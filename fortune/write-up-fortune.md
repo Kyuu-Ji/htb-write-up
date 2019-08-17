@@ -45,14 +45,14 @@ This gets us the following characters: &, +, \, ;
 The _ampersand_ and the _plus_ are uninteresting for us and the _backslash_ is for escaping characters.
 So the only thing that is interesting is the _semicolon_.
 
-If we put a command as after the value in the parameter _db_ like this:
+If we put a command after the value in the parameter _db_ like this:
 
 ```markdown
 db=startrek;id
 ```
 
 Then the command gets executed. This means we try to get a reverse shell with **Netcat**.
-Netcat is installed on the machine but doesn't work. There is probably a firewall in the way because pinging works.
+It is installed on the machine but doesn't work. There is probably a firewall in the way because pinging works fine.
 We are writing our own script to get a reverse shell, that is in this folder named **cmd-inject.py**
 
 Now we have pseudo reverse shell as the user \_fortune.
@@ -115,7 +115,7 @@ But instead of a shell we get this:
 
 ## Next Scan
 
-We do a new nmap scan to see if new ports are open when our SSH connection stanys open.
+We do a new nmap scan to see if new ports are open when our SSH connection stays open.
 
 ```markdown
 nmap 10.10.10.127
@@ -191,10 +191,8 @@ sqlite3 pgadmin4.db "select * from user;"
 sqlite3 pgadmin4.db "select * from server;"
 ```
 
-Hash of server: utUU0jkamCZDmqFLOrAuPjFxL0zp8zWzISe5MF0GY/l8Silrmu3caqrtjaVjLQlvFFEgESGz
-Hash of bob: $pbkdf2-sha512$25000$z9nbm1Oq9Z5TytkbQ8h5Dw$Vtx9YWQsgwdXpBnsa8BtO5kLOdQGflIZOQysAy7JdTVcRbv/6csQHAJCAIJT9rLFBawClFyMKnqKNL5t3Le9vg
-
-I am putting the hashes into the file _sqlite.hashes_.
+- Hash of server: utUU0jkamCZDmqFLOrAuPjFxL0zp8zWzISe5MF0GY/l8Silrmu3caqrtjaVjLQlvFFEgESGz
+- Hash of bob: $pbkdf2-sha512$25000$z9nbm1Oq9Z5TytkbQ8h5Dw$Vtx9YWQsgwdXpBnsa8BtO5kLOdQGflIZOQysAy7JdTVcRbv/6csQHAJCAIJT9rLFBawClFyMKnqKNL5t3Le9vgExecute crypto.py and we get the decrypted password of bob. If we now su - we are root on the machine.
 
 #### Find out what those hashes are
 
