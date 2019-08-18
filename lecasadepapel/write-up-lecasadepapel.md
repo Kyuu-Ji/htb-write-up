@@ -1,6 +1,6 @@
 # LeCasaDePapel
 
-This is the write-up for the box Fortune that got retired at the 27th July 2019.
+This is the write-up for the box LeCasaDePapel that got retired at the 27th July 2019.
 My IP address was 10.10.14.248 while I did this.
 
 Let's put this in our hosts file:
@@ -13,7 +13,7 @@ Let's put this in our hosts file:
 Starting with a Nmap scan:
 
 ```markdown
-nmap -sC -sV -o nmap/fortune.nmap 10.10.10.131
+nmap -sC -sV -o nmap/lecasadepapel.nmap 10.10.10.131
 ```
 
 ```markdown
@@ -53,7 +53,7 @@ searchsploit vsftpd
 ```
 
 And we find that there is a Metasploit module for that exact version.
-After we try this the exploit it does not work, so we change the _Verbose_ option to _True_ and running it again will say the following:
+After we try this the exploit does not work, so we change the _Verbose_ option to _True_ and running it again will say the following:
 > The service on port 6200 does not appear to be a shell
 
 There seems to be something on port 6200 so let's check that:
@@ -78,7 +78,7 @@ Now we have potential users on the box. They are called nairobi, dali, berlin, o
 file_get_contents:("/home/nairobi/ca.key")
 ```
 
-- User dali: We have permissio and can change .ssh/authorized_keys
+- User dali: We have permission to write and can change .ssh/authorized_keys
 - User nairobi: We get contents of ca.key
 - User berlin: Has user.txt
 
@@ -103,7 +103,7 @@ openssl pkey -in ca.key -pubout
 openssl x509 -in lacasadepapelhtb.crt -pubkey -noout
 ```
 
-The output of both is the same so we are good to go.
+The output of both files is the same so we are good to go.
 
 Now we can generate a client key, a certificate signing request and then sign it:
 
@@ -128,7 +128,7 @@ The filenames in the path of one of this .avi files look like they are Base64 de
 hxxps://10.10.10.131/file/U0VBU09OLTEvMDEuYXZp
 ```
 
-If we decode this string it says **SEASON-1/01.avi** so maybe we can browse the file system if we Base64 decode ourr own strings.
+If we decode this string it says **SEASON-1/01.avi** so maybe we can browse the file system if we Base64 decode our own strings.
 Let's decode the string **../.ssh/id_rsa** and paste it into the URL:
 
 ```markdown
