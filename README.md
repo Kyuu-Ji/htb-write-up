@@ -4,7 +4,7 @@ More write-ups will come soon.
 
 ### Boxes
 
-- Arkham
+- [Arkham](https://kyuu-ji.github.io/htb-write-up/arkham/write-up-arkham)
   - Retired on 10th August 2019
 - [Fortune](https://kyuu-ji.github.io/htb-write-up/fortune/write-up-fortune)
   - Retired on 3rd August 2019
