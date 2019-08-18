@@ -1,4 +1,4 @@
-## Unintended way to get root
+## Unintended way to get a SSH session
 
 After we know that we have write permissions on dali in the Psy Shell we have another way to get on the box.
 
