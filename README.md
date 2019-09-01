@@ -3,7 +3,8 @@
 More write-ups will come soon.
 
 ### Boxes
-
+- [Helpline](https://kyuu-ji.github.io/htb-write-up/helpline/write-up-helpline)
+  - Retired on 17th August 2019
 - [Arkham](https://kyuu-ji.github.io/htb-write-up/arkham/write-up-arkham)
   - Retired on 10th August 2019
 - [Fortune](https://kyuu-ji.github.io/htb-write-up/fortune/write-up-fortune)
