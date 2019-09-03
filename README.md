@@ -15,3 +15,5 @@ More write-ups will come soon.
   - Retired on 20th July 2019 
 - [FriendZone](https://kyuu-ji.github.io/htb-write-up/friendzone/write-up-friendzone)
   - Retired on 13th July 2019
+- [Netmon](https://kyuu-ji.github.io/htb-write-up/netmon/write-up-netmon)
+  - Retired on 29th June 2019
