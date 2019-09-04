@@ -11,8 +11,8 @@ More write-ups will come soon.
   - Retired on 3rd August 2019
 - [LeCasaDePapel](https://kyuu-ji.github.io/htb-write-up/lecasadepapel/write-up-lecasadepapel)
   - Retired on 27th July 2019
-- CTF
-  - Retired on 20th July 2019 
+- [CTF](https://kyuu-ji.github.io/htb-write-up/ctf/write-up-ctf)
+  - Retired on 20th July 2019
 - [FriendZone](https://kyuu-ji.github.io/htb-write-up/friendzone/write-up-friendzone)
   - Retired on 13th July 2019
 - [Netmon](https://kyuu-ji.github.io/htb-write-up/netmon/write-up-netmon)
