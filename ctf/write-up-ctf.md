@@ -41,7 +41,7 @@ A list of banned IP is available here...
 
 If we click on _here_ we get the output of a _top_ command and a list of banned IPs. Both information are not interesting, so we get to the _Login_ part of the page.
 
-We are greated with an input for an **Username** and an **OTP**. If we input a non valid used we get the message _User test not found_.
+We are greated with an input for an **Username** and an **OTP**. If we input a non valid user we get the message _User test not found_.
 When testing for special characters with _Burpsuite_ by URL encoding strings multiple times, we get only one time URL encoded strings. This means there is some kind of blacklist in the background.
 
 If we check the source-code of the login page we get a hint that says:
@@ -80,4 +80,4 @@ The results are:
 - %255a = *
 - %255c = \
 
-Looking at these characters it becomes clear that these are often used in **LDAP queries**!
+Looking at these characters it becomes clear that these are used in **LDAP queries**!
