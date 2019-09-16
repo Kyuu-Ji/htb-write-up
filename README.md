@@ -4,8 +4,8 @@ More write-ups will come soon.
 
 ### Boxes
 - Bastion
-  - Retired on 07th September 2019
-- OneTwoSeven
+  - Retired on 7th September 2019
+- [OneTwoSeven](https://kyuu-ji.github.io/htb-write-up/onetwoseven/write-up-onetwoseven)
   - Retired on 31st August 2019
 - Unattended
   - Retired on 24th August 2019
