@@ -3,7 +3,7 @@
 More write-ups will come soon.
 
 ### Boxes
-- Bastion
+- [Bastion](https://kyuu-ji.github.io/htb-write-up/bastion/write-up-bastion)
   - Retired on 7th September 2019
 - [OneTwoSeven](https://kyuu-ji.github.io/htb-write-up/onetwoseven/write-up-onetwoseven)
   - Retired on 31st August 2019
