@@ -3,6 +3,8 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Luke](https://kyuu-ji.github.io/htb-write-up/luke/write-up-luke)
+  - Retired on 14th September 2019
 - [Bastion](https://kyuu-ji.github.io/htb-write-up/bastion/write-up-bastion)
   - Retired on 7th September 2019
 - [OneTwoSeven](https://kyuu-ji.github.io/htb-write-up/onetwoseven/write-up-onetwoseven)
