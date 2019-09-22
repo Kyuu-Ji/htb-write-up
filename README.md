@@ -15,9 +15,10 @@ More write-ups will come soon.
   - Retired on 31st August 2019
   - OS: Linux
   - Tags: Port forwarding, Advanced Packaging Tools (APT)
-- Unattended
+- [Unattended](https://kyuu-ji.github.io/htb-write-up/unattended/write-up-unattended)
   - Retired on 24th August 2019
   - OS: Linux
+  - Tags: SQL Injection
 - [Helpline](https://kyuu-ji.github.io/htb-write-up/helpline/write-up-helpline)
   - Retired on 17th August 2019
   - OS: Windows
@@ -46,3 +47,11 @@ More write-ups will come soon.
   - Retired on 29th June 2019
   - OS: Windows
   - Tags: CVE (PRTG Network Monitor)
+- [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
+  - Released on 15th March 2017
+  - OS: Windows
+  - Tags: CVE
+- [Lame](https://kyuu-ji.github.io/htb-write-up/lame/write-up-lame)
+  - Released on 14th March 2017
+  - OS: Linux
+  - Tags: CVE
