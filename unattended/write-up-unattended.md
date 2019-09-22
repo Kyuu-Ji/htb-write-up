@@ -1,6 +1,6 @@
 # Unattended
 
-This is the write-up for the box Bastion that got retired at the 24th August 2019.
+This is the write-up for the box Unattended that got retired at the 24th August 2019.
 My IP address was 10.10.14.4 while I did this.
 
 Let's put this in our hosts file:
@@ -49,7 +49,7 @@ The pages with SSL need the _-k_ parameter to skip SSL verification. We get the 
 - index.html
 - index.php
 
-All of them give me the HTTP code _403 Forbidden_ except for **/dev** that gives us a _301 Moved Temporarily_ and says:
+All of them give us the HTTP code _403 Forbidden_ except for **/dev** that gives us a _301 Moved Temporarily_ and says:
 > dev site has been moved to his own server
 
 On **index.php** we find a real web page with more information.
@@ -97,7 +97,7 @@ And this gives us the source code of **index.php**. This file can be found in th
 
 ### SQL Injection
 
-If we try outsome SQLi we find out that we get different responses with **UNION Injections**. For example like this, we get no content on the page:
+If we try out some SQLi we find out that we get different responses with **UNION Injections**. For example like this, we get no content on the page:
 ```markdown
 GET /index.php?id=465'+union+select+1--+-
 ```
