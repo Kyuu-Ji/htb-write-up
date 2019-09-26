@@ -281,4 +281,4 @@ Replacing the contents of these files on our client with the contents of the img
 And then we run **./sbin/uinitrd c0m3s3f0ss34nt4n1** again and get the following output:
 > 132f93ab100671dcb263acaf5dc95d8260e8b7c6
 
-If we try to _su -_ with the _guly_ user the authentication works and we are root!
+If we try to _su -_ with the _guly_ user with this password, the authentication works and we are root!
