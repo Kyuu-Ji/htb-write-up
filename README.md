@@ -47,6 +47,10 @@ More write-ups will come soon.
   - Retired on 29th June 2019
   - OS: Windows
   - Tags: CVE (PRTG Network Monitor)
+- [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
+  - Retired on 10th November 2018
+  - OS: Windows
+  - Tags: Active Directory
 - [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
   - Released on 15th March 2017
   - OS: Windows
