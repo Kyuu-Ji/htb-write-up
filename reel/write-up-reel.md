@@ -229,7 +229,7 @@ After that we can start Bloodhound and login with the credentials we entered and
 
 We can see that _Tom_ and _Nico_ are group members of **Print Operators** and this group has a path to _Administrator_:
 
-![Shortest Paths to High Value Targets](https://kyuu-ji.github.io/htb-write-up/reel/Image1.png)
+![Shortest Paths to High Value Targets](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_1.png)
 
 This is no direct path, so we need to look for groups we care about and that BloodHound just doesn't know. If we look at the groups of the users we have manually, we see the group **Backup_Admins** that we need to query in BloodHound.
 ```markdown
