@@ -236,3 +236,8 @@ This is no direct path, so we need to look for groups we care about and that Blo
 net groups /domain
 ```
 
+If we execute the function in SharpHound with the parameters that it should collect all information, we get more results to analyze:
+```powershell
+Invoke-Bloodhound -CollectionMethod All
+```
+
