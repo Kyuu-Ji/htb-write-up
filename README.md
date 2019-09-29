@@ -1,4 +1,4 @@
-## This is a page for my write-ups of Hack The Box machines
+# This is a page for my write-ups of Hack The Box machines
 
 More write-ups will come soon.
 
@@ -50,7 +50,7 @@ More write-ups will come soon.
 - [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
   - Retired on 10th November 2018
   - OS: Windows
-  - Tags: Active Directory
+  - Tags: Phishing, Active Directory, BloodHound
 - [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
   - Released on 15th March 2017
   - OS: Windows
