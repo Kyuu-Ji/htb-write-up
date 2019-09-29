@@ -51,6 +51,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
+  - Retired on 14th October 2017
+  - OS: Windows
+  - Tags: CVE
 - [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
   - Released on 15th March 2017
   - OS: Windows
