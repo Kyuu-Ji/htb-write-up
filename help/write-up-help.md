@@ -41,7 +41,7 @@ gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u 
 We get a path called **/support** that shows us a ticket system with the name **Help Desk Software by HelpDeskZ**.
 So we can check if there are known vulnerabilities for this software:
 ```markdown
-searchsploit helpdeksz
+searchsploit helpdeskz
 ```
 
 There are two vulnerabilites that both work for the version lower than _1.0.2_ so we need to find out what the version is.
@@ -64,7 +64,8 @@ It takes the file name, the system time and the extension and combining all of t
 When we upload a file we know the name and the upload time and thus can calculate this ourselves.
 
 Now lets _Submit a Ticket_ and attach a PHP file with it. In my case I am going to take the script _php-reverse-shell.php_ and let it call my IP and port 9001.
-![Uploading a PHP file]()
+
+![Uploading a PHP file](https://kyuu-ji.github.io/htb-write-up/help/help_file-upload.png)
 
 It says that the file is not allowed but the author of the script said it gets uploaded anyway so you can ignore that warning.
 
