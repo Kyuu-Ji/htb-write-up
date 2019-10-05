@@ -47,7 +47,6 @@ We see there is a _User Object_ with two values _username and password_:
 
 ![Interesting user objects](https://kyuu-ji.github.io/htb-write-up/help/help_user-objects.png)
 
-So we can query for those values:
 If we research a bit about the GraphQL package and how to exploit it we wil find different sources. One query I found is one that eventually gives us useful information:
 ```markdown
 { user {
@@ -88,7 +87,7 @@ This time we will use the **Authenticated SQL Injection** because we are authori
 
 Before we can use this exploit we need to create a ticket with an attachment:
 
-![Creating ticket](https://kyuu-ji.github.io/htb-write-up/help/help_create-ticket.png)
+![Creating ticket](https://kyuu-ji.github.io/htb-write-up/help/help_creating-ticket.png)
 
 Sending the location of the attachment to Burpsuite:
 ```markdown
@@ -116,12 +115,12 @@ sqlmap -r help.req --dump
 
 Here we will find the table named **staff** that is important.
 
-We will write a Python script to automate the process of this SQL Injection, that can found in this folder named **help-sqli.py**.
+We will write a Python script to automate the process of this SQL Injection, that can be found in this folder named **help-sqli.py**.
 ```markdown
 /support/?v=view_tickets&action=ticket&param[]=5&param[]=attachment&param[]=1&param[]=7 and substr((select password from staff limit 0,1),0,1) = 'a'
 ```
 
-Running that script will iterate through every character of the hash of the password of the Administrator. If you let run SQLMap long enough this hash will be found, too.
+Running that script will iterate through every character of the hash of the password of the Administrator. If we let run SQLMap long enough this hash will be found, too.
 > d318f44739dced66793b1a603028133a76ae680e
 
 This hash is 40 characters long and thus probably SHA1. On hashes.org we find this hash and the password is:
