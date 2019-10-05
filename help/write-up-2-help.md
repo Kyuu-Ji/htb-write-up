@@ -27,7 +27,7 @@ This is a hint to look out for **GraphQL** on the server and we find the path **
 
 If we research a bit about the GraphQL package and how to exploit it we wil find different sources. One query I found is one that eventually gives us useful information:
 ```markdown
-10.10.10.121:3000/graphql?query= {__schema%20{%0atypes%20{%0aname%0akind%0adescription%0afields%20{%0aname%0a}%0a}%0a}%0a}
+10.10.10.121:3000/graphql?query={__schema\%20{\%0atypes\%20{\%0aname\%0akind\%0adescription\%0afields\%20{\%0aname\%0a}\%0a}\%0a}\%0a}
 
 URL-decoded:
 {__schema {
