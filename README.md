@@ -47,6 +47,10 @@ More write-ups will come soon.
   - Retired on 29th June 2019
   - OS: Windows
   - Tags: CVE (PRTG Network Monitor)
+- [Help](https://kyuu-ji.github.io/htb-write-up/help/write-up-help)
+  - Retired on 8th June 2019
+  - OS: Linux
+  - Tags: SQL Injection, Arbitraty File Upload
 - [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
   - Retired on 10th November 2018
   - OS: Windows
