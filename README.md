@@ -51,6 +51,10 @@ More write-ups will come soon.
   - Retired on 8th June 2019
   - OS: Linux
   - Tags: SQL Injection, Arbitrary File Upload
+- [Conceal](https://kyuu-ji.github.io/htb-write-up/conceal/write-up-conceal)
+  - Retired on 18th May 2019
+  - OS: Windows
+  - Tags: SNMP, IKE/IPSec
 - [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
   - Retired on 10th November 2018
   - OS: Windows
