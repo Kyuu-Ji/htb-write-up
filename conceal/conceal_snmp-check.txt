@@ -1,0 +1,467 @@
+snmp-check v1.9 - SNMP enumerator
+Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)
+
+[+] Try to connect to 10.10.10.116:161 using SNMPv1 and community 'public'
+
+[*] System information:
+
+  Host IP address               : 10.10.10.116
+  Hostname                      : Conceal
+  Description                   : Hardware: AMD64 Family 23 Model 1 Stepping 2 AT/AT COMPATIBLE - Software: Windows Version 6.3 (Build 15063 Multiprocessor Free)
+  Contact                       : IKE VPN password PSK - 9C8B1A372B1878851BE2C097031B6E43
+  Location                      : -
+  Uptime snmp                   : 00:17:11.78
+  Uptime system                 : 00:16:47.47
+  System date                   : 2019-10-6 12:46:12.7
+  Domain                        : WORKGROUP
+
+[*] User accounts:
+
+  Guest
+  Destitute
+  Administrator
+  DefaultAccount
+
+[*] Network information:
+
+  IP forwarding enabled         : no
+  Default TTL                   : 128
+  TCP segments received         : 5546
+  TCP segments sent             : 8
+  TCP segments retrans          : 4
+  Input datagrams               : 9248
+  Delivered datagrams           : 7318
+  Output datagrams              : 470
+
+[*] Network interfaces:
+
+  Interface                     : [ up ] Software Loopback Interface 1
+  Id                            : 1
+  Mac Address                   : :::::
+  Type                          : softwareLoopback
+  Speed                         : 1073 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (IKEv2)
+  Id                            : 2
+  Mac Address                   : :::::
+  Type                          : unknown
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (PPTP)
+  Id                            : 3
+  Mac Address                   : :::::
+  Type                          : unknown
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] Microsoft Kernel Debug Network Adapter
+  Id                            : 4
+  Mac Address                   : :::::
+  Type                          : ethernet-csmacd
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (L2TP)
+  Id                            : 5
+  Mac Address                   : :::::
+  Type                          : unknown
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] Teredo Tunneling Pseudo-Interface
+  Id                            : 6
+  Mac Address                   : 00:00:00:00:00:00
+  Type                          : unknown
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (IP)
+  Id                            : 7
+  Mac Address                   : :::::
+  Type                          : ethernet-csmacd
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (SSTP)
+  Id                            : 8
+  Mac Address                   : :::::
+  Type                          : unknown
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (IPv6)
+  Id                            : 9
+  Mac Address                   : :::::
+  Type                          : ethernet-csmacd
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Intel(R) 82574L Gigabit Network Connection
+  Id                            : 10
+  Mac Address                   : 00:50:56:b9:a4:1c
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 524643
+  Out octets                    : 56103
+
+  Interface                     : [ down ] WAN Miniport (PPPOE)
+  Id                            : 11
+  Mac Address                   : :::::
+  Type                          : ppp
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] WAN Miniport (Network Monitor)
+  Id                            : 12
+  Mac Address                   : :::::
+  Type                          : ethernet-csmacd
+  Speed                         : 0 Mbps
+  MTU                           : 0
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Intel(R) 82574L Gigabit Network Connection-WFP Native MAC Layer LightWeight Filter-0000
+  Id                            : 13
+  Mac Address                   : 00:50:56:b9:a4:1c
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 524643
+  Out octets                    : 56103
+
+  Interface                     : [ up ] Intel(R) 82574L Gigabit Network Connection-QoS Packet Scheduler-0000
+  Id                            : 14
+  Mac Address                   : 00:50:56:b9:a4:1c
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 524643
+  Out octets                    : 56103
+
+  Interface                     : [ up ] Intel(R) 82574L Gigabit Network Connection-WFP 802.3 MAC Layer LightWeight Filter-0000
+  Id                            : 15
+  Mac Address                   : 00:50:56:b9:a4:1c
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 524643
+  Out octets                    : 56103
+
+
+[*] Network IP:
+
+  Id                    IP Address            Netmask               Broadcast
+  10                    10.10.10.116          255.255.255.0         1
+  1                     127.0.0.1             255.0.0.0             1
+
+[*] Routing information:
+
+  Destination           Next hop              Mask                  Metric
+  0.0.0.0               10.10.10.2            0.0.0.0               281
+  10.10.10.0            10.10.10.116          255.255.255.0         281
+  10.10.10.116          10.10.10.116          255.255.255.255       281
+  10.10.10.255          10.10.10.116          255.255.255.255       281
+  127.0.0.0             127.0.0.1             255.0.0.0             331
+  127.0.0.1             127.0.0.1             255.255.255.255       331
+  127.255.255.255       127.0.0.1             255.255.255.255       331
+  224.0.0.0             127.0.0.1             240.0.0.0             331
+  255.255.255.255       127.0.0.1             255.255.255.255       331
+
+[*] TCP connections and listening ports:
+
+  Local address         Local port            Remote address        Remote port           State
+  0.0.0.0               21                    0.0.0.0               0                     listen
+  0.0.0.0               80                    0.0.0.0               0                     listen
+  0.0.0.0               135                   0.0.0.0               0                     listen
+  0.0.0.0               445                   0.0.0.0               0                     listen
+  0.0.0.0               49664                 0.0.0.0               0                     listen
+  0.0.0.0               49665                 0.0.0.0               0                     listen
+  0.0.0.0               49666                 0.0.0.0               0                     listen
+  0.0.0.0               49667                 0.0.0.0               0                     listen
+  0.0.0.0               49668                 0.0.0.0               0                     listen
+  0.0.0.0               49669                 0.0.0.0               0                     listen
+  0.0.0.0               49670                 0.0.0.0               0                     listen
+  10.10.10.116          139                   0.0.0.0               0                     listen
+
+[*] Listening UDP ports:
+
+  Local address         Local port
+  0.0.0.0               123
+  0.0.0.0               161
+  0.0.0.0               500
+  0.0.0.0               4500
+  0.0.0.0               5050
+  0.0.0.0               5353
+  0.0.0.0               5355
+  10.10.10.116          137
+  10.10.10.116          138
+  10.10.10.116          1900
+  10.10.10.116          53226
+  127.0.0.1             1900
+  127.0.0.1             53227
+
+[*] Network services:
+
+  Index                 Name
+  0                     Power
+  1                     Server
+  2                     Themes
+  3                     IP Helper
+  4                     DNS Client
+  5                     Data Usage
+  6                     Superfetch
+  7                     DHCP Client
+  8                     Time Broker
+  9                     TokenBroker
+  10                    Workstation
+  11                    SNMP Service
+  12                    User Manager
+  13                    VMware Tools
+  14                    Windows Time
+  15                    CoreMessaging
+  16                    Plug and Play
+  17                    Print Spooler
+  18                    Windows Audio
+  19                    SSDP Discovery
+  20                    Task Scheduler
+  21                    Windows Search
+  22                    Windows Update
+  23                    Security Center
+  24                    Storage Service
+  25                    Windows Firewall
+  26                    CNG Key Isolation
+  27                    COM+ Event System
+  28                    Windows Event Log
+  29                    IPsec Policy Agent
+  30                    Geolocation Service
+  31                    Group Policy Client
+  32                    RPC Endpoint Mapper
+  33                    Data Sharing Service
+  34                    Device Setup Manager
+  35                    Network List Service
+  36                    System Events Broker
+  37                    User Profile Service
+  38                    Base Filtering Engine
+  39                    Local Session Manager
+  40                    Microsoft FTP Service
+  41                    TCP/IP NetBIOS Helper
+  42                    Cryptographic Services
+  43                    Diagnostic System Host
+  44                    COM+ System Application
+  45                    Diagnostic Service Host
+  46                    Shell Hardware Detection
+  47                    State Repository Service
+  48                    Diagnostic Policy Service
+  49                    Network Connection Broker
+  50                    Security Accounts Manager
+  51                    Network Location Awareness
+  52                    Windows Connection Manager
+  53                    Windows Font Cache Service
+  54                    Remote Procedure Call (RPC)
+  55                    DCOM Server Process Launcher
+  56                    Microsoft Storage Spaces SMP
+  57                    Windows Audio Endpoint Builder
+  58                    Application Host Helper Service
+  59                    Network Store Interface Service
+  60                    Client License Service (ClipSVC)
+  61                    Distributed Link Tracking Client
+  62                    System Event Notification Service
+  63                    World Wide Web Publishing Service
+  64                    Connected Devices Platform Service
+  65                    Windows Defender Antivirus Service
+  66                    Windows Management Instrumentation
+  67                    Windows Process Activation Service
+  68                    Distributed Transaction Coordinator
+  69                    IKE and AuthIP IPsec Keying Modules
+  70                    Microsoft Account Sign-in Assistant
+  71                    VMware CAF Management Agent Service
+  72                    VMware Physical Disk Helper Service
+  73                    Background Intelligent Transfer Service
+  74                    Background Tasks Infrastructure Service
+  75                    Program Compatibility Assistant Service
+  76                    VMware Alias Manager and Ticket Service
+  77                    Connected User Experiences and Telemetry
+  78                    WinHTTP Web Proxy Auto-Discovery Service
+  79                    Windows Defender Security Centre Service
+  80                    Windows Push Notifications System Service
+  81                    Windows Defender Antivirus Network Inspection Service
+  82                    Windows Driver Foundation - User-mode Driver Framework
+
+[*] Processes:
+
+  Id                    Status                Name                  Path                  Parameters
+  1                     running               System Idle Process
+  4                     running               System
+  312                   running               smss.exe
+  332                   running               svchost.exe           C:\Windows\System32\  -k LocalSystemNetworkRestricted
+  400                   running               csrss.exe
+  428                   running               svchost.exe           C:\Windows\system32\  -k netsvcs
+  488                   running               wininit.exe
+  500                   running               csrss.exe
+  580                   running               winlogon.exe
+  600                   running               services.exe
+  632                   running               lsass.exe             C:\Windows\system32\
+  716                   running               svchost.exe           C:\Windows\system32\  -k DcomLaunch
+  724                   running               fontdrvhost.exe
+  732                   running               fontdrvhost.exe
+  824                   running               svchost.exe           C:\Windows\system32\  -k RPCSS
+  924                   running               dwm.exe
+  944                   running               svchost.exe           C:\Windows\system32\  -k LocalService
+  980                   running               svchost.exe           C:\Windows\system32\  -k LocalServiceNoNetwork
+  988                   running               svchost.exe           C:\Windows\System32\  -k LocalServiceNetworkRestricted
+  1032                  running               Memory Compression
+  1060                  running               svchost.exe           C:\Windows\System32\  -k NetworkService
+  1092                  running               vmacthlp.exe          C:\Program Files\VMware\VMware Tools\
+  1212                  running               svchost.exe           C:\Windows\System32\  -k LocalServiceNetworkRestricted
+  1308                  running               svchost.exe           C:\Windows\system32\  -k LocalServiceNetworkRestricted
+  1316                  running               svchost.exe           C:\Windows\System32\  -k LocalServiceNetworkRestricted
+  1456                  running               spoolsv.exe           C:\Windows\System32\
+  1612                  running               svchost.exe           C:\Windows\system32\  -k appmodel
+  1624                  running               MpCmdRun.exe          C:\Program Files\Windows Defender\  -IdleTask -TaskName WdCacheMaintenance
+  1720                  running               svchost.exe           C:\Windows\system32\  -k apphost
+  1728                  running               svchost.exe           C:\Windows\System32\  -k utcsvc
+  1736                  running               svchost.exe           C:\Windows\system32\  -k ftpsvc
+  1808                  running               SecurityHealthService.exe
+  1836                  running               snmp.exe              C:\Windows\System32\
+  1852                  running               conhost.exe           \??\C:\Windows\system32\  0x4
+  1872                  running               VGAuthService.exe     C:\Program Files\VMware\VMware Tools\VMware VGAuth\
+  1880                  running               vmtoolsd.exe          C:\Program Files\VMware\VMware Tools\
+  1892                  running               ManagementAgentHost.exe  C:\Program Files\VMware\VMware Tools\VMware CAF\pme\bin\
+  1920                  running               svchost.exe           C:\Windows\system32\  -k iissvcs
+  1948                  running               MsMpEng.exe
+  2272                  running               dllhost.exe           C:\Windows\system32\  /Processid:{02D4B3F1-FD88-11D1-960D-00805FC79235}
+  2368                  running               svchost.exe           C:\Windows\system32\  -k LocalServiceAndNoImpersonation
+  2664                  running               SearchIndexer.exe     C:\Windows\system32\  /Embedding
+  2768                  running               svchost.exe           C:\Windows\system32\  -k NetworkServiceNetworkRestricted
+  2908                  running               svchost.exe
+  2960                  running               MpCmdRun.exe          C:\Program Files\Windows Defender\  Scan -ScheduleJob -ScanTrigger 55
+  2988                  running               WmiPrvSE.exe          C:\Windows\system32\wbem\
+  3028                  running               LogonUI.exe                                 /flags:0x0 /state0:0xa3a0b855 /state1:0x41c64e6d
+  3080                  running               SearchFilterHost.exe  C:\Windows\system32\  0 692 696 704 8192 700
+  3192                  running               conhost.exe           \??\C:\Windows\system32\  0x4
+  3204                  running               NisSrv.exe
+  3328                  running               MpCmdRun.exe          C:\Program Files\Windows Defender\  Scan -ScheduleJob -RestrictPrivileges -ScanType 1 -ScanTrigger 59 -Reinvoke
+  3344                  running               svchost.exe           C:\Windows\system32\  -k LocalSystemNetworkRestricted
+  3420                  running               msdtc.exe             C:\Windows\System32\
+  3860                  running               WmiPrvSE.exe          C:\Windows\system32\wbem\
+  3940                  running               svchost.exe           C:\Windows\System32\  -k smphost
+  5104                  running               SearchProtocolHost.exe  C:\Windows\system32\  Global\UsGthrFltPipeMssGthrPipe1_ Global\UsGthrCtrlFltPipeMssGthrPipe1 1 -2147483646 "Software\Microsoft\Windows Search" "Mozil
+
+[*] Storage information:
+
+  Description                   : ["C:\\ Label:  Serial Number 9606be7b"]
+  Device id                     : [#<SNMP::Integer:0x000055f163b06cd8 @value=1>]
+  Filesystem type               : ["unknown"]
+  Device unit                   : [#<SNMP::Integer:0x000055f163b04708 @value=4096>]
+  Memory size                   : 59.51 GB
+  Memory used                   : 10.57 GB
+
+  Description                   : ["D:\\"]
+  Device id                     : [#<SNMP::Integer:0x000055f163f2d500 @value=2>]
+  Filesystem type               : ["unknown"]
+  Device unit                   : [#<SNMP::Integer:0x000055f163c76f00 @value=0>]
+  Memory size                   : 0 bytes
+  Memory used                   : 0 bytes
+
+  Description                   : ["Virtual Memory"]
+  Device id                     : [#<SNMP::Integer:0x000055f163f1d8f8 @value=3>]
+  Filesystem type               : ["unknown"]
+  Device unit                   : [#<SNMP::Integer:0x000055f163f29fe0 @value=65536>]
+  Memory size                   : 3.12 GB
+  Memory used                   : 835.94 MB
+
+  Description                   : ["Physical Memory"]
+  Device id                     : [#<SNMP::Integer:0x000055f163c69fa8 @value=4>]
+  Filesystem type               : ["unknown"]
+  Device unit                   : [#<SNMP::Integer:0x000055f163c66c90 @value=65536>]
+  Memory size                   : 2.00 GB
+  Memory used                   : 812.44 MB
+
+
+[*] File system information:
+
+  Index                         : 1
+  Mount point                   :
+  Remote mount point            : -
+  Access                        : 1
+  Bootable                      : 0
+
+[*] Device information:
+
+  Id                    Type                  Status                Descr
+  1                     unknown               running               Microsoft XPS Document Writer v4
+  2                     unknown               running               Microsoft Print To PDF
+  3                     unknown               running               Microsoft Shared Fax Driver
+  4                     unknown               running               Unknown Processor Type
+  5                     unknown               running               Unknown Processor Type
+  6                     unknown               unknown               Software Loopback Interface 1
+  7                     unknown               unknown               WAN Miniport (IKEv2)
+  8                     unknown               unknown               WAN Miniport (PPTP)
+  9                     unknown               unknown               Microsoft Kernel Debug Network Adapter
+  10                    unknown               unknown               WAN Miniport (L2TP)
+  11                    unknown               unknown               Teredo Tunneling Pseudo-Interface
+  12                    unknown               unknown               WAN Miniport (IP)
+  13                    unknown               unknown               WAN Miniport (SSTP)
+  14                    unknown               unknown               WAN Miniport (IPv6)
+  15                    unknown               unknown               Intel(R) 82574L Gigabit Network Connection
+  16                    unknown               unknown               WAN Miniport (PPPOE)
+  17                    unknown               unknown               WAN Miniport (Network Monitor)
+  18                    unknown               unknown               Intel(R) 82574L Gigabit Network Connection-WFP Native MAC Layer
+  19                    unknown               unknown               Intel(R) 82574L Gigabit Network Connection-QoS Packet Scheduler-
+  20                    unknown               unknown               Intel(R) 82574L Gigabit Network Connection-WFP 802.3 MAC Layer L
+  21                    unknown               unknown               D:\
+  22                    unknown               running               Fixed Disk
+  23                    unknown               running               IBM enhanced (101- or 102-key) keyboard, Subtype=(0)
+
+[*] Software components:
+
+  Index                 Name
+  1                     Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161
+  2                     VMware Tools
+  3                     Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161
+
+[*] IIS server information:
+
+  TotalBytesSentLowWord         : 0
+  TotalBytesReceivedLowWord     : 0
+  TotalFilesSent                : 0
+  CurrentAnonymousUsers         : 0
+  CurrentNonAnonymousUsers      : 0
+  TotalAnonymousUsers           : 0
+  TotalNonAnonymousUsers        : 0
+  MaxAnonymousUsers             : 0
+  MaxNonAnonymousUsers          : 0
+  CurrentConnections            : 0
+  MaxConnections                : 0
+  ConnectionAttempts            : 0
+  LogonAttempts                 : 0
+  Gets                          : 0
+  Posts                         : 0
+  Heads                         : 0
+  Others                        : 0
+  CGIRequests                   : 0
+  BGIRequests                   : 0
+  NotFoundErrors                : 0
