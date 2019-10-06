@@ -5,7 +5,7 @@ My IP address was 10.10.14.10 while I did this.
 
 Let's put this in our hosts file:
 ```markdown
-10.10.10.116    coneal.htb
+10.10.10.116    conceal.htb
 ```
 
 ## Enumeration
@@ -69,9 +69,6 @@ We get a lot of interesting results that I put in a file in this folder called *
   - 137 - NetBIOS Name Service
   - 138 - NetBIOS Datagram Service
   - 1900 - Microsoft SSDP (UPnP)
-  - 53226 - Unknown
-  - 53227 - Unknown
-
 
 ## Checking IPSec
 
@@ -102,9 +99,9 @@ We need to focus on the **SA (Security Association)** that is:
 - Authentication with a PSK that we have
 - Life Duration of it is 0x00007080 = 28800 seconds = 8 hours
 
-Now that we have all the important information we need a IPSec Tunneling program called **strongswan**.
+Now that we have all the important information we need a IPSec Tunneling program called **strongSwan**.
 
-### Configuring strongswan
+### Configuring strongSwan
 
 In the `manpage` for `ipsec.secrets` we find an example how to configure an IPSec tunnel:
 ```markdown
@@ -117,7 +114,7 @@ So we add this line to the **/etc/ipsec.secrets** file:
 10.10.10.116 %any : PSK "Dudecake1!"
 ```
 
-Whenever we make an IPSec connection through stongswan to the box it uses this PSK.
+Whenever we make an IPSec connection through stongSwan to the box it uses this PSK.
 
 Next we need to configure **/etc/ipsec.conf** and the help for that can be found in `man ipsec.conf`.
 Everything we configure here is with information we already have:
