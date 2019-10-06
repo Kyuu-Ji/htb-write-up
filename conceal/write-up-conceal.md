@@ -204,6 +204,6 @@ After uploading the file we can execute JuicyPotato.exe:
 ```
 
 Normally it tries the CLSID of BITS but that won't escalate our privileges so we take the **CLSID of wuauserv** which is _{e60687f7-01a1-40aa-86ac-db1cbf673334}_.
-We can a list of CLSID here: [JuicyPotato CLSID list](https://ohpe.it/juicy-potato/CLSID/Windows_10_Enterprise/).
+A list of CLSID can be found here: [JuicyPotato CLSID list](https://ohpe.it/juicy-potato/CLSID/Windows_10_Enterprise/).
 
 When the program successfully runs, our second reverse shell spawns a shell with the user _NT Authority\SYSTEM_ and we rooted the box!
