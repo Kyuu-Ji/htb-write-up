@@ -63,6 +63,10 @@ More write-ups will come soon.
   - Retired on 14th October 2017
   - OS: Windows
   - Tags: CVE
+- [Popcorn](https://kyuu-ji.github.io/htb-write-up/popcorn/write-up-popcorn)
+  - Retired on 25th June 2017
+  - OS: Linux
+  - Tags: Unrestricted File Upload, CVE
 - [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
   - Released on 15th March 2017
   - OS: Windows
