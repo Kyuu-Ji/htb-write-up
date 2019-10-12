@@ -51,7 +51,7 @@ More write-ups will come soon.
   - Retired on 8th June 2019
   - OS: Linux
   - Tags: SQL Injection, Arbitrary File Upload
-- [Sizzle](https://kyuu-ji.github.io/htb-write-up/help/write-up-help)
+- [Sizzle](https://kyuu-ji.github.io/htb-write-up/sizzle/write-up-sizzle)
   - Retired on 1st June 2019
   - OS: Windows
   - Tags: SCF File Attack, Certificate Authority, Active Directory
