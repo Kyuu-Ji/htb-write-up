@@ -369,7 +369,7 @@ When trying to run it we see that a policy is blocking it so we need to [bypass 
 .\SharpHound.exe
 ```
 
-This creates a ZIP file that we need on our machine to analyze it with Bloodhound but it has not all the information we need, so we do that with a C2 Framework.
+This creates a ZIP file that we need on our machine to analyze it with Bloodhound but it does not execute like it should, so we execute it with a C2 Framework.
 
 ### Starting a C2 Framework
 
@@ -384,17 +384,19 @@ docker run -it -p 7443:7443 -p 80:80 -p 443:443 --name covenant -v $(pwd)/Data:/
 
 After that we get a web server on localhost on port 7443 thats our C2 framework.
 
+This is the Covenant Dashboard:
+
 ![Covenant Dashboard](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-dashboard.png)
 
 Starting a Listener:
 
 ![Covenant create Listener](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-listener.png)
 
-Hosting a Binary Launcher:
+Generating a Binary Launcher:
 
 ![Covenant start Launcher](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-launcher.png)
 
-After executing that launcher.exe we get a call back and this can be seen on Grunts:
+After executing that launcher.exe we get a callback and this can be seen on Grunts:
 
 ![Covenant start Grunt](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt.png)
 
@@ -408,7 +410,7 @@ But we want to start the SharpHound.exe:
 
 ![Covenant executing SharpHound](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt-3.png)
 
-And now we can download this file and analyze it with BloodHound.
+And now we can download the generated ZIP file and analyze it with BloodHound.
 
 ### Analyzing BloodHound
 
