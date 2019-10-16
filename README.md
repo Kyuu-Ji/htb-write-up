@@ -54,7 +54,7 @@ More write-ups will come soon.
 - [Sizzle](https://kyuu-ji.github.io/htb-write-up/sizzle/write-up-sizzle)
   - Retired on 1st June 2019
   - OS: Windows
-  - Tags: SCF File Attack, Certificate Authority, Active Directory, BloodHound, C2 Framework Covenant
+  - Tags: SCF File Attack, Certificate Authority, Kerberoast, BloodHound, C2 Framework Covenant
 - [Conceal](https://kyuu-ji.github.io/htb-write-up/conceal/write-up-conceal)
   - Retired on 18th May 2019
   - OS: Windows
