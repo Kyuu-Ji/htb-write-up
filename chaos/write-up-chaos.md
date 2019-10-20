@@ -74,11 +74,9 @@ We get the path _/wp_ from which we were can browse to a WordPress page with an 
 
 ![WordPress page](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_wp-page.png)
 
-When seeing a WordPress page the first thing to do is to start **Nikto and **WPScan** to look for vulnerabilities and potential usernames:
+When seeing a WordPress page the first thing to do is to start **WPScan** to look for vulnerabilities and potential usernames:
 ```markdown
 wpscan --enumerate --url 10.10.10.120/wp/wordpress
-
-nikto -host 10.10.10.120/wp/wordpress
 ```
 
 We get a username named _human_. Trying this username on the password protected article, we can read that article and it says:
@@ -114,7 +112,7 @@ TestA001 login ayush jiujitsu
 TestA001 OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SORT=DISPLAY THREAD=REFERENCES THREAD=REFS THREAD=ORDEREDSUBJECT MULTIAPPEND URL-PARTIAL CATENATE UNSELECT CHILDREN NAMESPACE UIDPLUS LIST-EXTENDED I18NLEVEL=1 CONDSTORE QRESYNC ESEARCH ESORT SEARCHRES WITHIN CONTEXT=SEARCH LIST-STATUS BINARY MOVE SNIPPET=FUZZY LITERAL+ NOTIFY SPECIAL-USE] Logged in
 ```
 
-This verifies that the credentials work so we can set up a mail client where we can look if this user has e-mail.
+This verifies that the credentials work so we can set up a mail client where we can look if this user has mails.
 I will use the mail client **Evolution** and configure it accordingly to access the mailbox of _ayush_:
 
 ![Mailbox of user](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_mailbox.png)
