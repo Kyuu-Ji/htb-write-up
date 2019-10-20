@@ -76,10 +76,9 @@ After copying the request for the login page and saving it as a file (login.req)
 sqlmap -r login.req 
 ```
 
-The mostinteresting output from SQLMap is this:
+Interesting output from SQLMap:
 > sqlmap got a 302 redirect to 'http://admin.cronos.htb:80/welcome.php'. Do you want to follow? [Y/n]
 
-And this:
 > POST parameter 'username' is vulnerable.(...)
 
 So lets try a basic SQL Injection on the username field:
@@ -109,7 +108,7 @@ Uploading and starting the enumeration script **LinEnum.sh** and looking at the 
 > \* \* \* \* \*    root    php /var/www/laravel/artisan schedule:run >> /dev/null 2>&1
 
 The cronjob runs a Laravel command every minute as root and this can get us command execution as root.
-On the [Laravel documentation](https://laravel.com/docs/5.8/scheduling) about how the scheduled commands work and create our own commands.
+On the [Laravel documentation](https://laravel.com/docs/5.8/scheduling) we can see how the scheduled commands work and create our own commands.
 
 First we need to find the file **Kernel.php**:
 ```markdown
