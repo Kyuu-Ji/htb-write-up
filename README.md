@@ -55,6 +55,10 @@ More write-ups will come soon.
   - Retired on 1st June 2019
   - OS: Windows
   - Tags: SCF File Attack, Certificate Authority, Kerberoast, BloodHound, C2 Framework Covenant
+- [Chaos](https://kyuu-ji.github.io/htb-write-up/chaos/write-up-chaos)
+  - Retired on 25th May 2019
+  - OS: Linux
+  - Tags: 
 - [Conceal](https://kyuu-ji.github.io/htb-write-up/conceal/write-up-conceal)
   - Retired on 18th May 2019
   - OS: Windows
@@ -67,6 +71,10 @@ More write-ups will come soon.
   - Retired on 14th October 2017
   - OS: Windows
   - Tags: CVE
+- [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
+  - Retired on 5th August 2017
+  - OS: Linux
+  - Tags: DNS, Web Exploitation, Laravel 
 - [Popcorn](https://kyuu-ji.github.io/htb-write-up/popcorn/write-up-popcorn)
   - Retired on 25th June 2017
   - OS: Linux
