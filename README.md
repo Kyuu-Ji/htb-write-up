@@ -58,7 +58,7 @@ More write-ups will come soon.
 - [Chaos](https://kyuu-ji.github.io/htb-write-up/chaos/write-up-chaos)
   - Retired on 25th May 2019
   - OS: Linux
-  - Tags: 
+  - Tags: Password reuse, IMAP, Restricted shell, Firefox passwords
 - [Conceal](https://kyuu-ji.github.io/htb-write-up/conceal/write-up-conceal)
   - Retired on 18th May 2019
   - OS: Windows
