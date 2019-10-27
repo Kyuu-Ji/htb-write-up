@@ -75,6 +75,14 @@ More write-ups will come soon.
   - Retired on 5th August 2017
   - OS: Linux
   - Tags: DNS, Web Exploitation, Laravel 
+- [Arctic](https://kyuu-ji.github.io/htb-write-up/arctic/write-up-arctic)
+  - Retired on 7th July 2017
+  - OS: Windows
+  - Tags:
+- [October](https://kyuu-ji.github.io/htb-write-up/october/write-up-october)
+  - Retired on 1st July 2017
+  - OS: Linux
+  - Tags: Binary Exploitation
 - [Popcorn](https://kyuu-ji.github.io/htb-write-up/popcorn/write-up-popcorn)
   - Retired on 25th June 2017
   - OS: Linux
