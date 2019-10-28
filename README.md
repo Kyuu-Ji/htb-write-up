@@ -82,7 +82,7 @@ More write-ups will come soon.
 - [October](https://kyuu-ji.github.io/htb-write-up/october/write-up-october)
   - Retired on 1st July 2017
   - OS: Linux
-  - Tags: Binary Exploitation
+  - Tags: Binary Exploitation, Return-to-libc Attack
 - [Popcorn](https://kyuu-ji.github.io/htb-write-up/popcorn/write-up-popcorn)
   - Retired on 25th June 2017
   - OS: Linux
