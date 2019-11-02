@@ -47,6 +47,10 @@ More write-ups will come soon.
   - Retired on 29th June 2019
   - OS: Windows
   - Tags: CVE (PRTG Network Monitor)
+- [Querier](https://kyuu-ji.github.io/htb-write-up/querier/write-up-querier)
+  - Retired on 22nd June 2019
+  - OS:
+  - Tags:
 - [Help](https://kyuu-ji.github.io/htb-write-up/help/write-up-help)
   - Retired on 8th June 2019
   - OS: Linux
@@ -71,6 +75,10 @@ More write-ups will come soon.
   - Retired on 14th October 2017
   - OS: Windows
   - Tags: CVE
+- [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
+  - Retired on 1st September 2017
+  - OS:
+  - Tags:
 - [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
   - Retired on 5th August 2017
   - OS: Linux
@@ -78,7 +86,7 @@ More write-ups will come soon.
 - [Arctic](https://kyuu-ji.github.io/htb-write-up/arctic/write-up-arctic)
   - Retired on 7th July 2017
   - OS: Windows
-  - Tags:
+  - Tags: CVE (Adobe Coldfusion)
 - [October](https://kyuu-ji.github.io/htb-write-up/october/write-up-october)
   - Retired on 1st July 2017
   - OS: Linux
