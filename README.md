@@ -49,8 +49,8 @@ More write-ups will come soon.
   - Tags: CVE (PRTG Network Monitor)
 - [Querier](https://kyuu-ji.github.io/htb-write-up/querier/write-up-querier)
   - Retired on 22nd June 2019
-  - OS:
-  - Tags:
+  - OS: Windows
+  - Tags: MS SQL, GPO password
 - [Help](https://kyuu-ji.github.io/htb-write-up/help/write-up-help)
   - Retired on 8th June 2019
   - OS: Linux
@@ -77,7 +77,7 @@ More write-ups will come soon.
   - Tags: CVE
 - [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
   - Retired on 1st September 2017
-  - OS:
+  - OS: Linux
   - Tags:
 - [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
   - Retired on 5th August 2017
