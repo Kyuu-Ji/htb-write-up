@@ -78,7 +78,7 @@ More write-ups will come soon.
 - [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
   - Retired on 1st September 2017
   - OS: Linux
-  - Tags:
+  - Tags: Elastix PBX, Local File Inclusion (LFI), Shellshock
 - [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
   - Retired on 5th August 2017
   - OS: Linux
