@@ -28,6 +28,7 @@ PORT   STATE SERVICE VERSION
 |_http-server-header: Apache/2.4.18 (Ubuntu)
 |_http-title: Job Portal &#8211; Just another WordPress site
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
 
 ## Checking HTTP (Port 80)
 
@@ -42,12 +43,12 @@ There is the plugin _Job Manager 0.7.25_ installed that has the vulnerability [C
 
 By clicking this link we get forwarded to **index.php/jobs**.
 
-![Job Listing Link](https://kyuu-ji.github.io/htb-write-up/sizzle/tenten_jobs-1.png)
+![Job Listing Link](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-1.png)
 
 Clicking on the button to apply to the job forwards us to **index.php/jobs/apply/8**.
 This number tends to be the name a row ID in the WordPress table.
 
-![Apply Now Link](https://kyuu-ji.github.io/htb-write-up/sizzle/tenten_jobs-2.png)
+![Apply Now Link](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-2.png)
 
 By iterating through this number we get different pages for every number.
 - 1: Hello world!
@@ -68,16 +69,16 @@ By iterating through this number we get different pages for every number.
 Every number after 13 is just empty so we probably reached the end.
 If we "apply" to the job and upload a file we should find that file by doing this procedure again.
 
-![Uploading a file](https://kyuu-ji.github.io/htb-write-up/sizzle/tenten_jobs-3.png)
+![Uploading a file](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-3.png)
 
-When we browse to the 15th ID we see that there is now a Title called **test** that was my input.
+When we browse to the 15th ID we see that there is now a Title called **test** that was our input.
 WordPress saves uploaded files in the directory **/wp-content/uploads/current_year/current_month/filename.extension**.
 
 So in my case the file I uploaded is in:
 > /wp-content/uploads/2019/11/test.jpg
 
-Now we got file upload but the application does not allow PHP files.
-What is interesting is ID 13 with the name **HackerAccessGranted** whose files we want to check.
+Now we got Arbitrary File Upload but the application does not allow PHP files.
+One interesting title is ID 13 with the name **HackerAccessGranted** whose files we should check.
 
 We will use the Python script from the CVE-2019-6668 and modify the following lines to our needs:
 ```python
@@ -105,7 +106,7 @@ Enter a file name: HackerAccessGranted
 [+] URL of CV found! http://10.10.10.10/wp-content/uploads/2017/04/HackerAccessGranted.jpg
 ```
 
-This finds a JPG file from the mysterious user that we download to analyze further
+This finds a JPG file from the mysterious user that we download to analyze further.
 
 ### Analyzing the image file
 
@@ -132,7 +133,7 @@ By using [sshng2john](https://github.com/stricture/hashstack-server-plugin-jtr/b
 python sshng2john.py id_rsa
 ```
 
-Now using the **JohnTheRipper** to crack this:
+Now using the password cracking tool **JohnTheRipper** to crack this:
 ```markdown
 john id_rsa.encrypted --wordlist=/usr/share/wordlists/rockyou.txt
 ```
@@ -153,7 +154,7 @@ We try it with the user _takis_ because that is the only user we enumerated and 
 
 ## Privilege Escalation
 
-When we look at the commands that _takis_ can do as root via sudo, we see the file **/bin/fuckin**.
+When we look at the commands that _takis_ can execute as root via sudo, we see the file **/bin/fuckin**.
 Analyzing it, it executes arguments:
 ```markdown
 cat /bin/fuckin
@@ -168,4 +169,4 @@ So if we run this with `sudo` and give it the argument `bash` we should start a 
 sudo /bin/fucking bash
 ```
 
-It does start a session with root and can read the flag!
+It does start a session with root and we can read the flag!
