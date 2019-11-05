@@ -82,7 +82,11 @@ More write-ups will come soon.
 - [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
   - Retired on 5th August 2017
   - OS: Linux
-  - Tags: DNS, Web Exploitation, Laravel 
+  - Tags: DNS, Web Exploitation, Laravel
+- [Tenten](https://kyuu-ji.github.io/htb-write-up/tenten/write-up-tenten)
+  - Retired on 16th July 2017
+  - OS: Linux
+  - Tags: CVE (WordPress), Steganography
 - [Arctic](https://kyuu-ji.github.io/htb-write-up/arctic/write-up-arctic)
   - Retired on 7th July 2017
   - OS: Windows
