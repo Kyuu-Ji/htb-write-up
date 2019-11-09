@@ -75,6 +75,10 @@ More write-ups will come soon.
   - Retired on 14th October 2017
   - OS: Windows
   - Tags: CVE
+- [Lazy](https://kyuu-ji.github.io/htb-write-up/lazy/write-up-lazy)
+  - Retired on 7th October 2017
+  - OS: Linux
+  - Tags: Cookie bit flipping, Binary Analysis
 - [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
   - Retired on 1st September 2017
   - OS: Linux
