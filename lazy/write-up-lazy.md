@@ -1,4 +1,4 @@
-# October
+# Lazy
 
 This is the write-up for the box Lazy that got retired at the 7th October 2017.
 My IP address was 10.10.14.23 while I did this.
@@ -36,8 +36,6 @@ This is what we see on the web page:
 
 ![Web Page](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_webpage.png)
 
-Unfortunately we don't get any interesting results back.
-
 When registering an user, the page just says that we are currently logged in as the user we used to register.
 Lets examine the cookies by login out first and then login back again and intercept the request with Burpsuite.
 
@@ -52,7 +50,7 @@ When clicking on _Analyze_ the capture gets summarized and we want to _Copy Toke
 The copied cookies vary from each other which means there is some kind of randomness in creating those.
 Assuming these are encrypted strings we will try to flip the bits on a user whose name is similar to _admin_ and by flipping the characters in the cookie we can become admin.
 
-So we register a user with a name close to _admin_ like _bdmin_ and send it to **Burpsuites Intruder** and make sure the position is on the authentication Cookie:
+So we register an user with a name close to _admin_ like _bdmin_ and send it to **Burpsuites Intruder** and make sure the position is on the authentication Cookie:
 
 ![Burpsuite Intruder](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-3.png)
 
@@ -61,7 +59,7 @@ As the Payload we will use the _Bit flipper_.
 ![Burpsuite bit flipper](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-4.png)
 
 The responses with the length 1351 all show different user names in the Response like _"gdmin, Idmin, kdmin"_ and so on.
-If we wait long enough it will find get the result for _admin_ back, too. It has a length of 1499.
+If we wait long enough it will get the result for _admin_ back, too. It has a length of 1499.
 > auth:60BZd9dCWwq8hMf9HGyO5SPOBzdZzMVv
 
 Now we can input this cookie into the browser with any plugin, refresh the page and we see an admin panel:
@@ -84,7 +82,7 @@ We can login as the user _mitsos_
 ## Privilege Escalation
 
 In the home directory of _mitsos_ is a binary file named **backup**. When executing it, it outputs the contents of the _/etc/shadow_ file.
-There is also the _peda_ extension for **gdb** which seems to be hint to debug this binary.
+There is also the _peda_ extension for **gdb** which seems to be a hint to debug this binary.
 ```markdown
 gdb ./backup
 ```
@@ -99,7 +97,7 @@ After running it we see that it calls _system_ and right before that it loads a 
 
 ![Binary Analysis 1](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_privesc-2.png)
 
-The command `cat` gets executed from _/bin/cat_. When we create our own *cat** command in a path that gets checked before we can exploit this:
+The command `cat` gets executed from _/bin/cat_. When we create our own **cat** command in a path that gets checked before, we can exploit this:
 ```markdown
 mitsos@LazyClown:~$ which cat
 /bin/cat
