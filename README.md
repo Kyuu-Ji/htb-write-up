@@ -79,6 +79,10 @@ More write-ups will come soon.
   - Retired on 7th October 2017
   - OS: Linux
   - Tags: Cookie bit flipping, Binary Analysis
+- [Bastard](https://kyuu-ji.github.io/htb-write-up/bastard/write-up-bastard)
+  - Retired on 16th September 2017
+  - OS: Windows
+  - Tags: Drupal, PHP serialization vulnerability
 - [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
   - Retired on 1st September 2017
   - OS: Linux
