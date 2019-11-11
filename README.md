@@ -67,6 +67,10 @@ More write-ups will come soon.
   - Retired on 18th May 2019
   - OS: Windows
   - Tags: SNMP, IKE/IPSec
+- [Lightweight](https://kyuu-ji.github.io/htb-write-up/lightweight/write-up-lightweight)
+  - Retired on 11th May 2019
+  - OS: Linux
+  - Tags: LDAP, Traffic sniffing, Linux capabilities
 - [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
   - Retired on 10th November 2018
   - OS: Windows
