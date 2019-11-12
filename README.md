@@ -75,6 +75,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
+  - Retired on 28th October 2017
+  - OS: Windows
+  - Tags:
 - [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
   - Retired on 14th October 2017
   - OS: Windows
@@ -83,6 +87,10 @@ More write-ups will come soon.
   - Retired on 7th October 2017
   - OS: Linux
   - Tags: Cookie bit flipping, Binary Analysis
+- [Bank](https://kyuu-ji.github.io/htb-write-up/bank/write-up-bank)
+  - Retired on 22nd September 2017
+  - OS: Linux
+  - Tags:
 - [Bastard](https://kyuu-ji.github.io/htb-write-up/bastard/write-up-bastard)
   - Retired on 16th September 2017
   - OS: Windows

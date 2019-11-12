@@ -163,3 +163,5 @@ Balance: 8842803 .
 ```
 
 When trying this credentials on the login page we get logged in.
+
+There is a _Support_ page where we can upload files.
