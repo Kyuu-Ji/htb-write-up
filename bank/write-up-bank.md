@@ -75,7 +75,7 @@ www.bank.htb.           604800  IN      CNAME   bank.htb.
 bank.htb.               604800  IN      SOA     bank.htb. chris.bank.htb. 2 604800 86400 2419200 604800
 ```
 
-We get some interesting subdomains that we will put into our hosts file.
+We get some subdomains that we will put into our hosts file.
 
 ## Checking HTTP (Port 80)
 
@@ -107,7 +107,7 @@ This is the index.php page:
 
 This is the support.php page:
 
-![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support.png)
+![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support-1.png)
 
 We can upload code on the support.php to get command execution on the box.
 
@@ -118,7 +118,7 @@ The directory _balance-transfers_ that we found has many of these files in it:
 
 ![Bank balance-transfers page](https://kyuu-ji.github.io/htb-write-up/bank/bank_balance-transfers.png)
 
-This goes way down. There are around 1000 of these files. Looking at one of them they hold this content:
+There are around 1000 of these files. Looking at one of them they hold this content:
 ```markdown
 ++OK ENCRYPT SUCCESS
 +=================+
@@ -175,7 +175,7 @@ So lets change the extension of our file to _.htb_ instead.
 
 ![File upload](https://kyuu-ji.github.io/htb-write-up/bank/bank_file-upload.png)
 
-We see the uploaded files in the web page now and can click on the attachment to browse to that file. Now we can execute commands:
+We see the uploaded files in the web page and can click on the attachment to browse to that file. Now we can execute commands:
 ```markdown
 http://bank.htb/uploads/logo.htb?cmd=whoami
 ```
@@ -190,7 +190,7 @@ After a short while the the request gets sent to my listener that waits for conn
 ## Privilege Escalation
 
 When looking at the PHP files from the server, we find credentials for MySQL in the file **/var/www/bank/inc/user.php**:
-```markdown
+```php
 # (...)
 function getUsername($email){
                 $mysql = new mysqli("localhost", "root", "!@#S3cur3P4ssw0rd!@#", "htbbank");
@@ -201,7 +201,7 @@ function getUsername($email){
 # (...)
 ```
 
-We can login into MySQL but don't find anything important can starting a shell from there won't give us a root shell:
+We can login into MySQL but don't find anything important and starting a shell from there won't give us a root shell:
 ```markdown
 mysql -u root -p
 
