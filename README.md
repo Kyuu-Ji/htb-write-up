@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 1st September 2017
   - OS: Linux
   - Tags: Elastix PBX, Local File Inclusion (LFI), Shellshock
+- [Brainfuck](https://kyuu-ji.github.io/htb-write-up/brainfuck/write-up-brainfuck)
+  - Retired on 26th August 2017
+  - OS: Linux
+  - Tags: WordPress, Keyed Vigenere Cipher, RSA decryption
 - [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
   - Retired on 5th August 2017
   - OS: Linux
