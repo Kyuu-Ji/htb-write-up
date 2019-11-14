@@ -78,7 +78,7 @@ More write-ups will come soon.
 - [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
   - Retired on 28th October 2017
   - OS: Windows
-  - Tags:
+  - Tags: CVE (HttpFileServer)
 - [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
   - Retired on 14th October 2017
   - OS: Windows
@@ -90,7 +90,7 @@ More write-ups will come soon.
 - [Bank](https://kyuu-ji.github.io/htb-write-up/bank/write-up-bank)
   - Retired on 22nd September 2017
   - OS: Linux
-  - Tags:
+  - Tags: DNS, Arbitrary File Upload
 - [Bastard](https://kyuu-ji.github.io/htb-write-up/bastard/write-up-bastard)
   - Retired on 16th September 2017
   - OS: Windows
