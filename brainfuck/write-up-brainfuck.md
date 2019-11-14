@@ -79,9 +79,9 @@ We can host this on the _Python SimpleHTTPServer_ and click Login on the form. T
 
 ![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_wordpress-2.png)
 
-To get code execution in WordPress we can go into _Appearance --> Editor_ and edit the PHP files normally but in this case all the files are not writable, so this will not work.
+To get code execution in WordPress we can go into _Appearance --> Editor_ and edit the PHP files normally but in this case, all the files are not writable, so this will not work.
 
-As the first article on the page told us something that SMTP integration is ready, we can look into those settings in _Settings --> Easy WP SMTP_.
+As the first article on the page mentioned that SMTP integration is ready, we can look into those settings in _Settings --> Easy WP SMTP_.
 In here we get the SMTP username that we got before and a masked password. The masked password can be read by looking at the field with the Developer Tools in the browser:
 
 ![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_wordpress-3.png)
@@ -92,7 +92,7 @@ These are the credentials for SMTP:
 ## Checking SMTP (Port 25)
 
 We can use any mail client to connect to the mail server _brainfuck.htb_ with the gathered credentials.
-After configuring the mail client we can see the inbox of _Orestis_ and he has two emails. One from _root@brainfuck.htb_ is very interesting because there are credentials for a secret forum:
+After configuring the mail client we can see the inbox of _Orestis_ and he has two emails. The mail from _root@brainfuck.htb_ is very interesting because there are credentials for a secret forum:
 
 ![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_mails.png)
 
@@ -106,7 +106,7 @@ password: kIEnnfEKJ#9UmdO
 Browsing to the subdomain _sup3rs3cr3t.brainfuck.htb_ we are presented with a **Super Secret Forum** where we can try the gathered credentials.
 They work and there are two threads to examine:
 
-The first thread is called **SSH Access** and it tells us that SSH only works with keys.
+The first thread is called **SSH Access** and it tells us that SSH authentication only works with keys.
 
 ![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_forum-1.png)
 
@@ -129,7 +129,7 @@ Encrypted: Pieagnm - Jkoijeg nbw zwx mle grwsnn
 
 By comparing the letters and putting them into the tool one by one we get the key.
 ```markdown
-**Decrypt**
+# Decrypt
 
 Your message:  P i e a g n m J k o i j e g n b w z w x m l e g r w s n n
 The pad:       O r e s t i s H a c k i n g f o r f u n a n d p r o f i t
