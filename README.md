@@ -87,6 +87,10 @@ More write-ups will come soon.
   - Retired on 7th October 2017
   - OS: Linux
   - Tags: Cookie bit flipping, Binary Analysis
+- [Haircut](https://kyuu-ji.github.io/htb-write-up/haircut/write-up-haircut)
+  - Retired on 30th September 2017
+  - OS: Linux
+  - Tags: Exploiting cURL, Screen command
 - [Bank](https://kyuu-ji.github.io/htb-write-up/bank/write-up-bank)
   - Retired on 22nd September 2017
   - OS: Linux
