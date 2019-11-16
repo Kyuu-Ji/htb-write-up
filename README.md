@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 22nd September 2017
   - OS: Linux
   - Tags: DNS, Arbitrary File Upload
+- [Joker](https://kyuu-ji.github.io/htb-write-up/joker/write-up-joker)
+  - Retired on 22nd September 2017
+  - OS: Linux
+  - Tags: Proxy connections, Sudo exploit, Dangers of wildcards
 - [Bastard](https://kyuu-ji.github.io/htb-write-up/bastard/write-up-bastard)
   - Retired on 16th September 2017
   - OS: Windows
