@@ -60,7 +60,7 @@ unzip BlockyCore.jar
 ```
 
 It extracts the folder **META-INF** with a **MANIFEST.MF** file that has only the manifest version as content.
-And it extracts the file **com/myfirstplugin/BlockyCore.class** which is a Java class file, that can be compiled with the `jad` command:
+And it extracts the file **com/myfirstplugin/BlockyCore.class** which is a Java class file, that can be decompiled with the `jad` command:
 ```markdown
 jad BlockyCore.jar
 ```
@@ -91,7 +91,7 @@ But trying them with the user _Notch_ which is an author on the WordPress blog, 
 
 ## Privilege Escalation
 
-When looking for `sudo` privileges for this user, he can run every command as root.
+When looking for `sudo` privileges for the user _Notch_, he can run every command as root:
 ```markdown
 sudo -l
 
