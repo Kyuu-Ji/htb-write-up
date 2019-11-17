@@ -75,6 +75,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Blocky](https://kyuu-ji.github.io/htb-write-up/blocky/write-up-blocky)
+  - Retired on 9th December 2017
+  - OS: Linux
+  - Tags: Java files
 - [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
   - Retired on 28th October 2017
   - OS: Windows
