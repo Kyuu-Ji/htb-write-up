@@ -79,6 +79,10 @@ More write-ups will come soon.
   - Retired on 9th December 2017
   - OS: Linux
   - Tags: Java files
+- [Apocalyst](https://kyuu-ji.github.io/htb-write-up/apocalyst/write-up-apocalyst)
+  - Retired on 25th November 2017
+  - OS: Linux
+  - Tags: Custom Password Lists, WordPress
 - [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
   - Retired on 28th October 2017
   - OS: Windows
