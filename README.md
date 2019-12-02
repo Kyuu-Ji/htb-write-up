@@ -79,6 +79,10 @@ More write-ups will come soon.
   - Retired on 9th December 2017
   - OS: Linux
   - Tags: Java files
+- [Europa](https://kyuu-ji.github.io/htb-write-up/europa/write-up-europa)
+  - Retired on 2nd December 2017
+  - OS: Linux
+  - Tags: PHP Regular Expressions, Cronjobs
 - [Apocalyst](https://kyuu-ji.github.io/htb-write-up/apocalyst/write-up-apocalyst)
   - Retired on 25th November 2017
   - OS: Linux
