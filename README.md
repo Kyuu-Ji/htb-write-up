@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 28th October 2017
   - OS: Windows
   - Tags: CVE (HttpFileServer)
+- [Sneaky] (In Progress)
+  - Retired on 11th November 2017
+  - OS: Linux
+  - Tags: SNMP, IPv6
 - [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
   - Retired on 14th October 2017
   - OS: Windows
