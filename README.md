@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [SwagShop](https://kyuu-ji.github.io/htb-write-up/swagshop/write-up-swagshop)
+  - Retired on 28th September 2019
+  - OS: Linux
+  - Tags: CVE (Magento)
 - [Luke](https://kyuu-ji.github.io/htb-write-up/luke/write-up-luke)
   - Retired on 14th September 2019
   - OS: Linux
