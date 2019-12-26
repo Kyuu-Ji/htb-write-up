@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Writeup](https://kyuu-ji.github.io/htb-write-up/writeup/write-up-writeup)
+  - Retired on 12th October 2019
+  - OS: Linux
+  - Tags: CVE (CMS Made Simple), Relative path in Crontab
 - [SwagShop](https://kyuu-ji.github.io/htb-write-up/swagshop/write-up-swagshop)
   - Retired on 28th September 2019
   - OS: Linux
