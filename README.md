@@ -95,14 +95,18 @@ More write-ups will come soon.
   - Retired on 25th November 2017
   - OS: Linux
   - Tags: Custom Password Lists, WordPress
-- [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
-  - Retired on 28th October 2017
-  - OS: Windows
-  - Tags: CVE (HttpFileServer)
+- [Holiday](https://kyuu-ji.github.io/htb-write-up/holiday/write-up-holiday)
+  - Retired on 18th November 2017
+  - OS: Linux
+  - Tags: SQL Injection, Cross-Site-Scripting, Node Package Manager (npm)
 - [Sneaky] (In Progress)
   - Retired on 11th November 2017
   - OS: Linux
   - Tags: SNMP, IPv6
+- [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
+  - Retired on 28th October 2017
+  - OS: Windows
+  - Tags: CVE (HttpFileServer)
 - [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
   - Retired on 14th October 2017
   - OS: Windows

