@@ -83,6 +83,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Shrek](https://kyuu-ji.github.io/htb-write-up/shrek/write-up-shrek)
+  - Retired on 3rd February 2018
+  - OS: Linux
+  - Tags: Audio file, Decrypting RSA key, Dangers of wildcards
 - [Blocky](https://kyuu-ji.github.io/htb-write-up/blocky/write-up-blocky)
   - Retired on 9th December 2017
   - OS: Linux
