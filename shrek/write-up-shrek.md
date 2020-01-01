@@ -151,7 +151,7 @@ DEK-Info: AES-128-CBC,94DC7309349E17F8ED6776ED69D6265A
 
 ### Analyzing the .txt files
 
-To check if this is **Base64** decode, we can decode one of the files:
+To check if this is **Base64** encoded, we can decode one of the files:
 ```markdown
 base64 -d 0180e34259d846c4b521ddf1e285f53d.txt
 ```
@@ -255,7 +255,6 @@ Most files in _/var/log_ can be ignored. The interesting files are:
 ```
 
 Now we know that there is a cronjob that belongs to root and we can't read and the file _thoughts.txt_ with a Shrek quote that does not give any hint.
-This cronjob probably does something in the _/usr/src_ directory.
 
 After uploading and executing **Pspy** on the box, it becomes clear that every five minutes a `chown` command is run:
 ```markdown
@@ -273,7 +272,7 @@ touch -- --reference=thoughts.txt
 With the `--reference` parameter the `chown` command will use the given files owner and group as owner instead of the user _nobody_.
 The owner and group of _thoughts.txt_ is root.
 
-Lets create a simple C script so we can start a shell:
+Lets create a simple C program so we can start a shell:
 ```c
 #include <stdio.h>
 #include <stdlib.h>
