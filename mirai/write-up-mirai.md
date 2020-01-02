@@ -36,7 +36,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 The name of the box is a hint because **Mirai** was a botnet that was first found in 2016 that took control of many different websites and devices.
 It scanned the internet for IoT devices and tried default credentials to take control of them.
 
-So guessing that there will some default credentials on this box.
+So guessing that there will be some default credentials on this box.
 
 ## Checking HTTP (Port 80)
 
@@ -66,7 +66,7 @@ The path _/admin_ is a default path for the Pi-hole and it is possible to browse
 
 ## Checking SSH (Port 22)
 
-Now knowing that this is a **Raspberry Pi** and assume it has default credentials, lets try the default credentials for it.
+Now knowing that this is a **Raspberry Pi** and assuming it has default credentials, lets try the default credentials for it.
 The credentials for a non-configured Raspberry Pi are:
 ```markdown
 username: pi
