@@ -87,6 +87,10 @@ More write-ups will come soon.
   - Retired on 3rd February 2018
   - OS: Linux
   - Tags: Audio file, Decrypting RSA key, Dangers of wildcards
+- [Blue](https://kyuu-ji.github.io/htb-write-up/blue/write-up-blue)
+  - Retired on 13th January 2018
+  - OS: Windows
+  - Tags: CVE (EternalBlue)
 - [Blocky](https://kyuu-ji.github.io/htb-write-up/blocky/write-up-blocky)
   - Retired on 9th December 2017
   - OS: Linux
