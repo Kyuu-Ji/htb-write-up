@@ -83,6 +83,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Mirai](https://kyuu-ji.github.io/htb-write-up/mirai/write-up-mirai)
+  - Retired on 10th February 2018
+  - OS: Linux
+  - Tags: Default credentials
 - [Shrek](https://kyuu-ji.github.io/htb-write-up/shrek/write-up-shrek)
   - Retired on 3rd February 2018
   - OS: Linux
