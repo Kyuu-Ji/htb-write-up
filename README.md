@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 13th January 2018
   - OS: Windows
   - Tags: CVE (EternalBlue)
+- [Nineveh](https://kyuu-ji.github.io/htb-write-up/nineveh/write-up-nineveh)
+  - Retired on 16th December 2017
+  - OS: Linux
+  - Tags: Online Password Cracking, phpLiteAdmin, Port Knocking, chkrootkit
 - [Blocky](https://kyuu-ji.github.io/htb-write-up/blocky/write-up-blocky)
   - Retired on 9th December 2017
   - OS: Linux
