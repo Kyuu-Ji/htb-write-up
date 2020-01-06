@@ -90,7 +90,11 @@ More write-ups will come soon.
 - [Shrek](https://kyuu-ji.github.io/htb-write-up/shrek/write-up-shrek)
   - Retired on 3rd February 2018
   - OS: Linux
-  - Tags: Audio file, Decrypting RSA key, Dangers of wildcards
+  - Tags: Audio Steganography, Decrypting RSA key, Dangers of wildcards
+- [Calamity](https://kyuu-ji.github.io/htb-write-up/calamity/write-up-calamity)
+  - Retired on 20th January 2018
+  - OS: Linux
+  - Tags: Audio Steganography, Exploiting LCX (Linux Containers)
 - [Blue](https://kyuu-ji.github.io/htb-write-up/blue/write-up-blue)
   - Retired on 13th January 2018
   - OS: Windows
