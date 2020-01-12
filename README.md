@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 3rd February 2018
   - OS: Linux
   - Tags: Audio Steganography, Decrypting RSA key, Dangers of wildcards
+- [SolidState](https://kyuu-ji.github.io/htb-write-up/solidstate/write-up-solidstate)
+  - Retired on 27th January 2018
+  - OS: Linux
+  - Tags: Mail, Restricted bash
 - [Calamity](https://kyuu-ji.github.io/htb-write-up/calamity/write-up-calamity)
   - Retired on 20th January 2018
   - OS: Linux
