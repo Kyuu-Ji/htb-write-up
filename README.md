@@ -83,6 +83,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Shocker](https://kyuu-ji.github.io/htb-write-up/shocker/write-up-shocker)
+  - Retired on 17th February 2018
+  - OS: Linux
+  - Tags: CVE (Shellshock)
 - [Mirai](https://kyuu-ji.github.io/htb-write-up/mirai/write-up-mirai)
   - Retired on 10th February 2018
   - OS: Linux
