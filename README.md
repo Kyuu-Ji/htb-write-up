@@ -135,6 +135,10 @@ More write-ups will come soon.
   - Retired on 28th October 2017
   - OS: Windows
   - Tags: CVE (HttpFileServer)
+- [Granny](https://kyuu-ji.github.io/htb-write-up/granny/write-up-granny)
+  - Retired on 21st October 2017
+  - OS: Windows
+  - Tags: WebDAV, CVE
 - [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
   - Retired on 14th October 2017
   - OS: Windows
