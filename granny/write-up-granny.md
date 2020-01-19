@@ -37,7 +37,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 The web page displays an _"Under Construction"_ error and nothing interesting in the HTML source code.
 
 As the **WebDAV** scan of Nmap shows, it seems to be possible to use different HTTP methods.
-Lets scan what we can do with with the methods:
+Lets scan what we can do with the methods:
 ```markdown
 davtest -url http://10.10.10.15
 
@@ -56,7 +56,7 @@ PUT     txt     SUCCEED:        http://10.10.10.15/DavTestDir_xnG2iD5Fuf4lok/dav
 PUT     jsp     SUCCEED:        http://10.10.10.15/DavTestDir_xnG2iD5Fuf4lok/davtest_xnG2iD5Fuf4lok.jsp
 ```
 
-Setting up a proxy with **Burpsuite** and looking at the what this scan does:
+Setting up a proxy with **Burpsuite** and looking at the what this scan did:
 ```markdown
 PUT /DavTestDir_xnG2iD5Fuf4lok/davtest_xnG2iD5Fuf4lok.html HTTP/1.1
 TE: deflate,gzip;q=0.3
