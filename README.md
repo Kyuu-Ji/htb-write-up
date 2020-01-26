@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Safe](https://kyuu-ji.github.io/htb-write-up/safe/write-up-safe)
+  - Retired on 26th October 2019
+  - OS: Linux
+  - Tags: Return-oriented programming (Buffer Overflow), KeePass database cracking
 - [Writeup](https://kyuu-ji.github.io/htb-write-up/writeup/write-up-writeup)
   - Retired on 12th October 2019
   - OS: Linux
