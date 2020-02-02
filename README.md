@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Haystack](https://kyuu-ji.github.io/htb-write-up/haystack/write-up-haystack)
+  - Retired on 2nd November 2019
+  - OS: Linux
+  - Tags: Port forwarding, Elastic Stack
 - [Safe](https://kyuu-ji.github.io/htb-write-up/safe/write-up-safe)
   - Retired on 26th October 2019
   - OS: Linux
