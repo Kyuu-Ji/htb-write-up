@@ -63,7 +63,7 @@ yellow open   quotes  ZG2D1IqkQNiNZmi2HRImnQ   5   1        253            0    
 yellow open   bank    eSVpNfCfREyYoVigNWcrMw   5   1       1000            0    483.2kb        483.2kb
 ```
 
-We can look inside the index _quotes_ like with the following request. I use `jq` to make the JSON output more readable:
+We can look inside the index _quotes_ with the following request. I use `jq` to make the JSON output more readable:
 ```markdown
 curl http://10.10.10.115:9200/quotes/_search | jq .
 ```
@@ -146,7 +146,7 @@ ssh> -L 5602:127.0.0.1:5601
 ```
 
 This opens port _5602_ on my local client and forwards the service from port _5601_ through the SSH session.
-Now we can access the **Kibana** service on our local client:
+Now we can access the **Kibana** service on our local client.
 ```markdown
 http://localhost:5602
 ```
