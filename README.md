@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Bashed](https://kyuu-ji.github.io/htb-write-up/bashed/write-up-bashed)
+  - Retired on 28th April 2018
+  - OS: Linux
+  - Tags: Webshell
 - [Shocker](https://kyuu-ji.github.io/htb-write-up/shocker/write-up-shocker)
   - Retired on 17th February 2018
   - OS: Linux
