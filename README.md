@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
+- [Mantis](https://kyuu-ji.github.io/htb-write-up/mantis/write-up-mantis)
+  - Retired on 24th February 2018
+  - OS: Windows
+  - Tags: Domain Controller, Kerberos Forging Attack
 - [Shocker](https://kyuu-ji.github.io/htb-write-up/shocker/write-up-shocker)
   - Retired on 17th February 2018
   - OS: Linux
