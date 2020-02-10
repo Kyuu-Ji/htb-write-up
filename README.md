@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Nibbles](https://kyuu-ji.github.io/htb-write-up/nibbles/write-up-nibbles)
+  - Retired on 30th June 2018
+  - OS: Linux
+  - Tags: Nibbleblog (CMS)
 - [Bashed](https://kyuu-ji.github.io/htb-write-up/bashed/write-up-bashed)
   - Retired on 28th April 2018
   - OS: Linux
