@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Aragog](https://kyuu-ji.github.io/htb-write-up/aragog/write-up-aragog)
+  - Retired on 21st July 2018
+  - OS: Linux
+  - Tags: XML External Entity (XXE), Local File Inclusion (LFI)
 - [Nibbles](https://kyuu-ji.github.io/htb-write-up/nibbles/write-up-nibbles)
   - Retired on 30th June 2018
   - OS: Linux
