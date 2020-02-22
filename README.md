@@ -103,6 +103,10 @@ More write-ups will come soon.
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
+- [Kotarak](https://kyuu-ji.github.io/htb-write-up/kotarak/write-up-kotarak)
+  - Retired on 10th March 2018
+  - OS: Linux
+  - Tags: Server Side Request Forgery (SSRF), Tomcat WAF file, ntds.dit Cracking, Pivoting, Wget Exploitation
 - [Mantis](https://kyuu-ji.github.io/htb-write-up/mantis/write-up-mantis)
   - Retired on 24th February 2018
   - OS: Windows
