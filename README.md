@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 30th June 2018
   - OS: Linux
   - Tags: Nibbleblog (CMS)
+- [Jeeves](https://kyuu-ji.github.io/htb-write-up/jeeves/write-up-jeeves)
+  - Retired on 19th May 2018
+  - OS: Windows
+  - Tags: Jenkins, KeePass database cracking, Alternate Data Streams
 - [Bashed](https://kyuu-ji.github.io/htb-write-up/bashed/write-up-bashed)
   - Retired on 28th April 2018
   - OS: Linux
