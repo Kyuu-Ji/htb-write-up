@@ -163,6 +163,10 @@ More write-ups will come soon.
   - Retired on 11th November 2017
   - OS: Linux
   - Tags: SNMP, IPv6
+- [Charon](https://kyuu-ji.github.io/htb-write-up/charon/write-up-charon)
+  - Retired on 4th November 2017
+  - OS: Linux
+  - Tags: SQL Injection, RSA decryption, Binary Exploitation
 - [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
   - Retired on 28th October 2017
   - OS: Windows
