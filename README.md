@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Valentine](https://kyuu-ji.github.io/htb-write-up/valentine/write-up-valentine)
+  - Retired on 28th July 2018
+  - OS: Linux
+  - Tags: Heartbleed, tmux
 - [Aragog](https://kyuu-ji.github.io/htb-write-up/aragog/write-up-aragog)
   - Retired on 21st July 2018
   - OS: Linux
