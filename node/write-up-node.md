@@ -134,7 +134,7 @@ The connection goes to _localhost:27017_ but lets see if this user reused his pa
 ssh mark@10.10.10.58
 ```
 
-He did reuse his account and we can log in on the box as the user _mark_.
+He did reuse his password and we can log in on the box as the user _mark_.
 
 ## Privilege Escalation
 
@@ -240,7 +240,7 @@ In **Radare2** it shows different blacklisted characters and strings that are no
 - /
 - //
 
-There are several methods to bypass this blacklist that I describe in the [Unintended way write-up](https://kyuu-ji.github.io/htb-write-up/node/unintended-way-node.md).
+There are several methods to bypass this blacklist that I describe in the [Unintended way write-up](/node/unintended-way-node.md).
 
 Lets debug the binary with **gdb** and see if there is a **Buffer Overflow**.
 
@@ -267,7 +267,7 @@ run abc 45fac180e9eee72f4fd2d9386ea7033e52b7c740afc3d98a8d0230167104d474 AAAAAAA
 
 We need the following information before we can write an exploit:
 - Base address of libc:
- - `ldd /usr/local/bin/backup | grep libc.so.6`
+  - `ldd /usr/local/bin/backup | grep libc.so.6`
 
 - Offset address of system:
   - `readelf -s /lib32/libc.so.6 | grep system`
