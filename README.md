@@ -115,6 +115,10 @@ More write-ups will come soon.
   - Retired on 10th March 2018
   - OS: Linux
   - Tags: Server Side Request Forgery (SSRF), Tomcat WAF file, ntds.dit Cracking, Pivoting, Wget Exploitation
+- [Node](https://kyuu-ji.github.io/htb-write-up/node/write-up-node)
+  - Retired on 3rd March 2018
+  - OS: Linux
+  - Tags: Node.js, ZIP password cracking, MongoDB, Binary Exploitation, Return-to-libc Attack
 - [Mantis](https://kyuu-ji.github.io/htb-write-up/mantis/write-up-mantis)
   - Retired on 24th February 2018
   - OS: Windows
