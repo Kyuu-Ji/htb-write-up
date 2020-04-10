@@ -44,21 +44,21 @@ I look for _txt_ files because searching for directories did not get any interes
 This way it finds two _txt_ files:
 - /changelog.txt
 ```markdown
-# Security Changelog
+Security Changelog
 
-### Issue
+Issue
 There was a failure in updating the firewall. Manual patching is therefore required
 
-### Mitigated
+Mitigated
 2 of 3 vulnerabilities have been patched.
 
-### Timeline
+Timeline
 The remaining patches will be installed during the next maintenance window
 ```
 
 - /system-users.txt
 ```markdown
-####Support ticket###
+Support ticket
 
 Please create the following user
 
