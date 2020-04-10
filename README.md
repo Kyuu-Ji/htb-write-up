@@ -111,6 +111,10 @@ More write-ups will come soon.
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
+- [Sense](https://kyuu-ji.github.io/htb-write-up/sense/write-up-sense)
+  - Retired on 24th March 2018
+  - OS: FreeBSD
+  - Tags: CVE (pfSense), Bypassing character filter
 - [Kotarak](https://kyuu-ji.github.io/htb-write-up/kotarak/write-up-kotarak)
   - Retired on 10th March 2018
   - OS: Linux
