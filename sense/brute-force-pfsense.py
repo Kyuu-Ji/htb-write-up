@@ -1,4 +1,4 @@
-# Brute-forcecredentials of pfSense
+# Brute-force credentials of pfSense
 # Don't try too many passwords as it bans you for 24 hours after 15 failed attempts
 
 import requests
