@@ -59,7 +59,7 @@ It finds the following directories:
 - /syncml
 
 The HTTP code responds back with _200 OK_ but when browsing there with a browser the pages respond with the HTTP code _403 Forbidden_.
-One difference between **Gobuster** and the browser is the _User-Agent_, so lets send this too **Burpsuite** and change that header.
+One difference between **Gobuster** and the browser is the _User-Agent_, so lets send this to **Burpsuite** and change that header.
 ```markdown
 GET /sync HTTP/1.1
 Host: 10.10.10.69
@@ -72,7 +72,7 @@ As the comment in the HTML code said we allegedly can add a timestamp on the _/s
 
 ### Fuzzing the web application
 
-We need to fuzz for a parameter that can display the date another date. When getting a valid parameter to change the displayed date on the server we can go further and may execute commands.
+We need to fuzz for a parameter that can display another date. When getting a valid parameter to change the displayed date on the server we can go further and may execute commands.
 ```markdown
 wfuzz -c -w /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt -u http://10.10.10.69/sync?FUZZ=yesterday
 ```
@@ -122,7 +122,7 @@ ID           Response   Lines    Word     Chars    Payload
 000000020:   403        7 L      10 W     175 Ch      "|"
 000000016:   200        2 L      1 W      19 Ch       "{"
 000000018:   200        2 L      1 W      19 Ch       "]"
-000000019:   200        2 L      1 W      19 Ch       "["
+000000019:   200        2 L      1 W      19 Ch       "\["
 000000021:   200        2 L      1 W      19 Ch       "\"
 000000022:   403        7 L      10 W     175 Ch      "\`"
 000000023:   200        2 L      1 W      19 Ch       ","
@@ -131,7 +131,7 @@ ID           Response   Lines    Word     Chars    Payload
 000000027:   403        7 L      10 W     175 Ch      ";"
 000000025:   200        2 L      1 W      19 Ch       "/"
 000000028:   200        2 L      1 W      19 Ch       ":"
-**000000029:   200        1 L      0 W      1 Ch        "'"**
+000000029:   200        1 L      0 W      1 Ch        "'"
 000000030:   200        2 L      1 W      19 Ch       """
 000000031:   403        7 L      10 W     175 Ch      "<"
 000000032:   403        7 L      10 W     175 Ch      ">"
