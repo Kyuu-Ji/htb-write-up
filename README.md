@@ -107,6 +107,10 @@ More write-ups will come soon.
   - Retired on 19th May 2018
   - OS: Windows
   - Tags: Jenkins, KeePass database cracking, Alternate Data Streams
+- [FluxCapacitor](https://kyuu-ji.github.io/htb-write-up/fluxcapacitor/write-up-fluxcapacitor)
+  - Retired on 12th May 2018
+  - OS: Linux
+  - Tags: Web Application Fuzzing
 - [Bashed](https://kyuu-ji.github.io/htb-write-up/bashed/write-up-bashed)
   - Retired on 28th April 2018
   - OS: Linux
