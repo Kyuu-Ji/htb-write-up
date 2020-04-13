@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Celestial](https://kyuu-ji.github.io/htb-write-up/celestial/write-up-celestial)
+  - Retired on 25th August 2018
+  - OS: Linux
+  - Tags: Node.js Deserialization attack, Cronjobs
 - [Valentine](https://kyuu-ji.github.io/htb-write-up/valentine/write-up-valentine)
   - Retired on 28th July 2018
   - OS: Linux
