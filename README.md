@@ -107,6 +107,10 @@ More write-ups will come soon.
   - Retired on 30th June 2018
   - OS: Linux
   - Tags: Nibbleblog (CMS)
+- [Chatterbox](https://kyuu-ji.github.io/htb-write-up/chatterbox/write-up-chatterbox)
+  - Retired on 16th June 2018
+  - OS: Windows
+  - Tags: CVE (AChat chat system)
 - [Jeeves](https://kyuu-ji.github.io/htb-write-up/jeeves/write-up-jeeves)
   - Retired on 19th May 2018
   - OS: Windows
