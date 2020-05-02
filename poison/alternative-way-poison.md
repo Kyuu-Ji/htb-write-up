@@ -46,7 +46,6 @@ With `file_upload` enabled, it is possible to upload files that PHP accepts and 
 This is explained in [this paper from InsomniaSec](https://insomniasec.com/downloads/publications/LFI%20With%20PHPInfo%20Assistance.pdf).
 
 The request method has to be _POST_ and the _Content-Type_ is also changed and the whole request looks like this:
-Lets request the following POST data:
 ```markdown
 POST /phpinfo.php HTTP/1.1
 Host: 10.10.10.84
