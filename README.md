@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Poison](https://kyuu-ji.github.io/htb-write-up/poison/write-up-poison)
+  - Retired on 8th September 2018
+  - OS: FreeBSD
+  - Tags: Local File Inclusion (LFI), Log Poisoning, VNC
 - [Celestial](https://kyuu-ji.github.io/htb-write-up/celestial/write-up-celestial)
   - Retired on 25th August 2018
   - OS: Linux
