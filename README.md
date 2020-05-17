@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 25th August 2018
   - OS: Linux
   - Tags: Node.js Deserialization attack, Cronjobs
+- [Silo](https://kyuu-ji.github.io/htb-write-up/silo/write-up-silo)
+  - Retired on 4th August 2018
+  - OS: Windows
+  - Tags: Oracle Database, ODAT, Windows Memory Dump, Volatility, Pass-The-Hash
 - [Valentine](https://kyuu-ji.github.io/htb-write-up/valentine/write-up-valentine)
   - Retired on 28th July 2018
   - OS: Linux

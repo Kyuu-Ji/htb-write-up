@@ -14,6 +14,540 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>FriendZone</td>
+    <td>Linux</td>
+    <td>13th July 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>DNS Enumeration</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Hackback</td>
+    <td>Windows</td>
+    <td>6th July 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Netmon</td>
+    <td>Windows</td>
+    <td>29th June 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>CVE (PRTG Network Monitor)</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Querier</td>
+    <td>Windows</td>
+    <td>22nd June 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>MS SQL</li>
+        <li>GPO password</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>FluJab</td>
+    <td>Linux</td>
+    <td>15th June 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Help</td>
+    <td>Linux</td>
+    <td>8th June 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>SQL Injection</li>
+        <li>Arbitrary File Upload</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
+  </tr>
+  <tr>
+    <td>Sizzle</td>
+    <td>Windows</td>
+    <td>1st June 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>SCF File Attack</li>
+        <li>Certificate Authority</li>
+        <li>Kerberoast</li>
+        <li>BloodHound</li>
+        <li>C2 Framework Covenant</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Chaos</td>
+    <td>Linux</td>
+    <td>25th May 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>Password reuse</li>
+        <li>IMAP</li>
+        <li>Restricted shell</li>
+        <li>Firefox passwords</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Conceal</td>
+    <td>Windows</td>
+    <td>18th May 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>SNMP</li>
+        <li>IKE/IPSec</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>LightWeight</td>
+    <td>Linux</td>
+    <td>11th May 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>LDAP</li>
+        <li>Traffic Sniffing</li>
+        <li>Linux capabilities</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>BigHead</td>
+    <td>Windows</td>
+    <td>4th May 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Irked</td>
+    <td>Linux</td>
+    <td>27th April 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Teacher</td>
+    <td>Linux</td>
+    <td>20th April 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>RedCross</td>
+    <td>Linux</td>
+    <td>13th April 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Vault</td>
+    <td>Linux</td>
+    <td>6th April 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Curling</td>
+    <td>Linux</td>
+    <td>30th March 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Frolic</td>
+    <td>Linux</td>
+    <td>23th March 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Carrier</td>
+    <td>Linux</td>
+    <td>16th March 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Ethereal</td>
+    <td>Windows</td>
+    <td>9th March 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Access</td>
+    <td>Windows</td>
+    <td>2nd March 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Zipper</td>
+    <td>Linux</td>
+    <td>23th February 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Giddy</td>
+    <td>Windows</td>
+    <td>16th February 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Ypuffy</td>
+    <td>Unknown</td>
+    <td>9th February 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Dab</td>
+    <td>Linux</td>
+    <td>2nd February 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Reddish</td>
+    <td>Linux</td>
+    <td>26th January 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>SecNotes</td>
+    <td>Windows</td>
+    <td>19th January 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Oz</td>
+    <td>Linux</td>
+    <td>12th January 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Mischief</td>
+    <td>Linux</td>
+    <td>5th January 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Waldo</td>
+    <td>Linux</td>
+    <td>15th December 2018</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Active</td>
+    <td>Windows</td>
+    <td>8th December 2018</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Hawk</td>
+    <td>Linux</td>
+    <td>1st December 2018</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Jerry</td>
+    <td>Windows</td>
+    <td>17th November 2018</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Reel</td>
+    <td>Windows</td>
+    <td>10th November 2018</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>Phishing</li>
+        <li>Active Directory</li>
+        <li>BloodHound</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Dropzone</td>
+    <td>Windows</td>
+    <td>3rd November 2018</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Bounty</td>
+    <td>Windows</td>
+    <td>27th October 2018</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>TartarSauce</td>
+    <td>Linux</td>
+    <td>20th October 2018</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>DevOops</td>
+    <td>Linux</td>
+    <td>13th October 2018</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Fighter</td>
+    <td>Windows</td>
+    <td>6th October 2018</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Sunday</td>
+    <td>Solaris</td>
+    <td>29th September 2018</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Olympus</td>
+    <td>Linux</td>
+    <td>22nd September 2018</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Canape</td>
     <td>Linux</td>
     <td>15th September 2018</td>
@@ -88,11 +622,15 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Oracle Database</li>
+        <li>ODAT</li>
+        <li>Windows Memory Dump</li>
+        <li>Volatility</li>
+        <li>Pass-The-Hash</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Valentine</td>
