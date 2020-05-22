@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 8th September 2018
   - OS: FreeBSD
   - Tags: Local File Inclusion (LFI), Log Poisoning, VNC
+- [Stratosphere](https://kyuu-ji.github.io/htb-write-up/stratosphere/write-up-stratosphere)
+  - Retired on 1st September 2018
+  - OS: Linux
+  - Tags: CVE (Apache Struts), Forward shell, Python module attack
 - [Celestial](https://kyuu-ji.github.io/htb-write-up/celestial/write-up-celestial)
   - Retired on 25th August 2018
   - OS: Linux

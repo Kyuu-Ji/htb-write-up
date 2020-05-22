@@ -14,6 +14,169 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Ghoul</td>
+    <td>Linux</td>
+    <td>5th October 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>SwagShop</td>
+    <td>Linux</td>
+    <td>28th September 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>CVE (Magento)</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Kryptos</td>
+    <td>Linux</td>
+    <td>21st September 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Luke</td>
+    <td>FreeBSD</td>
+    <td>14th September 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>JSON Web Token (JWT)</li>
+        <li>Ajenti</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Bastion</td>
+    <td>Windows</td>
+    <td>7th September 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>VHD files</li>
+        <li>mRemoteNG</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>OneTwoSeven</td>
+    <td>Linux</td>
+    <td>31st August 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>Port forwarding</li>
+        <li>Advanced Packaging Tools (APT)</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Unattended</td>
+    <td>Linux</td>
+    <td>24th August 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>SQL Injection</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Helpline</td>
+    <td>Windows</td>
+    <td>17th August 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>CVE (ManageEngine ServiceDesk)</li>
+        <li>Encrypted File System</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Arkham</td>
+    <td>Windows</td>
+    <td>10th August 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>LUKS encryption</li>
+        <li>Java payloads</li>
+        <li>UAC bypassing</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
+  </tr>
+  <tr>
+    <td>Fortune</td>
+    <td>Unknown</td>
+    <td>3rd August 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>SSL/TLS certificates</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>LaCasaDePapel</td>
+    <td>Linux</td>
+    <td>27th July 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>SSL/TLS certificates</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
+  </tr>
+  <tr>
+    <td>CTF</td>
+    <td>Linux</td>
+    <td>20th July 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>One-Time-Pad</li>
+        <li>LDAP</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>FriendZone</td>
     <td>Linux</td>
     <td>13th July 2019</td>
@@ -582,10 +745,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Apache Struts)</li>
+        <li>Forward shell</li>
+        <li>Python module attack</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
