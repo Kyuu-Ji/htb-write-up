@@ -123,6 +123,10 @@ More write-ups will come soon.
   - Retired on 16th June 2018
   - OS: Windows
   - Tags: CVE (AChat chat system)
+- [Tally](https://kyuu-ji.github.io/htb-write-up/tally/write-up-tally)
+  - Retired on 28th May 2018
+  - OS: Windows
+  - Tags: SharePoint, KeePass database cracking, MS SQL, Scheduled task
 - [Jeeves](https://kyuu-ji.github.io/htb-write-up/jeeves/write-up-jeeves)
   - Retired on 19th May 2018
   - OS: Windows
