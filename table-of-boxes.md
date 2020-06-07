@@ -14,6 +14,425 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Nest</td>
+    <td>Windows</td>
+    <td>6th June 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Resolute</td>
+    <td>Windows</td>
+    <td>30th May 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Rope</td>
+    <td>Linux</td>
+    <td>23rd May 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Patents</td>
+    <td>Linux</td>
+    <td>16th May 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Obscurity</td>
+    <td>Linux</td>
+    <td>9th May 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>OpenAdmin</td>
+    <td>Linux</td>
+    <td>2nd May 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Control</td>
+    <td>Windows</td>
+    <td>25th April 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Mango</td>
+    <td>Linux</td>
+    <td>18th April 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Traverxec</td>
+    <td>Linux</td>
+    <td>11th April 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Registry</td>
+    <td>Linux</td>
+    <td>4th April 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Sniper</td>
+    <td>Windows</td>
+    <td>28th March 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Forest</td>
+    <td>Windows</td>
+    <td>21st March 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Postman</td>
+    <td>Linux</td>
+    <td>14th March 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>BankRobber</td>
+    <td>Windows</td>
+    <td>7th March 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Scavenger</td>
+    <td>Linux</td>
+    <td>29th February 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Zetta</td>
+    <td>Linux</td>
+    <td>22nd February 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Json</td>
+    <td>Windows</td>
+    <td>15th February 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>RE</td>
+    <td>Windows</td>
+    <td>1st February 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>AI</td>
+    <td>Linux</td>
+    <td>25th January 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Player</td>
+    <td>Linux</td>
+    <td>18th January 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Bitlab</td>
+    <td>Linux</td>
+    <td>11th January 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Craft</td>
+    <td>Linux</td>
+    <td>4th January 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Smasher2</td>
+    <td>Linux</td>
+    <td>28 December 2019</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Wall</td>
+    <td>Linux</td>
+    <td>7th December 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Heist</td>
+    <td>Windows</td>
+    <td>30th November 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Chainsaw</td>
+    <td>Linux</td>
+    <td>23rd November 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Networked</td>
+    <td>Linux</td>
+    <td>16th November 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Jarvis</td>
+    <td>Linux</td>
+    <td>9th November 2019</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Haystack</td>
+    <td>Linux</td>
+    <td>2nd November 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>Port forwarding</li>
+        <li>Elastic Stack</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Safe</td>
+    <td>Linux</td>
+    <td>26th October 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>Return-oriented programming (Buffer Overflow)</li>
+        <li>KeePass database cracking</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Ellingson</td>
+    <td>Linux</td>
+    <td>19th October 2019</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Writeup</td>
+    <td>Linux</td>
+    <td>12th October 2019</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>CVE (CMS Made Simple)</li>
+        <li>Relative path in Crontab</li>
+      </ul>
+    </td>
+    <td>:heavy_check_mark:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Ghoul</td>
     <td>Linux</td>
     <td>5th October 2019</td>

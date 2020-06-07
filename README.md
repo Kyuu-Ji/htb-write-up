@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Sunday](https://kyuu-ji.github.io/htb-write-up/sunday/write-up-sunday)
+  - Retired on 29th September 2018
+  - OS: Solaris
+  - Tags: Finger, Shadow file, Wget
 - [Poison](https://kyuu-ji.github.io/htb-write-up/poison/write-up-poison)
   - Retired on 8th September 2018
   - OS: FreeBSD
