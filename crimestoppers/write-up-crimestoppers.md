@@ -71,7 +71,7 @@ Hello, <br /> You guys should really learn to code, one of the GET Parameters is
 ```
 
 The only GET parameters found so far are _op_ and _secretname_ and the first one is probably vulnerable.
-After analyzing the page, it becomes clear that the values for _op_ are just PHP files on the server. When accessing them like _/view.php_, they just display a white page and not an error, so they exist and the variables just executes them from another directory.
+After analyzing the page, it becomes clear that the values for _op_ are just PHP files on the server. When accessing them like _/view.php_, they just display a white page and not an error, so they exist and the variables execute them from another directory.
 
 In this case, lets try a **Local File Inclusion** trick with PHP to get the source code of the scripts as a Base64-decoded string:
 ```markdown
@@ -86,7 +86,7 @@ base64 -d home.php.b64 > home.php
 This can be done for all the PHP scripts that were found so far: _home.php, index.php, list.php, view.php, upload.php, common.php_.
 
 In _common.php_ there is another hint as a comment:
-```markdown
+```php
 <?php
 /* Stop hackers. \*/
 if(!defined('FROM_INDEX')) die();
@@ -109,7 +109,7 @@ This means that uploaded tips become files on the web server which means that up
 As those files don't get the _.php_ extension, a **PHP wrapper** has to be used so the script gets executed. I will use the [ZIP compression wrapper for PHP](https://www.php.net/manual/de/wrappers.compression.php).
 
 Creating a malicious _cmd.php_ PHP script:
-```markdown
+```php
 <?php echo system($\_REQUEST['test']); ?>
 ```
 
