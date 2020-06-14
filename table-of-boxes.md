@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Monteverde</td>
+    <td>Windows</td>
+    <td>13th June 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Nest</td>
     <td>Windows</td>
     <td>6th June 2020</td>
@@ -1330,11 +1343,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Local File Inclusion (LFI)</li>
+        <li>PHP wrapper</li>
+        <li>Thunderbird</li>
+        <li>Reverse Engineering</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Tally</td>

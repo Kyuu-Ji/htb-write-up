@@ -127,6 +127,10 @@ More write-ups will come soon.
   - Retired on 16th June 2018
   - OS: Windows
   - Tags: CVE (AChat chat system)
+- [CrimeStoppers](https://kyuu-ji.github.io/htb-write-up/crimestoppers/write-up-crimestoppers)
+  - Retired on 2nd June 2018
+  - OS: Linux
+  - Tags: Local File Inclusion (LFI), PHP wrapper, Thunderbird, Reverse Engineering
 - [Tally](https://kyuu-ji.github.io/htb-write-up/tally/write-up-tally)
   - Retired on 28th May 2018
   - OS: Windows
