@@ -147,6 +147,10 @@ More write-ups will come soon.
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
+- [Inception](https://kyuu-ji.github.io/htb-write-up/inception/write-up-inception)
+  - Retired on 14th April 2018
+  - OS: Linux
+  - Tags: Arbitrary File Read, WebDAV, Proxy connections, Host and guest system, Advanced Packaging Tools (APT)
 - [Sense](https://kyuu-ji.github.io/htb-write-up/sense/write-up-sense)
   - Retired on 24th March 2018
   - OS: FreeBSD
