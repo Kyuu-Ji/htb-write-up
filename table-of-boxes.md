@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>ForwardSlash</td>
+    <td>Linux</td>
+    <td>4th July 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>PlayerTwo</td>
+    <td>Linux</td>
+    <td>27th June 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>ServMon</td>
     <td>Windows</td>
     <td>20th June 2020</td>
@@ -1149,10 +1175,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Xdebug</li>
+        <li>Decipher Wireless Traffic</li>
+        <li>Port Knocking</li>
+        <li>Docker</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

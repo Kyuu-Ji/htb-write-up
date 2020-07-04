@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 29th September 2018
   - OS: Solaris
   - Tags: Finger, Shadow file, Wget
+- [Olympus](https://kyuu-ji.github.io/htb-write-up/olympus/write-up-olympus)
+  - Retired on 22nd September 2018
+  - OS: Linux
+  - Tags: Xdebug, Decipher Wireless Traffic, Port Knocking, Docker
 - [Poison](https://kyuu-ji.github.io/htb-write-up/poison/write-up-poison)
   - Retired on 8th September 2018
   - OS: FreeBSD
