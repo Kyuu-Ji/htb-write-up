@@ -146,7 +146,7 @@ As this is a valid password, maybe it was reused on the box, so we can try out t
 ### Enumerating usernames
 
 To brute-force SSH usernames, the vulnerability [CVE-2018-15473](https://github.com/Rhynorater/CVE-2018-15473-Exploit) will be used.
-The wordlist will not be default usernames but as the theme of the box is _Greek mythological characters_, is is probably more efficient to create a custom wordlist with those names.
+The wordlist will not be default usernames but as the theme of the box is _Greek mythological characters_, it is probably more efficient to create a custom wordlist with those names.
 
 Running the exploit with the custom wordlist:
 ```markdown
@@ -195,7 +195,7 @@ ctfolympus.htb.         86400   IN      SOA     ns1.ctfolympus.htb. ns2.ctfolymp
 ```
 
 The TXT-record that tells us to open a temporal portal to Hades looks like, it wants us to do **port knocking** on the ports to open another port.
-As SSH is filtered, it could that one and _"St34l_th3_F1re!"_ the password.
+As SSH is filtered, it could be that one and _"St34l_th3_F1re!"_ the password.
 
 Port knocking the ports and simultaneously connecting to SSH with _prometheus_:
 ```markdown
