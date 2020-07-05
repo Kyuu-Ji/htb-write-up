@@ -1,4 +1,4 @@
-# Alternative way to exploit Tally
+# Alternative way to exploit Crimestoppers
 
 ## Privilege Escalation to root
 

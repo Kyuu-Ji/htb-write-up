@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [DevOops](https://kyuu-ji.github.io/htb-write-up/devoops/write-up-devoops)
+  - Retired on 13th October 2018
+  - OS: Linux
+  - Tags: XML External Entity (XXE), Python pickle, Git
 - [Sunday](https://kyuu-ji.github.io/htb-write-up/sunday/write-up-sunday)
   - Retired on 29th September 2018
   - OS: Solaris
