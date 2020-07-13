@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Book</td>
+    <td>Linux</td>
+    <td>11th July 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>ForwardSlash</td>
     <td>Linux</td>
     <td>4th July 2020</td>
@@ -1193,10 +1206,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Git</li>
+        <li>Python pickle</li>
+        <li>CouchDB</li>
+        <li>pip</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

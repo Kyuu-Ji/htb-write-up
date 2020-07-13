@@ -103,6 +103,10 @@ More write-ups will come soon.
   - Retired on 22nd September 2018
   - OS: Linux
   - Tags: Xdebug, Decipher Wireless Traffic, Port Knocking, Docker
+- [Canape](https://kyuu-ji.github.io/htb-write-up/canape/write-up-canape)
+  - Retired on 15th September 2018
+  - OS: Linux
+  - Tags: Git, Python pickle, CouchDB, pip
 - [Poison](https://kyuu-ji.github.io/htb-write-up/poison/write-up-poison)
   - Retired on 8th September 2018
   - OS: FreeBSD
