@@ -1476,10 +1476,13 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Network Pivoting</li>
+        <li>ImageTragick</li>
+        <li>Shellshock</li>
+        <li>Docker</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

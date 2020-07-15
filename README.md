@@ -159,6 +159,10 @@ More write-ups will come soon.
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
+- [Ariekei](https://kyuu-ji.github.io/htb-write-up/ariekei/write-up-ariekei)
+  - Retired on 21st April 2018
+  - OS: Linux
+  - Tags: Network Pivoting, ImageTragick, Shellshock, Docker
 - [Inception](https://kyuu-ji.github.io/htb-write-up/inception/write-up-inception)
   - Retired on 14th April 2018
   - OS: Linux
