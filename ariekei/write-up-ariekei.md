@@ -131,7 +131,7 @@ gobuster -u https://calvin.ariekei.htb dir -w /usr/share/wordlists/dirbuster/dir
 
 It finds the directory _/upload_ where it is possible to upload images:
 
-![Upload page](https://kyuu-ji.github.io/htb-write-up/ariekei/arikei_web-1.png)
+![Upload page](https://kyuu-ji.github.io/htb-write-up/ariekei/ariekei_web-1.png)
 
 In the HTML source is a comment that is ASCII art of a happy mask face and a sad mask face also known as _"Tragedy Mask"_.
 This is a hint for a vulnerability that is called [ImageTragick](https://imagetragick.com/).
@@ -180,7 +180,7 @@ IP address       HW type     Flags       HW address            Mask     Device
 
 In the root (/) directory is also a non-default folder called _/common_. The subdirectory _/common/network_ has an image in it, which describes the network architecture:
 
-![Network architecture](https://kyuu-ji.github.io/htb-write-up/ariekei/arikei_network-1.png)
+![Network architecture](https://kyuu-ji.github.io/htb-write-up/ariekei/ariekei_network-1.png)
 
 In there is a bash script that creates the networks:
 ```markdown
