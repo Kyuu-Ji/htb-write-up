@@ -48,9 +48,9 @@ Notes about the findings:
 ## Checking HTTPS (Port 443)
 
 On the web page it only says "Maintenance!" and that the "site is under development" and there is also nothing interesting in the HTML source code.
-There is also an interesting response header _"X-Ariekei-WAF: beehive.ariekei.htb"_ so the traffic goes through a **Web Application Firewall (WAF)**.
+There is an interesting response header _"X-Ariekei-WAF: beehive.ariekei.htb"_ so the traffic goes through a **Web Application Firewall (WAF)**.
 
-When checking the SSL certificate there are also some subdomains that seem important:
+When checking the SSL certificate there are some subdomains that seem important:
 ```markdown
 DNS Name: calvin.ariekei.htb
 DNS Name: beehive.ariekei.htb
@@ -153,7 +153,7 @@ After uploading it, the listener on my IP and port 443 starts a reverse shell se
 In the root (/) directory is a file called _.dockerenv_ which indicates that this is a **Docker container** from which pivoting to other machines is necessary.
 Commands like `netstat`, `ss`, `ip` and `arp` are not on this container, but network connections can also be seen in the file _/proc/net/tcp_:
 ```markdown
-sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode                                                     
+sl  local_address rem_address   st tx_queue rx_queue tr tm->when retrnsmt   uid  timeout inode
    0: 0B00007F:A90C 00000000:0000 0A 00000000:00000000 00:00000000 00000000    0  0 18353 1 0000000000000000 100 0 0 10 0
    1: 00000000:1F90 00000000:0000 0A 00000000:00000001 00:00000000 00000000    0  0 18985 2 0000000000000000 100 0 0 10 0
    2: 0B0017AC:8B12 0A0E0A0A:01BB 01 00000002:00000000 01:0000001B 00000000    0  0 298817 3 0000000000000000 27 4 31 10 -1
@@ -255,7 +255,9 @@ We are _www-data_ on this box but were root on all the other containers. When lo
 Lets switch user to root with `su -` to get access to all files.
 
 There is the home directory _/home/spanishdancer_ that has a private and public SSH key in the _.ssh_ folder and the public key shows the username and hostname for which box it is:
-> spanishdancer@ariekei.htb
+```markdown
+(...) spanishdancer@ariekei.htb
+```
 
 The private key is AES-128 encrypted and has to be cracked before and for that I will use **JohnTheRipper**:
 ```markdown
