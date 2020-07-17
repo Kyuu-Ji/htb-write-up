@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Bounty](https://kyuu-ji.github.io/htb-write-up/bounty/write-up-bounty)
+  - Retired on 27th October 2018
+  - OS: Windows
+  - Tags: IIS web.config, CVE
 - [DevOops](https://kyuu-ji.github.io/htb-write-up/devoops/write-up-devoops)
   - Retired on 13th October 2018
   - OS: Linux
