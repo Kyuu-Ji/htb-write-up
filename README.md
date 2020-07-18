@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 27th October 2018
   - OS: Windows
   - Tags: IIS web.config, CVE
+- [TartarSauce](https://kyuu-ji.github.io/htb-write-up/tartarsauce/write-up-tartarsauce)
+  - Retired on 20th October 2018
+  - OS: Linux
+  - Tags: WordPress, Remote File Inclusion (RFI), Tar, Systemd timer
 - [DevOops](https://kyuu-ji.github.io/htb-write-up/devoops/write-up-devoops)
   - Retired on 13th October 2018
   - OS: Linux
