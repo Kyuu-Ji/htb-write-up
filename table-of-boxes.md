@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Cascade</td>
+    <td>Windows</td>
+    <td>25th July 2020</td>
+    <td>:yellow_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Sauna</td>
     <td>Windows</td>
     <td>18th July 2020</td>
@@ -1095,10 +1108,10 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Tomcat WAR file</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

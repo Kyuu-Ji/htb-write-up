@@ -87,6 +87,10 @@ More write-ups will come soon.
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
+- [Jerry](https://kyuu-ji.github.io/htb-write-up/jerry/write-up-jerry)
+  - Retired on 17th November 2018
+  - OS: Windows
+  - Tags: Tomcat WAR file
 - [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
   - Retired on 10th November 2018
   - OS: Windows
