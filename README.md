@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Chainsaw](https://kyuu-ji.github.io/htb-write-up/chainsaw/write-up-chainsaw)
+  - Retired on 23rd November 2019
+  - OS: Linux
+  - Tags: Solidity / Smart Contracts, InterPlanetary File System (IPFS), Slack Space
 - [Haystack](https://kyuu-ji.github.io/htb-write-up/haystack/write-up-haystack)
   - Retired on 2nd November 2019
   - OS: Linux

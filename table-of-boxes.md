@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Oouch</td>
+    <td>Linux</td>
+    <td>1st August 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Cascade</td>
     <td>Windows</td>
     <td>25th July 2020</td>
@@ -436,11 +449,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Solidity / Smart Contracts</li>
+        <li>InterPlanetary File System (IPFS)</li>
+        <li>Slack Space</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Networked</td>
