@@ -63,7 +63,7 @@ Unfortunately it does not give any information about the hostname.
 
 ## Checking SMB (Port 445)
 
-It is possible to get the shares of SMB without authentication by using a anonymous authentication:
+It is possible to get the shares of SMB without authentication by using an anonymous authentication:
 ```markdown
 smbclient -L //10.10.10.100
 ```
@@ -103,7 +103,7 @@ Displaying the contents of the share recursively:
 smbmap -H 10.10.10.100 -R Replication
 ```
 
-There is a file called _Groups.xml_ in the directory _\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\_, which is a **Group Policy file** where local account information is stored.
+There is a file called _Groups.xml_ in the directory _"\active.htb\Policies\{31B2F340-016D-11D2-945F-00C04FB984F9}\MACHINE\Preferences\Groups\"_, which is a **Group Policy file** where local account information is stored.
 ```markdown
 smbclient //10.10.10.100/Replication
 
@@ -178,7 +178,7 @@ This starts a command shell as the user and allows us to run _Sharphound.exe_ on
 
 After it finishes, it creates a _.zip_ file that can be drag&dropped into **Bloodhound** for further analysis.
 
-When using the query called _"Shortest Path from Kerberoastable Users"_ it shows that the user _Administrator@active.htb_ is vulnerable to a **Kerberoast attack** which can be done with another script from the **Impacket Framework**:
+When using the query called _"Shortest Path from Kerberoastable Users"_ it shows that the user _Administrator[@]active.htb_ is vulnerable to a **Kerberoast attack** which can be done with another script from the **Impacket Framework**:
 ```markdown
 GetUserSPNs.py -request -dc-ip 10.10.10.100 active.htb/SVC_TGS
 ```
