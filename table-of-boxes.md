@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Traceback</td>
+    <td>Linux</td>
+    <td>15th August 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Fatty</td>
+    <td>Linux</td>
+    <td>8th August 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Oouch</td>
     <td>Linux</td>
     <td>1st August 2020</td>
@@ -1097,10 +1123,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>GPO password</li>
+        <li>Kerberoast</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
