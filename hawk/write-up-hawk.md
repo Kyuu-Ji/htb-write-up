@@ -176,9 +176,9 @@ On the web page on port 80 it shows a **Drupal** login page, which is a Content-
 The password found out earlier is working and with the username _admin_.
 
 When looking at the _Modules_ there is a PHP module that allows PHP code to be executed. It can be activated by ticking it on _PHP Filter_.
-After enabling it, uploading PHP files is possible:
+After enabling it, uploading PHP files is possible.
 ```markdown
-Content --> Add Content --> Article / Basic Page --> Test Format: PHP code
+Content --> Add Content --> Article / Basic Page --> Text Format: PHP code
 ```
 
 Lets upload a PHP reverse shell into it:
@@ -202,7 +202,7 @@ H2 Console
 Sorry, remote connections ('webAllowOthers') are disabled on this server.
 ```
 
-By creating an SSH tunnel on the box to we are able to access the **H2 console** locally:
+By creating an SSH tunnel on the box, we are able to access the **H2 console** locally:
 ```markdown
 ssh -R 9002:127.0.0.1:8082 testuser@10.10.14.6
 ```
@@ -213,7 +213,7 @@ Now the service runs on my local client on port 9002:
 
 ### Exploiting H2 Console
 
-When looking for exploits for **H2** there is a **Arbitrary Code Execution** vulnerability found:
+When looking for exploits for **H2** there is an **Arbitrary Code Execution** vulnerability found:
 ```markdown
 searchsploit h2
 ```
