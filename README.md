@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 8th December 2018
   - OS: Windows
   - Tags: Active Directory, GPO password, Kerberoast
+- [Hawk](https://kyuu-ji.github.io/htb-write-up/hawk/write-up-hawk)
+  - Retired on 1st December 2018
+  - OS: Linux
+  - Tags: Drupal, Decrypt OpenSSL, H2 Java SQL Database
 - [Jerry](https://kyuu-ji.github.io/htb-write-up/jerry/write-up-jerry)
   - Retired on 17th November 2018
   - OS: Windows
