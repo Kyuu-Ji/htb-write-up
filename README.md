@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
+- [Waldo](https://kyuu-ji.github.io/htb-write-up/waldo/write-up-waldo)
+  - Retired on 15th December 2018
+  - OS: Linux
+  - Tags: Directory Traversal, Docker, Restricted bash, Linux capabilities
 - [Active](https://kyuu-ji.github.io/htb-write-up/active/write-up-active)
   - Retired on 8th December 2018
   - OS: Windows
