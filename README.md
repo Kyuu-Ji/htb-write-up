@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
+- [Mischief](https://kyuu-ji.github.io/htb-write-up/mischief/write-up-mischief)
+  - Retired on 5th January 2019
+  - OS: Linux
+  - Tags: SNMP, IPv6, ICMP
 - [Waldo](https://kyuu-ji.github.io/htb-write-up/waldo/write-up-waldo)
   - Retired on 15th December 2018
   - OS: Linux

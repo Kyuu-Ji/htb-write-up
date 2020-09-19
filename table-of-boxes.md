@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Travel</td>
+    <td>Linux</td>
+    <td>12th September 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Remote</td>
     <td>Windows</td>
     <td>5th September 2020</td>
@@ -1136,11 +1149,13 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SNMP</li>
+        <li>IPv6</li>
+        <li>ICMP</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Waldo</td>
