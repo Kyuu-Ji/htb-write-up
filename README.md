@@ -91,6 +91,10 @@ More write-ups will come soon.
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
+- [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
+  - Retired on 19th January 2019
+  - OS: Windows
+  - Tags: Cross-Site-Request-Forgery (CSRF)
 - [Mischief](https://kyuu-ji.github.io/htb-write-up/mischief/write-up-mischief)
   - Retired on 5th January 2019
   - OS: Linux
