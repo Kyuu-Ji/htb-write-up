@@ -95,6 +95,10 @@ More write-ups will come soon.
   - Retired on 19th January 2019
   - OS: Windows
   - Tags: Cross-Site-Request-Forgery (CSRF)
+- [Dab](https://kyuu-ji.github.io/htb-write-up/dab/write-up-dab)
+  - Retired on 2nd February 2019
+  - OS: Linux
+  - Tags: Fuzzing, Memcached, SSH Enumeration, Reverse Engineering
 - [Mischief](https://kyuu-ji.github.io/htb-write-up/mischief/write-up-mischief)
   - Retired on 5th January 2019
   - OS: Linux
