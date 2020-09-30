@@ -7,6 +7,10 @@ More write-ups will come soon.
   - Retired on 23rd November 2019
   - OS: Linux
   - Tags: Solidity / Smart Contracts, InterPlanetary File System (IPFS), Slack Space
+- [Jarvis](https://kyuu-ji.github.io/htb-write-up/jarvis/write-up-jarvis)
+  - Retired on 9th November 2019
+  - OS: Linux
+  - Tags: SQL Injection, phpMyAdmin
 - [Haystack](https://kyuu-ji.github.io/htb-write-up/haystack/write-up-haystack)
   - Retired on 2nd November 2019
   - OS: Linux
