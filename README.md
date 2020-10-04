@@ -98,7 +98,7 @@ More write-ups will come soon.
 - [Curling](https://kyuu-ji.github.io/htb-write-up/curling/write-up-curling)
   - Retired on 30th March 2019
   - OS: Linux
-  - Tags: Custom Word List, Nested archives, cURL configuration file
+  - Tags: Custom Word List, Nested encoding, cURL Configuration File
 - [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
   - Retired on 19th January 2019
   - OS: Windows

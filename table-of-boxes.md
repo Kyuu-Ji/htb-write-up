@@ -1033,10 +1033,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Custom Word List</li>
+        <li>Nested encoding</li>
+        <li>cURL Configuration File</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
