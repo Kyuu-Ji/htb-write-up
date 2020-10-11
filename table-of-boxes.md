@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Cache</td>
+    <td>Linux</td>
+    <td>10th October 2020</td>
+    <td>:yellow_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Blackfield</td>
     <td>Windows</td>
     <td>3rd October 2020</td>
@@ -1126,11 +1139,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>LDAP</li>
+        <li>SSH Certificate Authority</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Dab</td>

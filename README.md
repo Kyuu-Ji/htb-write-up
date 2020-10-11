@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
+- [Ypuffy](https://kyuu-ji.github.io/htb-write-up/ypuffy/write-up-ypuffy)
+  - Retired on 9th February 2019
+  - OS: OpenBSD
+  - Tags: LDAP, SSH Certificate Authority
 - [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
   - Retired on 19th January 2019
   - OS: Windows
