@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Blunder</td>
+    <td>Linux</td>
+    <td>17th October 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Cache</td>
     <td>Linux</td>
     <td>10th October 2020</td>
@@ -1126,10 +1139,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>CVE (Ubiquiti UniFi Video)</li>
+        <li>Bypass AppLocker & Anti-Malware</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

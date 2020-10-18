@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
+- [Giddy](https://kyuu-ji.github.io/htb-write-up/giddy/write-up-giddy)
+  - Retired on 16th February 2019
+  - OS: Windows
+  - Tags: SQL Injection, CVE (Ubiquiti UniFi Video), Bypass AppLocker & Anti-Malware
 - [Ypuffy](https://kyuu-ji.github.io/htb-write-up/ypuffy/write-up-ypuffy)
   - Retired on 9th February 2019
   - OS: OpenBSD
