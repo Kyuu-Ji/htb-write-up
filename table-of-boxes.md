@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Dyplesher</td>
+    <td>Linux</td>
+    <td>24th October 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Blunder</td>
     <td>Linux</td>
     <td>17th October 2020</td>
@@ -579,10 +592,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Cisco Password Cracking</li>
+        <li>Password Spraying</li>
+        <li>SID Brute-Force</li>
+        <li>Process Dump</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

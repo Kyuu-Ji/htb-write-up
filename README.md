@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Heist](https://kyuu-ji.github.io/htb-write-up/heist/write-up-heist)
+  - Retired on 30th November 2019
+  - OS: Windows
+  - Tags: Cisco Password Cracking, Password Spraying, SID Brute-Force, Process Dump
 - [Chainsaw](https://kyuu-ji.github.io/htb-write-up/chainsaw/write-up-chainsaw)
   - Retired on 23rd November 2019
   - OS: Linux
