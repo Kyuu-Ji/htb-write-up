@@ -99,6 +99,10 @@ More write-ups will come soon.
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
+- [Irked](https://kyuu-ji.github.io/htb-write-up/irked/write-up-irked)
+  - Retired on 27th April 2019
+  - OS: Linux
+  - Tags: Internet Relay Chat (IRC), Steganography
 - [Curling](https://kyuu-ji.github.io/htb-write-up/curling/write-up-curling)
   - Retired on 30th March 2019
   - OS: Linux
