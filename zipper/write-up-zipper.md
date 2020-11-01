@@ -142,7 +142,7 @@ Which means, that the credentials for the Zabbix admin interface is the username
 
 ### Exploiting Zabbix to access Zipper
 
-On the admin interface it is possible to see the enabled services for the clients and it looks like out target _zipper_ has the **Zabbix Agent** installed:
+On the admin interface it is possible to see the enabled services for the clients and it looks like our target _zipper_ has the **Zabbix Agent** installed:
 
 ![Enabled services](https://kyuu-ji.github.io/htb-write-up/zipper/zipper_web-4.png)
 
