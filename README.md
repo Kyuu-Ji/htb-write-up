@@ -107,6 +107,10 @@ More write-ups will come soon.
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
+- [Zipper](https://kyuu-ji.github.io/htb-write-up/zipper/write-up-zipper)
+  - Retired on 23rd February 2019
+  - OS: Linux
+  - Tags: Zabbix, Systemd timer
 - [Giddy](https://kyuu-ji.github.io/htb-write-up/giddy/write-up-giddy)
   - Retired on 16th February 2019
   - OS: Windows
