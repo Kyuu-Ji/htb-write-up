@@ -203,6 +203,10 @@ More write-ups will come soon.
   - Retired on 30th June 2018
   - OS: Linux
   - Tags: Nibbleblog (CMS)
+- [Falafel](https://kyuu-ji.github.io/htb-write-up/falafel/write-up-falafel)
+  - Retired on 23rd June 2018
+  - OS: Linux
+  - Tags: SQL Injection, PHP Type Juggling, Wget character length, Linux System Groups
 - [Chatterbox](https://kyuu-ji.github.io/htb-write-up/chatterbox/write-up-chatterbox)
   - Retired on 16th June 2018
   - OS: Windows
