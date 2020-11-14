@@ -151,6 +151,10 @@ More write-ups will come soon.
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
+- [Dropzone](https://kyuu-ji.github.io/htb-write-up/dropzone/write-up-dropzone)
+  - Retired on 3rd November 2018
+  - OS: Windows
+  - Tags: TFTP, Manage Object Format (MOF), Alternate Data Streams
 - [Bounty](https://kyuu-ji.github.io/htb-write-up/bounty/write-up-bounty)
   - Retired on 27th October 2018
   - OS: Windows

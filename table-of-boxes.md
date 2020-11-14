@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Intense</td>
+    <td>Linux</td>
+    <td>14th November 2020</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Tabby</td>
     <td>Linux</td>
     <td>7th November 2020</td>
@@ -1356,10 +1369,12 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>TFTP</li>
+        <li>Manage Object Format (MOF)</li>
+        <li>Alternate Data Streams</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
