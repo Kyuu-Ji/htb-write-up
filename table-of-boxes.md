@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Buff</td>
+    <td>Windows</td>
+    <td>21st November 2020</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Intense</td>
     <td>Linux</td>
     <td>14th November 2020</td>
@@ -1806,10 +1819,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection (WordPress)</li>
+        <li>Joomla</li>
+        <li>Pivoting</li>
+        <li>Binary Exploitation</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

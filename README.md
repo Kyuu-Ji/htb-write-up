@@ -247,6 +247,10 @@ More write-ups will come soon.
   - Retired on 24th March 2018
   - OS: FreeBSD
   - Tags: CVE (pfSense), Bypassing character filter
+- [Enterprise](https://kyuu-ji.github.io/htb-write-up/enterprise/write-up-enterprise)
+  - Retired on 17th March 2018
+  - OS: Linux
+  - Tags: SQL Injection (WordPress), Joomla, Pivoting, Binary Exploitation
 - [Kotarak](https://kyuu-ji.github.io/htb-write-up/kotarak/write-up-kotarak)
   - Retired on 10th March 2018
   - OS: Linux
