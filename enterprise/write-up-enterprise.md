@@ -148,7 +148,7 @@ Plugins can be found in the directory _/wp-content/plugins/lcars/_ on port 80 an
 
 ## Exploiting the WordPress plugin (Port 80)
 
-In _lcars_db.php_ it can be seen, that it takes the parameter _query_ and using a ID of a WordPress blog article as the value:
+In _lcars_db.php_ it can be seen, that it takes the parameter _query_ and using an ID of a WordPress blog article as the value:
 ```markdown
 http://enterprise.htb/wp-content/plugins/lcars/lcars_db.php?query=1
 ```
@@ -180,7 +180,7 @@ The login page for WordPress is on _/wp-login.php_ and after trying all of those
 
 ### Getting Code Execution on WordPress
 
-To get code execution, we can modify one of the PHP files to run system commands:
+To get code execution, PHP files can be modified to run system commands:
 ```markdown
 Appearance --> Editor --> Theme Header (header.php)
 ```
@@ -216,7 +216,7 @@ It seems like that this is not the target box yet.
 
 The ARP table can be checked with `ip neigh` and it has two IP addresses 172.17.0.1 & 172.17.0.2.
 
-In the WordPress configuration file _/var/www/html/wp-config.php_ is a password that could be used to pivot to the database server that also holds the database tables of **Joomla**:
+In the WordPress configuration file _/var/www/html/wp-config.php_ is a password that could be used to pivot to the database server that also has the database of **Joomla**:
 ```markdown
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -225,7 +225,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', 'NCC-1701E');
 ```
 
-As there is no MySQL installed on this server, we can use **Metasploit** to pivot through that client to another one.
+As there is no MySQL installed on this current server, **Metasploit** can be used to pivot through that client to another one.
 
 Creating binary to start **Meterpreter** connection:
 ```markdown
@@ -297,12 +297,12 @@ select id, name, username, password from edz2g_users;
 +-----+------------+-----------------+--------------------------------------------------------------+
 ```
 
-The login page for Joomla is on _/administrator_ and now that we have the usernames, we can try all the passwords from before on both of these.
+The login page for Joomla is on _/administrator_ and now that we have the usernames, all the passwords from before can be tried on both of these.
 Access is granted with the username _geordi.la.forge_ and the password _"ZD3YxfnSjezg67JZ"_.
 
 ### Getting Code Execution on Joomla
 
-To get code execution, we can modify one of the PHP files to run system commands:
+To get code execution, PHP files can be modified to run system commands:
 ```markdown
 Extensions --> Templates --> Templates --> Protostar Details and Files --> index.php
 ```
@@ -328,7 +328,7 @@ When checking the IP address with `ip a` it shows 172.17.0.3.
 ## Pivoting to Enterprise (Port 443)
 
 Now we got access to the **WordPress** box _(Port 80)_ and **Joomla** box _(Port 8080)_ and the next station will be the box on port 443 that hosted the _lcars.zip_.
-This is the box that also probably has SSH open as the initial Nmap scan shows.
+This is the box that probably has SSH open as the initial Nmap scan shows.
 
 When looking at the mounted shares on the Joomla box with `mount`, it shows that _/var/www/html/files_ is mounted and in there is _lcars.zip_.
 The current user _www-data_ has access to write files in there and after checking the index on port 443 the files are also displayed, which means we have the ability to upload files to Enterprise.
@@ -343,7 +343,7 @@ Running it by clicking on it on the index page:
 ![Executing shell.php](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_web-3.png)
 
 After executing it the listener on my IP and port 9005 starts a reverse shell as _www-data_.
-When checking the IP address with `ip a` it shows many interfaces but also 10.10.10.61 which is the target box.
+When checking the IP address with `ip a` it shows different interfaces and also 10.10.10.61 which is the target box.
 
 ## Privilege Escalation
 
@@ -408,7 +408,7 @@ LCARS Bridge Secondary Controls -- Main Menu:
 Waiting for input:
 ```
 
-All of those menus want some kind of input, so lets try which one can't handle long strings and crashes:
+All of those menus want some kind of input, so trying which one can't handle long strings and crashes:
 ```markdown
 python -c 'print "A"*500'
 ```
@@ -443,7 +443,7 @@ After running it with that pattern, it found the offset at 212 characters in:
 
 ![Offset on 212](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_re-1.png)
 
-Also **ASLR** is disabled on the box which doesn't have to bypassed:
+Also **ASLR** is disabled on the box which doesn't have to be bypassed:
 ```markdown
 www-data@enterprise:/$ cat /proc/sys/kernel/randomize_va_space
 0
