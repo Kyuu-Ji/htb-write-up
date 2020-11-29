@@ -3,7 +3,7 @@
 ## Getting SSH Password by adding an Interface
 
 After getting access to the first router _(AS100)_, there is another way to gain access to the main box instead of the **BGP Hijack attack**.
-By adding an IP to the interfaces of the router, the FTP connection will be sent directly to this device:
+By adding an IP to the interfaces of the router, the FTP connection will be sent directly to this device.
 
 Creating the route as before:
 ```markdown
