@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>SneakyMailer</td>
+    <td>Linux</td>
+    <td>28th November 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Buff</td>
     <td>Windows</td>
     <td>21st November 2020</td>
@@ -95,7 +108,7 @@ Work in progress.
     <td>Cache</td>
     <td>Linux</td>
     <td>10th October 2020</td>
-    <td>:yellow_circle: Medium</td>
+    <td>:orange_circle: Medium</td>
     <td>
       <ul>
         <li>-</li>
@@ -186,7 +199,7 @@ Work in progress.
     <td>Magic</td>
     <td>Linux</td>
     <td>22nd August 2020</td>
-    <td>:yellow_circle: Medium</td>
+    <td>:orange_circle: Medium</td>
     <td>
       <ul>
         <li>-</li>
@@ -238,7 +251,7 @@ Work in progress.
     <td>Cascade</td>
     <td>Windows</td>
     <td>25th July 2020</td>
-    <td>:yellow_circle: Medium</td>
+    <td>:orange_circle: Medium</td>
     <td>
       <ul>
         <li>-</li>
@@ -1156,11 +1169,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Border Gateway Protocol (BGP) Hijack</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Ethereal</td>

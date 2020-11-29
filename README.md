@@ -107,6 +107,10 @@ More write-ups will come soon.
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
+- [Carrier](https://kyuu-ji.github.io/htb-write-up/carrier/write-up-carrier)
+  - Retired on 16th March 2019
+  - OS: Linux
+  - Tags: Border Gateway Protocol (BGP) Hijack
 - [Zipper](https://kyuu-ji.github.io/htb-write-up/zipper/write-up-zipper)
   - Retired on 23rd February 2019
   - OS: Linux
