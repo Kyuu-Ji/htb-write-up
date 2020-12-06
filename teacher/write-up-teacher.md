@@ -25,7 +25,7 @@ PORT   STATE SERVICE VERSION
 
 ## Checking HTTP (Port 80)
 
-The web page is a website of a fictional school _"Blackhat Highschool"_ with some links that don't work forward anywhere and stock text.
+The web page is a website of a fictional school _"Blackhat Highschool"_ with some links that don't forward anywhere and stock text.
 In the HTML source code of _/gallery.html_ is one suspicious line:
 ```html
 <li><a href="#"><img src="images/5.png" onerror="console.log('That\'s an F');" alt=""></a></li>
