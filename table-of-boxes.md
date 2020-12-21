@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Laser</td>
+    <td>Linux</td>
+    <td>19th December 2020</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>OpenKeyS</td>
+    <td>OpenBSD</td>
+    <td>12th December 2020</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Unbalanced</td>
     <td>Linux</td>
     <td>5th December 2020</td>
@@ -1142,11 +1168,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Pivoting</li>
+        <li>Port Forwarding</li>
+        <li>GPG</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Curling</td>

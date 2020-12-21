@@ -107,6 +107,10 @@ More write-ups will come soon.
   - Retired on 20th April 2019
   - OS: Linux
   - Tags: CVE (Moodle), Cronjobs
+- [Vault](https://kyuu-ji.github.io/htb-write-up/vault/write-up-vault)
+  - Retired on 6th April 2019
+  - OS: Linux
+  - Tags: Pivoting, Port Forwarding, GPG
 - [Curling](https://kyuu-ji.github.io/htb-write-up/curling/write-up-curling)
   - Retired on 30th March 2019
   - OS: Linux
