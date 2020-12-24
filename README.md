@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Craft](https://kyuu-ji.github.io/htb-write-up/craft/write-up-craft)
+  - Retired on 4th January 2020
+  - OS: Linux
+  - Tags: Gogs (Git), Searching through Code, HashiCorp Vault Token
 - [Heist](https://kyuu-ji.github.io/htb-write-up/heist/write-up-heist)
   - Retired on 30th November 2019
   - OS: Windows
