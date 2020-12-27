@@ -605,11 +605,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>ODS Spreadsheet with Macros</li>
+        <li>CVE (WinRAR)</li>
+        <li>Ghidra XXE Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>AI</td>

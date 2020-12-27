@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
+  - Retired on 1st February 2020
+  - OS: Windows
+  - Tags: ODS Spreadsheet with Macros, CVE (WinRAR), Ghidra XXE Vulnerability
 - [Craft](https://kyuu-ji.github.io/htb-write-up/craft/write-up-craft)
   - Retired on 4th January 2020
   - OS: Linux
