@@ -30,7 +30,11 @@ More write-ups will come soon.
 - [Safe](https://kyuu-ji.github.io/htb-write-up/safe/write-up-safe)
   - Retired on 26th October 2019
   - OS: Linux
-  - Tags: Return-oriented programming (Buffer Overflow), KeePass database cracking
+  - Tags: Return-Oriented Programming (Buffer Overflow), KeePass database cracking
+- [Ellingson](https://kyuu-ji.github.io/htb-write-up/ellingson/write-up-ellingson)
+  - Retired on 19th October 2019
+  - OS: Linux
+  - Tags: Python Flask / Werkzeug, Shadow file, Binary Exploitation (ROP Chain)
 - [Writeup](https://kyuu-ji.github.io/htb-write-up/writeup/write-up-writeup)
   - Retired on 12th October 2019
   - OS: Linux

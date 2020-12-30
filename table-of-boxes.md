@@ -786,10 +786,12 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Python Flask / Werkzeug</li>
+        <li>Shadow file</li>
+        <li>Binary Exploitation (ROP Chain)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
