@@ -227,6 +227,10 @@ More write-ups will come soon.
   - Retired on 21st July 2018
   - OS: Linux
   - Tags: XML External Entity (XXE), Local File Inclusion (LFI), WordPress configuration
+- [Bart](https://kyuu-ji.github.io/htb-write-up/bart/write-up-bart)
+  - Retired on 14th July 2018
+  - OS: Windows
+  - Tags: Log Poisoning, Autologon Credentials
 - [Nibbles](https://kyuu-ji.github.io/htb-write-up/nibbles/write-up-nibbles)
   - Retired on 30th June 2018
   - OS: Linux
