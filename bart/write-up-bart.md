@@ -71,7 +71,7 @@ The login wants to forward to _monitor.bart.htb_, so also putting that into the 
 
 On _Servers_ there is one entry for _internal-01.bart.htb_ that has to be put into the _/etc/hosts_ file to get to it:
 
-![Server monitor](https://kyuu-ji.github.io/htb-write-up/bartssss/bart_web-2.png)
+![Server monitor](https://kyuu-ji.github.io/htb-write-up/barts/bart_web-2.png)
 
 It forwards to another login form with the title _"[DEV] Internal Chat Login Form"_:
 
@@ -180,7 +180,7 @@ DefaultPassword      : 3130438f31186fbaf962f407711faddb
 ```
 
 Even though this looks like a **MD5 hash**, it is not, it is the actual password for the machine.
-If we could run `RunAs`, it would be possible to run commands with higher privileges.
+If we could run `RunAs`, it would be possible to execute commands with higher privileges.
 
 To connect to the box through **PSExec**, the port 445 (SMB) has to be open. This can be done by starting a **Meterpreter session** and forward the port to our local client.
 
