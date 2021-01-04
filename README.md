@@ -131,6 +131,10 @@ More write-ups will come soon.
   - Retired on 16th March 2019
   - OS: Linux
   - Tags: Border Gateway Protocol (BGP) Hijack
+- [Access](https://kyuu-ji.github.io/htb-write-up/access/write-up-access)
+  - Retired on 2nd March 2019
+  - OS: Windows
+  - Tags: Microsoft Access Database, Stored Windows Credentials, Runas
 - [Zipper](https://kyuu-ji.github.io/htb-write-up/zipper/write-up-zipper)
   - Retired on 23rd February 2019
   - OS: Linux
