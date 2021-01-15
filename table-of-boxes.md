@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Omni</td>
+    <td>Unknown</td>
+    <td>9th January 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Laser</td>
     <td>Linux</td>
     <td>19th December 2020</td>
@@ -633,11 +646,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>JSON Web Token (JWT)</li>
+        <li>FFmpeg Vulnerability</li>
+        <li>CVE (SSH)</li>
+        <li>PHP Deserialization Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Bitlab</td>

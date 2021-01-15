@@ -7,6 +7,10 @@ More write-ups will come soon.
   - Retired on 1st February 2020
   - OS: Windows
   - Tags: ODS Spreadsheet with Macros, CVE (WinRAR), Ghidra XXE Vulnerability
+- [Player](https://kyuu-ji.github.io/htb-write-up/player/write-up-player)
+  - Retired on 18th January 2020
+  - OS: Linux
+  - Tags: JSON Web Token (JWT), FFmpeg Vulnerability, CVE (SSH), PHP Deserialization Vulnerability
 - [Craft](https://kyuu-ji.github.io/htb-write-up/craft/write-up-craft)
   - Retired on 4th January 2020
   - OS: Linux
