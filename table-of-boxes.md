@@ -14,6 +14,20 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>RopeTwo</td>
+    <td>Linux</td>
+    <td>16th January 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+  <tr>
     <td>Omni</td>
     <td>Unknown</td>
     <td>9th January 2021</td>
@@ -2132,9 +2146,10 @@ Work in progress.
       <ul>
         <li>SNMP</li>
         <li>IPv6</li>
+	<li>Binary Exploitation</li>
       </ul>
     </td>
-    <td>In Progress</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

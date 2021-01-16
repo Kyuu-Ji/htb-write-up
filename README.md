@@ -343,10 +343,10 @@ More write-ups will come soon.
   - Retired on 18th November 2017
   - OS: Linux
   - Tags: SQL Injection, Cross-Site-Scripting, Node Package Manager (npm)
-- [Sneaky] (In Progress)
+- [Sneaky](https://kyuu-ji.github.io/htb-write-up/sneaky/write-up-sneaky)
   - Retired on 11th November 2017
   - OS: Linux
-  - Tags: SNMP, IPv6
+  - Tags: SNMP, IPv6, Binary Exploitation
 - [Charon](https://kyuu-ji.github.io/htb-write-up/charon/write-up-charon)
   - Retired on 4th November 2017
   - OS: Linux
