@@ -74,10 +74,10 @@ After running the exploit, it starts a Meterpreter shell as _NT AUTHORITY\Networ
 
 The `getuid` command says that access is denied, so `migrate` to a process that the user _NT AUTHORITY\Network Service_ has access to:
 ```markdown
-1804  wmiprvse.exe      x86   0     NT AUTHORITY\NETWORK SERVICE  C:\WINDOWS\system32\wbem\wmiprvse.exe
-2880  cmd.exe           x86   0     NT AUTHORITY\NETWORK SERVICEC:\WINDOWS\system32\cmd.exe
-2920  w3wp.exe          x86   0     NT AUTHORITY\NETWORK SERVICEc:\windows\system32\inetsrv\w3wp.exe
-3804  davcdata.exe      x86   0     NT AUTHORITY\NETWORK SERVICEC:\WINDOWS\system32\inetsrv\davcdata.exe
+1804  wmiprvse.exe      x86   0    NT AUTHORITY\NETWORK SERVICE   C:\WINDOWS\system32\wbem\wmiprvse.exe
+2880  cmd.exe           x86   0    NT AUTHORITY\NETWORK SERVICE   C:\WINDOWS\system32\cmd.exe
+2920  w3wp.exe          x86   0    NT AUTHORITY\NETWORK SERVICE   c:\windows\system32\inetsrv\w3wp.exe
+3804  davcdata.exe      x86   0    NT AUTHORITY\NETWORK SERVICE   C:\WINDOWS\system32\inetsrv\davcdata.exe
 ```
 ```markdown
 migrate 3804
