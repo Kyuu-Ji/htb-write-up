@@ -1234,10 +1234,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Decoding different Encodings</li>
+        <li>CVE (playSMS)</li>
+        <li>Binary Exploitation</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

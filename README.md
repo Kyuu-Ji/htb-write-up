@@ -131,6 +131,10 @@ More write-ups will come soon.
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
+- [Frolic](https://kyuu-ji.github.io/htb-write-up/frolic/write-up-frolic)
+  - Retired on 23rd March 2019
+  - OS: Linux
+  - Tags: Decoding different Encodings, CVE (playSMS), Binary Exploitation
 - [Carrier](https://kyuu-ji.github.io/htb-write-up/carrier/write-up-carrier)
   - Retired on 16th March 2019
   - OS: Linux
