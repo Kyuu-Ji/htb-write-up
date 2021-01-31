@@ -123,6 +123,10 @@ More write-ups will come soon.
   - Retired on 20th April 2019
   - OS: Linux
   - Tags: CVE (Moodle), Cronjobs
+- [RedCross](https://kyuu-ji.github.io/htb-write-up/redcross/write-up-redcross)
+  - Retired on 13th April 2019
+  - OS: Linux
+  - Tags: SQL Injection, Cross-Site-Scripting (XSS), Command Injection, CVE (Haraka), PostgreSQL, Buffer Overflow
 - [Vault](https://kyuu-ji.github.io/htb-write-up/vault/write-up-vault)
   - Retired on 6th April 2019
   - OS: Linux

@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Worker</td>
+    <td>Windows</td>
+    <td>30th January 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Compromised</td>
+    <td>Linux</td>
+    <td>23rd January 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>RopeTwo</td>
     <td>Linux</td>
     <td>16th January 2021</td>
@@ -26,7 +52,6 @@ Work in progress.
     <td>:x:</td>
     <td>:x:</td>
   </tr>
-  <tr>
   <tr>
     <td>Omni</td>
     <td>Unknown</td>
@@ -1191,11 +1216,16 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>Cross-Site-Scripting (XSS)</li>
+        <li>Command Injection</li>
+        <li>CVE (Haraka)</li>
+        <li>PostgreSQL</li>
+        <li>Buffer Overflow</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Vault</td>
