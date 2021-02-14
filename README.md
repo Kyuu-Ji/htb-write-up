@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Forest](https://kyuu-ji.github.io/htb-write-up/forest/write-up-forest)
+  - Retired on 21st March 2020
+  - OS: Windows
+  - Tags: Active Directory, Password Spraying, SMB Null Session Attack, AS-REP Roasting, DCSync
 - [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
   - Retired on 1st February 2020
   - OS: Windows

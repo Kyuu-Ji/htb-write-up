@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Jewel</td>
+    <td>Linux</td>
+    <td>13th February 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Doctor</td>
+    <td>Linux</td>
+    <td>6th February 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Worker</td>
     <td>Windows</td>
     <td>30th January 2021</td>
@@ -579,11 +605,15 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>Password Spraying</li>
+        <li>SMB Null Session Attack</li>
+        <li>AS-REP Roasting</li>
+        <li>DCSync</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Postman</td>
