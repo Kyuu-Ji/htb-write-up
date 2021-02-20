@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Feline</td>
+    <td>Linux</td>
+    <td>20th February 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Jewel</td>
     <td>Linux</td>
     <td>13th February 2021</td>
@@ -702,10 +715,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection via Speech-To-Text</li>
+        <li>Java Debug Wire Protocol (JDWP)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

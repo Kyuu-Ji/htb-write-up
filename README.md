@@ -11,6 +11,10 @@ More write-ups will come soon.
   - Retired on 1st February 2020
   - OS: Windows
   - Tags: ODS Spreadsheet with Macros, CVE (WinRAR), Ghidra XXE Vulnerability
+- [AI](https://kyuu-ji.github.io/htb-write-up/ai/write-up-ai)
+  - Retired on 25th January 2020
+  - OS: Linux
+  - Tags: SQL Injection via Speech-To-Text, Java Debug Wire Protocol (JDWP)
 - [Player](https://kyuu-ji.github.io/htb-write-up/player/write-up-player)
   - Retired on 18th January 2020
   - OS: Linux
