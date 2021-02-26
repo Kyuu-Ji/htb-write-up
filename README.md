@@ -7,6 +7,10 @@ More write-ups will come soon.
   - Retired on 21st March 2020
   - OS: Windows
   - Tags: Active Directory, Password Spraying, SMB Null Session Attack, AS-REP Roasting, DCSync
+- [Bankrobber](https://kyuu-ji.github.io/htb-write-up/bankrobber/write-up-bankrobber)
+  - Retired on 7th March 2020
+  - OS: Windows
+  - Tags: Cross-Site-Scripting (XSS), SQL Injection, Cross-Site-Request-Forgery (CSRF), Server Exploitation
 - [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
   - Retired on 1st February 2020
   - OS: Windows
@@ -358,7 +362,7 @@ More write-ups will come soon.
 - [Holiday](https://kyuu-ji.github.io/htb-write-up/holiday/write-up-holiday)
   - Retired on 18th November 2017
   - OS: Linux
-  - Tags: SQL Injection, Cross-Site-Scripting, Node Package Manager (npm)
+  - Tags: SQL Injection, Cross-Site-Scripting (XSS), Node Package Manager (npm)
 - [Sneaky](https://kyuu-ji.github.io/htb-write-up/sneaky/write-up-sneaky)
   - Retired on 11th November 2017
   - OS: Linux

@@ -648,10 +648,13 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Cross-Site-Scripting (XSS)</li>
+        <li>SQL Injection</li>
+        <li>Cross-Site-Request-Forgery (CSRF)</li>
+        <li>Server Exploitation</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
