@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Academy</td>
+    <td>Linux</td>
+    <td>27th February 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Feline</td>
     <td>Linux</td>
     <td>20th February 2021</td>
@@ -748,11 +761,14 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>GitLab</li>
+        <li>Git Hooks</li>
+        <li>PostgreSQL</li>
+        <li>Windows Binary Analysis</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Craft</td>

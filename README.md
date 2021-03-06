@@ -23,6 +23,10 @@ More write-ups will come soon.
   - Retired on 18th January 2020
   - OS: Linux
   - Tags: JSON Web Token (JWT), FFmpeg Vulnerability, CVE (SSH), PHP Deserialization Vulnerability
+- [Bitlab](https://kyuu-ji.github.io/htb-write-up/bitlab/write-up-bitlab)
+  - Retired on 11th January 2020
+  - OS: Linux
+  - Tags: GitLab, Git Hooks, PostgreSQL, Windows Binary Analysis
 - [Craft](https://kyuu-ji.github.io/htb-write-up/craft/write-up-craft)
   - Retired on 4th January 2020
   - OS: Linux
