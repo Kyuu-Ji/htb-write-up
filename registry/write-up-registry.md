@@ -86,10 +86,10 @@ tar -xvf install2.tar
 It extracts two files:
 - _readme.md_: Links to **Docker** documentation
 ```
-# Private Docker Registry
+Private Docker Registry
 
-- https://docs.docker.com/registry/deploying/
-- https://docs.docker.com/engine/security/certificates/
+https://docs.docker.com/registry/deploying/
+https://docs.docker.com/engine/security/certificates/
 ```
 
 - _ca.crt_: Contents of a certificate
@@ -181,7 +181,7 @@ Downloading and executing `sh` on the container:
 docker run -it docker.registry.htb/bolt-image sh
 ```
 
-This gives access to the container as root and interesting files can be searched.
+This gives access to the container as root and the file system can be searched through.
 There is an encrypted private SSH key in _/root/.ssh/id_rsa_ that is probably for the user _bolt_ as _/root/.ssh/id_rsa.pub_ shows that username.
 ```
 -----BEGIN RSA PRIVATE KEY-----

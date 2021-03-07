@@ -69,7 +69,7 @@ It extracts one file:
 etc/profile.d/01-ssh.sh
 ```
 
-This file is a bash script that contains a password for a SSH key from root:
+This file is a bash script that contains a password for a SSH key from _bolt_:
 ```
 #!/usr/bin/expect -f
 #eval `ssh-agent -s`
