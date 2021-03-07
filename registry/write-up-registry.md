@@ -85,14 +85,16 @@ tar -xvf install2.tar
 
 It extracts two files:
 - _readme.md_: Links to **Docker** documentation
+
 ```
 Private Docker Registry
 
-https://docs.docker.com/registry/deploying/
-https://docs.docker.com/engine/security/certificates/
+docs.docker.com/registry/deploying/
+docs.docker.com/engine/security/certificates/
 ```
 
 - _ca.crt_: Contents of a certificate
+
 ```
 -----BEGIN CERTIFICATE-----
 MIIC/DCCAeSgAwIBAgIJAIFtFmFVTwEtMA0GCSqGSIb3DQEBCwUAMBMxETAPBgNV
