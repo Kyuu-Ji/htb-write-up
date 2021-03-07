@@ -3,6 +3,10 @@
 More write-ups will come soon.
 
 ### Boxes
+- [Registry](https://kyuu-ji.github.io/htb-write-up/registry/write-up-registry)
+  - Retired on 4th April 2020
+  - OS: Linux
+  - Tags: Docker Registry, CVE (Bolt CMS), Restic
 - [Forest](https://kyuu-ji.github.io/htb-write-up/forest/write-up-forest)
   - Retired on 21st March 2020
   - OS: Windows

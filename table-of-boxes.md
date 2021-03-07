@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Passage</td>
+    <td>Linux</td>
+    <td>6th March 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Academy</td>
     <td>Linux</td>
     <td>27th February 2021</td>
@@ -605,11 +618,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Docker Registry</li>
+        <li>CVE (Bolt CMS)</li>
+        <li>Restic</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Sniper</td>
