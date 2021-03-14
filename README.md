@@ -1,6 +1,37 @@
 # This is a page for my write-ups of Hack The Box machines
 
+### Contents
+
+- Every machine has its own folder were the _write-up_ is stored.
+- In some cases there are _alternative-ways_, that are shorter write ups, that have another way to complete certain parts of the boxes.
+- If custom scripts are mentioned in the write up, it can also be found in the corresponding folder.
+- The file _tables-of-boxes.md_ is similar to _README.md_ but with more information:
+  - Difficulty Rating on Hack The Box
+  - State of my personal completion
+  - Alternative way exists in this repository
+
 More write-ups will come soon.
+
+### Searching through Write-Ups
+
+Most commands and the output in the write-ups are in text form, which makes this repository easy to search though for certain keywords.
+
+Clone the repository and go into the folder and search with `grep` and the arguments for case-insensitive _(-i)_ and show the filename _(-R)_.
+
+Example: **Search all write-ups were the tool _sqlmap_ is used**
+```
+grep -iR "sqlmap" */*.md
+```
+
+Example: **Search all write-ups were _CSRF_ is mentioned**
+```
+grep -iR "csrf" */*.md
+```
+
+Example: **Search all write-ups were _port 8080_ is open**
+```
+grep -iR "8080/tcp" */*.md
+```
 
 ### Boxes
 - [Registry](https://kyuu-ji.github.io/htb-write-up/registry/write-up-registry)
@@ -43,6 +74,10 @@ More write-ups will come soon.
   - Retired on 23rd November 2019
   - OS: Linux
   - Tags: Solidity / Smart Contracts, InterPlanetary File System (IPFS), Slack Space
+- [Networked](https://kyuu-ji.github.io/htb-write-up/networked/write-up-networked)
+  - Retired on 16th November 2019
+  - OS: Linux
+  - Tags: Arbitrary File Upload, Cronjob, Code Execution through Network Scripts
 - [Jarvis](https://kyuu-ji.github.io/htb-write-up/jarvis/write-up-jarvis)
   - Retired on 9th November 2019
   - OS: Linux

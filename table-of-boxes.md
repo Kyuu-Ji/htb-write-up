@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Reel2</td>
+    <td>Windows</td>
+    <td>13th March 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Passage</td>
     <td>Linux</td>
     <td>6th March 2021</td>
@@ -864,10 +877,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Arbitrary File Upload</li>
+        <li>Cronjob</li>
+        <li>Code Execution through Network Scripts</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
