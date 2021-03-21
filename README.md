@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Monteverde](https://kyuu-ji.github.io/htb-write-up/monteverde/write-up-monteverde)
+  - Retired on 13th June 2020
+  - OS: Windows
+  - Tags: Password Spraying, Azure AD Connect
 - [Registry](https://kyuu-ji.github.io/htb-write-up/registry/write-up-registry)
   - Retired on 4th April 2020
   - OS: Linux

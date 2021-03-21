@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>CrossFit</td>
+    <td>Linux</td>
+    <td>20th March 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Reel2</td>
     <td>Windows</td>
     <td>13th March 2021</td>
@@ -501,11 +514,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Password Spraying</li>
+        <li>Azure AD Connect</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Nest</td>
