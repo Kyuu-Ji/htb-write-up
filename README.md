@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 13th June 2020
   - OS: Windows
   - Tags: Password Spraying, Azure AD Connect
+- [Resolute](https://kyuu-ji.github.io/htb-write-up/resolute/write-up-resolute)
+  - Retired on 30th May 2020
+  - OS: Windows
+  - Tags: Password Spraying, Active Directory, DNS Admin Vulnerability
 - [Registry](https://kyuu-ji.github.io/htb-write-up/registry/write-up-registry)
   - Retired on 4th April 2020
   - OS: Linux
