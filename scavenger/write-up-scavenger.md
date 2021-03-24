@@ -49,7 +49,7 @@ Service Info: Host: ib01.supersechosting.htb; OSs: Unix, Linux; CPE: cpe:/o:linu
 ```
 
 There is a hostname _supersechosting.htb_ that should be put into the _/etc/hosts_ file with all subdomains to be able to access it:
-- www.supersechosting.htb
+- www[.]supersechosting.htb
 - ib01.supersechosting.htb
 
 ## Checking HTTP (Port 80)
@@ -61,9 +61,9 @@ Virtualhost not available.
 ERROR: vhost config data not found.
 ```
 
-The web page on _www.supersechosting.htb_ shows some information about the fictional web hosting provider:
+The web page on _www[.]supersechosting.htb_ shows some information about the fictional web hosting provider:
 
-![SuperSecHosting Homepage](scavenger/scavenger_web-1.png)
+![SuperSecHosting Homepage](scavenger_web-1.png)
 
 The hostnames in this image should also be put into the _/etc/hosts_ file:
 - dns.supersechosting.htb
@@ -142,7 +142,7 @@ This service is vulnerable to a **SQL Injection vulnerability**.
 
 ### Exploiting SQL Injection Vulnerability
 
-As far as the error shows, the SQL query looks kind of like this:
+As far as the error shows, the SQL query probably looks kind of like this:
 ```
 SELECT * FROM 'test') LIMIT 1
 ```
@@ -228,18 +228,18 @@ dig axfr justanotherblog.htb @10.10.10.155
 
 - justanotherblog.htb
 - mail1.justanotherblog.htb
-- www.justanotherblog.htb
+- www[.]justanotherblog.htb
 
-After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www.justanotherblog.htb_ has a web page that says _"Under Construction"_.
+After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www[.]justanotherblog.htb_ has a web page that says _"Under Construction"_.
 
 ```
 dig axfr pwnhats.htb @10.10.10.155
 ```
 - pwnhats.htb
 - mail1.pwnhats.htb
-- www.pwnhats.htb
+- www[.]pwnhats.htb
 
-After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www.pwnhats.htb_ runs a shop with the E-Commerce software [PrestaShop](https://www.prestashop.com/en).
+After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www[.]pwnhats.htb_ runs a shop with the E-Commerce software [PrestaShop](https://www.prestashop.com/en).
 
 ```
 dig axfr rentahacker.htb @10.10.10.155
@@ -247,10 +247,10 @@ dig axfr rentahacker.htb @10.10.10.155
 
 - mail1.rentahacker.htb
 - sec03.rentahacker.htb
-- www.rentahacker.htb
+- www[.]rentahacker.htb
 - rentahacker.htb
 
-After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www.rentahacker.htb_ runs a _"Rent-A-Hacker"_ blog on **WordPress**.
+After putting them all into the _/etc/hosts_ file and browsing to all domains, the domain _www[.]rentahacker.htb_ runs a _"Rent-A-Hacker"_ blog on **WordPress**.
 
 The domain _sec03.rentahacker.htb_ shows an image of a person with a Guy Fawkes mask and the text _"Owned by 31173 HAXXOR team!!!"_.
 It looks like that this site is hacked and defaced, so the hackable part of the website has to be searched to gain access to it.
@@ -310,19 +310,11 @@ GET /shell.php?hidden=cat+/etc/iptables/rules.v4
 -A INPUT -p tcp -m tcp --dport 22 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 25 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 43 -j ACCEPT
--A INPUT -p tcp -m tcp --dport 53 -j ACCEPT
 -A INPUT -p udp -m udp --dport 53 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -j REJECT --reject-with icmp-port-unreachable
-
--A OUTPUT -p icmp -j ACCEPT
--A OUTPUT -p udp -m udp --dport 53 -m u32 --u32 "0x1e=0x1000000:0x1ffffff" -j ACCEPT
+(...)
 -A OUTPUT -p tcp -m tcp --sport 20 -j ACCEPT
--A OUTPUT -o lo -j ACCEPT
--A OUTPUT -p tcp -m state --state ESTABLISHED -j ACCEPT
--A OUTPUT -p udp -m state --state ESTABLISHED -j ACCEPT
--A OUTPUT -j REJECT --reject-with icmp-port-unreachable
+(...)
 ```
 
 It drops every packet on input and output in the beginning of the rules.
@@ -431,7 +423,7 @@ cat ib01c01.access.log | grep "Mozilla/4.0"
 10.0.2.19 - - [10/Dec/2018:21:52:22 +0100] "POST /admin530o6uisg/index.php?controller=AdminCustomerThreads&token=8d8e4db864318da7655c7f2d8175815f HTTP/1.1" 200 90999 "-" "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)"
 ```
 
-It looks like the attacker got access by doing something on _www.pwnhats.htb_ first and the value _"1542582364810"_ is a good string to look out for in the PCAP file.
+It looks like the attacker got access by doing something on _www[.]pwnhats.htb_ first and the value _"1542582364810"_ is a good string to look out for in the PCAP file.
 
 - ib01c01_incident.pcap
 
@@ -448,7 +440,7 @@ ajax=1&token=&controller=AdminLogin&submitLogin=1&passwd=GetYouAH4t%21&email=pwn
 (...)
 ```
 
-There are credentials for the _www.pwnhats.htb_ website, but they don't work on any of the web login forms:
+There are credentials for the _www[.]pwnhats.htb_ website, but they don't work on any of the web login forms:
 ```
 Username: pwnhats@pwnhats.htb
 Password: GetYouAH4t!
