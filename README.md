@@ -54,6 +54,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 7th March 2020
   - OS: Windows
   - Tags: Cross-Site-Scripting (XSS), SQL Injection, Cross-Site-Request-Forgery (CSRF), Server Exploitation
+- [Scavenger](https://kyuu-ji.github.io/htb-write-up/scavenger/write-up-scavenger)
+  - Retired on 29th February 2020
+  - OS: Linux
+  - Tags: SQL Injection, Whois, DNS Zone Transfer, Log and PCAP Analysis, Rootkit Reversing
 - [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
   - Retired on 1st February 2020
   - OS: Windows

@@ -721,10 +721,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>Whois</li>
+        <li>DNS Zone Transfer</li>
+        <li>Log and PCAP Analysis</li>
+        <li>Rootkit Reversing</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
