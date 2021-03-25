@@ -78,6 +78,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 4th January 2020
   - OS: Linux
   - Tags: Gogs (Git), Searching through Code, HashiCorp Vault Token
+- [Wall](https://kyuu-ji.github.io/htb-write-up/wall/write-up-wall)
+  - Retired on 7th December 2019
+  - OS: Linux
+  - Tags: CVE (Centreon), Decompile Python Binary, Screen Vulnerability
 - [Heist](https://kyuu-ji.github.io/htb-write-up/heist/write-up-heist)
   - Retired on 30th November 2019
   - OS: Windows
