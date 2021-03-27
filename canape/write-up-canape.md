@@ -35,7 +35,7 @@ PORT   STATE SERVICE VERSION
 
 On the web page there is a custom developed "Simpsons Fan Site" where it is possible to submit a quote to the server:
 
-![Canape submit quote](https://kyuu-ji.github.io/htb-write-up/canape/canape_web-1.png)
+![Canape submit quote](canape_web-1.png)
 
 In the HTML source code is a comment that may be relevant:
 ```markdown

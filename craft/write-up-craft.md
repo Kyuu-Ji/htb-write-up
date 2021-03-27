@@ -67,11 +67,11 @@ After putting these hostnames into the _/etc/hosts_ file, they load successfully
 
 **Craft** API:
 
-![Craft API](https://kyuu-ji.github.io/htb-write-up/craft/craft_web-1.png)
+![Craft API](craft_web-1.png)
 
 **Gogs** self-hosted Git service:
 
-![Gogs service](https://kyuu-ji.github.io/htb-write-up/craft/craft_web-2.png)
+![Gogs service](craft_web-2.png)
 
 ### Checking Craft API
 
@@ -100,7 +100,7 @@ Explore --> Craft / craft-api
 
 In this repository there is one issue and in this issue is an API-Token that could be useful:
 
-![Repository issue](https://kyuu-ji.github.io/htb-write-up/craft/craft_web-3.png)
+![Repository issue](craft_web-3.png)
 
 ```markdown
 curl -H 'X-Craft-API-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoidXNlciIsImV4cCI6MTU0OTM4NTI0Mn0.-wW1aJkLQDOE-GP5pQd3z_BJTe2Uo0jJ_mQ238P5Dqw' -H "Content-Type: application/json" -k -X POST https://api.craft.htb/api/brew/ --data '{"name":"bullshit","brewer":"bullshit", "style": "bullshit", "abv": "15.0")}'

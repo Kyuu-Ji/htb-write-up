@@ -34,29 +34,29 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 This is what we see on the web page:
 
-![Web Page](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_webpage.png)
+![Web Page](lazy_webpage.png)
 
 When registering an user, the page just says that we are currently logged in as the user we used to register.
 Lets examine the cookies by login out first and then login back again and intercept the request with Burpsuite.
 
 On Burpsuite we send the request to the **Sequencer** tab to replay the login request multiple times.
 
-![Burpsuite Sequencer](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-1.png)
+![Burpsuite Sequencer](lazy_cookie-1.png)
 
 When clicking on _Analyze_ the capture gets summarized and we want to _Copy Tokens_ and put them in a file.
 
-![Burpsuite Sequencer](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-2.png)
+![Burpsuite Sequencer](lazy_cookie-2.png)
 
 The copied cookies vary from each other which means there is some kind of randomness in creating those.
 Assuming these are encrypted strings we will try to flip the bits on a user whose name is similar to _admin_ and by flipping the characters in the cookie we can become admin.
 
 So we register an user with a name close to _admin_ like _bdmin_ and send it to **Burpsuites Intruder** and make sure the position is on the authentication Cookie:
 
-![Burpsuite Intruder](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-3.png)
+![Burpsuite Intruder](lazy_cookie-3.png)
 
 As the Payload we will use the _Bit flipper_.
 
-![Burpsuite bit flipper](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_cookie-4.png)
+![Burpsuite bit flipper](lazy_cookie-4.png)
 
 The responses with the length 1351 all show different user names in the Response like _"gdmin, Idmin, kdmin"_ and so on.
 If we wait long enough it will get the result for _admin_ back, too. It has a length of 1499.
@@ -64,7 +64,7 @@ If we wait long enough it will get the result for _admin_ back, too. It has a le
 
 Now we can input this cookie into the browser with any plugin, refresh the page and we see an admin panel:
 
-![Admin panel](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_webpage-admin.png)
+![Admin panel](lazy_webpage-admin.png)
 
 On this page we can download a SSH key.
 
@@ -93,9 +93,9 @@ Breakpoint 1 at 0x8048420
 
 After running it we see that it calls _system_ and right before that it loads a variable into ESP which is and argument for _system_.
 
-![Binary Analysis 1](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_privesc-1.png)
+![Binary Analysis](lazy_privesc-1.png)
 
-![Binary Analysis 1](https://kyuu-ji.github.io/htb-write-up/lazy/lazy_privesc-2.png)
+![Binary Analysis](lazy_privesc-2.png)
 
 The command `cat` gets executed from _/bin/cat_. When we create our own **cat** command in a path that gets checked before, we can exploit this:
 ```markdown

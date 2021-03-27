@@ -45,7 +45,7 @@ Looking at the HTML source code of that page, it has a comment that says:
 
 It is possible to log in with the username _admin_ and the found password and it forwards us to a message:
 
-![Web message](https://kyuu-ji.github.io/htb-write-up/calamity/calamity_web-1.png)
+![Web message](calamity_web-1.png)
 
 This page parses HTML code and if it gets PHP code it also works.
 ```markdown
@@ -121,11 +121,11 @@ Lets do this with any audio editing program like **Audacity**.
 
 Open _rick.wav_ and import _recov.wav_:
 
-![Audacity open files](https://kyuu-ji.github.io/htb-write-up/calamity/calamity_audacity-1.png)
+![Audacity open files](calamity_audacity-1.png)
 
 Highlighting one of the waves and inverting them against each other:
 
-![Audacity invert waves](https://kyuu-ji.github.io/htb-write-up/calamity/calamity_audacity-2.png)
+![Audacity invert waves](calamity_audacity-2.png)
 
 After listening to it, it starts with some numbers and at 16 seconds to the end we hear:
 ```markdown

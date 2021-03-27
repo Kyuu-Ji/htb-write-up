@@ -57,7 +57,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 On the web page there is a login form and the possibility to sign up:
 
-![Login page](https://kyuu-ji.github.io/htb-write-up/secnotes/secnotes_web-1.png)
+![Login page](secnotes_web-1.png)
 
 When trying out some usernames and passwords it says _"No account found with that username."_ but after creating a user and sending wrong credentials it does not show this message, which means this is a way to enumerate usernames.
 
@@ -68,7 +68,7 @@ wfuzz -w /usr/share/seclists/Usernames/Names/names.txt -d "username=FUZZ&passwor
 
 It finds one username called _tyler_. After logging in with our created user, it shows that name also on the top in a message:
 
-![Logged in as our user](https://kyuu-ji.github.io/htb-write-up/secnotes/secnotes_web-2.png)
+![Logged in as our user](secnotes_web-2.png)
 
 The feature _"New Note"_ lets us create a note and when trying to create it with HTML tags, it gets parsed:
 ```markdown
@@ -96,7 +96,7 @@ GET /change_pass.php?password=Pass1243&confirm_password=Pass1234&submit=submit
 
 The feature _"Contact Us"_ allows us to input any message text and allegedly sends it to _tyler_:
 
-![Contact form](https://kyuu-ji.github.io/htb-write-up/secnotes/secnotes_web-3.png)
+![Contact form](secnotes_web-3.png)
 
 Lets start a listener on any port and send a link with my IP, to see if he follows links:
 ```markdown
@@ -120,7 +120,7 @@ http://10.10.10.97/change_pass.php?password=Pass123&confirm_password=Pass123&sub
 
 After its reviewed, the password of _tyler_ changes to _"Pass123"_ and login as him works:
 
-![Homepage of tyler](https://kyuu-ji.github.io/htb-write-up/secnotes/secnotes_web-4.png)
+![Homepage of tyler](secnotes_web-4.png)
 
 One of the notes look like an SMB path and credentials:
 ```markdown

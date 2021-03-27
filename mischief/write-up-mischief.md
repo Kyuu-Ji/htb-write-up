@@ -143,12 +143,12 @@ http://[dead:beef::250:56ff:feb9:b8fb]
 
 On the web page it says _"Command Execution Panel"_ as the title and there is a button to _Login_.
 
-![Login page](https://kyuu-ji.github.io/htb-write-up/mischief/mischief_web-1.png)
+![Login page](mischief_web-1.png)
 
 The credentials don't work as they are, but after guessing some common usernames, the second password _"trickeryanddeceit"_ works with the username _administrator_ and logs us in.
 Now it looks like a tool to execute system commands:
 
-![Command Execution Panel](https://kyuu-ji.github.io/htb-write-up/mischief/mischief_web-2.png)
+![Command Execution Panel](mischief_web-2.png)
 
 Pinging localhost gets executed successfully and also pinging our local client works successfully.
 When putting a semicolon after the ping, it is possible to execute other commands and shows the output on the screen:
@@ -156,7 +156,7 @@ When putting a semicolon after the ping, it is possible to execute other command
 whoami; echo
 ```
 
-![Command Execution](https://kyuu-ji.github.io/htb-write-up/mischief/mischief_web-3.png)
+![Command Execution](mischief_web-3.png)
 
 It says that there is a file called _credentials_ in the home directory, so lets read that:
 ```markdown

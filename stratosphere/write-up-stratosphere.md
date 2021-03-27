@@ -37,12 +37,12 @@ It finds the following directories:
 - /Monitoring
   - Forwards to _/Monitoring/example/Welcome.action_ and there is a button to _"Sign On"_ or _"Register"_.
 
-![Monitoring page](https://kyuu-ji.github.io/htb-write-up/stratosphere/stratosphere_web-1.png)
+![Monitoring page](stratosphere_web-1.png)
 
 The button _Register_ forwards to _/Monitoring/example/Register.action_ but there is only on sentence that it is under construction.
 The button _Sign On_ forwards to _/Monitoring/example/Login_input.action_ where it is possible to input an username and a password.
 
-![Sign on page](https://kyuu-ji.github.io/htb-write-up/stratosphere/stratosphere_web-2.png)
+![Sign on page](stratosphere_web-2.png)
 
 This _.action_ extension is mostly used in [Apache Struts](https://struts.apache.org/core-developers/action-configuration.html) and are used to determine how to process requests.
 

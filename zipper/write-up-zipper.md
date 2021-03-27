@@ -38,12 +38,12 @@ gobuster -u 10.10.10.108 dir -w /usr/share/wordlists/dirbuster/directory-list-2.
 
 It finds _/zabbix_ that forwards to the login page of the open-source monitoring system **Zabbix**:
 
-![Zabbix login](https://kyuu-ji.github.io/htb-write-up/zipper/zipper_web-1.png)
+![Zabbix login](zipper_web-1.png)
 
 There is an option to _sign in as guest_ to get some restricted access to the platform.
 The footer shows that it is running **Zabbix version 3.0.21** and on _Latest data_ it shows the checks it is doing on the devices and there are potential hostnames and usernames:
 
-![Zabbix latest data](https://kyuu-ji.github.io/htb-write-up/zipper/zipper_web-2.png)
+![Zabbix latest data](zipper_web-2.png)
 
 When trying to log in with _zipper:zipper, zabbix:zabbix, zapper:zapper_ only the _zapper_ user gives a different message:
 
@@ -73,7 +73,7 @@ hostid = '10105'        ### Zabbix hostid
 
 The _hostid_ can be found by running one of the scripts and it gets shown in the URL of the results:
 
-![Zabbix getting HostID](https://kyuu-ji.github.io/htb-write-up/zipper/zipper_web-3.png)
+![Zabbix getting HostID](zipper_web-3.png)
 
 Running the exploit:
 ```markdown
@@ -144,7 +144,7 @@ Which means, that the credentials for the Zabbix admin interface is the username
 
 On the admin interface it is possible to see the enabled services for the clients and it looks like our target _zipper_ has the **Zabbix Agent** installed:
 
-![Enabled services](https://kyuu-ji.github.io/htb-write-up/zipper/zipper_web-4.png)
+![Enabled services](zipper_web-4.png)
 
 By default this service listens on port 10050 or 10051, so lets test for the ports from the _zabbix_ server:
 ```markdown

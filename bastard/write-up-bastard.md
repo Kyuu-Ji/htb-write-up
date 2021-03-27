@@ -94,7 +94,7 @@ It outputs that we are _NT Authority\iusr_.
 
 Now we either have command execution with this method or use the token in the file _session.json_ and replace the cookies with these values and get logged in as Admin:
 
-![Admin page](https://kyuu-ji.github.io/htb-write-up/bastard/bastard_adminpage.png)
+![Admin page](bastard_adminpage.png)
 
 ### Command Execution on HTTP
 

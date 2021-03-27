@@ -33,7 +33,7 @@ Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
 
 On the web page there is an application where it is possible to test local PHP files:
 
-![Web page](https://kyuu-ji.github.io/htb-write-up/poison/poison_web-1.png)
+![Web page](poison_web-1.png)
 
 So lets test the given PHP files and the _/listfiles.php_ seems to list files in the working directory:
 

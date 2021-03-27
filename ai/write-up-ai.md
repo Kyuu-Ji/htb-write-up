@@ -40,7 +40,7 @@ Our developers working 24/7 to make it happen and we progressed well with audio 
 
 This AI can be found on the menu that forwards to _ai.php_ and allows to upload and process _wav_ files:
 
-![Upload wav file](https://kyuu-ji.github.io/htb-write-up/ai/ai_web-1.png)
+![Upload wav file](ai_web-1.png)
 
 After uploading a PHP file, it seems to not get blocked, but does not show any output:
 ```
@@ -60,7 +60,7 @@ It finds the following directories and PHP files:
 - _/intelligence.php_
   - Shows how the Speech Recognition API processes user input:
 
-![Speech Recognition API process](https://kyuu-ji.github.io/htb-write-up/ai/ai_web-2.png)
+![Speech Recognition API process](ai_web-2.png)
 
 These look like aliases for words and as it expects audio _wav_ files, it could be possible to execute code by sending words via a **Text-to-Speech** program.
 

@@ -19,13 +19,13 @@ nmap -sC -sV -o nmap/october.nmap 10.10.10.16
 ```markdown
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   1024 79:b1:35:b6:d1:25:12:a3:0c:b5:2e:36:9c:33:26:28 (DSA)
 |   2048 16:08:68:51:d1:7b:07:5a:34:66:0d:4c:d0:25:56:f5 (RSA)
 |   256 e3:97:a7:92:23:72:bf:1d:09:88:85:b6:6c:17:4e:85 (ECDSA)
 |_  256 89:85:90:98:20:bf:03:5d:35:7f:4a:a9:e1:1b:65:31 (ED25519)
 80/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))
-| http-methods: 
+| http-methods:
 |_  Potentially risky methods: PUT PATCH DELETE
 |_http-server-header: Apache/2.4.7 (Ubuntu)
 |_http-title: October CMS - Vanilla
@@ -36,7 +36,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 On the webpage we see a CMS called **October CMS** that seems to be up-to-date as the date on the lower bottom suggests and it uses the open-source forum software **Vanilla Forums**.
 
-![October CMS](https://kyuu-ji.github.io/htb-write-up/october/october_webpage.png)
+![October CMS](october_webpage.png)
 
 Lets look for hidden directories with _Gobuster_:
 ```markdown
@@ -59,7 +59,7 @@ Trying the default credentials **admin / admin** we get logged in.
 
 Now we can upload any PHP Webshell (mine listens on my IP and port 9001):
 
-![Uploading PHP Webshell](https://kyuu-ji.github.io/htb-write-up/october/october_webshell.png)
+![Uploading PHP Webshell](october_webshell.png)
 
 Browsing to the file starts a reverse shell on the box as the user www-data and we can read the user flag.
 
@@ -95,15 +95,15 @@ This is the proof that we need to exploit a _Buffer Overflow_ vulnerability.
 
 When analyzing the libraries we get the following output:
 ```markdown
-www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw 
+www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw
         linux-gate.so.1 =>  (0xb77c7000)
         libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb760d000)
         /lib/ld-linux.so.2 (0x80034000)
-www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw 
+www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw
         linux-gate.so.1 =>  (0xb7795000)
         libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb75db000)
         /lib/ld-linux.so.2 (0x800e9000)
-www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw 
+www-data@october:/home/harry$ ldd /usr/local/bin/ovrflw
         linux-gate.so.1 =>  (0xb77cc000)
         libc.so.6 => /lib/i386-linux-gnu/libc.so.6 (0xb7612000)
         /lib/ld-linux.so.2 (0x8005d000)
@@ -136,15 +136,15 @@ gdb-peda$ b main
 Breakpoint 1 at 0x8048480
 ```
 
-![Checksec](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_1.png)
+![Checksec](october_gdb_1.png)
 
 As we can see with `checksec` the **NX (No eXecute)** is enabled which is **Data Execution Prevention (DEP)** so we can't execute shellcode and jump to it.
 
 Now we execute it with the unique pattern we created:
 
-![Running the binary](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_2.png)
+![Running the binary](october_gdb_2.png)
 
-![Continuation](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_3.png)
+![Continuation](october_gdb_3.png)
 
 The program crashes at 0x64413764.
 
@@ -170,7 +170,7 @@ print(buf)
 
 After running the binary with this it breaks at 0xd3adc0d3 as we expected:
 
-![Testing Buffer Overflow](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_4.png)
+![Testing Buffer Overflow](october_gdb_4.png)
 
 We are going to do a **Return-to-libc Attack** because of the DEP protection so we need to drop the memory location to the system syscall and have that point to a string we control to execute the code. So we are never executing code off the stack but let a instruction appear out of nowhere.
 
@@ -182,7 +182,7 @@ Before we can write a script we need to following information
 - Memory address of /bin/sh
   - `gdb-peda$ searchmem /bin/sh`
 
-![Collecting memory addresses](https://kyuu-ji.github.io/htb-write-up/october/october_gdb_5.png)
+![Collecting memory addresses](october_gdb_5.png)
 
 Now we have enough information to write a script to exploit this. This script is in this folder called **october-bof.py**.
 ```markdown

@@ -70,7 +70,7 @@ This is a test string
 
 After sending the request and looking at the PHP variables, we see that the data is included in there:
 
-![Phpinfo variables](https://kyuu-ji.github.io/htb-write-up/poison/poison_phpinfo-1.png)
+![Phpinfo variables](poison_phpinfo-1.png)
 
 The cached file has the name _/tmp/phpNdOnxX_ and will be there for a short time.
 To access the cached file, we will use the script from the paper that will try to win a Race Condition. It can also be found in the [PayloadAllTheThings GitHub repository](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/File%20Inclusion/phpinfolfi.py).

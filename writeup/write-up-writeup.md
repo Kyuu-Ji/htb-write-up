@@ -34,7 +34,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 On the web page there is text with some ASCII art that may give us some hints:
 
-![Writeup Web Page](https://kyuu-ji.github.io/htb-write-up/writeup/writeup_page-1.png)
+![Writeup Web Page](writeup_page-1.png)
 
 - Potential DoS protection against 40x errors
 - Potential user: jkr@writeup.htb
@@ -42,7 +42,7 @@ On the web page there is text with some ASCII art that may give us some hints:
 As in the results of the Nmap scan stated, there is a _robots.txt_ file that tells to disallow bots for the _/writeup/_ folder.
 When browsing to that path there are writeups for HackTheBox machines:
 
-![Writeup Web Page 2](https://kyuu-ji.github.io/htb-write-up/writeup/writeup_page-2.png)
+![Writeup Web Page 2](writeup_page-2.png)
 
 The links are working with PHP in the background.
 In the source code of the page, we see it was made with an Open-Source CMS called **CMS Made Simple** which source code can be found in the [Subversion Repository](http://svn.cmsmadesimple.org/svn/cmsmadesimple/trunk/).

@@ -54,7 +54,7 @@ Found files and directories:
 - _admin.php_
   - Shows a login prompt
 
-![Login prompt on admin.php](https://kyuu-ji.github.io/htb-write-up/vault/vault_web-1.png)
+![Login prompt on admin.php](vault_web-1.png)
 
 - _/design_
   - 403 Forbidden
@@ -71,7 +71,7 @@ Found files and directories:
   - Button to _/changelogo.php_
   - Upload feature on _changelogo.php_
 
-![Upload feature on changelogo.php](https://kyuu-ji.github.io/htb-write-up/vault/vault_web-2.png)
+![Upload feature on changelogo.php](vault_web-2.png)
 
 Searching in _/uploads_:
 ```markdown
@@ -203,7 +203,7 @@ ssh> -L 8001:192.168.122.4:80
 
 The HTTP service of 192.168.122.4 is now accessible on my localhost on port 8001:
 
-![Web page on 192.168.122.4](https://kyuu-ji.github.io/htb-write-up/vault/vault_web-3.png)
+![Web page on 192.168.122.4](vault_web-3.png)
 
 ### Checking HTTP (Port 80) on 192.168.122.4
 
@@ -211,7 +211,7 @@ The first option _"Click here to modify your DNS Settings"_ forwards to _/dns-co
 
 The second option _"Click here to test your VPN Configuration"_ forwards to _/vpnconfig.php_ and is a feature to upload and execute a **.ovpn** file:
 
-![VPN Configurator](https://kyuu-ji.github.io/htb-write-up/vault/vault_web-4.png)
+![VPN Configurator](vault_web-4.png)
 
 In this [article from Tenable](https://medium.com/tenable-techblog/reverse-shell-from-an-openvpn-configuration-file-73fd8b1d38da), it is explained how to execute commands and get a reverse shell via **OpenVPN**.
 

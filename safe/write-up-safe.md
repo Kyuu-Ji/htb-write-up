@@ -68,7 +68,7 @@ I use **gdb** and **radare2** to analyze this.
 
 When looking at the _main function_, we can immediately see that it is vulnerable to a **Buffer Overflow** as it uses the `gets` and `puts` functions.
 
-![Main function](https://kyuu-ji.github.io/htb-write-up/safe/safe_binary-1.png)
+![Main function](safe_binary-1.png)
 
 So lets execute this with a long string to overflow it on **gdb with gef installed**:
 ```markdown
@@ -97,7 +97,7 @@ python -c 'print("A"\*120 + "B"\*8 + "C"\*8)
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBCCCCCCCC
 ```
 
-![Register of RSP](https://kyuu-ji.github.io/htb-write-up/safe/safe_binary-2.png)
+![Register of RSP](safe_binary-2.png)
 
 To write a script to exploit this, we need the starting address of the main function, which is at _0x40115f_.
 Our goal is to hijack the system call `uptime` that we saw earlier, by putting our own string inside of _RDI_.

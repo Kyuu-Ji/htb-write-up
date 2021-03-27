@@ -83,7 +83,7 @@ On the web page it displays the default Apache2 Ubuntu installation page.
 As we found out, there is a domain name, we can browse to the web page with the domain name _bank.htb_ and we get a login page.
 This is called **Virtual Host Routing**.
 
-![Bank login page](https://kyuu-ji.github.io/htb-write-up/bank/bank_login.png)
+![Bank login page](bank_login.png)
 
 We use **Gobuster** to enumerate hidden paths on this page with the PHP extension:
 ```markdown
@@ -103,11 +103,11 @@ With Burpsuite it is possible to see the web pages that redirect us by changing 
 
 This is the index.php page:
 
-![Bank index page](https://kyuu-ji.github.io/htb-write-up/bank/bank_index.png)
+![Bank index page](bank_index.png)
 
 This is the support.php page:
 
-![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support-1.png)
+![Bank support page](bank_support-1.png)
 
 We can upload code on the support.php to get command execution on the box.
 
@@ -116,7 +116,7 @@ We can upload code on the support.php to get command execution on the box.
 
 The directory _balance-transfers_ has many of these files in it:
 
-![Bank balance-transfers page](https://kyuu-ji.github.io/htb-write-up/bank/bank_balance-transfers.png)
+![Bank balance-transfers page](bank_balance-transfers.png)
 
 There are around 1000 of these files. Looking at one of them they hold this content:
 ```markdown
@@ -166,14 +166,14 @@ When trying this credentials on the login page we get logged in.
 
 There is a _Support_ page where it is possible to upload files.
 
-![Bank support page](https://kyuu-ji.github.io/htb-write-up/bank/bank_support-2.png)
+![Bank support page](bank_support-2.png)
 
 The page allows images but doesn't allow PHP files to be uploaded. Looking at the source there is a comment that says:
 > [DEBUG] I added the file extension .htb to execute as php for debugging purposes only [DEBUG]
 
 So lets change the extension of our file to _.htb_ instead.
 
-![File upload](https://kyuu-ji.github.io/htb-write-up/bank/bank_file-upload.png)
+![File upload](bank_file-upload.png)
 
 The uploaded files are in the center of the support page and clicking on the attachment to browse to that file. Now we can execute commands:
 ```markdown

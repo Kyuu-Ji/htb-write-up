@@ -62,7 +62,7 @@ In the HTML source code, there is a mistake about the absolute URLs with wrong s
 
 They are all missing a slash (/) character in _"http:/"_. To load the page correctly, it is possible to configure a local proxy like **Burpsuite** to replace this string with the correct syntax:
 
-![Burpsuite match and replace](https://kyuu-ji.github.io/htb-write-up/tartarsauce/tartarsauce_web-1.png)
+![Burpsuite match and replace](tartarsauce_web-1.png)
 
 After refreshing the web page, it loads the scripts and looks better.
 The tool **Wpscan** is practical, to scan WordPress pages, plugins, etc. for vulnerabilities:

@@ -49,7 +49,7 @@ Checking the SSL certificate we get a potential email address _admin@europacorp.
 Browsing to the sites on HTTP and HTTPS with the hostname _europacorp.htb_ it still shows the default Apache2 installation page.
 The site _admin-portal.europacorp.htb_ on HTTPS shows a login page.
 
-![Login Page](https://kyuu-ji.github.io/htb-write-up/europa/europa_login.png)
+![Login Page](europa_login.png)
 
 When typing in an email address it filters for symbols, so lets try a simple **SQL Injection**:
 ```markdown
@@ -58,11 +58,11 @@ email=admin%40europacorp.htb'-- -&password=test123
 
 This gets us logged in on the page and now we see some kind of dashboard:
 
-![Dashboard after login](https://kyuu-ji.github.io/htb-write-up/europa/europa_dashboard.png)
+![Dashboard after login](europa_dashboard.png)
 
 All buttons and links do nothing, except for **Tools** on the left side menu that forwards to some **OpenVPN Config Generator**:
 
-![Tools Page](https://kyuu-ji.github.io/htb-write-up/europa/europa_tools.png)
+![Tools Page](europa_tools.png)
 
 Any string that gets typed into the input field replaces the _"remote-addres":"ip_address"_ with that input.
 The request looks like this:

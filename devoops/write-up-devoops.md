@@ -50,7 +50,7 @@ gobuster -u http://10.10.10.91:5000 dir -w /usr/share/wordlists/dirbuster/direct
 
 It finds the _/upload_ directory where it is possible to upload files:
 
-![DevOops Upload page](https://kyuu-ji.github.io/htb-write-up/devoops/devoops_web-1.png)
+![DevOops Upload page](devoops_web-1.png)
 
 Lets send the requests to a proxy tool like **Burpsuite** to analyze this functionality.
 When uploading a text file it doesn't show any special response, so lets send something with the XML elements:

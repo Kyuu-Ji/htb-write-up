@@ -34,7 +34,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 On the web page there is the **Magento Demo Store** installed. This application is an Open-Source e-commerce platform written in PHP to set up stores.
 The date of the copyright logo on the bottom tells, that this installation is from 2014.
 
-![Magento Shop](https://kyuu-ji.github.io/htb-write-up/swagshop/swagshop_magento-1.png)
+![Magento Shop](swagshop_magento-1.png)
 
 With the tool [Magescan](https://github.com/steverobbins/magescan) it is possible to scan Magento sites for versions and vulnerabilities.
 ```markdown
@@ -48,7 +48,7 @@ php magescan.phar scan:all 10.10.10.140
 
 The Admin Login Panel can be found under _/index.php/admin_.
 
-![Magento Admin Login](https://kyuu-ji.github.io/htb-write-up/swagshop/swagshop_magento-2.png)
+![Magento Admin Login](swagshop_magento-2.png)
 
 Lets look for exploits:
 ```markdown

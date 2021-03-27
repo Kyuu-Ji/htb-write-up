@@ -56,7 +56,7 @@ gobuster -u http://10.10.10.81 dir -w /usr/share/wordlists/dirbuster/directory-l
 
 It finds the directory _/forum_ which is the site from before and the directory _/monitor_ with a login form:
 
-![Monitor login form](https://kyuu-ji.github.io/htb-write-up/bart/bart_web-1.png)
+![Monitor login form](bart_web-1.png)
 
 ### Getting Access to Development Tools
 
@@ -71,11 +71,11 @@ The login wants to forward to _monitor.bart.htb_, so also putting that into the 
 
 On _Servers_ there is one entry for _internal-01.bart.htb_ that has to be put into the _/etc/hosts_ file to get to it:
 
-![Server monitor](https://kyuu-ji.github.io/htb-write-up/barts/bart_web-2.png)
+![Server monitor](bart_web-2.png)
 
 It forwards to another login form with the title _"[DEV] Internal Chat Login Form"_:
 
-![Chat login form](https://kyuu-ji.github.io/htb-write-up/bart/bart_web-3.png)
+![Chat login form](bart_web-3.png)
 
 The default credentials from before don't work, but luckily this is not protected with a **CSRF-token** and can be brute-forced with **Hydra**:
 ```markdown
@@ -87,7 +87,7 @@ After a while the password for the username _harvey_ in this login form is found
 
 It forwards to a chat program:
 
-![Chat application](https://kyuu-ji.github.io/htb-write-up/bart/bart_web-4.png)
+![Chat application](bart_web-4.png)
 
 In the HTML source is a path in which this program seems to log into:
 ```markdown

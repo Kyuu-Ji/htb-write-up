@@ -27,7 +27,7 @@ PORT   STATE SERVICE VERSION
 
 On the web page there is an article about a tool called **phpbash** and that it was developed on the same server.
 
-![Phpbash article](https://kyuu-ji.github.io/htb-write-up/bashed/bashed_web-1.png)
+![Phpbash article](bashed_web-1.png)
 
 So lets use **Gobuster** to look for hidden paths and find this tool:
 ```markdown
@@ -41,7 +41,7 @@ It finds the following paths that could be interesting:
 
 In the _/dev_ directory is the tool **phpbash.php** that starts a web shell in the browser:
 
-![Web shell](https://kyuu-ji.github.io/htb-write-up/bashed/bashed_web-2.png)
+![Web shell](bashed_web-2.png)
 
 Now we can start a reverse shell to our local client.
 

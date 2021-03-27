@@ -89,7 +89,7 @@ f0e2e750791171b0391b682ec35835bd6a5c3f7c8d1d0191451ec77b4d75f240: spongebob
 
 Since _myP14ceAdm1nAcc0uNT_ is an admin account, we can log in with that user on the login page.
 
-![Login with admin account](https://kyuu-ji.github.io/htb-write-up/node/node_web-1.png)
+![Login with admin account](node_web-1.png)
 
 The only option on this page is to download a _"myplace.backup"_ file that is just a text file with a lot of Base64-encoded content.
 
@@ -195,7 +195,7 @@ When executing, it seemingly does nothing, so we should upload it to our local c
 
 This binary needs three parameters or else it exits:
 
-![Binary analysis](https://kyuu-ji.github.io/htb-write-up/node/node_binary-1.png)
+![Binary analysis](node_binary-1.png)
 
 Giving it three parameters and trace the system calls:
 ```markdown

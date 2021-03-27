@@ -87,14 +87,14 @@ It doesn't prompt us for a password anymore and shows a different Squid error me
 
 If we browse to _127.0.0.1_, which is the local address of the proxy, there is a page:
 
-![Web Page](https://kyuu-ji.github.io/htb-write-up/joker/joker_webpage.png)
+![Web Page](joker_webpage.png)
 
 To analyze web pages with **Burpsuite** over another Proxy we need to configure an **Upstream Proxy Server**:
 ```markdown
 User options --> Connections --> Upstream Proxy Servers --> Add
 ```
 
-![Burpsuite Upstream Proxy](https://kyuu-ji.github.io/htb-write-up/joker/joker_burpsuite-proxy.png)
+![Burpsuite Upstream Proxy](joker_burpsuite-proxy.png)
 
 The **Shorty** application is a rabbit hole and not vulnerable. The web page needs to get enumerated more by looking for hidden paths.
 First we need to create another **Proxy Listener in Burpsuite**:
@@ -123,7 +123,7 @@ This will find the following paths:
 
 The _/console_ page seems interesting:
 
-![Web console](https://kyuu-ji.github.io/htb-write-up/joker/joker_console.png)
+![Web console](joker_console.png)
 
 ### Getting a reverse shell
 

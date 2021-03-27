@@ -49,7 +49,7 @@ Host script results:
 
 On the web page on port 80 there is some kind of search engine:
 
-![Ask Jeeves search engine](https://kyuu-ji.github.io/htb-write-up/jeeves/jeeves_web-1.png)
+![Ask Jeeves search engine](jeeves_web-1.png)
 
 When searching for anything it redirects to _/error.html_ which looks like a Microsoft SQL Server error message but is just an image.
 This is a rabbit hole.
@@ -69,7 +69,7 @@ As we have full control over Jenkins, there are several ways to get code executi
 Manage Jenkins --> Script Console
 ```
 
-![Ask Jeeves search engine](https://kyuu-ji.github.io/htb-write-up/jeeves/jeeves_jenkins-1.png)
+![Ask Jeeves search engine](jeeves_jenkins-1.png)
 
 In here it is possible to execute **Groovy Script** so lets test out code execution with that:
 ```markdown

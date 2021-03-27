@@ -116,7 +116,7 @@ Based on the open ports, this box is an **Active Directory domain controller**.
 
 On this web page there is some kind of blog which is developed with an open-source CMS called **Orchard** that is a _multi-tenant application framework and CMS for ASP.NET Core_.
 
-![Orchard as CMS](https://kyuu-ji.github.io/htb-write-up/mantis/mantis_web-1.png)
+![Orchard as CMS](mantis_web-1.png)
 
 The software looks updated and there is no hidden information.
 
@@ -166,11 +166,11 @@ This looks like the password for the MS SQL service.
 As the notes from before said, the user for MS SQL that was created is called _admin_.
 To authenticate to the SQL service I will use the GUI tool **dbeaver**.
 
-![Connecting to database](https://kyuu-ji.github.io/htb-write-up/mantis/mantis_database-1.png)
+![Connecting to database](mantis_database-1.png)
 
 When searching for _"User"_ it finds a user database with usernames and passwords:
 
-![Credentials in database](https://kyuu-ji.github.io/htb-write-up/mantis/mantis_database-2.png)
+![Credentials in database](mantis_database-2.png)
 
 - Username:james@htb.local
   - Password: J@m3s_P@ssW0rd!

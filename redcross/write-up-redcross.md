@@ -54,7 +54,7 @@ In the SSL certificate is an email address, that could be a potential username:
 
 The title of the web page is _"RedCross Messaging Intranet"_ with a login form and it seems to be a custom developed website.
 
-![RedCross Messaging Intranet](https://kyuu-ji.github.io/htb-write-up/redcross/redcross_web-1.png)
+![RedCross Messaging Intranet](redcross_web-1.png)
 
 The current directory _?page=login_ is actually _index.php_ that includes other PHP files.
 In this case the **Burpsuite Spider** found _/pages/actions.php_ and _index.php_ is also in this directory.
@@ -109,7 +109,7 @@ It’s very important to follow this rules to get the account information as fas
 After requesting as it is described, it shows a message that contains temporary credentials as _guest:guest_ while my request is processed.
 The credentials  of _guest_ work and logs us into the system:
 
-![Login with guest](https://kyuu-ji.github.io/htb-write-up/redcross/redcross_web-2.png)
+![Login with guest](redcross_web-2.png)
 
 Input on the _UserID_ errors out when using a _single quote_ which means there is some kind of **SQL Injection** vulnerability in this function:
 ```
@@ -220,7 +220,7 @@ The messages say, that there are problems with the _"Admin webpanel"_ which is t
 
 On _admin.redcross.htb_ is a login form to the IT Admin panel:
 
-![IT Admin panel](https://kyuu-ji.github.io/htb-write-up/redcross/redcross_web-3.png)
+![IT Admin panel](redcross_web-3.png)
 
 No found credentials work on the login page, but the password of _charles_ could be a hint to do something with **Cookies**.
 By copying the current **PHPSESSID cookie** of _charles_ and using them on the _admin.redcross.htb_ page, it logs us in directly into the web panel.

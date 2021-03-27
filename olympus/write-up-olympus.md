@@ -77,7 +77,7 @@ Host: 10.10.10.83
 This doesn't show any response but in the Xdebug extension, it shows the whole script from the web page.
 I will set a breakpoint on line 20 and append a test string to it:
 
-![Xdebug Test](https://kyuu-ji.github.io/htb-write-up/olympus/olympus_xdebug-1.png)
+![Xdebug Test](olympus_xdebug-1.png)
 
 After changing the variable, click _Run_ again and **Burpsuite** will show the added string, which means it is possible to change contents on the page.
 Lets try code execution by sending a `ping` command:

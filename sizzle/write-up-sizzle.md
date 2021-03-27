@@ -20,15 +20,15 @@ nmap -sC -sV -o nmap/sizzle.nmap 10.10.10.103
 PORT     STATE SERVICE       VERSION
 21/tcp   open  ftp           Microsoft ftpd
 |_ftp-anon: Anonymous FTP login allowed (FTP code 230)
-| ftp-syst: 
+| ftp-syst:
 |_  SYST: Windows_NT
 53/tcp   open  domain?
-| fingerprint-strings: 
-|   DNSVersionBindReqTCP: 
+| fingerprint-strings:
+|   DNSVersionBindReqTCP:
 |     version
 |_    bind
 80/tcp   open  http          Microsoft IIS httpd 10.0
-| http-methods: 
+| http-methods:
 |_  Potentially risky methods: TRACE
 |_http-server-header: Microsoft-IIS/10.0
 |_http-title: Site doesn't have a title (text/html).
@@ -41,7 +41,7 @@ PORT     STATE SERVICE       VERSION
 |_Not valid after:  2020-10-11T17:07:17
 |_ssl-date: 2019-10-12T17:21:36+00:00; +1s from scanner time.
 443/tcp  open  ssl/http      Microsoft IIS httpd 10.0
-| http-methods: 
+| http-methods:
 |_  Potentially risky methods: TRACE
 |_http-server-header: Microsoft-IIS/10.0
 |_http-title: Site doesn't have a title (text/html).
@@ -49,7 +49,7 @@ PORT     STATE SERVICE       VERSION
 | Not valid before: 2018-07-03T17:58:55
 |_Not valid after:  2020-07-02T17:58:55
 |_ssl-date: 2019-10-12T17:21:35+00:00; 0s from scanner time.
-| tls-alpn: 
+| tls-alpn:
 |   h2
 |_  http/1.1
 445/tcp  open  microsoft-ds?
@@ -186,7 +186,7 @@ The only share we can read is _Department Shares_ so lets see what we find there
 smbclient -N '//10.10.10.103/Department Shares'
 ```
 
-![Folders in the share](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_smb-shares.png)
+![Folders in the share](sizzle_smb-shares.png)
 
 There are many folders of different departments so I will mount this share locally for easy browsing:
 ```markdown
@@ -314,13 +314,13 @@ openssl req -new -key amanda.key -out amanda.csr
 
 Now we copy the contents of _amanda.csr_ and let it sign from the CA:
 
-![Request a certificate](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_adcs_1.png)
+![Request a certificate](sizzle_adcs_1.png)
 
-![Advanced certificate request](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_adcs_2.png)
+![Advanced certificate request](sizzle_adcs_2.png)
 
-![Paste contents of CSR](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_adcs_3.png)
+![Paste contents of CSR](sizzle_adcs_3.png)
 
-![Download certificate as Base64-decoded file](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_adcs_4.png)
+![Download certificate as Base64-decoded file](sizzle_adcs_4.png)
 
 We now have a certificate that is signed by the CA using the _amanda_ user. Verifying this:
 ```markdown
@@ -345,7 +345,7 @@ Certificate:
 ### Using Windows Powershell Remoting (Port 5985)
 
 As the full TCP port scan showed the ports 5985 and 5986 are open we will use these services for **Windows Powershell Remoting**.
-We will use a modified version of this [WinRM Ruby script](https://github.com/Alamot/code-snippets/blob/master/winrm/winrm_shell.rb) that allows us to start a shell on the box. 
+We will use a modified version of this [WinRM Ruby script](https://github.com/Alamot/code-snippets/blob/master/winrm/winrm_shell.rb) that allows us to start a shell on the box.
 
 The modified script can be found in this folder with the name _psremote.rb_ in which the authentication method will be with the certificate that we created before.
 
@@ -386,29 +386,29 @@ After that we get a web server on localhost on port 7443 thats our C2 framework.
 
 This is the Covenant Dashboard:
 
-![Covenant Dashboard](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-dashboard.png)
+![Covenant Dashboard](sizzle_cv-dashboard.png)
 
 Starting a Listener:
 
-![Covenant create Listener](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-listener.png)
+![Covenant create Listener](sizzle_cv-listener.png)
 
 Generating a Binary Launcher:
 
-![Covenant start Launcher](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-launcher.png)
+![Covenant start Launcher](sizzle_cv-launcher.png)
 
 After executing that launcher.exe we get a callback and this can be seen on Grunts:
 
-![Covenant start Grunt](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt.png)
+![Covenant start Grunt](sizzle_cv-grunt.png)
 
 Clicking on the Grunt name and then Interact:
 
-![Covenant interacting with Grunt](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt-2.png)
+![Covenant interacting with Grunt](sizzle_cv-grunt-2.png)
 
 With the command _help_ we can see every module we can execute like **Seatbelt, Rubeus, Mimikatz, Kerberoast** and much more.
 
 But we want to start the SharpHound.exe with the parameters `--CollectionMethod all,GPOLocalGroup,LoggedOn`:
 
-![Covenant executing SharpHound](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-grunt-3.png)
+![Covenant executing SharpHound](sizzle_cv-grunt-3.png)
 
 And now we can download the generated ZIP file and analyze it with BloodHound.
 
@@ -418,24 +418,24 @@ Looking at the query **Find Principals with DCSync Rights** we get information a
 
 The user _Mrlky_ has the _GetChangesAll_ and _GetChanges_ permission and these two are needed to do DS-Replication-Get-Changes to perform a DCSync attack:
 
-![Bloodhound DCSync rights](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_bh_1.png)
+![Bloodhound DCSync rights](sizzle_bh_1.png)
 
 If we look at the **Shortest Paths from Kerberoastable Users** we see that the user _Mrlky_ can do this, too:
 
-![Bloodhound Kerberoastable rights](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_bh_2.png)
+![Bloodhound Kerberoastable rights](sizzle_bh_2.png)
 
 
 ## Kerberoast and DCSync Attack
 
 So lets do a **Kerberoast** attack from Covenant. First we create a token so the authentication works and then the module to Rubeus Kerberoast:
 
-![Covenant MakeToken](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-maketoken.png)
+![Covenant MakeToken](sizzle_cv-maketoken.png)
 
-![Covenant Rubeus Kerberoast](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-kerberoast.png)
+![Covenant Rubeus Kerberoast](sizzle_cv-kerberoast.png)
 
 And we get a TGS ticket for the user _Mrlky_:
 ```markdown
-$krb5tgs$23$*mrlky$HTB.LOCAL$http/sizzle*$00EEDBE52D6CEFE97F3C75A89F3CAB73$779AF 6953FFC7F37CCE7A7247DDE3039336F59C99D8C763A4C1B1DA1D3AFFE71DC6CBF90171C811C58280 DA2CF72B54F293CE846E1EE2AF120B16A0BBBDD25F2D4A2781D9C97AF071F9FDFFA07DA2D48908D7 89CBCF5C883765347EAE76C09BB576B138C08DEBBFCBFAB84D1E8D4C5E68DE6C69EF41894F170B2F 095C664339655C34FE2C1487884602137974A0E239412504D5A4FC6217D0DE247422AD3AA6719A12 BABD90CA963807DBF6C797ABBBC1C3028085EAA0D2D66E0F1261079D8FAA873513108485CA66C5D0 CAA247E57FBCA400D97FCE6CF86C78C719EA639D8A81EFC1ED31CEF083B49EB9E1F6A48FC61A0B4C 1586A4E657F31D0061BA44F166173DBDDF01A7411CC61AF8025153EE6D5D348A9E0DA746F3827C9B 8C1E7A1FD328834EE794C31F0B8072E69F75A958B3B323632773C2B6B6FAA529D2909B4648018139 14C06F42B71626E55A01FA5376B1B3CF4E2C828285B582D9A568D340B8436610F0D4D3C6F9D42F25 DDBBA4D6E21729C87427D2DFB4F9AB31E68ED1947A01F4CE19C7C4659E39EA6301B67399EE76E785 322DFB7025DCE49F2B9CFEBC5D881A357030656F07E37B26628369293A9AB7BA3B9F4BA7BCB612D1 83FD4D98EACC32220AB2DADB665272BE52CD6BE56E302BA1888A7A9761DFE82BE40ED05B87966820 5E0F2A6CBB3C9B38A3E053715EB09F4111A01BA81105E51A0D782FB700013BDAB704C3136FD22C91 BBE6CAD72A8D0B29E5D7F4724303D0EECD311BE8C43DC97D7FC46D18410676807FF5F66419118119 2592AE0ACE56ABDBCAAADC109240FC5F09CB485C238FE0B80539CFA19D45127EE3759D8962BE93A9 169904A28212AFBFA61C0AB542468A9141BDDD801EC1673C43288755BB5B7E099C756E22DB884B82 96AB163EF076CD32C3F34C7BED21DD48DE33E717EFAB0DC1AACFD8B1A781148656DF7177EC480F3E 08D1D17E0DAC1F802867288149B385BF6B04BA5202280143233D339B12599A9E2A4CF94D194CBF38 7BB7362C0D080806B2F4455C287C8041B72DFBB70A477014F03A6C56A63981E2A391C5FB3AB030DE 27C968D92AE8871789CD8CBD88A1D32C96976A5EDB16D7F5D4070AE2BA4ED335398AACFEA7D0C104 C6681CFAB943665A4B48AB6813E636347FA13EAB81D774605D5F5F6C05BBDDAC3604DEC967A9E9BB F80C8F3BA45462DA0395144DB20ABD98627F4436B6531EA3ECAA0ADC16AB4D8132FB773627A3EE6C DAAFD240C466F341F45046A6CFE0C5F274D5667496913EDA352652C802DF55B032957B97D35D8754 CA2B8A27BA498D0189F4199DD6E9DB7D9B1AAA76283966D8968F034952F98C499BB5EFED0808F6D3 4D84231C92078E0E8FCA3DD26D5381B86475944B7A4C64B8DEBDD6B8401F223 
+$krb5tgs$23$*mrlky$HTB.LOCAL$http/sizzle*$00EEDBE52D6CEFE97F3C75A89F3CAB73$779AF 6953FFC7F37CCE7A7247DDE3039336F59C99D8C763A4C1B1DA1D3AFFE71DC6CBF90171C811C58280 DA2CF72B54F293CE846E1EE2AF120B16A0BBBDD25F2D4A2781D9C97AF071F9FDFFA07DA2D48908D7 89CBCF5C883765347EAE76C09BB576B138C08DEBBFCBFAB84D1E8D4C5E68DE6C69EF41894F170B2F 095C664339655C34FE2C1487884602137974A0E239412504D5A4FC6217D0DE247422AD3AA6719A12 BABD90CA963807DBF6C797ABBBC1C3028085EAA0D2D66E0F1261079D8FAA873513108485CA66C5D0 CAA247E57FBCA400D97FCE6CF86C78C719EA639D8A81EFC1ED31CEF083B49EB9E1F6A48FC61A0B4C 1586A4E657F31D0061BA44F166173DBDDF01A7411CC61AF8025153EE6D5D348A9E0DA746F3827C9B 8C1E7A1FD328834EE794C31F0B8072E69F75A958B3B323632773C2B6B6FAA529D2909B4648018139 14C06F42B71626E55A01FA5376B1B3CF4E2C828285B582D9A568D340B8436610F0D4D3C6F9D42F25 DDBBA4D6E21729C87427D2DFB4F9AB31E68ED1947A01F4CE19C7C4659E39EA6301B67399EE76E785 322DFB7025DCE49F2B9CFEBC5D881A357030656F07E37B26628369293A9AB7BA3B9F4BA7BCB612D1 83FD4D98EACC32220AB2DADB665272BE52CD6BE56E302BA1888A7A9761DFE82BE40ED05B87966820 5E0F2A6CBB3C9B38A3E053715EB09F4111A01BA81105E51A0D782FB700013BDAB704C3136FD22C91 BBE6CAD72A8D0B29E5D7F4724303D0EECD311BE8C43DC97D7FC46D18410676807FF5F66419118119 2592AE0ACE56ABDBCAAADC109240FC5F09CB485C238FE0B80539CFA19D45127EE3759D8962BE93A9 169904A28212AFBFA61C0AB542468A9141BDDD801EC1673C43288755BB5B7E099C756E22DB884B82 96AB163EF076CD32C3F34C7BED21DD48DE33E717EFAB0DC1AACFD8B1A781148656DF7177EC480F3E 08D1D17E0DAC1F802867288149B385BF6B04BA5202280143233D339B12599A9E2A4CF94D194CBF38 7BB7362C0D080806B2F4455C287C8041B72DFBB70A477014F03A6C56A63981E2A391C5FB3AB030DE 27C968D92AE8871789CD8CBD88A1D32C96976A5EDB16D7F5D4070AE2BA4ED335398AACFEA7D0C104 C6681CFAB943665A4B48AB6813E636347FA13EAB81D774605D5F5F6C05BBDDAC3604DEC967A9E9BB F80C8F3BA45462DA0395144DB20ABD98627F4436B6531EA3ECAA0ADC16AB4D8132FB773627A3EE6C DAAFD240C466F341F45046A6CFE0C5F274D5667496913EDA352652C802DF55B032957B97D35D8754 CA2B8A27BA498D0189F4199DD6E9DB7D9B1AAA76283966D8968F034952F98C499BB5EFED0808F6D3 4D84231C92078E0E8FCA3DD26D5381B86475944B7A4C64B8DEBDD6B8401F223
 ```
 
 Cracking it with Hashcat:
@@ -448,9 +448,9 @@ We have the password of Mrlky:
 
 Now we do the DCSync attack with this user. First we create a token in Covenant for authentication and then the DCSync module on the user _Administrator_:
 
-![Covenant MakeToken 2](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-maketoken-2.png)
+![Covenant MakeToken 2](sizzle_cv-maketoken-2.png)
 
-![Covenant DCSync](https://kyuu-ji.github.io/htb-write-up/sizzle/sizzle_cv-dcsync.png)
+![Covenant DCSync](sizzle_cv-dcsync.png)
 
 The NTLM hash of Administrator is:
 > f6b7160bfc91823792e0ac3a162c9267

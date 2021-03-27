@@ -54,7 +54,7 @@ This finds the following PHP pages and directories.
 The page _login.php_ is a "Login to SuperCMS" and the pages _menu.php_ and _upload.php_ redirect to _/login.php?err=2_.
 On the page _forgot.php_ it asks for an email to retrieve the password:
 
-![Retrieve password](https://kyuu-ji.github.io/htb-write-up/charon/charon_web-1.png)
+![Retrieve password](charon_web-1.png)
 
 This is what we want to exploit.
 
@@ -175,7 +175,7 @@ The hash is a MD5 hash because it has 32 characters so looking it up on **Hashes
 
 With these credentials it is possible to log into the website on the _/cmsdata/login.php_ page.
 
-![SuperCMS admin page](https://kyuu-ji.github.io/htb-write-up/charon/charon_web-2.png)
+![SuperCMS admin page](charon_web-2.png)
 
 ### Getting command execution
 
@@ -187,7 +187,7 @@ GIF8
 
 Before uploading, there has to be something changed in the HTML page source:
 
-![HTML source code](https://kyuu-ji.github.io/htb-write-up/charon/charon_web-3.png)
+![HTML source code](charon_web-3.png)
 
 The comment with the Base64 string has to be uncommented and instead of the Base64 string it has to be the decoded string.
 ```markdown
@@ -209,7 +209,7 @@ Changing the response can be accomplished with **Burpsuite** by intercepting ser
 After forwarding the changes to the server we can input another parameter.
 Now the file extension has to be gif, jpg or png so uploading works and it can be found in _/images/test.php_.
 
-![Uploading file](https://kyuu-ji.github.io/htb-write-up/charon/charon_web-4.png)
+![Uploading file](charon_web-4.png)
 
 On there we got command execution:
 ```markdown
@@ -292,7 +292,7 @@ After analyzing, there is the non-default executable _/usr/local/bin/supershell_
 This executable wants a command as a parameter but does nothing.
 Lets download it to our local client and analyze it with **Radare2**.
 
-![Analyzing binary with Radare2](https://kyuu-ji.github.io/htb-write-up/charon/charon_binary-1.png)
+![Analyzing binary with Radare2](charon_binary-1.png)
 
 It loads _/bin/ls_ and a compares it to the parameters given with a `strcmp` function. If the comparison is true, it will execute a `printf` and `setuid` function and send it to `system`.
 

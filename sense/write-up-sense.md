@@ -30,7 +30,7 @@ PORT    STATE SERVICE    VERSION
 
 The web service on port 80 forwards to the web service on port 443 and it greets us with a **pfSense** login page:
 
-![pfSense Login](https://kyuu-ji.github.io/htb-write-up/sense/sense_web-1.png)
+![pfSense Login](sense_web-1.png)
 
 This software is an open-source firewall and router software that is based on **FreeBSD**.
 By default it has a Brute-Force protection that bans IP addresses for 24 hours after 15 failed login attempts, so we can't guess usernames.
@@ -71,7 +71,7 @@ In the _system-users.txt_ we get a the username _Rohit_ who has the company defa
 
 We don't know the company default password but when trying the default password for **pfSense**, which is _pfsense_, we get logged in with _rohit_.
 
-![pfSense Dashboard](https://kyuu-ji.github.io/htb-write-up/sense/sense_web-2.png)
+![pfSense Dashboard](sense_web-2.png)
 
 The version of this pfSense installation is 2.1.3 and we can search for public vulnerabilities:
 ```markdown

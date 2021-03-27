@@ -69,7 +69,7 @@ Password: nibbles
 
 On the admin panel we need to activate the _My Image plugin_ and then we can upload an image on the box:
 
-![Uploading file](https://kyuu-ji.github.io/htb-write-up/nibbles/nibbles_web-1.png)
+![Uploading file](nibbles_web-1.png)
 
 The file _cmd.php_ has the magic byte for a GIF at the beginning and code for command execution with PHP:
 ```markdown

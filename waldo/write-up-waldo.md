@@ -35,7 +35,7 @@ PORT     STATE    SERVICE        VERSION
 
 On the web page there is some kind of _List Manager_ where it is possible to add and delete lists:
 
-![Waldo list manager](https://kyuu-ji.github.io/htb-write-up/waldo/waldo_web-1.png)
+![Waldo list manager](waldo_web-1.png)
 
 When intercepting the functionalities of the web page with any proxy tool like **Burpsuite**, it becomes clear that something happens in the background.
 

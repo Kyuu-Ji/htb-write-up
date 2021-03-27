@@ -52,7 +52,7 @@ Browsing to the web page on the IP address gives us a default nginx installation
 Browsing to the web page with the DNS name _brainfuck.htb_ gives us a custom WordPress site of the fictional company **Brainfuck Ltd.** with one article that has an email address in it.
 > orestis@brainfuck.htb
 
-![WordPress page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_wordpress-1.png)
+![WordPress page](brainfuck_wordpress-1.png)
 
 Enumerate WordPress:
  ```markdown
@@ -77,14 +77,14 @@ The vulnerability is called _WordPress Plugin WP Support Plus Responsive Ticket 
 
 We can host this on the _Python SimpleHTTPServer_ and click Login on the form. This will set the session cookies to administrative session cookies and we get logged in on the WordPress page as _admin_.
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_wordpress-2.png)
+![WordPress Admin page](brainfuck_wordpress-2.png)
 
 To get code execution in WordPress we can go into _Appearance --> Editor_ and edit the PHP files normally but in this case, all the files are not writable, so this will not work.
 
 As the first article on the page mentioned that SMTP integration is ready, we can look into those settings in _Settings --> Easy WP SMTP_.
 In here we get the SMTP username that we got before and a masked password. The masked password can be read by looking at the field with the Developer Tools in the browser:
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_wordpress-3.png)
+![WordPress Admin page](brainfuck_wordpress-3.png)
 
 These are the credentials for SMTP:
 > orestis:kHGuERB29DNiNE
@@ -94,7 +94,7 @@ These are the credentials for SMTP:
 We can use any mail client to connect to the mail server _brainfuck.htb_ with the gathered credentials.
 After configuring the mail client we can see the inbox of _Orestis_ and he has two emails. The mail from _root@brainfuck.htb_ is very interesting because there are credentials for a secret forum:
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_mails.png)
+![WordPress Admin page](brainfuck_mails.png)
 
 ```markdown
 username: orestis
@@ -108,11 +108,11 @@ They work and there are two threads to examine:
 
 The first thread is called **SSH Access** and it tells us that SSH authentication only works with keys.
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_forum-1.png)
+![WordPress Admin page](brainfuck_forum-1.png)
 
 The second thread is called **Key** and is the encrypted thread that _Orestis_ is talking about:
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_forum-2.png)
+![WordPress Admin page](brainfuck_forum-2.png)
 
 They write in a decoded type of language that looks like some kind of cipher that involves the alphabet because there are still whitespaces and numbers like the IP address are not decoded.
 
@@ -142,11 +142,11 @@ The key we can decode the text with is:
 
 Now we can use the [Keyed Vigenere Tool from Rumkin](http://rumkin.com/tools/cipher/vigenere-keyed.php) to decode the messages:
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_forum-3.png)
+![WordPress Admin page](brainfuck_forum-3.png)
 
 This is the most important message:
 
-![WordPress Admin page](https://kyuu-ji.github.io/htb-write-up/brainfuck/brainfuck_forum-4.png)
+![WordPress Admin page](brainfuck_forum-4.png)
 
 Lets browse to the URL https://10.10.10.17/8ba5aa10e915218697d1c658cdee0bb8/orestis/id_rsa and download the _id_rsa_ file.
 

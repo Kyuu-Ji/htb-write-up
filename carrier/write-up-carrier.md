@@ -55,7 +55,7 @@ This means that there is a mismatch in distribution versions and eventually some
 
 On the web page is a login form to an application called **Lyghtspeed** and it shows two error codes:
 
-![Lyghtspeed login form](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-1.png)
+![Lyghtspeed login form](carrier_web-1.png)
 
 Searching the Internet does not find anything about this application, so it is most likely a custom application.
 Lets search for hidden directories with **Gobuster**:
@@ -76,11 +76,11 @@ License expired, exiting...
 
 This directory is an index page with two files _diagram_for_tac.png_ and _error_codes.pdf_. The image file shows some network information:
 
-![Diagram for tac](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-2.png)
+![Diagram for tac](carrier_web-2.png)
 
 The PDF file seems to be a manual for the **Lyghtspeed Management Platform** and shows descriptions to error codes:
 
-![Lyghtspeed manual](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-3.png)
+![Lyghtspeed manual](carrier_web-3.png)
 
 So error code _45007_ says that the certificate is invalid or expired, which explains why _remote.php_ did not work.
 The error code _45009_ says that the password for _admin_ is the chassis serial number, which could be found in the SNMP strings.
@@ -103,7 +103,7 @@ Access is granted with the user _admin_ and _"NET_45JDX23"_.
 After logging into the **Lyghtspeed platform**, it shows a dashboard, diagnostics and tickets menu.
 Two tickets from **Castcom**, that were also in the _diagram_for_tac.png_ as AS300, are some hints for the next steps:
 
-![Lyghtspeed tickets](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-4.png)
+![Lyghtspeed tickets](carrier_web-4.png)
 
 - Networks:
   - 10.120.15.0/24
@@ -114,7 +114,7 @@ Two tickets from **Castcom**, that were also in the _diagram_for_tac.png_ as AS3
 
 The _diagnostics menu_ has a _"Verify Status"_ button that shows some process information:
 
-![Lyghtspeed diagnostics](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_web-5.png)
+![Lyghtspeed diagnostics](carrier_web-5.png)
 
 After sending this to a proxy tool like **Burpsuite** and analyze it, it requests the data _"check=cXVhZ2dh"_ which Base64-decoded translates to _"quagga"_:
 ```markdown
@@ -341,7 +341,7 @@ tcpdump -i any -w ftp-2.pcap port 21
 After sniffing for a little while, the PCAP file can be downloaded to our local client for analysis with **Wireshark**.
 It shows the captured packets and FTP login credentials:
 
-![Wireshark capture FTP credentials](https://kyuu-ji.github.io/htb-write-up/carrier/carrier_wireshark-1.png)
+![Wireshark capture FTP credentials](carrier_wireshark-1.png)
 
 > BGPtelc0rout1ng
 

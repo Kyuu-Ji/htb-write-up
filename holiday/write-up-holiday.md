@@ -84,14 +84,14 @@ It found the username _RickA_ and a hashed password in this table. The hash is m
 
 As we logged in, the web page forwarded us to _/agent_ where we see bookings in a table with names and UUIDs:
 
-![Bookings page](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-1.png)
+![Bookings page](holiday_web-bookings-1.png)
 
 There are 100 different names and UUIDs.
 When clicking the UUID, we get information about the customer and can add a note to it:
 
-![Bookings page details](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-2.png)
+![Bookings page details](holiday_web-bookings-2.png)
 
-![Bookings page notes](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-bookings-3.png)
+![Bookings page notes](holiday_web-bookings-3.png)
 
 The information at the bottom of the notes page hints, that this could be an attack to make the automated approval click or execute something malicious.
 Lets try some JavaScript to see if this page is vulnerable to **Cross-Site Scripting**.
@@ -153,13 +153,13 @@ It has a lot of output but the most interesting part is at the bottom:
 
 When putting this cookie into the browser, it unlocks a hidden feature in the Booking Management tool:
 
-![Bookings page Admin](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-admin-1.png)
+![Bookings page Admin](holiday_web-admin-1.png)
 
 ### Exploiting the Admin page
 
 After adding another note, it shows a button to _Approve_ it and those awaiting approvals can be found in the _/admin_ path.
 
-![Bookings page export](https://kyuu-ji.github.io/htb-write-up/holiday/holiday_web-admin-2.png)
+![Bookings page export](holiday_web-admin-2.png)
 
 This means we have some export function on the server. Lets send this to **Burpsuite** to see the header and exploit it:
 ```markdown

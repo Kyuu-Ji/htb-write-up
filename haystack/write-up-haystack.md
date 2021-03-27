@@ -41,7 +41,7 @@ On the web page there is an image of a needle in a haystack and nothing interest
 
 On the web page on port 9200 there is some kind of API where it shows data in JSON format:
 
-![JSON data](https://kyuu-ji.github.io/htb-write-up/haystack/haystack_web-1.png)
+![JSON data](haystack_web-1.png)
 
 The clustername indicates that there is an **Elasticsearch** service installed on the server.
 When looking at the [Elasticsearch Reference](https://www.elastic.co/guide/en/elasticsearch/reference/6.4/index.html) at the _Document APIs_ and _cat APIs_, we can get some information about this application with those methods.

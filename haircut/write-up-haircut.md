@@ -39,7 +39,7 @@ gobuster -u http://10.10.10.24/ -w dir /usr/share/wordlists/dirbuster/directory-
 
 The responses are the path _/uploads_ with HTTP Code 403 Forbidden, a page _/test.html_, where its a picture of hair and _/exposed.php_ where we see this:
 
-![Exposed page](https://kyuu-ji.github.io/htb-write-up/haircut/haircut_web-1.png)
+![Exposed page](haircut_web-1.png)
 
 When clicking on _Go_, it gets back the _test.html_ site.
 If we start a web server and input the IP of our server in there it tries to connect to us.
@@ -47,7 +47,7 @@ If we start a web server and input the IP of our server in there it tries to con
 Trying special characters like semicolon and pipes get filtered with a warning, that those characters can't be used.
 By inputting anything into the field, it displays an error from `curl`:
 
-![Curl identified](https://kyuu-ji.github.io/htb-write-up/haircut/haircut_web-2.png)
+![Curl identified](haircut_web-2.png)
 
 This means that this application sends a `curl` command to get the files.
 Lets send this to _Burpsuites Repeater_ to try some things with _cURL_.

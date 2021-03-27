@@ -19,7 +19,7 @@ nmap -sC -sV -o nmap/tenten.nmap 10.10.10.10
 ```markdown
 PORT   STATE SERVICE VERSION
 22/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.1 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 ec:f7:9d:38:0c:47:6f:f0:13:0f:b9:3b:d4:d6:e3:11 (RSA)
 |   256 cc:fe:2d:e2:7f:ef:4d:41:ae:39:0e:91:ed:7e:9d:e7 (ECDSA)
 |_  256 8d:b5:83:18:c0:7c:5d:3d:38:df:4b:e1:a4:82:8a:07 (ED25519)
@@ -32,7 +32,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 ## Checking HTTP (Port 80)
 
-On the web page we see a default WordPress page. 
+On the web page we see a default WordPress page.
 We can run **Wpscan** and **Nikto** to find some information and vulnerabilities against this service.
 ```markdown
 wpscan --url http://10.10.10.10 --enumerate
@@ -43,12 +43,12 @@ There is the plugin _Job Manager 0.7.25_ installed that has the vulnerability [C
 
 By clicking this link we get forwarded to **index.php/jobs**.
 
-![Job Listing Link](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-1.png)
+![Job Listing Link](tenten_jobs-1.png)
 
 Clicking on the button to apply to the job forwards us to **index.php/jobs/apply/8**.
 This number tends to be the name a row ID in the WordPress table.
 
-![Apply Now Link](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-2.png)
+![Apply Now Link](tenten_jobs-2.png)
 
 By iterating through this number we get different pages for every number.
 - 1: Hello world!
@@ -69,7 +69,7 @@ By iterating through this number we get different pages for every number.
 Every number after 13 is just empty so we probably reached the end.
 If we "apply" to the job and upload a file we should find that file by doing this procedure again.
 
-![Uploading a file](https://kyuu-ji.github.io/htb-write-up/tenten/tenten_jobs-3.png)
+![Uploading a file](tenten_jobs-3.png)
 
 When we browse to the 15th ID we see that there is now a Title called **test** that was our input.
 WordPress saves uploaded files in the directory **/wp-content/uploads/current_year/current_month/filename.extension**.

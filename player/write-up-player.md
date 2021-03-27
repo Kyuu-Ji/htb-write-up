@@ -60,7 +60,7 @@ gobuster -u http://10.10.10.145 dir -w /usr/share/dirbuster/wordlists/directory-
 
 If finds the directory _/launcher_ that forwards to a custom created website with a counter and the possibility to send an email:
 
-![Website on launcher](https://kyuu-ji.github.io/htb-write-up/player/player_web-1.png)
+![Website on launcher](player_web-1.png)
 
 In the HTML source is another interesting file called _dee8dc8a47256c64630d803a4c40786c.php_.
 
@@ -74,21 +74,21 @@ grep -v 403 player_subdomains.txt
 It found three subdomains that respond with a HTTP code _200 OK_ and they can be accessed after putting them into the _/etc/hosts_ file:
 - dev.player.htb (Status: 200)
 
-![Login prompt on dev.player.htb](https://kyuu-ji.github.io/htb-write-up/player/player_web-3.png)
+![Login prompt on dev.player.htb](player_web-3.png)
 
 - chat.player.htb (Status: 200)
 
-![Chat on chat.player.htb](https://kyuu-ji.github.io/htb-write-up/player/player_web-2.png)
+![Chat on chat.player.htb](player_web-2.png)
 
 As _Vincent_ says, it seems like there are potentially sensitive files exposed on their _staging_.
 
 - staging.player.htb (Status: 200)
 
-![Website on staging.player.htb](https://kyuu-ji.github.io/htb-write-up/player/player_web-4.png)
+![Website on staging.player.htb](player_web-4.png)
 
 On _Contact Core Team_ it is possible to fill out a contact form and submit it:
 
-![Contact from on staging.player.htb](https://kyuu-ji.github.io/htb-write-up/player/player_web-5.png)
+![Contact from on staging.player.htb](player_web-5.png)
 
 When submitting anything, it shows something for less than one second and then forwards to _501.php_ and shows a _501 Internal Server Error_ which is fake as it resolved the PHP page correctly.
 Lets send this request to a proxy tool like **Burpsuite** and analyze the step between the submit and the PHP code.
@@ -197,7 +197,7 @@ But when using the access code _"0E76658526655756207688271159624026011393"_, it 
 
 I will use the website [jwt.io](https://jwt.io/) to create the JWT token:
 
-![Creating token on jwt.io](https://kyuu-ji.github.io/htb-write-up/player/player_web-6.png)
+![Creating token on jwt.io](player_web-6.png)
 
 New token:
 ```
@@ -214,7 +214,7 @@ Cookie: access=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwcm9qZWN0IjoiUGxheUJ1ZmYi
 
 It responds with a HTTP code _302 Found_ and forwards to _launcher/7F2dcsSdZo6nj3SNMTQ1_, which is the _"PlayBuff"_ application:
 
-![PlayBuff application](https://kyuu-ji.github.io/htb-write-up/player/player_web-7.png)
+![PlayBuff application](player_web-7.png)
 
 ### Analyzing PlayBuff application
 
@@ -229,7 +229,7 @@ python3 gen_avi_bypass.py file:///etc/passwd passwd.avi
 
 After uploading _passwd.avi_ to the application, it shows a link to it that can be downloaded which is a video file that shows the contents of _/etc/passwd_ on the box:
 
-![Contents of /etc/passwd](https://kyuu-ji.github.io/htb-write-up/player/player_web-8.png)
+![Contents of /etc/passwd](player_web-8.png)
 
 As we have the ability to read files from the box, the web source code files could have interesting information.
 When looking through some filenames gathered from before, some PHP files are not showing anything, so there is some restriction to reading files.
@@ -239,7 +239,7 @@ The code of _service_config.php_ contains a plain-text username and password:
 python3 gen_avi_bypass.py file:///var/www/backup/service_config service_config.avi
 ```
 
-![Contents of service_config.php](https://kyuu-ji.github.io/htb-write-up/player/player_web-9.png)
+![Contents of service_config.php](player_web-9.png)
 
 - Username: telegen
 - Password: d-bC|jC!2uepS/w
@@ -293,7 +293,7 @@ After trying the credentials on all three services, they work on _dev.player.htb
 This application seems to be a code management system.
 By creating a new project and using the correct path, it shows the source files of _dev.player.htb_:
 
-![Code of dev.player.htb](https://kyuu-ji.github.io/htb-write-up/player/player_web-10.png)
+![Code of dev.player.htb](player_web-10.png)
 
 All those files can be found directly on _dev.player.htb_ and can be tested with the _INSTALL.txt_ for example:
 ```

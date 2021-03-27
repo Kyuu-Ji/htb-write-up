@@ -38,7 +38,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 The web page is a login page to **GitLab Community Edition** which is a version control management for Git repositories.
 
-![GitLab Homepage](https://kyuu-ji.github.io/htb-write-up/bitlab/bitlab_web-1.png)
+![GitLab Homepage](bitlab_web-1.png)
 
 Lets search for hidden directories with **Gobuster**:
 ```
@@ -83,7 +83,7 @@ function(){
 
 The credentials work on the **GitLab** portal and the user _clave_ has access to two repositories.
 
-![GitLab Repositories](https://kyuu-ji.github.io/htb-write-up/bitlab/bitlab_web-2.png)
+![GitLab Repositories](bitlab_web-2.png)
 
 ### Exploiting GitLab
 
@@ -108,7 +108,7 @@ echo "OK\n";
 
 The repository _Administrator/Profile_ has many _merge requests_, so it looks like an automated task that a merge will automatically push.
 
-![GitLab merge requests in Profile](https://kyuu-ji.github.io/htb-write-up/bitlab/bitlab_web-3.png)
+![GitLab merge requests in Profile](bitlab_web-3.png)
 
 Creating new branch on _Profile_:
 ```

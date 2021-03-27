@@ -171,7 +171,7 @@ There is a password for a portal and this portal is probably one of the HTTP ser
 
 On the web page on port 80 it shows a **Drupal** login page, which is a Content-Management-System.
 
-![Drupal login page](https://kyuu-ji.github.io/htb-write-up/hawk/hawk_web-1.png)
+![Drupal login page](hawk_web-1.png)
 
 The password found out earlier is working and with the username _admin_.
 
@@ -183,7 +183,7 @@ Content --> Add Content --> Article / Basic Page --> Text Format: PHP code
 
 Lets upload a PHP reverse shell into it:
 
-![Drupal upload PHP](https://kyuu-ji.github.io/htb-write-up/hawk/hawk_web-2.png)
+![Drupal upload PHP](hawk_web-2.png)
 
 After clicking on _Preview_ it hangs, but the listener on my IP and port 9001 starts a reverse shell session as _www-data_.
 
@@ -209,7 +209,7 @@ ssh -R 9002:127.0.0.1:8082 testuser@10.10.14.6
 
 Now the service runs on my local client on port 9002:
 
-![H2 Console](https://kyuu-ji.github.io/htb-write-up/hawk/hawk_h2-1.png)
+![H2 Console](hawk_h2-1.png)
 
 ### Exploiting H2 Console
 
@@ -231,7 +231,7 @@ User Name: sa
 Password:
 ```
 
-![H2 Console](https://kyuu-ji.github.io/htb-write-up/hawk/hawk_h2-2.png)
+![H2 Console](hawk_h2-2.png)
 
 The [article for the exploit](https://mthbernardes.github.io/rce/2018/03/14/abusing-h2-database-alias.html) explains the vulnerability.
 Running the command from the article:
@@ -242,7 +242,7 @@ CALL SHELLEXEC('id')
 
 This executes the `id` command and shows that it was executed as root:
 
-![H2 Console](https://kyuu-ji.github.io/htb-write-up/hawk/hawk_h2-3.png)
+![H2 Console](hawk_h2-3.png)
 
 Code execution works, so creating a reverse shell script _(revshell.sh)_ on the box, making it executable with `chmod +x revshell.sh` and then executing it:
 ```markdown

@@ -37,12 +37,12 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 The web page forwards to _/login.php_ and shows a login page to a web application:
 
-![Login page](https://kyuu-ji.github.io/htb-write-up/heist/heist_web-1.png)
+![Login page](heist_web-1.png)
 
 When trying out an username, it says to enter an email address.
 The button _"Login as guest"_ forwards to _/issues.php_ which looks like a help desk page with a service ticket and an attachment:
 
-![Service ticket](https://kyuu-ji.github.io/htb-write-up/heist/heist_web-2.png)
+![Service ticket](heist_web-2.png)
 
 The username _hazard_ could be a potential username.
 The attachment forwards to _/attachments/config.txt_ and looks like a snippet of a **Cisco configuration** with the following interesting information:

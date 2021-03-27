@@ -34,7 +34,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 The web page is a custom built company website for **Ellingson Mineral Corp** from the movie **Hackers from 1995** with some articles about a security breach:
 
-![Ellingson Mineral Corp homepage](https://kyuu-ji.github.io/htb-write-up/ellingson/ellingson_web-1.png)
+![Ellingson Mineral Corp homepage](ellingson_web-1.png)
 
 - Suspicious Network Activity
 ```markdown
@@ -76,7 +76,7 @@ The debugger caught an exception in your WSGI application. You can now look at t
 The service in the background is a **Python Flask** application and its running in _debug mode_.
 That means that the debugger **Werkzeug** can be used from this web page and Python code runs successfully:
 
-![Python Werkzeug debugger](https://kyuu-ji.github.io/htb-write-up/ellingson/ellingson_web-2.png)
+![Python Werkzeug debugger](ellingson_web-2.png)
 
 Running `whoami`:
 ```python

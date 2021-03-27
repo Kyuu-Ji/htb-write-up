@@ -53,13 +53,13 @@ It finds the following directories on both sites, so they are probably identical
 
 The directory _/remote_ shows a **Windows PowerShell Web Access** login page, that warns to use SSL for it:
 
-![PowerShell Web Acces login](https://kyuu-ji.github.io/htb-write-up/giddy/giddy_web-1.png)
+![PowerShell Web Acces login](giddy_web-1.png)
 
 The warning disappears when browsing to it on HTTPS.
 
 The directory _/mvc_ shows some kind of shop and the footer says that it is an **ASP.NET Application** and also has a _"Register"_ and "_Login"_ page:
 
-![Shop page](https://kyuu-ji.github.io/htb-write-up/giddy/giddy_web-2.png)
+![Shop page](giddy_web-2.png)
 
 The _search_ also takes input and when trying out a _single quote_ it shows a SQL error, which means there is potential **SQL Injection**.
 
@@ -122,7 +122,7 @@ Computer name:    giddy
 
 Now the PowerShell web shell is accessible:
 
-![PowerShell Web Access](https://kyuu-ji.github.io/htb-write-up/giddy/giddy_web-3.png)
+![PowerShell Web Access](giddy_web-3.png)
 
 ## Privilege Escalation
 

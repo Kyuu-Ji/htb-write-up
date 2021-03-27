@@ -107,19 +107,19 @@ It shows one result:
 
 So after setting the cookie _"Cookie: password=secret"_, it forwards to another page:
 
-![Service on port 8080](https://kyuu-ji.github.io/htb-write-up/dab/dab_web-1.png)
+![Service on port 8080](dab_web-1.png)
 
 ### Enumerating "TCP socket test" Application
 
 In summary, this application does the following:
 - Sending an open port (22) to application: Shows the header of that service:
 
-![Valid port](https://kyuu-ji.github.io/htb-write-up/dab/dab_web-2.png)
+![Valid port](dab_web-2.png)
 
 - Sending a closed port: Shows an _Internal Server Error_
 - Sending invalid data to port 80: Shows the header with an HTTP status code _400 Bad Request_:
 
-![Valid port but invalid line](https://kyuu-ji.github.io/htb-write-up/dab/dab_web-3.png)
+![Valid port but invalid line](dab_web-3.png)
 
 - Sending valid data _(GET HTTP/1.1)_ to port 80: Shows the message _"Suspected hacking attempt detected"_
 
@@ -148,7 +148,7 @@ This is also what happens on _port 80_, when the **MySQL database** send the dat
 
 To get any useful responses, this [Memcached Cheat Sheet](https://lzone.de/cheat-sheet/memcached) has some commands to test, so sending _version_ as data to the service:
 
-![Memcached version command](https://kyuu-ji.github.io/htb-write-up/dab/dab_web-4.png)
+![Memcached version command](dab_web-4.png)
 
 To get the information that is stored in Memcached, so called _slabs_ are used. The command to display them is `stats slabs`:
 ```markdown
@@ -274,7 +274,7 @@ r2 myexec
 Analyzing all flags (`aaa`) and list functions (`afl`), there is only the _main_ function that is is interesting.
 Disassembling the _main_ function (`pdf @ main`) and it shows a password in there:
 
-![Password in binary](https://kyuu-ji.github.io/htb-write-up/dab/dab_re-1.png)
+![Password in binary](dab_re-1.png)
 
 > s3cur3l0g1n
 
@@ -297,7 +297,7 @@ libseclogin.so => /usr/lib/libseclogin.so (0x00007f688140e000)
 
 When analyzing it with **Radare2**, this is the library that is responsible for the placeholder text:
 
-![Placeholder text](https://kyuu-ji.github.io/htb-write-up/dab/dab_re-2.png)
+![Placeholder text](dab_re-2.png)
 
 This kind of dynamic linking is handled by **ldconfig**, which has **SUID permission**.
 The configuration files for this can be found in _/etc/ld.so.conf.d_ and in there is a configuration file _test.conf_ which links to _/tmp_.

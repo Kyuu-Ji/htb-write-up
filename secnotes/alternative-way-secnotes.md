@@ -12,7 +12,7 @@ tester' OR 1=1-- -
 
 The password can be anything and after logging in with the user _"tester' OR 1=1-- -"_ and the given password, it logs us in successfully and we see all notes:
 
-![SQL Injection login](https://kyuu-ji.github.io/htb-write-up/secnotes/secnotes_sqli-1.png)
+![SQL Injection login](secnotes_sqli-1.png)
 
 ## Getting Administrator without bash
 

@@ -28,7 +28,7 @@ PORT   STATE SERVICE VERSION
 On the web page there are pictures and descriptions of fsociety from the Mr. Robot series.
 In the menu there is a page called _Upload_ that redirects to _/?op=upload_ where we can send any text to the web server,
 
-![Upload page](https://kyuu-ji.github.io/htb-write-up/crimestoppers/crimestoppers_web-1.png)
+![Upload page](crimestoppers_web-1.png)
 
 After sending this, it forwards to _/?op=view&secretname=613c59d9877e27846bf36b956b3583ae57de3dfb_.
 Lets send this to **Burpsuite** to analyze the request.
@@ -63,7 +63,7 @@ Send Tip!
 The _op_ variable seems to have different parameters like _view ,upload and home_.
 Also the cookie _admin=0_ is interesting, so lets change the value to _1_ and see what happens:
 
-![List page](https://kyuu-ji.github.io/htb-write-up/crimestoppers/crimestoppers_web-2.png)
+![List page](crimestoppers_web-2.png)
 
 It shows a new menu in which it shows all the uploaded files. The hashes are tests from me, but _Whiterose.txt_ looks interesting and has the following content:
 ```markdown
@@ -100,7 +100,7 @@ function genFilename() {
 
 In _upload.php_ it says that files get uploaded to _http[:]//10.10.10.80/uploads/IP_ADDRESS/_ and when browsing there to my IP address, I can see the tips I uploaded as files:
 
-![Uploaded tips as files](https://kyuu-ji.github.io/htb-write-up/crimestoppers/crimestoppers_web-3.png)
+![Uploaded tips as files](crimestoppers_web-3.png)
 
 This means that uploaded tips become files on the web server which means that uploading a malicious file could get command execution.
 
@@ -128,7 +128,7 @@ UEsDBAoAAAAAAPx1zVAoVK/eKQAAACkAAAAHABwAY21kLnBocFVUCQAD+8rkXgjL5F51eAsAAQQAAAAA
 
 Sending string as a request after decoding it with **Burpsuite**:
 
-![Request in Burpsuite](https://kyuu-ji.github.io/htb-write-up/crimestoppers/crimestoppers_web-4.png)
+![Request in Burpsuite](crimestoppers_web-4.png)
 
 Sending the request and the file _cmd.zip_ will be accessible on the box but with the hash name.
 Now we can use the ZIP PHP wrapper to access the file and execute commands:
@@ -244,7 +244,7 @@ Printing disassembly of the function:
 pdf @sym.darkarmy
 ```
 
-![Functions in Radare2](https://kyuu-ji.github.io/htb-write-up/crimestoppers/crimestoppers_re-1.png)
+![Functions in Radare2](crimestoppers_re-1.png)
 
 The function loads two effective addresses with a bytearray at `0x00001bf2` and the other one is a string called _"HackTheBox"_ into the registers _rdi_ and _rsi_.
 After clearing _edx_ it goes into a loop where the first character of _rdi_ gets put into _ecx_ and XOR'ed against the first character of _rsi_.

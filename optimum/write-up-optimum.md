@@ -28,7 +28,7 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 
 On the web page there is an application called **HttpFileServer 2.3**.
 
-![HttpFileServer](https://kyuu-ji.github.io/htb-write-up/optimum/optimum-hfs.png)
+![HttpFileServer](optimum-hfs.png)
 
 Looking for exploits for this service we find **Rejetto HTTP File Server 2.3.x - Remote Code Execution** with the CVE number [CVE-2014-6287](https://nvd.nist.gov/vuln/detail/CVE-2014-6287).
 

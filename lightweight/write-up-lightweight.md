@@ -134,11 +134,11 @@ ssh 10.10.14.23@10.10.10.119 "/usr/sbin/tcpdump -i lo -U -s0 -w - 'not port 22'"
 
 If we refresh all the pages on the web server we get some information on the localhost interface of the box:
 
-![Wireshark on localhost](https://kyuu-ji.github.io/htb-write-up/lightweight/lightweight_wireshark-1.png)
+![Wireshark on localhost](lightweight_wireshark-1.png)
 
 When following the LDAP request, we see that _ldapuser2_ authenticates on the box with a password:
 
-![Wireshark on localhost](https://kyuu-ji.github.io/htb-write-up/lightweight/lightweight_wireshark-2.png)
+![Wireshark on localhost](lightweight_wireshark-2.png)
 
 Password of _ldapuser2_:
 > 8bc8251332abe1d7f105d3e53ad39ac2

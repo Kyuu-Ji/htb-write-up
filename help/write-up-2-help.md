@@ -5,7 +5,7 @@ There is another way of doing the box. If we check our Nmap scan again we see th
 ```markdown
 PORT     STATE SERVICE VERSION
 22/tcp   open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.6 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey: 
+| ssh-hostkey:
 |   2048 e5:bb:4d:9c:de:af:6b:bf:ba:8c:22:7a:d8:d7:43:28 (RSA)
 |   256 d5:b0:10:50:74:86:a3:9f:c5:53:6f:3b:4a:24:61:19 (ECDSA)
 |_  256 e2:1b:88:d3:76:21:d4:1e:38:15:4a:81:11:b7:99:07 (ED25519)
@@ -45,7 +45,7 @@ URL-decoded:
 
 We see there is a _User Object_ with two values _username and password_:
 
-![Interesting user objects](https://kyuu-ji.github.io/htb-write-up/help/help_user-objects.png)
+![Interesting user objects](help_user-objects.png)
 
 If we research a bit about the GraphQL package and how to exploit it we wil find different sources. One query I found is one that eventually gives us useful information:
 ```markdown
@@ -87,7 +87,7 @@ This time we will use the **Authenticated SQL Injection** because we are authori
 
 Before we can use this exploit we need to create a ticket with an attachment:
 
-![Creating ticket](https://kyuu-ji.github.io/htb-write-up/help/help_creating-ticket.png)
+![Creating ticket](help_creating-ticket.png)
 
 Sending the location of the attachment to Burpsuite:
 ```markdown

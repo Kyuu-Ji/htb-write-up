@@ -37,7 +37,7 @@ Service Info: OS: Unix
 On the web page there is a fan page for Shrek with pictures in the _Image Gallery_ and an _Upload Page_.
 It is possible to upload pictures that forwards to _/upload.php_ and after a success, it displays this information:
 
-![Upload successful](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_web-1.png)
+![Upload successful](shrek_web-1.png)
 
 When uploading a PHP shell, it still shows the success page, but it is not clear where the files are stored.
 Lets enumerate for hidden paths with **Gobuster**:
@@ -51,11 +51,11 @@ It finds the paths:
 
 The _/memes_ page has a bunch of images:
 
-![Memes page](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_web-2.png)
+![Memes page](shrek_web-2.png)
 
 Our uploaded files are not in _/uploads_ but instead different PHP, ASP and EXE files:
 
-![Uploads page](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_web-3.png)
+![Uploads page](shrek_web-3.png)
 
 After downloading all, we check what kind of `file` they are:
 ```markdown
@@ -85,19 +85,19 @@ This can be analyzed with different audio editor programs like **Audacity**.
 
 Opening the file in Audacity and zooming in on the end part:
 
-![Audacity cut end part](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_audacity-1.png)
+![Audacity cut end part](shrek_audacity-1.png)
 
 Changing output to _Spectrogram_:
 
-![Audacity cut end part](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_audacity-2.png)
+![Audacity cut end part](shrek_audacity-2.png)
 
 Increasing the maximum frequency in the _Spectrogram Settings_:
 
-![Audacity cut end part](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_audacity-3.png)
+![Audacity cut end part](shrek_audacity-3.png)
 
 This shows even the frequency that can't be heard and normally is not used so the Spectrogram displays something:
 
-![Audacity cut end part](https://kyuu-ji.github.io/htb-write-up/shrek/shrek_audacity-4.png)
+![Audacity cut end part](shrek_audacity-4.png)
 
 These look assumingly like credentials for **FTP**:
 > donkey:d0nk3y1337!
