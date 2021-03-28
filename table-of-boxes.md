@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Luanne</td>
+    <td>Unknown</td>
+    <td>27th March 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>CrossFit</td>
     <td>Linux</td>
     <td>20th March 2021</td>
@@ -621,10 +634,10 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>MongoDB</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
