@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Time</td>
+    <td>Linux</td>
+    <td>3rd April 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Luanne</td>
     <td>Unknown</td>
     <td>27th March 2021</td>
@@ -595,11 +608,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Python Code Analysis</li>
+        <li>Known-Plaintext Attack</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>OpenAdmin</td>

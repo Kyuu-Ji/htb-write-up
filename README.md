@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 30th May 2020
   - OS: Windows
   - Tags: Password Spraying, Active Directory, DNS Admin Vulnerability
+- [Obscurity](https://kyuu-ji.github.io/htb-write-up/obscurity/write-up-obscurity)
+  - Retired on 9th May 2020
+  - OS: Linux
+  - Tags: Python Code Analysis, Known-Plaintext Attack
 - [Mango](https://kyuu-ji.github.io/htb-write-up/mango/write-up-mango)
   - Retired on 18th April 2020
   - OS: Linux
