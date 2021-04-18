@@ -45,7 +45,7 @@ PORT      STATE SERVICE
 
 ## Checking HTTP (Port 80)
 
-The web page shows a welcome page to _"The Cyber Geek's Personal Website_ and also says that it is _"Unter Construction! Coming Soon!"_.
+The web page shows a welcome page to _"The Cyber Geek's Personal Website_ and says that it is _"Unter Construction! Coming Soon!"_.
 There is nothing interesting in the HTML source code, so lets search for hidden directories with **Gobuster**:
 ```
 gobuster -u http://10.10.10.160 dir -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
@@ -83,7 +83,7 @@ redis_version:4.0.9
 config_file:/etc/redis/redis.conf
 ```
 
-By installing the _redis-tools_, it is more comfortable to enumerate the box:
+By installing the _redis-tools_, it is more comfortable to enumerate the service:
 ```
 apt install redis-tools
 ```
@@ -92,6 +92,7 @@ redis-cli -h 10.10.10.160
 ```
 
 With the commands, it is possible to put our own SSH key into the _authorized keys_.
+
 Creating own SSH key:
 ```
 ssh-keygen -f postman
@@ -160,7 +161,7 @@ su - Matt
 ### Privilege Escalation to root
 
 The credentials of _Matt_ also work on the **Webmin web interface** that was found earlier.
-The version running is **Webmin 1.910**, so lets search for vulnerabilities in that:
+The version running is **Webmin 1.910**, so lets search for vulnerabilities for that:
 ```
 searchsploit webmin
 ```
