@@ -58,6 +58,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 21st March 2020
   - OS: Windows
   - Tags: Active Directory, Password Spraying, SMB Null Session Attack, AS-REP Roasting, DCSync
+- [Postman](https://kyuu-ji.github.io/htb-write-up/postman/write-up-postman)
+  - Retired on 14th March 2020
+  - OS: Linux
+  - Tags: Redis, CVE (Webmin)
 - [Bankrobber](https://kyuu-ji.github.io/htb-write-up/bankrobber/write-up-bankrobber)
   - Retired on 7th March 2020
   - OS: Windows

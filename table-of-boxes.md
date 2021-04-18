@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Laboratory</td>
+    <td>Linux</td>
+    <td>17th April 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>APT</td>
+    <td>Windows</td>
+    <td>10th April 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Time</td>
     <td>Linux</td>
     <td>3rd April 2021</td>
@@ -719,10 +745,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Redis</li>
+        <li>CVE (Webmin)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
