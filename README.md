@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 13th June 2020
   - OS: Windows
   - Tags: Password Spraying, Azure AD Connect
+- [Nest](https://kyuu-ji.github.io/htb-write-up/nest/write-up-nest)
+  - Retired on 6th June 2020
+  - OS: Windows
+  - Tags: Enumerating SMB Shares, Visual Basic Code Analysis, Alternate Data Streams, .NET Binary Analysis
 - [Resolute](https://kyuu-ji.github.io/htb-write-up/resolute/write-up-resolute)
   - Retired on 30th May 2020
   - OS: Windows
