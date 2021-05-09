@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Attended</td>
+    <td>OpenBSD</td>
+    <td>8th May 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Sharp</td>
+    <td>Windows</td>
+    <td>1st May 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Bucket</td>
     <td>Linux</td>
     <td>24th April 2021</td>
@@ -808,7 +834,12 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>FTP Bounce Attack</li>
+        <li>IPv6</li>
+        <li>rsync</li>
+        <li>Rsyslog</li>
+        <li>SQL Injection</li>
+        <li>PostgreSQL</li>
       </ul>
     </td>
     <td>:x:</td>

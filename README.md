@@ -74,6 +74,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 29th February 2020
   - OS: Linux
   - Tags: SQL Injection, Whois, DNS Zone Transfer, Log and PCAP Analysis, Rootkit Reversing
+- [Zetta](https://kyuu-ji.github.io/htb-write-up/zetta/write-up-zetta)
+  - Retired on 22nd February 2020
+  - OS: Linux
+  - Tags: FTP Bounce Attack, IPv6, rsync, Rsyslog, SQL Injection, PostgreSQL
 - [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
   - Retired on 1st February 2020
   - OS: Windows
