@@ -45,7 +45,7 @@ Nostromo - Directory Traversal Remote Command Execution (Metasploit)
 nostromo 1.9.6 - Remote Code Execution
 ```
 
-There is a known Remote Code Execution vulnerability that can be exploited with a Python script or with a **Metasploit module**.
+There is a known Remote Code Execution vulnerability that can be exploited with a **Python script** or with a **Metasploit module**.
 
 Using the Metasploit module:
 ```
@@ -80,7 +80,7 @@ In the web directory is a hidden file _/var/nostromo/conf/.htpasswd_ with a pass
 david:$1$e7NfNpNi$A6nCwOTqrNR2oDuIKirRZ/
 ```
 
-It starts with _"$1$"_ and the example hashes of **Hashcat** show that it is probably **md5crypt**.
+It starts with _"$1$"_ and the [example hashes of Hashcat](https://hashcat.net/wiki/doku.php?id=example_hashes) show that it is probably **md5crypt**.
 Lets try to crack it with **Hashcat**:
 ```
 hashcat -m 500 david_htpasswd.hash /usr/share/wordlists/rockyou.txt
@@ -128,7 +128,6 @@ tar -xzvf backup-ssh-identity-files.tar
 
 It extracted the public and private SSH keys from _david_:
 ```
-- home/david/.ssh/
 - home/david/.ssh/authorized_keys
 - home/david/.ssh/id_rsa
 - home/david/.ssh/id_rsa.pub
@@ -158,7 +157,7 @@ In the home directory of _david_ is a bash script called _/home/david/bin/server
 /usr/bin/sudo /usr/bin/journalctl -n5 -unostromo.service | /usr/bin/cat
 ```
 
-The binary `journalctl` has is listed in [GTFObins](https://gtfobins.github.io/gtfobins/journalctl/) and can be abused to elevate privileges when running it with sudo.
+The binary `journalctl` is listed in [GTFObins](https://gtfobins.github.io/gtfobins/journalctl/) and can be abused to elevate privileges when running it with sudo.
 By removing the command after the pipe, `journalctl` will invoke the default pager as `less`.
 
 The command `less` waits for user input and it is possible to execute commands with the exclamation mark character:
@@ -169,4 +168,4 @@ The command `less` waits for user input and it is possible to execute commands w
 
 > NOTE: If `journalctl` will not use `less` as the pager, then shrink the terminal size to less than 5 lines and run the command again and it will use `less` by default
 
-This start a shell as root!
+This starts a shell as root!

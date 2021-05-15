@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Ready</td>
+    <td>Linux</td>
+    <td>15th May 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Attended</td>
     <td>OpenBSD</td>
     <td>8th May 2021</td>
