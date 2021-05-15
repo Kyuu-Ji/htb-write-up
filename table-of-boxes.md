@@ -729,10 +729,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Nostromo)</li>
+        <li>Password Cracking</li>
+        <li>journalctl</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
@@ -842,7 +844,7 @@ Work in progress.
         <li>PostgreSQL</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
