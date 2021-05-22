@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Delivery</td>
+    <td>Linux</td>
+    <td>22nd May 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Ready</td>
     <td>Linux</td>
     <td>15th May 2021</td>
@@ -703,10 +716,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (OpenNetAdmin)</li>
+        <li>Password Reuse</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

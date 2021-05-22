@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 9th May 2020
   - OS: Linux
   - Tags: Python Code Analysis, Known-Plaintext Attack
+- [OpenAdmin](https://kyuu-ji.github.io/htb-write-up/openadmin/write-up-openadmin)
+  - Retired on 2nd May 2020
+  - OS: Linux
+  - Tags: CVE (OpenNetAdmin), Password Reuse
 - [Mango](https://kyuu-ji.github.io/htb-write-up/mango/write-up-mango)
   - Retired on 18th April 2020
   - OS: Linux
