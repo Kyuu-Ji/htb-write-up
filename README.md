@@ -54,6 +54,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 2nd May 2020
   - OS: Linux
   - Tags: CVE (OpenNetAdmin), Password Reuse
+- [Control](https://kyuu-ji.github.io/htb-write-up/control/write-up-control)
+  - Retired on 25th April 2020
+  - OS: Windows
+  - Tags: SQL Injection, PowerShell History, Windows Services
 - [Mango](https://kyuu-ji.github.io/htb-write-up/mango/write-up-mango)
   - Retired on 18th April 2020
   - OS: Linux

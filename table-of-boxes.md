@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Cereal</td>
+    <td>Windows</td>
+    <td>29th May 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Delivery</td>
     <td>Linux</td>
     <td>22nd May 2021</td>
@@ -730,11 +743,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>PowerShell History</li>
+        <li>Windows Services</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Mango</td>
