@@ -262,14 +262,18 @@ grep -iR "8080/tcp" */*.md
   - Retired on 9th February 2019
   - OS: OpenBSD
   - Tags: LDAP, SSH Certificate Authority
-- [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
-  - Retired on 19th January 2019
-  - OS: Windows
-  - Tags: Cross-Site-Request-Forgery (CSRF)
 - [Dab](https://kyuu-ji.github.io/htb-write-up/dab/write-up-dab)
   - Retired on 2nd February 2019
   - OS: Linux
   - Tags: Fuzzing, Memcached, SSH Enumeration, Reverse Engineering
+- [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
+  - Retired on 19th January 2019
+  - OS: Windows
+  - Tags: Cross-Site-Request-Forgery (CSRF)
+- [Oz](https://kyuu-ji.github.io/htb-write-up/oz/write-up-oz)
+  - Retired on 12th January 2019
+  - OS: Linux
+  - Tags: Web API, SQL Injection, Server Side Template Injection, Port Knocking, Docker (Portainer)
 - [Mischief](https://kyuu-ji.github.io/htb-write-up/mischief/write-up-mischief)
   - Retired on 5th January 2019
   - OS: Linux
