@@ -146,6 +146,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 12th October 2019
   - OS: Linux
   - Tags: CVE (CMS Made Simple), Relative path in Crontab
+- [Ghoul](https://kyuu-ji.github.io/htb-write-up/ghoul/write-up-ghoul)
+  - Retired on 5th October 2019
+  - OS: Linux
+  - Tags: Zip Slip Vulnerability, Docker, Pivoting, Gogs (Git), Git Hooks, SSH Agent Forwarding
 - [SwagShop](https://kyuu-ji.github.io/htb-write-up/swagshop/write-up-swagshop)
   - Retired on 28th September 2019
   - OS: Linux

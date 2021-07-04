@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Ophiuchi</td>
+    <td>Linux</td>
+    <td>3rd July 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Spectra</td>
+    <td>Unknown</td>
+    <td>26th June 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Tentacle</td>
     <td>Linux</td>
     <td>19th June 2021</td>
@@ -1169,11 +1195,16 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Zip Slip Vulnerability</li>
+        <li>Docker</li>
+        <li>Pivoting</li>
+        <li>Gogs (Git)</li>
+        <li>Git Hooks</li>
+        <li>SSH Agent Forwarding</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>SwagShop</td>
