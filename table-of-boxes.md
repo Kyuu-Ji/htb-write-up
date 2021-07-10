@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Atom</td>
+    <td>Windows</td>
+    <td>10th July 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Ophiuchi</td>
     <td>Linux</td>
     <td>3rd July 2021</td>
@@ -644,10 +657,14 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>AS-REP Roasting</li>
+        <li>BloodHound</li>
+        <li>DCSync</li>
+        <li>Pass-The-Hash</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

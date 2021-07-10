@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Sauna](https://kyuu-ji.github.io/htb-write-up/sauna/write-up-sauna)
+  - Retired on 18th July 2020
+  - OS: Windows
+  - Tags: Active Directory, AS-REP Roasting, BloodHound, DCSync, Pass-The-Hash
 - [Monteverde](https://kyuu-ji.github.io/htb-write-up/monteverde/write-up-monteverde)
   - Retired on 13th June 2020
   - OS: Windows
