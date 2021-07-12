@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Cascade](https://kyuu-ji.github.io/htb-write-up/cascade/write-up-cascade)
+  - Retired on 25th July 2020
+  - OS: Windows
+  - Tags: LDAP, .NET Binary Analysis, Active Directory Recycle Bin
 - [Sauna](https://kyuu-ji.github.io/htb-write-up/sauna/write-up-sauna)
   - Retired on 18th July 2020
   - OS: Windows

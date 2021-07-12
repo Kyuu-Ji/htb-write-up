@@ -644,10 +644,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>LDAP</li>
+        <li>.NET Binary Analysis</li>
+        <li>Active Directory Recycle Bin</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

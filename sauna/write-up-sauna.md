@@ -126,7 +126,7 @@ WINRM       10.10.10.175    5985   SAUNA            [+] EGOTISTICAL-BANK.LOCAL\f
 
 Connecting to the box with [Evil-WinRM](https://github.com/Hackplayers/evil-winrm):
 ```
-/opt/shells/evil-winrm/evil-winrm.rb -i 10.10.10.175 -u fsmith -p Thestrokes23
+evil-winrm.rb -i 10.10.10.175 -u fsmith -p Thestrokes23
 ```
 
 ## Privilege Escalation
