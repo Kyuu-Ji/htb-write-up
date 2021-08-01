@@ -52,7 +52,7 @@ On this page is a menu with the following pages:
 - _profile.php_
 - _settings.php_
 
-The images on _books.php_ forward to _download.php_ and _contact.php_ shows a potential username called _admin@book.htb_.
+The images on _books.php_ forward to _download.php_ and _contact.php_ shows a potential username called _admin[@]book.htb_.
 There is also a page on _/admin_ that has a different login page:
 
 ![Admin Sign In](book_web-3.png)
@@ -60,7 +60,7 @@ There is also a page on _/admin_ that has a different login page:
 After trying out different Web vulnerabilities like **SQL Injection** and **XSS**, none of the input fields of the pages resolve in errors.
 This means the _Sign In / Sign Up_ page should be focused and the _admin_ user could be taken over somehow.
 
-In the HTML source code of _index.php_ on the login form there is some JavaScript that says that the username should not be more than 20 characters:
+In the HTML source code of _index.php_ on the login form is some JavaScript that says that the username should not be more than 20 characters:
 ```
 (...)
 alert("Please fill name field. Should not be more than 10 characters");
@@ -73,10 +73,10 @@ return false;
 ```
 
 The username can be duplicates, but the email address has to be unique on the login form.
-The username _admin@book.htb_ has 14 characters, so by adding 6 blank characters and 1 random letter at the end, it may truncate the 21st letter and ignore all the whitespaces.
+The username _admin[@]book.htb_ has 14 characters, so by adding 6 blank characters and 1 random letter at the end, it may truncate the 21st letter and ignore all the whitespaces.
 This method is called **SQL Truncation** and could result in successful login with the admin user.
 
-Creating username _admin@book.htb      1_:
+Creating username _admin[@]book.htb++++++1_ _(the plus symbol is used to symbolize spaces)_:
 ```
 POST /index.php HTTP/1.1
 Host: 10.10.10.176
@@ -85,7 +85,7 @@ Host: 10.10.10.176
 name=test1&email=admin%40book.htb      1&password=Test123
 ```
 
-Now the login with _admin@book.htb_ and the given password works, as the whitespaces get truncated.
+Now the login with _admin[@]book.htb_ and the given password works, as the whitespaces get truncated.
 The login also works on the _/admin_ page:
 
 ![Library Admin Panel](book_web-4.png)
@@ -95,7 +95,7 @@ The login also works on the _/admin_ page:
 In the _Collections_ menu are two PDFs that can be downloaded.
 One shows the existing users and the other one the collections on the web application.
 
-I changed the username of the initially created user to _"<b>test<b>"_ to see if it processes HTML syntax.
+I changed the username of the initially created user to `"<b>test<\b>"` to see if it processes HTML syntax.
 It does not process it on the web page, but the PDF creation tool does and shows the username in bold letters:
 
 ![Users PDF export](book_web-5.png)
@@ -161,7 +161,7 @@ $conn = mysqli_connect("localhost","book_admin","I_Hate_Book_Reading","book");
 (...)
 ```
 
-After running **LinPeas** to enumerate the box more, it shows that **logrotate** runs on it and the _backups/access.log.1_ is a writable log to exploit a [Logrotate Vulnerability](https://book.hacktricks.xyz/linux-unix/privilege-escalation#logrotate-exploitation).
+After running **LinPeas** to enumerate the box more, it shows that **logrotate** runs on it and the _backups/access.log.1_ is a writable log file to exploit a [Logrotate Vulnerability](https://book.hacktricks.xyz/linux-unix/privilege-escalation#logrotate-exploitation).
 
 This vulnerability works only when a user logs in, but the `last` command shows, that root is constantly login in.
 We can use the [logrotten exploit on GitHub](https://github.com/whotwagner/logrotten), that has to be uploaded to the box and then compiled there:
