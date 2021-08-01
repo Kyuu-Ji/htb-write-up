@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>TheNotebook</td>
+    <td>Linux</td>
+    <td>31st July 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Armageddon</td>
+    <td>Linux</td>
+    <td>24th July 2021</td>
+    <td>:easy_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Breadcrumbs</td>
+    <td>Windows</td>
+    <td>17th July 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Atom</td>
     <td>Windows</td>
     <td>10th July 2021</td>
@@ -676,10 +715,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Truncation</li>
+        <li>Logrotten (Logrotate Vulnerability)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
