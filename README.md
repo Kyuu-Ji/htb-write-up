@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Oouch](https://kyuu-ji.github.io/htb-write-up/oouch/write-up-oouch)
+  - Retired on 1st August 2020
+  - OS: Linux
+  - Tags: OAuth, D-Bus, Containers, uWSGI
 - [Cascade](https://kyuu-ji.github.io/htb-write-up/cascade/write-up-cascade)
   - Retired on 25th July 2020
   - OS: Windows

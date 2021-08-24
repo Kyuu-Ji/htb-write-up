@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Proper</td>
+    <td>Windows</td>
+    <td>21st August 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>CrossFitTwo</td>
+    <td>OpenBSD</td>
+    <td>14th August 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Love</td>
+    <td>Windows</td>
+    <td>7th August 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>TheNotebook</td>
     <td>Linux</td>
     <td>31st July 2021</td>
@@ -30,7 +69,7 @@ Work in progress.
     <td>Armageddon</td>
     <td>Linux</td>
     <td>24th July 2021</td>
-    <td>:easy_circle: Easy</td>
+    <td>:green_circle: Easy</td>
     <td>
       <ul>
         <li>-</li>
@@ -670,11 +709,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>OAuth</li>
+        <li>D-Bus</li>
+        <li>Containers</li>
+        <li>uWSGI</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Cascade</td>
