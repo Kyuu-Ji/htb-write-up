@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 11th July 2020
   - OS: Linux
   - Tags: SQL Truncation, Logrotten (Logrotate Vulnerability)
+- [ServMon](https://kyuu-ji.github.io/htb-write-up/servmon/write-up-servmon)
+  - Retired on 20th June 2020
+  - OS: Windows
+  - Tags: CVE (NVMS-1000), NSClient++
 - [Monteverde](https://kyuu-ji.github.io/htb-write-up/monteverde/write-up-monteverde)
   - Retired on 13th June 2020
   - OS: Windows
