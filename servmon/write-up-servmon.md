@@ -61,6 +61,7 @@ PORT     STATE SERVICE       VERSION
 
 On FTP _anonymous login_ is allowed and there are two files in two different user directories:
 - _Users/Nadine/Confidential.txt_
+
 ```
 Nathan,
 
@@ -70,6 +71,7 @@ Regards
 ```
 
 - _Users/Nathan/Notes to do.txt_
+
 ```
 1) Change the password for NVMS - Complete
 2) Lock down the NSClient Access - Complete
@@ -171,7 +173,7 @@ ssh nadine@10.10.10.184
 
 ## Privilege Escalation
 
-We know that **NSClient++** runs on the box and there are is a **Privilege Escalation** vulnerability for this software.
+We know that **NSClient++** runs on the box and there is a **Privilege Escalation** vulnerability for this software.
 
 The installation directory is in _C:/Program Files/NSClient++_ and the file _nsclient.ini_ contains a password:
 ```
