@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Remote](https://kyuu-ji.github.io/htb-write-up/remote/write-up-remote)
+  - Retired on 5th September 2020
+  - OS: Windows
+  - Tags: CVE (Umbraco CMS), NFS
 - [Oouch](https://kyuu-ji.github.io/htb-write-up/oouch/write-up-oouch)
   - Retired on 1st August 2020
   - OS: Linux
