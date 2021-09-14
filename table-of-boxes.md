@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Validation</td>
+    <td>Linux</td>
+    <td>14th September 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Schooled</td>
     <td>FreeBSD</td>
     <td>11th September 2021</td>
@@ -710,10 +723,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>QUIC Transport Protocol</li>
+        <li>HTTP/3</li>
+        <li>XXE on Esigate</li>
+        <li>Symlink Race</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

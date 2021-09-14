@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 5th September 2020
   - OS: Windows
   - Tags: CVE (Umbraco CMS), NFS
+- [Quick](https://kyuu-ji.github.io/htb-write-up/quick/write-up-quick)
+  - Retired on 29th August 2020
+  - OS: Linux
+  - Tags: QUIC Transport Protocol, HTTP/3, XXE on Esigate, Symlink Race
 - [Oouch](https://kyuu-ji.github.io/htb-write-up/oouch/write-up-oouch)
   - Retired on 1st August 2020
   - OS: Linux
