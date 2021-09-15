@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Admirer](https://kyuu-ji.github.io/htb-write-up/admirer/write-up-admirer)
+  - Retired on 26th September 2020
+  - OS: Linux
+  - Tags: Adminer, Local File Inclusion (LFI), Python Library Hijacking
 - [Remote](https://kyuu-ji.github.io/htb-write-up/remote/write-up-remote)
   - Retired on 5th September 2020
   - OS: Windows
