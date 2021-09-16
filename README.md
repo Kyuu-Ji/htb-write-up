@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Blackfield](https://kyuu-ji.github.io/htb-write-up/blackfield/write-up-blackfield)
+  - Retired on 3rd October 2020
+  - OS: Windows
+  - Tags: Active Directory, AS-REP Roasting, BloodHound, LSASS Dump, NTDS.dit
 - [Admirer](https://kyuu-ji.github.io/htb-write-up/admirer/write-up-admirer)
   - Retired on 26th September 2020
   - OS: Linux

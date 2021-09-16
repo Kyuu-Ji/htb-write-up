@@ -657,10 +657,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>AS-REP Roasting</li>
+        <li>BloodHound</li>
+        <li>LSASS Dump</li>
+        <li>NTDS.dit</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
