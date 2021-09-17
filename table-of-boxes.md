@@ -758,10 +758,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Threat Hunting</li>
+        <li>Lua Scripting</li>
+        <li>MOTD Privilege Escalation</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
