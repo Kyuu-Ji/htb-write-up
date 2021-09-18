@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 29th August 2020
   - OS: Linux
   - Tags: QUIC Transport Protocol, HTTP/3, XXE on Esigate, Symlink Race
+- [Magic](https://kyuu-ji.github.io/htb-write-up/magic/write-up-magic)
+  - Retired on 22nd August 2020
+  - OS: Linux
+  - Tags: SQL Injection, Magic Bytes, Path Injection
 - [Traceback](https://kyuu-ji.github.io/htb-write-up/traceback/write-up-traceback)
   - Retired on 15th August 2020
   - OS: Linux

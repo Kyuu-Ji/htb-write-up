@@ -745,10 +745,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>Magic Bytes</li>
+        <li>Path Injection</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark</td>
     <td>:x:</td>
   </tr>
   <tr>
