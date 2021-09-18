@@ -154,5 +154,5 @@ Executing _/bin/sysinfo_:
 /bin/sysinfo
 ```
 
-After executing the binary, the `free` command will run from _/dev/shm_ and executes the reverse shell script.
-The listener on my IP and port 9002 starts a connections as root!
+After executing the binary, the `free` command will run from _/dev/shm_ and execute the reverse shell script.
+The listener on my IP and port 9002 starts a connection as root!

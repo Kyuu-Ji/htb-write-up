@@ -750,7 +750,7 @@ Work in progress.
         <li>Path Injection</li>
       </ul>
     </td>
-    <td>:heavy_check_mark</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
