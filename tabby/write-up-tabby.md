@@ -50,7 +50,7 @@ GET /news.php?file=/../../../../../etc/passwd
 ```
 
 It works and outputs the contents of _/etc/passwd_.
-The web files of the service on port 80 doe not look interesting, so maybe on port 8080 are important files to obtain.
+The web files of the service on port 80 do not look interesting, so maybe on port 8080 are important files to obtain.
 
 ## Checking HTTP (Port 8080)
 
