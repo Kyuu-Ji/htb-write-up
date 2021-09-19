@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Tabby](https://kyuu-ji.github.io/htb-write-up/tabby/write-up-tabby)
+  - Retired on 7th November 2020
+  - OS: Linux
+  - Tags: Local File Inclusion (LFI), Tomcat WAR file, Cracking ZIP, LXC (Linux Containers)
 - [Blackfield](https://kyuu-ji.github.io/htb-write-up/blackfield/write-up-blackfield)
   - Retired on 3rd October 2020
   - OS: Windows
@@ -453,7 +457,7 @@ grep -iR "8080/tcp" */*.md
 - [Kotarak](https://kyuu-ji.github.io/htb-write-up/kotarak/write-up-kotarak)
   - Retired on 10th March 2018
   - OS: Linux
-  - Tags: Server Side Request Forgery (SSRF), Tomcat WAF file, ntds.dit Cracking, Pivoting, Wget Exploitation
+  - Tags: Server Side Request Forgery (SSRF), Tomcat WAR file, ntds.dit Cracking, Pivoting, Wget Exploitation
 - [Node](https://kyuu-ji.github.io/htb-write-up/node/write-up-node)
   - Retired on 3rd March 2018
   - OS: Linux
@@ -481,7 +485,7 @@ grep -iR "8080/tcp" */*.md
 - [Calamity](https://kyuu-ji.github.io/htb-write-up/calamity/write-up-calamity)
   - Retired on 20th January 2018
   - OS: Linux
-  - Tags: Audio Steganography, Exploiting LCX (Linux Containers)
+  - Tags: Audio Steganography, Exploiting LXC (Linux Containers)
 - [Blue](https://kyuu-ji.github.io/htb-write-up/blue/write-up-blue)
   - Retired on 13th January 2018
   - OS: Windows

@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Sink</td>
+    <td>Linux</td>
+    <td>18th September 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Validation</td>
     <td>Linux</td>
     <td>14th September 2021</td>
@@ -592,10 +605,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Local File Inclusion (LFI)</li>
+        <li>Tomcat WAR file</li>
+        <li>Cracking ZIP</li>
+        <li>LXC (Linux Containers)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
