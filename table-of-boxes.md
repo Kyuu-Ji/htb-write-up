@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Cap</td>
+    <td>Linux</td>
+    <td>2nd October 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Jarmis</td>
+    <td>Linux</td>
+    <td>27th September 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Pit</td>
+    <td>Linux</td>
+    <td>25th September 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Sink</td>
     <td>Linux</td>
     <td>18th September 2021</td>
@@ -1158,11 +1197,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>.NET Deserialization</li>
+        <li>.NET Binary Analysis</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>RE</td>

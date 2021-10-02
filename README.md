@@ -138,6 +138,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 22nd February 2020
   - OS: Linux
   - Tags: FTP Bounce Attack, IPv6, rsync, Rsyslog, SQL Injection, PostgreSQL
+- [Json](https://kyuu-ji.github.io/htb-write-up/json/write-up-json)
+  - Retired on 15th February 2020
+  - OS: Windows
+  - Tags: .NET Deserialization, .NET Binary Analysis
 - [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
   - Retired on 1st February 2020
   - OS: Windows
