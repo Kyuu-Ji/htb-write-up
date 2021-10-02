@@ -89,7 +89,7 @@ Bearer: RandomString
 ```
 
 This web server may be vulnerable to **.NET Deserialization** and to exploit such a vulnerability, I will use the tool [ysoserial](https://github.com/pwntester/ysoserial.net).
-As this is a Windows tool, the payload will be created from a Windows client.
+As this is a Windows tool, the payload will be created on a Windows client.
 
 Creating .NET Payload:
 ```
@@ -214,7 +214,7 @@ Right click --> Edit Method (C#)
 
 ![Editing main method](json_dotnet-1.png)
 
-After pressing _Compile_ and then saving the file, the binary can be executed and it displays a windows with the credentials:
+After pressing _Compile_ and then saving the file, the binary can be executed and it displays a window with the credentials:
 
 ![Credentials after execution](json_dotnet-2.png)
 
