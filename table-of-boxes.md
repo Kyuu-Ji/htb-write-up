@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Dynstr</td>
+    <td>Linux</td>
+    <td>16th October 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Monitors</td>
+    <td>Linux</td>
+    <td>9th October 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Cap</td>
     <td>Linux</td>
     <td>2nd October 2021</td>
@@ -699,10 +725,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>OpenEMR</li>
+        <li>SQL Injection</li>
+        <li>Memcached</li>
+        <li>Docker</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
