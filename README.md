@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 7th November 2020
   - OS: Linux
   - Tags: Local File Inclusion (LFI), Tomcat WAR file, Cracking ZIP, LXC (Linux Containers)
+- [Fuse](https://kyuu-ji.github.io/htb-write-up/fuse/write-up-fuse)
+  - Retired on 31st October 2020
+  - OS: Windows
+  - Tags: Active Directory, Custom Password List, Printer (Capcom Driver)
 - [Cache](https://kyuu-ji.github.io/htb-write-up/cache/write-up-cache)
   - Retired on 10th October 2020
   - OS: Linux

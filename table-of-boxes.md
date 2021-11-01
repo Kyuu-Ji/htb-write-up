@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Explore</td>
+    <td>Android</td>
+    <td>30th October 2021</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Spooktrol</td>
+    <td>Linux</td>
+    <td>26th October 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Spider</td>
+    <td>Linux</td>
+    <td>23rd October 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Dynstr</td>
     <td>Linux</td>
     <td>16th October 2021</td>
@@ -686,10 +725,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>Printer (Capcom Driver)</li>
+        <li>Custom Password List</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
