@@ -172,7 +172,7 @@ SeLoadDriverPrivilege         Load and unload device drivers Enabled
 ```
 
 With this permission, it is possible to load drivers into the kernel and escalate privileges that way.
-The most common driver to load is the **Capcom driver** explained by [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/28.html) that can should be downloaded from their [GitHub repository](https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys).
+The most common driver to load is the **Capcom driver** explained by [FuzzySecurity](https://www.fuzzysecurity.com/tutorials/28.html) that should be downloaded from their [GitHub repository](https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys).
 
 This [article from Tarlogic](https://www.tarlogic.com/blog/abusing-seloaddriverprivilege-for-privilege-escalation/) explains the steps to exploit _SeLoadDriverPrivilege_.
 They provide a Proof of Concept driver on their [GitHub repository](https://github.com/TarlogicSecurity/EoPLoadDriver/) that we will use.
