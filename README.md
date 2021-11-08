@@ -54,6 +54,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 26th September 2020
   - OS: Linux
   - Tags: Adminer, Local File Inclusion (LFI), Python Library Hijacking
+- [Travel](https://kyuu-ji.github.io/htb-write-up/travel/write-up-travel)
+  - Retired on 12th September 2020
+  - OS: Linux
+  - Tags: WordPress, Server Side Request Forgery (SSRF), PHP Deserialization, Memcached, LDAP
 - [Remote](https://kyuu-ji.github.io/htb-write-up/remote/write-up-remote)
   - Retired on 5th September 2020
   - OS: Windows

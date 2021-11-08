@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>PivotAPI</td>
+    <td>Windows</td>
+    <td>6th November 2021</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Explore</td>
     <td>Android</td>
     <td>30th October 2021</td>
@@ -827,10 +840,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>WordPress</li>
+        <li>Server Side Request Forgery (SSRF)</li>
+        <li>PHP Deserialization</li>
+        <li>Memcached</li>
+        <li>LDAP</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
