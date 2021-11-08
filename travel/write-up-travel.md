@@ -36,7 +36,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
 The SSL certificate on port 443 discloses some DNS names, that should be added to the _/etc/hosts_ file:
-- www.travel.htb
+- www[.]travel.htb
 - blog.travel.htb
 - blog-dev.travel.htb
 
@@ -179,7 +179,7 @@ DEBUG
  ~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  ```
 
-The PHP file _debug.php_ is also placed in _wp-content/themes/twentytwenty/_ and can be called from there.
+The PHP file _debug.php_ is actually placed in _wp-content/themes/twentytwenty/_ and can be called from there.
 
 Now it has to be found out if there is a way for user input so the server calls back to us and it may be possible to manipulate the PHP serialized object.
 
