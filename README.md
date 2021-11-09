@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [SneakyMailer](https://kyuu-ji.github.io/htb-write-up/sneakymailer/write-up-sneakymailer)
+  - Retired on 28th November 2020
+  - OS: Linux
+  - Tags: Phishing, PyPI Server
 - [Tabby](https://kyuu-ji.github.io/htb-write-up/tabby/write-up-tabby)
   - Retired on 7th November 2020
   - OS: Linux
