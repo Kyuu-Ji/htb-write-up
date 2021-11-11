@@ -46,6 +46,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 31st October 2020
   - OS: Windows
   - Tags: Active Directory, Custom Password List, Printer (Capcom Driver)
+- [Blunder](https://kyuu-ji.github.io/htb-write-up/blunder/write-up-blunder)
+  - Retired on 17th October 2020
+  - OS: Linux
+  - Tags: CVE (Bludit CMS), Bypass Brute-Force Restrictions, Sudo Vulnerability
 - [Cache](https://kyuu-ji.github.io/htb-write-up/cache/write-up-cache)
   - Retired on 10th October 2020
   - OS: Linux

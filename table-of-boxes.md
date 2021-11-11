@@ -767,11 +767,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Bludit CMS)</li>
+        <li>Bypass Brute-Force Restrictions</li>
+        <li>Sudo Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Cache</td>
