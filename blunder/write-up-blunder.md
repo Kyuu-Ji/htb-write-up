@@ -154,7 +154,7 @@ The uploaded shell can be found in _/bl-content/tmp/php-reverse-shell.gif_ and a
 
 ## Privilege Escalation
 
-In _/var/www/bludit-3.10.0a/_ is the another version of **Bludit** and the file _bl-content/databases/users.php_ contains a password for the user _Hugo_:
+In _/var/www/bludit-3.10.0a/_ is another version of **Bludit** and the file _bl-content/databases/users.php_ contains a password for the user _Hugo_:
 ```
 admin": {
         "nickname": "Hugo",
