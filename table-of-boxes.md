@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Writer</td>
+    <td>Linux</td>
+    <td>11th December 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Pikaboo</td>
+    <td>Linux</td>
+    <td>4th December 2021</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Intelligence</td>
     <td>Windows</td>
     <td>27th November 2021</td>
@@ -750,10 +776,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Gym Management Software)</li>
+        <li>CVE (CloudMe Sync)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

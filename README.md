@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 28th November 2020
   - OS: Linux
   - Tags: Phishing, PyPI Server
+- [Buff](https://kyuu-ji.github.io/htb-write-up/buff/write-up-buff)
+  - Retired on 21st November 2020
+  - OS: Windows
+  - Tags: CVE (Gym Management Software), CVE (CloudMe Sync)
 - [Tabby](https://kyuu-ji.github.io/htb-write-up/tabby/write-up-tabby)
   - Retired on 7th November 2020
   - OS: Linux
