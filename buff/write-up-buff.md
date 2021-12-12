@@ -33,7 +33,7 @@ On the top right is a login form and the copyright on the bottom shows [Projectw
 In the menu _Contact_ it says that it is made using _"Gym Management Software 1.0"_.
 On the website **Projectworlds.in**, there are different PHP projects and one them is [Gym Management System 1.0](https://projectworlds.in/free-projects/php-projects/gym-management-system-project-in-php/).
 
-By searching for vulnerabilities for this software, there are is a  **Unauthenticated Remote Code Execution** vulnerability:
+By searching for vulnerabilities for this software, there is a **Unauthenticated Remote Code Execution** vulnerability:
 ```
 searchsploit gym
 
