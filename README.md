@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 12th December 2020
   - OS: OpenBSD
   - Tags: Vim Swap File, CVE (OpenBSD)
+- [Unbalanced](https://kyuu-ji.github.io/htb-write-up/unbalanced/write-up-unbalanced)
+  - Retired on 5th December 2020
+  - OS: Linux
+  - Tags: Cracking EncFS, Proxy connections, XPATH Injection, CVE (Pi-hole)
 - [SneakyMailer](https://kyuu-ji.github.io/htb-write-up/sneakymailer/write-up-sneakymailer)
   - Retired on 28th November 2020
   - OS: Linux
