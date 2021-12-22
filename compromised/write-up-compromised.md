@@ -33,7 +33,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ## Checking HTTP (Port 80)
 
 The web site looks like a webshop that sells rubber ducks.
-On the top left it says **[LiteCart]**(https://www.litecart.net), which is an open-source E-Commerce platform built with PHP and jQuery.
+On the top left it says [LiteCart](https://www.litecart.net), which is an open-source E-Commerce platform built with PHP and jQuery.
 
 Lets search for hidden directories and PHP files with **Gobuster**:
 ```
@@ -279,7 +279,7 @@ su sysadmin
 
 ### Privilege Escalation to root
 
-When searching for more persistence methods, the **LD_PRELOAD** trick is often used to force change the precedence of libraries.
+When searching for more persistence methods, the **LD_PRELOAD** trick is often used to change the precedence of libraries.
 The binary _/bin/bash_ uses an unusual library:
 ```
 ldd /bin/bash
@@ -304,10 +304,6 @@ As this is a shared library, it can be analyzed with any decompiler like **Ghidr
 It has one Export for the function _read_, which seems to contain a backdoor, when all variables are true:
 
 ![Backdoor in function](compromised_re-2.png)
-
-```
-0x776b654f5534736a7638346f6b2f
-```
 
 Decoding hex to ASCII:
 ```
