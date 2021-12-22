@@ -140,7 +140,7 @@ This should have a vulnerability somewhere, so lets send the login form to **Bur
 ### Searching Vulnerability on Web Page
 
 A difference between the login forms is, that _intranet-host1_ shows the message _"Invalid credentials"_ when trying to authenticate.
-When sending a _single quote (')_ in any of the parameters, the response size gets bigger, but there is nothing more displayed on the page.
+When sending a _single quote (')_ in any of the parameters, the response size gets bigger, but there is not more displayed on the page.
 This means that there is some kind of **injection vulnerability**.
 
 After testing for different injections, the following in the _Password_ parameter dumps data from the database:
@@ -152,8 +152,8 @@ Username=admin&Password=' or '1'='
 ```
 ```
 Rita Fubelli    rita@unbalanced.htb    Role: HR Manager
-Jim Mickelson   jim@unbalanced.htb     Role: Web Designer      
-Bryan Angstrom  bryan@unbalanced.htb   Role: System Administrator      
+Jim Mickelson   jim@unbalanced.htb     Role: Web Designer
+Bryan Angstrom  bryan@unbalanced.htb   Role: System Administrator
 Sarah Goodman   sarah@unbalanced.htb   Role: Team Leader
 ```
 

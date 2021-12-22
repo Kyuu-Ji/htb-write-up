@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Compromised](https://kyuu-ji.github.io/htb-write-up/compromised/write-up-compromised)
+  - Retired on 23rd January 2021
+  - OS: Linux
+  - Tags: CVE (LiteCart), Bypass PHP disabled functions, Persistence (MySQL, strace, LD_PRELOAD, PAM), Reverse Engineering
 - [OpenKeyS](https://kyuu-ji.github.io/htb-write-up/openkeys/write-up-openkeys)
   - Retired on 12th December 2020
   - OS: OpenBSD

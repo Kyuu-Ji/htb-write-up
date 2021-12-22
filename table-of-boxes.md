@@ -696,11 +696,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (LiteCart)</li>
+        <li>Bypass PHP disabled functions</li>
+        <li>Persistence (MySQL, strace, LD_PRELOAD, PAM)</li>
+        <li>Reverse Engineering</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>RopeTwo</td>
