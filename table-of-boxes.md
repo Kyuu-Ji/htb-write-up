@@ -644,10 +644,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Java Deserialization</li>
+        <li>Tomcat</li>
+        <li>CVE (SaltStack)</li>
+        <li>Docker Engine API</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

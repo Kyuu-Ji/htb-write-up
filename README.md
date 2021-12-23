@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Feline](https://kyuu-ji.github.io/htb-write-up/feline/write-up-feline)
+  - Retired on 20th February 2021
+  - OS: Linux
+  - Tags: Java Deserialization, Tomcat, CVE (SaltStack), Docker Engine API
 - [Compromised](https://kyuu-ji.github.io/htb-write-up/compromised/write-up-compromised)
   - Retired on 23rd January 2021
   - OS: Linux
