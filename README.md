@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 20th February 2021
   - OS: Linux
   - Tags: Java Deserialization, Tomcat, CVE (SaltStack), Docker Engine API
+- [Worker](https://kyuu-ji.github.io/htb-write-up/worker/write-up-worker)
+  - Retired on 30th January 2021
+  - OS: Windows
+  - Tags: Apache Subversion, Azure DevOps
 - [Compromised](https://kyuu-ji.github.io/htb-write-up/compromised/write-up-compromised)
   - Retired on 23rd January 2021
   - OS: Linux

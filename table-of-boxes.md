@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>LogForge</td>
+    <td>Linux</td>
+    <td>23rd December 2021</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Static</td>
     <td>Linux</td>
     <td>18th December 2021</td>
@@ -686,11 +699,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Apache Subversion</li>
+        <li>Azure DevOps</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Compromised</td>
