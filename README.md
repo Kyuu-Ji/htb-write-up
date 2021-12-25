@@ -46,6 +46,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 23rd January 2021
   - OS: Linux
   - Tags: CVE (LiteCart), Bypass PHP disabled functions, Persistence (MySQL, strace, LD_PRELOAD, PAM), Reverse Engineering
+- [Omni](https://kyuu-ji.github.io/htb-write-up/omni/write-up-omni)
+  - Retired on 9th January 2021
+  - OS: Windows IoT
+  - Tags: Windows IoT, SirepRAT, Decrypting Files with PowerShell
 - [OpenKeyS](https://kyuu-ji.github.io/htb-write-up/openkeys/write-up-openkeys)
   - Retired on 12th December 2020
   - OS: OpenBSD
