@@ -618,10 +618,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Outlook Web App (OWA)</li>
+        <li>Password Spraying</li>
+        <li>Phishing</li>
+        <li>PowerShell Constrained Language</li>
+        <li>Just Enough Administration (JEA)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

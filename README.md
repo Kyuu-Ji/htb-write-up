@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Reel2](https://kyuu-ji.github.io/htb-write-up/reel2/write-up-reel2)
+  - Retired on 13th March 2021
+  - OS: Windows
+  - Tags: Outlook Web App (OWA), Password Spraying, Phishing, PowerShell Constrained Language, Just Enough Administration (JEA)
 - [Feline](https://kyuu-ji.github.io/htb-write-up/feline/write-up-feline)
   - Retired on 20th February 2021
   - OS: Linux
