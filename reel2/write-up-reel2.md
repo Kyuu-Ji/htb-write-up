@@ -147,7 +147,7 @@ responder -I tun0
 [HTTP] NTLMv2 Hash     : k.svensson::htb:97fb9988700e15f5:9067AC51AC1C30F8ED6739D704B2384E:0101000000000000211A864141FBD701A2(...)
 ```
 
-After a while the link gets clicked from the user _k.svensson_ and the NTLM hash can be tried to crack with **Hashcat**:
+After a while the link gets clicked from the user _k.svensson_ and the NTLM hash can be tried to be cracked with **Hashcat**:
 ```
 hashcat -m 5600 ksvensson.hash /usr/share/wordlists/rockyou.txt
 ```
@@ -208,7 +208,7 @@ These files are for the [Just Enough Administration (JEA)](https://docs.microsof
 
 A _.psrc_ file is for [JEA Role Capabilities](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/jea/role-capabilities?view=powershell-7.2) and a _.pssc_ file is for [JEA Session Configurations](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting/jea/session-configurations?view=powershell-7.2).
 
-JEA Role Capabilities of the user _jea_test_account_:
+**JEA Role Capabilities** of the user _jea_test_account_:
 ```
 type jea_test_account.psrc | select-string -notmatch "^#" | select-string .
 ```
@@ -224,7 +224,7 @@ FunctionDefinitions = @{
 }
 ```
 
-JEA Session Configuration of the user _jea_test_account_:
+**JEA Session Configuration** of the user _jea_test_account_:
 ```
 type jea_test_account.pssc | select-string -notmatch "^#" | select-string .
 ```
@@ -275,7 +275,7 @@ It starts a shell on the box as the user _jea_test_account_.
 
 The command `Get-Command` shows the same eight commands as the other user but including the _Check-File_ function that is shown in the **JEA Role Capabilities**.
 
-This function can only be run if the path contains _"D:"_ or _"C:\ProgramData_.
+This function can only be run if the path contains _"D:"_ or _"C:\ProgramData"_.
 
 Testing for **Path Traversal**:
 ```
