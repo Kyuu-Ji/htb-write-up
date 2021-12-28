@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 13th March 2021
   - OS: Windows
   - Tags: Outlook Web App (OWA), Password Spraying, Phishing, PowerShell Constrained Language, Just Enough Administration (JEA)
+- [Passage](https://kyuu-ji.github.io/htb-write-up/passage/write-up-passage)
+  - Retired on 6th March 2021
+  - OS: Linux
+  - Tags: CVE (CuteNews), USBCreator
 - [Feline](https://kyuu-ji.github.io/htb-write-up/feline/write-up-feline)
   - Retired on 20th February 2021
   - OS: Linux
