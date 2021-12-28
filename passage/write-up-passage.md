@@ -138,7 +138,7 @@ In the home directory of _nadav_ is a _.viminfo_ file that contains some history
 ```
 
 This user changed the group _root_ to _sudo_ in the _51-ubuntu-admin.conf_ configuration.
-There exists a configuration file for **USBCreator**, which is used to convert create bootable USB devices.
+There exists a configuration file for **USBCreator**, which is used to create bootable USB devices.
 
 An [article from Palo Alto](https://unit42.paloaltonetworks.com/usbcreator-d-bus-privilege-escalation-in-ubuntu-desktop/) describes how this can be exploited to escalate privileges and read files that belong to root.
 
