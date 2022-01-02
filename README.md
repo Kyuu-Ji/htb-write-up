@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Bucket](https://kyuu-ji.github.io/htb-write-up/bucket/write-up-bucket)
+  - Retired on 24th April 2021
+  - OS: Linux
+  - Tags: AWS S3 Buckets, DynamoDB, PD4ML
 - [Reel2](https://kyuu-ji.github.io/htb-write-up/reel2/write-up-reel2)
   - Retired on 13th March 2021
   - OS: Windows
