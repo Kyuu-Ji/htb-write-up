@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Developer</td>
+    <td>Linux</td>
+    <td>15th January 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Previse</td>
+    <td>Linux</td>
+    <td>8th January 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>NodeBlog</td>
+    <td>Linux</td>
+    <td>1st January 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>LogForge</td>
     <td>Linux</td>
     <td>23rd December 2021</td>
@@ -680,10 +719,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Ruby on Rails</li>
+        <li>Multi-Factor Authentication</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
