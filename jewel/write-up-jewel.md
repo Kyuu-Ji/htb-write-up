@@ -49,7 +49,7 @@ The software [Phusion Passenger](https://github.com/phusion/passenger) is a web 
 
 ## Checking HTTP (Port 8000)
 
-On the web page on port 8000 a **Git repository** is hosted with the description _"BL0G!"_.
+On the web page on port 8000 a **Git repository** with the description _"BL0G!"_ is hosted.
 This seems to be the source code of the web application on port 8080.
 
 It can be downloaded by clicking on _Snapshot_ and then the archive can be decompressed:
@@ -102,7 +102,7 @@ rails new exploit
 cd exploit
 ```
 
-Staring `rails console` and creating serialized object:
+Starting `rails console` and creating serialized object:
 ```
 rails console
 ```
