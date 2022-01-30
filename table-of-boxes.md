@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Anubis</td>
+    <td>Windows</td>
+    <td>29th January 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Forge</td>
+    <td>Linux</td>
+    <td>22nd January 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Developer</td>
     <td>Linux</td>
     <td>15th January 2022</td>
@@ -733,11 +759,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Server-Side Template Injection (SSTI)</li>
+        <li>Log Files</li>
+        <li>Splunk Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Worker</td>

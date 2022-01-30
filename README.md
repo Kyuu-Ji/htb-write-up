@@ -54,6 +54,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 13th February 2021
   - OS: Linux
   - Tags: Ruby on Rails, Multi-Factor Authentication
+- [Doctor](https://kyuu-ji.github.io/htb-write-up/doctor/write-up-doctor)
+  - Retired on 6th February 2021
+  - OS: Linux
+  - Tags: Server-Side Template Injection (SSTI), Log Files, Splunk Vulnerability
 - [Worker](https://kyuu-ji.github.io/htb-write-up/worker/write-up-worker)
   - Retired on 30th January 2021
   - OS: Windows
