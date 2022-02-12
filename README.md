@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 24th April 2021
   - OS: Linux
   - Tags: AWS S3 Buckets, DynamoDB, PD4ML
+- [Time](https://kyuu-ji.github.io/htb-write-up/time/write-up-time)
+  - Retired on 3rd April 2021
+  - OS: Linux
+  - Tags: Java Library (Jackson), Systemd Timer
 - [Reel2](https://kyuu-ji.github.io/htb-write-up/reel2/write-up-reel2)
   - Retired on 13th March 2021
   - OS: Windows
