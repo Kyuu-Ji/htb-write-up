@@ -37,7 +37,7 @@ The web page hosts an _online JSON beautifier & validator_ and the _validate_ fu
 
 It parses JSON data, but the _validate_ function displays that _"Validation failed"_.
 
-When sending anything other than JSON data to the validator, it displays a **Jave error message**:
+When sending anything other than JSON data to the validator, it displays a **Java error message**:
 ```
 Validation failed: Unhandled Java exception: com.fasterxml.jackson.core.JsonParseException: Unrecognized token 'anything': was expecting ('true', 'false' or 'null')
 ```

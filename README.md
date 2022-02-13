@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 24th April 2021
   - OS: Linux
   - Tags: AWS S3 Buckets, DynamoDB, PD4ML
+- [Laboratory](https://kyuu-ji.github.io/htb-write-up/laboratory/write-up-laboratory)
+  - Retired on 17th April 2021
+  - OS: Linux
+  - Tags: CVE (GitLab), Path Injection
 - [Time](https://kyuu-ji.github.io/htb-write-up/time/write-up-time)
   - Retired on 3rd April 2021
   - OS: Linux
