@@ -190,7 +190,7 @@ Unfortunately the shell cuts of parts of the output, but the _"Tail -f Stdout"_ 
 /usr/libexec/httpd -u -X -s -i 127.0.0.1 -I 3001 -L weather /home/r.michaels/devel/webapi/weather.lua -P /var/run/httpd_devel.pid -U r.michaels -b /home/r.michaels/devel/www
 ```
 
-The user _r.micheals_ runs this and according to the [NetBSD httpd documentation](https://man.netbsd.org/NetBSD-6.0.1/httpd.8), the `-u` parameter enables access to the user directory:
+The user _r.michaels_ runs this and according to the [NetBSD httpd documentation](https://man.netbsd.org/NetBSD-6.0.1/httpd.8), the `-u` parameter enables access to the user directory:
 ```
 curl localhost:3001/~r.michaels/
 
@@ -212,7 +212,7 @@ Getting the private SSH key _id_rsa_:
 curl --user webapi_user:iamthebest localhost:3001/~r.michaels/id_rsa
 ```
 
-Using the SSH key to login into the box as _r.micheals_:
+Using the SSH key to login into the box as _r.michaels_:
 ```
 ssh -i rmichaels.key r.michaels@10.10.10.218
 ```
@@ -238,7 +238,7 @@ Decompressing the **Tar archive**:
 tar -zxvf /tmp/backups.tar.gz
 ```
 
-It contains the same files for the web server as before, but the _.htpasswd_ has a different hash than before:
+It contains the same files for the web server, but the _.htpasswd_ has a different hash than before:
 ```
 webapi_user:$1$6xc7I/LW$WuSQCS6n3yXsjPMSmwHDu.
 ```
