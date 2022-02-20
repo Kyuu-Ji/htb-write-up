@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Bolt</td>
+    <td>Linux</td>
+    <td>19th February 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>EarlyAccess</td>
     <td>Linux</td>
     <td>12th February 2022</td>
@@ -700,10 +713,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Supervisor Process Manager</li>
+        <li>API Fuzzing</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

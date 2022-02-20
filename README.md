@@ -46,6 +46,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 3rd April 2021
   - OS: Linux
   - Tags: Java Library (Jackson), Systemd Timer
+- [Luanne](https://kyuu-ji.github.io/htb-write-up/luanne/write-up-luanne)
+  - Retired on 27th March 2021
+  - OS: NetBSD
+  - Tags: Supervisor Process Manager, API Fuzzing
 - [Reel2](https://kyuu-ji.github.io/htb-write-up/reel2/write-up-reel2)
   - Retired on 13th March 2021
   - OS: Windows
