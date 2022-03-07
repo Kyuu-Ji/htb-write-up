@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Sharp](https://kyuu-ji.github.io/htb-write-up/sharp/write-up-sharp)
+  - Retired on 1st May 2021
+  - OS: Windows
+  - Tags: .NET Binary Analysis, .NET Remoting, Windows Communication Foundation
 - [Bucket](https://kyuu-ji.github.io/htb-write-up/bucket/write-up-bucket)
   - Retired on 24th April 2021
   - OS: Linux
