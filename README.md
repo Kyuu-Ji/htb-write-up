@@ -62,6 +62,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 6th March 2021
   - OS: Linux
   - Tags: CVE (CuteNews), USBCreator
+- [Academy](https://kyuu-ji.github.io/htb-write-up/academy/write-up-academy)
+  - Retired on 27th February 2021
+  - OS: Linux
+  - Tags: PHP Laravel, Brute-Force SSH, Auditd Log Files
 - [Feline](https://kyuu-ji.github.io/htb-write-up/feline/write-up-feline)
   - Retired on 20th February 2021
   - OS: Linux
