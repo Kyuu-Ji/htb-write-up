@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Delivery](https://kyuu-ji.github.io/htb-write-up/delivery/write-up-delivery)
+  - Retired on 22nd May 2021
+  - OS: Linux
+  - Tags: Help Desk, Mattermost, Brute-Force su
 - [Sharp](https://kyuu-ji.github.io/htb-write-up/sharp/write-up-sharp)
   - Retired on 1st May 2021
   - OS: Windows

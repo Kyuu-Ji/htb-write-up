@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Stacked</td>
+    <td>Linux</td>
+    <td>19th March 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Ransom</td>
+    <td>Linux</td>
+    <td>15th March 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Devzat</td>
     <td>Linux</td>
     <td>12th March 2022</td>
@@ -644,11 +670,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Help Desk</li>
+        <li>Mattermost</li>
+        <li>Brute-Force su</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Ready</td>
