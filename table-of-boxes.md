@@ -631,11 +631,14 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>WordPress</li>
+        <li>PHP Deserialization</li>
+        <li>Race Condition Vulnerability</li>
+        <li>Inotify</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>ScriptKiddie</td>
