@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 22nd May 2021
   - OS: Linux
   - Tags: Help Desk, Mattermost, Brute-Force su
+- [Ready](https://kyuu-ji.github.io/htb-write-up/ready/write-up-ready)
+  - Retired on 15th May 2021
+  - OS: Linux
+  - Tags: GitLab, Server Side Request Forgery (SSRF), Docker
 - [Sharp](https://kyuu-ji.github.io/htb-write-up/sharp/write-up-sharp)
   - Retired on 1st May 2021
   - OS: Windows
