@@ -285,7 +285,7 @@ After sending the password, a Kerberos ticket will be granted and SSH can be use
 ssh j.nakazawa@10.10.10.224
 ```
 
-> NOTE: In the _/etc/hosts_ file, the hostname of _srv01.realcorp.htb_ has to be specified first for this to work:
+> NOTE: In the _/etc/hosts_ file, the hostname of _srv01.realcorp.htb_ has to be specified as the first entry to make this work:
 ```
 10.10.10.224    srv01.realcorp.htb realcorp.htb
 ```
@@ -317,7 +317,7 @@ After a minute, the file _.k5login_ file will be synchronized into _/home/admin/
 ssh admin@10.10.10.224
 ```
 
-## Privilege Escalation to root
+### Privilege Escalation to root
 
 Checking which files the user and group _admin_ has access to:
 ```
