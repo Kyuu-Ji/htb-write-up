@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Shibboleth</td>
+    <td>Linux</td>
+    <td>2nd April 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Altered</td>
+    <td>Linux</td>
+    <td>1st April 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Secret</td>
     <td>Linux</td>
     <td>26th March 2022</td>
@@ -631,10 +657,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Proxy connections</li>
+        <li>CVE (OpenSMTPD)</li>
+        <li>Linux KDC</li>
+        <li>Kerberos (k5login, keytab)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

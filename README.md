@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Tentacle](https://kyuu-ji.github.io/htb-write-up/tentacle/write-up-tentacle)
+  - Retired on 19th June 2021
+  - OS: Linux
+  - Tags: Proxy connections, CVE (OpenSMTPD), Linux KDC, Kerberos (k5login, keytab)
 - [Tenet](https://kyuu-ji.github.io/htb-write-up/tenet/write-up-tenet)
   - Retired on 12th June 2021
   - OS: Linux
