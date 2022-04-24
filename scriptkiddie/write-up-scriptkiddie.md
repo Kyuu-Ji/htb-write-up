@@ -86,12 +86,12 @@ def searchsploit(text, srcip):
 # (...)
 ```
 
-It gets an entry, when the **Searchsplot** feature does not contain any alphanumeric characters:
+It gets an entry, when the **Searchsploit** feature does not contain any alphanumeric characters:
 ```
 regex_alphanum = re.compile(r'^[A-Za-z0-9 \.]+$')
 ```
 
-Sending special characters to the **Searchsplot** feature while checking the file with `tail -f`:
+Sending special characters to the **Searchsploit** feature while checking the file with `tail -f`:
 ```
 tail -f logs/hackers
 
@@ -149,12 +149,12 @@ User pwn may run the following commands on scriptkiddie:
     (root) NOPASSWD: /opt/metasploit-framework-6.0.9/msfconsole
 ```
 
-Starting the **Metasploit Console**
+Starting the **Metasploit Console**:
 ```
 sudo /opt/metasploit-framework-6.0.9/msfconsole
 ```
 
-It is possible to execute local commands from `msfconsole` and the privileges will stay:
+It is possible to run local commands from `msfconsole` with the executed privileges:
 ```
 msf6 > /bin/bash
 [*] exec: /bin/bash
