@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 12th June 2021
   - OS: Linux
   - Tags: WordPress, PHP Deserialization, Race Condition Vulnerability, Inotify
+- [ScriptKiddie](https://kyuu-ji.github.io/htb-write-up/scriptkiddie/write-up-scriptkiddie)
+  - Retired on 5th June 2021
+  - OS: Linux
+  - Tags: CVE (Msfvenom), Command Injection, Msfconsole
 - [Delivery](https://kyuu-ji.github.io/htb-write-up/delivery/write-up-delivery)
   - Retired on 22nd May 2021
   - OS: Linux

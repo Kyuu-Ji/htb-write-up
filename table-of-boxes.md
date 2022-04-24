@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Backdoor</td>
+    <td>Linux</td>
+    <td>23rd April 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Toby</td>
+    <td>Linux</td>
+    <td>16th April 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Backend</td>
+    <td>Linux</td>
+    <td>12th April 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Overflow</td>
     <td>Linux</td>
     <td>9th April 2022</td>
@@ -702,10 +741,12 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Msfvenom)</li>
+        <li>Command Injection</li>
+        <li>Msfconsole</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
