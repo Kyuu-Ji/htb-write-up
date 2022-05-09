@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Unicode</td>
+    <td>Linux</td>
+    <td>7th May 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>BackendTwo</td>
+    <td>Linux</td>
+    <td>4th May 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Search</td>
+    <td>Windows</td>
+    <td>30th April 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Backdoor</td>
     <td>Linux</td>
     <td>23rd April 2022</td>
@@ -514,10 +553,12 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>HTTP Request Smuggling</li>
+        <li>Gitea</li>
+        <li>AWS Secrets & Keys</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

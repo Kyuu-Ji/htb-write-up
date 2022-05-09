@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Sink](https://kyuu-ji.github.io/htb-write-up/sink/write-up-sink)
+  - Retired on 18th September 2021
+  - OS: Linux
+  - Tags: HTTP Request Smuggling, Gitea, AWS Secrets & Keys
 - [Tentacle](https://kyuu-ji.github.io/htb-write-up/tentacle/write-up-tentacle)
   - Retired on 19th June 2021
   - OS: Linux
