@@ -43,7 +43,7 @@ The web service on port 5000 has the title _"Sink Devops"_ and looks like a cust
 
 ![Sink Devops Login](sink_web-1.png)
 
-After signing up, there is one article about _DevOps_ and a potential existing username _admin@sink.htb_:
+After signing up, there is one article about _DevOps_ and a potential existing username _admin[@]sink.htb_:
 
 ![Sink Devops Login](sink_web-2.png)
 
@@ -65,7 +65,7 @@ This web application seems to be vulnerable to **HTTP Request Smuggling** and [t
 ### Exploiting HTTP Request Smuggling
 
 The load balancer **HAProxy** sends every request to the web server **gunicorn**.
-The TCP-handshake in these requests are a bigger than usual, as these rely on **chunking**, which allows to send multiple HTTP requests in a single packet.
+The TCP-handshake in these requests are bigger than usual, as these rely on **chunking**, which allows to send multiple HTTP requests in a single packet.
 
 In this vulnerability a _vertical tab_ in the _Transfer-Encoding_ header is used, that is ignored by **HAProxy**, but gets processed by **gunicorn** to hijack the request.
 
@@ -106,7 +106,7 @@ After sending the request several times, it creates two notes with HTTP requests
 GET /notes/delete/1234 HTTP/1.1 Host: 127.0.0.1:8080 User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0 Accept-Encoding: gzip, deflate Accept: */* Cookie: session=eyJlbWFpbCI6ImFkbWluQHNpbmsuaHRiIn0.Ynezqg.8sVu29fOo9GLgGhrZVL-KqSrszs X-Forwa
 ```
 
-By taking it and replacing our session cookies in the **Browser Developer Tools**, we get logged in as the user _admin@sink.htb_.
+By taking it and replacing our session cookies in the **Browser Developer Tools**, we get logged in as the user _admin[@]sink.htb_.
 
 This user has three interesting notes:
 ```
@@ -127,7 +127,7 @@ The credentials of the _"Dev Node URL"_ can be successfully used to sign into th
 
 This user has four repositories:
 - Kinesis_Elasticsearch
-  - Elasticsearch runs on port 9200 by default, so it may be running locally
+  - Elasticsearch runs on port 9200 by default, so it may be accessible locally
 - Serverless-Plugin
   - _package.json_ shows that this runs **LocalStack** which runs on port 4566 by default
   - **LocalStack** is used to emulate **AWS** deployments
