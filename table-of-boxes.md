@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Fingerprint</td>
+    <td>Linux</td>
+    <td>14th May 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Unicode</td>
     <td>Linux</td>
     <td>7th May 2022</td>
@@ -797,10 +810,15 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>.NET Code Analysis</li>
+        <li>JWT Token</li>
+        <li>Deserialization</li>
+        <li>Cross-Site-Scripting (XSS)</li>
+        <li>GraphQL</li>
+        <li>Server Side Request Forgery (SSRF)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

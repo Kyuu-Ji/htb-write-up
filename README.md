@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 5th June 2021
   - OS: Linux
   - Tags: CVE (Msfvenom), Command Injection, Msfconsole
+- [Cereal](https://kyuu-ji.github.io/htb-write-up/cereal/write-up-cereal)
+  - Retired on 29th May 2021
+  - OS: Windows
+  - Tags: .NET Code Analysis, JWT Token, Deserialization, Cross-Site-Scripting (XSS), GraphQL, Server Side Request Forgery (SSRF)
 - [Delivery](https://kyuu-ji.github.io/htb-write-up/delivery/write-up-delivery)
   - Retired on 22nd May 2021
   - OS: Linux
