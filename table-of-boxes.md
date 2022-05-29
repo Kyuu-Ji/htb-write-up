@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>AdmirerToo</td>
+    <td>Linux</td>
+    <td>28th May 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Pandora</td>
+    <td>Linux</td>
+    <td>21st May 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Fingerprint</td>
     <td>Linux</td>
     <td>14th May 2022</td>
@@ -724,10 +750,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Reverse Engineering Electron Application</li>
+        <li>Redis</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

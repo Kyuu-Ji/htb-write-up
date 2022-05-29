@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 18th September 2021
   - OS: Linux
   - Tags: HTTP Request Smuggling, Gitea, AWS Secrets & Keys
+- [Atom](https://kyuu-ji.github.io/htb-write-up/atom/write-up-atom)
+  - Retired on 10th July 2021
+  - OS: Windows
+  - Tags: Reverse Engineering Electron Application, Redis
 - [Tentacle](https://kyuu-ji.github.io/htb-write-up/tentacle/write-up-tentacle)
   - Retired on 19th June 2021
   - OS: Linux
