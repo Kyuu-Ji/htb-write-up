@@ -45,7 +45,7 @@ Login Failed! Reason: User doesn't exist.
 After registering a user, it shows a message that they can be accessed on _/notes_.
 On there it is possible to add a title and contents for a note.
 
-It forwards to a generated URL _/dee51418-9e3e-47fe-925e-2a1de64e7ebe/notes_ while the directory _/notes_ cannot be found.
+It forwards to a generated directory _/dee51418-9e3e-47fe-925e-2a1de64e7ebe/notes_ while the directory _/notes_ cannot be found.
 The cookies also show this string in the value for _uuid_ and another cookie _auth_ with a **JSON Web Token (JWT)**:
 ```
 eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NzA3MC9wcml2S2V5LmtleSJ9.eyJ1c2VybmFtZSI6InR(...)
@@ -92,7 +92,7 @@ ssh-keygen -t rsa -b 5096 -m PEM -f jwtRS256.key
 openssl rsa -in jwtRS256.key -pubout -outform PEM -out jwtRS256.key.pub
 ```
 
-The signatures and the changes can be done with [jwt.io](JWT with [jwt.io](https://jwt.io/):
+The signatures and the changes can be done with [jwt.io](https://jwt.io/):
 
 ![Generating token on jwt.io](thenotebook_jwt-1.png)
 
