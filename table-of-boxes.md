@@ -646,10 +646,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Electron Application</li>
+        <li>Local File Inclusion (LFI)</li>
+        <li>Prototype Pollution</li>
+        <li>Kubernetes</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
