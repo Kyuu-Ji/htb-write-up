@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Paper</td>
+    <td>Linux</td>
+    <td>18th June 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Meta</td>
+    <td>Linux</td>
+    <td>11th June 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Timing</td>
     <td>Linux</td>
     <td>4th June 2022</td>
@@ -794,10 +820,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>WordPress</li>
+        <li>Upstart</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

@@ -38,7 +38,7 @@ grep -iR "8080/tcp" */*.md
   - Retired on 18th September 2021
   - OS: Linux
   - Tags: HTTP Request Smuggling, Gitea, AWS Secrets & Keys
-- [Unobtainium](unobtainium/write-up-unobtainium)
+- [Unobtainium](unobtainium/write-up-unobtainium.md)
   - Retired on 4th September 2021
   - OS: Linux
   - Tags: Electron Application, Local File Inclusion (LFI), Prototype Pollution, Kubernetes
@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 10th July 2021
   - OS: Windows
   - Tags: Reverse Engineering Electron Application, Redis
+- [Spectra](https://kyuu-ji.github.io/htb-write-up/spectra/write-up-spectra)
+  - Retired on 26th June 2021
+  - OS: chromeOS
+  - Tags: WordPress, Upstart
 - [Tentacle](https://kyuu-ji.github.io/htb-write-up/tentacle/write-up-tentacle)
   - Retired on 19th June 2021
   - OS: Linux
