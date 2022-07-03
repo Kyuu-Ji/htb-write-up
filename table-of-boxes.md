@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Undetected</td>
+    <td>Linux</td>
+    <td>2nd July 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Phoenix</td>
+    <td>Linux</td>
+    <td>25th June 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Paper</td>
     <td>Linux</td>
     <td>18th June 2022</td>
@@ -807,10 +833,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SnakeYAML</li>
+        <li>Golang WebAssembly</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

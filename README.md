@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 10th July 2021
   - OS: Windows
   - Tags: Reverse Engineering Electron Application, Redis
+- [Ophiuchi](https://kyuu-ji.github.io/htb-write-up/ophiuchi/write-up-ophiuchi)
+  - Retired on 3rd July 2021
+  - OS: Linux
+  - Tags: SnakeYAML, Golang WebAssembly
 - [Spectra](https://kyuu-ji.github.io/htb-write-up/spectra/write-up-spectra)
   - Retired on 26th June 2021
   - OS: chromeOS
