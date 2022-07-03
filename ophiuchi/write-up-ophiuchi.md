@@ -32,7 +32,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 The webpage shows one input field with the title _"Online YAML Parser"_:
 
-![Online YAML Parser](ophiuchiweb-1.png)
+![Online YAML Parser](ophiuchi_web-1.png)
 
 When sending any data to the parser, it says that the feature has been temporarily on hold because of security issues.
 
@@ -134,7 +134,7 @@ User admin may run the following commands on ophiuchi:
 This script uses the WebAssembly runtime [Wasmer Go](https://github.com/wasmerio/wasmer-go) and reads the contents of _main.wasm_.
 It calls _info_ and if it returns 1, it will run _deploy.sh_, which has no contents.
 
-The goal is to get _main.wasm_ to return anything other than 1 to execute our own bash file.
+The goal is to get _main.wasm_ to return 1 to execute our own bash file.
 It is a binary file, but the [WebAssembly Binary Toolkit](https://github.com/WebAssembly/wabt) can be used to decrypt and analyze it.
 
 Using `wasm2wat` to translate the binary to text format:
@@ -181,4 +181,4 @@ Executing the Go script with sudo permissions:
 sudo /usr/bin/go run /opt/wasm-functions/index.go
 ```
 
-After executing the Go script, it will run our _deploy.sh_ and the listener on my IP and port starts a reverse shell as root!
+After executing the Go script, it will run our _deploy.sh_ script and the listener on my IP and port starts a reverse shell as root!
