@@ -63,7 +63,7 @@ The web service on port 80 shows a login form to a _Voting System_ with the titl
 
 ![Voting system login](love_web-1.png)
 
-Lets search for hidden directories and PHP files with **Gobuster**:
+Lets search for hidden directories with **Gobuster**:
 ```
 gobuster -u http://10.10.10.239 dir -w /usr/share/seclists/Discovery/Web-Content/raft-small-words-lowercase.txt
 ```
@@ -71,7 +71,7 @@ gobuster -u http://10.10.10.239 dir -w /usr/share/seclists/Discovery/Web-Content
 It finds the directory _/admin_ with a similar login form.
 
 The hostname _staging.love.htb_ forwards to another service called _Free File Scanner_.
-The menu _Demo_ allows us to specify and URL to scan a file:
+The menu _Demo_ allows us to specify an URL to scan a file:
 
 ![Free File scanner demo](love_web-2.png)
 
