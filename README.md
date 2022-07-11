@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 4th September 2021
   - OS: Linux
   - Tags: Electron Application, Local File Inclusion (LFI), Prototype Pollution, Kubernetes
+- [Love](https://kyuu-ji.github.io/htb-write-up/love/write-up-love)
+  - Retired on 7th August 2021
+  - OS: Windows
+  - Tags: Server Side Request Forgery (SSRF)
 - [TheNotebook](https://kyuu-ji.github.io/htb-write-up/thenotebook/write-up-thenotebook)
   - Retired on 31st July 2021
   - OS: Linux
