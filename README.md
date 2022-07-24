@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 31st July 2021
   - OS: Linux
   - Tags: JSON Web Token (JWT), CVE (Docker)
+- [Armageddon](https://kyuu-ji.github.io/htb-write-up/armageddon/write-up-armageddon)
+  - Retired on 24th July 2021
+  - OS: Linux
+  - Tags: CVE (Drupal), Snap
 - [Atom](https://kyuu-ji.github.io/htb-write-up/atom/write-up-atom)
   - Retired on 10th July 2021
   - OS: Windows
