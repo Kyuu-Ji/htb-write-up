@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Monitors](https://kyuu-ji.github.io/htb-write-up/monitors/write-up-monitors)
+  - Retired on 9th October 2021
+  - OS: Linux
+  - Tags: Remote File Inclusion (WordPress), SQL Injection (Cacti), Java Deserialization (Apache OFBiz), Linux capabilities
 - [Sink](https://kyuu-ji.github.io/htb-write-up/sink/write-up-sink)
   - Retired on 18th September 2021
   - OS: Linux

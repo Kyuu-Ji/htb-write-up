@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Late</td>
+    <td>Linux</td>
+    <td>30th July 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Catch</td>
     <td>Linux</td>
     <td>23rd July 2022</td>
@@ -644,10 +657,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Remote File Inclusion (WordPress)</li>
+        <li>SQL Injection (Cacti)</li>
+        <li>Java Deserialization (Apache OFBiz)</li>
+        <li>Linux capabilities</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
