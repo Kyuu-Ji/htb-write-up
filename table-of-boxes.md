@@ -740,10 +740,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Moodle)</li>
+        <li>Cross-Site-Scripting (XSS)</li>
+        <li>Package Manager pkg</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

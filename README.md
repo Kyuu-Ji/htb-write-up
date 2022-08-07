@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 18th September 2021
   - OS: Linux
   - Tags: HTTP Request Smuggling, Gitea, AWS Secrets & Keys
+- [Schooled](https://kyuu-ji.github.io/htb-write-up/schooled/write-up-schooled)
+  - Retired on 11th September 2021
+  - OS: FreeBSD
+  - Tags: CVE (Moodle), Cross-Site-Scripting (XSS), Package Manager pkg
 - [Unobtainium](unobtainium/write-up-unobtainium.md)
   - Retired on 4th September 2021
   - OS: Linux
