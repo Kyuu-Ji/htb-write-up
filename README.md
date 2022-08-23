@@ -50,6 +50,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 4th September 2021
   - OS: Linux
   - Tags: Electron Application, Local File Inclusion (LFI), Prototype Pollution, Kubernetes
+- [Gobox](https://kyuu-ji.github.io/htb-write-up/gobox/write-up-gobox)
+  - Retired on 30th August 2021
+  - OS: Linux
+  - Tags: Server Side Template Injection (SSTI), Golang, AWS S3 Buckets
 - [Love](https://kyuu-ji.github.io/htb-write-up/love/write-up-love)
   - Retired on 7th August 2021
   - OS: Windows

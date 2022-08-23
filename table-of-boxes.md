@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Timelapse</td>
+    <td>Windows</td>
+    <td>20th August 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Retired</td>
+    <td>Linux</td>
+    <td>13th August 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Late</td>
     <td>Linux</td>
     <td>30th July 2022</td>
@@ -771,10 +797,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Server Side Template Injection (SSTI)</li>
+        <li>Golang</li>
+        <li>AWS S3 Buckets</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
