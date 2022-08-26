@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Dynstr](https://kyuu-ji.github.io/htb-write-up/dynstr/write-up-dynstr)
+  - Retired on 16th October 2021
+  - OS: Linux
+  - Tags: Dynamic DNS
 - [Monitors](https://kyuu-ji.github.io/htb-write-up/monitors/write-up-monitors)
   - Retired on 9th October 2021
   - OS: Linux

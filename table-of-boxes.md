@@ -670,10 +670,10 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Dynamic DNS</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
@@ -709,7 +709,7 @@ Work in progress.
     <td>Jarmis</td>
     <td>Linux</td>
     <td>27th September 2021</td>
-    <td>:orange_circle: Medium</td>
+    <td>:red_circle: Hard</td>
     <td>
       <ul>
         <li>-</li>
