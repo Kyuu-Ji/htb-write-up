@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 9th October 2021
   - OS: Linux
   - Tags: Remote File Inclusion (WordPress), SQL Injection (Cacti), Java Deserialization (Apache OFBiz), Linux capabilities
+- [Cap](https://kyuu-ji.github.io/htb-write-up/cap/write-up-cap)
+  - Retired on 2nd October 2021
+  - OS: Linux
+  - Tags: PCAP Analysis, Linux capabilities
 - [Pit](https://kyuu-ji.github.io/htb-write-up/pit/write-up-pit)
   - Retired on 25th September 2021
   - OS: Linux
