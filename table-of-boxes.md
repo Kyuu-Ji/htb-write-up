@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Scanned</td>
+    <td>Linux</td>
+    <td>10th September 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Noter</td>
+    <td>Linux</td>
+    <td>3rd September 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Talkative</td>
     <td>Linux</td>
     <td>27th August 2022</td>
@@ -670,10 +696,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Server Side Template Injection (SSTI)</li>
+        <li>SQL Injection</li>
+        <li>XML External Entity (XXE)</li>
+        <li>Bypass Web Application Firewall</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

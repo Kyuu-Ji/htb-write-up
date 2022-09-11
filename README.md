@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Spider](https://kyuu-ji.github.io/htb-write-up/spider/write-up-spider)
+  - Retired on 23rd October 2021
+  - OS: Linux
+  - Tags: Server Side Template Injection (SSTI), SQL Injection, XML External Entity (XXE), Bypass Web Application Firewall
 - [Dynstr](https://kyuu-ji.github.io/htb-write-up/dynstr/write-up-dynstr)
   - Retired on 16th October 2021
   - OS: Linux
