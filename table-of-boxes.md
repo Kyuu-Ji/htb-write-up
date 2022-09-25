@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Seventeen</td>
+    <td>Linux</td>
+    <td>24th September 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>StreamIO</td>
+    <td>Windows</td>
+    <td>17th September 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Scanned</td>
     <td>Linux</td>
     <td>10th September 2022</td>
@@ -605,10 +631,13 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Active Directory</li>
+        <li>BloodHound</li>
+        <li>Group Managed Service Account</li>
+        <li>Silver Ticket</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

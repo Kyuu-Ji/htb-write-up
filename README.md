@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Intelligence](https://kyuu-ji.github.io/htb-write-up/intelligence/write-up-intelligence)
+  - Retired on 27th November 2021
+  - OS: Windows
+  - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
 - [Spider](https://kyuu-ji.github.io/htb-write-up/spider/write-up-spider)
   - Retired on 23rd October 2021
   - OS: Linux
