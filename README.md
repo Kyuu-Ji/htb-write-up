@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 27th November 2021
   - OS: Windows
   - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
+- [Explore](https://kyuu-ji.github.io/htb-write-up/explore/write-up-explore)
+  - Retired on 30th October 2021
+  - OS: Android
+  - Tags: CVE (ES File Explorer), Android Debug Bridge (adb)
 - [Spider](https://kyuu-ji.github.io/htb-write-up/spider/write-up-spider)
   - Retired on 23rd October 2021
   - OS: Linux

@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Scrambled</td>
+    <td>Windows</td>
+    <td>1st October 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Seventeen</td>
     <td>Linux</td>
     <td>24th September 2022</td>
@@ -699,10 +712,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (ES File Explorer)</li>
+        <li>Android Debug Bridge (adb)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
