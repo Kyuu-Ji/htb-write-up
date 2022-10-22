@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Perspective</td>
+    <td>Windows</td>
+    <td>15th October 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>OpenSource</td>
+    <td>Linux</td>
+    <td>8th October 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Scrambled</td>
     <td>Windows</td>
     <td>1st October 2022</td>
@@ -726,11 +752,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Command & Control Server (C2)</li>
+        <li>Reverse Engineering</li>
+        <li>Local File Inclusion (LFI)</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:white_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Spider</td>

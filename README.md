@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 30th October 2021
   - OS: Android
   - Tags: CVE (ES File Explorer), Android Debug Bridge (adb)
+- [Spooktrol](https://kyuu-ji.github.io/htb-write-up/spooktrol/write-up-spooktrol)
+  - Retired on 26th October 2021
+  - OS: Linux
+  - Tags: Command & Control Server (C2), Reverse Engineering, Local File Inclusion (LFI)
 - [Spider](https://kyuu-ji.github.io/htb-write-up/spider/write-up-spider)
   - Retired on 23rd October 2021
   - OS: Linux
