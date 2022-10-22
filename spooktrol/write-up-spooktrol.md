@@ -99,7 +99,7 @@ sqlite> select * from tasks;
 
 This is the same ID and when enumerating the table _checkins_ for this string, it shows that the user root executes `whoami` every two minutes:
 ```
-sqlite> select * from checkins where session == '10a6dd5dde6094059db4d23d7710ae12
+sqlite> select * from checkins where session == '10a6dd5dde6094059db4d23d7710ae12';
 ```
 
 The command can be found in the database and can be modified to execute a reverse shell:

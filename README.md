@@ -34,43 +34,43 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
-- [Intelligence](https://kyuu-ji.github.io/htb-write-up/intelligence/write-up-intelligence)
+- [Intelligence](intelligence/write-up-intelligence.md)
   - Retired on 27th November 2021
   - OS: Windows
   - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
-- [Explore](https://kyuu-ji.github.io/htb-write-up/explore/write-up-explore)
+- [Explore](explore/write-up-explore.md)
   - Retired on 30th October 2021
   - OS: Android
   - Tags: CVE (ES File Explorer), Android Debug Bridge (adb)
-- [Spooktrol](https://kyuu-ji.github.io/htb-write-up/spooktrol/write-up-spooktrol)
+- [Spooktrol](spooktrol/write-up-spooktrol.md)
   - Retired on 26th October 2021
   - OS: Linux
   - Tags: Command & Control Server (C2), Reverse Engineering, Local File Inclusion (LFI)
-- [Spider](https://kyuu-ji.github.io/htb-write-up/spider/write-up-spider)
+- [Spider](spider/write-up-spider.md)
   - Retired on 23rd October 2021
   - OS: Linux
   - Tags: Server Side Template Injection (SSTI), SQL Injection, XML External Entity (XXE), Bypass Web Application Firewall
-- [Dynstr](https://kyuu-ji.github.io/htb-write-up/dynstr/write-up-dynstr)
+- [Dynstr](dynstr/write-up-dynstr.md)
   - Retired on 16th October 2021
   - OS: Linux
   - Tags: Dynamic DNS
-- [Monitors](https://kyuu-ji.github.io/htb-write-up/monitors/write-up-monitors)
+- [Monitors](monitors/write-up-monitors.md)
   - Retired on 9th October 2021
   - OS: Linux
   - Tags: Remote File Inclusion (WordPress), SQL Injection (Cacti), Java Deserialization (Apache OFBiz), Linux capabilities
-- [Cap](https://kyuu-ji.github.io/htb-write-up/cap/write-up-cap)
+- [Cap](cap/write-up-cap.md)
   - Retired on 2nd October 2021
   - OS: Linux
   - Tags: PCAP Analysis, Linux capabilities
-- [Pit](https://kyuu-ji.github.io/htb-write-up/pit/write-up-pit)
+- [Pit](pit/write-up-pit.md)
   - Retired on 25th September 2021
   - OS: Linux
   - Tags: SNMP, CVE (SeedDMS), SELinux
-- [Sink](https://kyuu-ji.github.io/htb-write-up/sink/write-up-sink)
+- [Sink](sink/write-up-sink.md)
   - Retired on 18th September 2021
   - OS: Linux
   - Tags: HTTP Request Smuggling, Gitea, AWS Secrets & Keys
-- [Schooled](https://kyuu-ji.github.io/htb-write-up/schooled/write-up-schooled)
+- [Schooled](schooled/write-up-schooled.md)
   - Retired on 11th September 2021
   - OS: FreeBSD
   - Tags: CVE (Moodle), Cross-Site-Scripting (XSS), Package Manager pkg
@@ -78,703 +78,703 @@ grep -iR "8080/tcp" */*.md
   - Retired on 4th September 2021
   - OS: Linux
   - Tags: Electron Application, Local File Inclusion (LFI), Prototype Pollution, Kubernetes
-- [Gobox](https://kyuu-ji.github.io/htb-write-up/gobox/write-up-gobox)
+- [Gobox](gobox/write-up-gobox.md)
   - Retired on 30th August 2021
   - OS: Linux
   - Tags: Server Side Template Injection (SSTI), Golang, AWS S3 Buckets
-- [Love](https://kyuu-ji.github.io/htb-write-up/love/write-up-love)
+- [Love](love/write-up-love.md)
   - Retired on 7th August 2021
   - OS: Windows
   - Tags: Server Side Request Forgery (SSRF)
-- [TheNotebook](https://kyuu-ji.github.io/htb-write-up/thenotebook/write-up-thenotebook)
+- [TheNotebook](thenotebook/write-up-thenotebook.md)
   - Retired on 31st July 2021
   - OS: Linux
   - Tags: JSON Web Token (JWT), CVE (Docker)
-- [Armageddon](https://kyuu-ji.github.io/htb-write-up/armageddon/write-up-armageddon)
+- [Armageddon](armageddon/write-up-armageddon.md)
   - Retired on 24th July 2021
   - OS: Linux
   - Tags: CVE (Drupal), Snap
-- [Atom](https://kyuu-ji.github.io/htb-write-up/atom/write-up-atom)
+- [Atom](atom/write-up-atom.md)
   - Retired on 10th July 2021
   - OS: Windows
   - Tags: Reverse Engineering Electron Application, Redis
-- [Ophiuchi](https://kyuu-ji.github.io/htb-write-up/ophiuchi/write-up-ophiuchi)
+- [Ophiuchi](ophiuchi/write-up-ophiuchi.md)
   - Retired on 3rd July 2021
   - OS: Linux
   - Tags: SnakeYAML, Golang WebAssembly
-- [Spectra](https://kyuu-ji.github.io/htb-write-up/spectra/write-up-spectra)
+- [Spectra](spectra/write-up-spectra.md)
   - Retired on 26th June 2021
   - OS: chromeOS
   - Tags: WordPress, Upstart
-- [Tentacle](https://kyuu-ji.github.io/htb-write-up/tentacle/write-up-tentacle)
+- [Tentacle](tentacle/write-up-tentacle.md)
   - Retired on 19th June 2021
   - OS: Linux
   - Tags: Proxy connections, CVE (OpenSMTPD), Linux KDC, Kerberos (k5login, keytab)
-- [Tenet](https://kyuu-ji.github.io/htb-write-up/tenet/write-up-tenet)
+- [Tenet](tenet/write-up-tenet.md)
   - Retired on 12th June 2021
   - OS: Linux
   - Tags: WordPress, PHP Deserialization, Race Condition Vulnerability, Inotify
-- [ScriptKiddie](https://kyuu-ji.github.io/htb-write-up/scriptkiddie/write-up-scriptkiddie)
+- [ScriptKiddie](scriptkiddie/write-up-scriptkiddie.md)
   - Retired on 5th June 2021
   - OS: Linux
   - Tags: CVE (Msfvenom), Command Injection, Msfconsole
-- [Cereal](https://kyuu-ji.github.io/htb-write-up/cereal/write-up-cereal)
+- [Cereal](cereal/write-up-cereal.md)
   - Retired on 29th May 2021
   - OS: Windows
   - Tags: .NET Code Analysis, JWT Token, Deserialization, Cross-Site-Scripting (XSS), GraphQL, Server Side Request Forgery (SSRF)
-- [Delivery](https://kyuu-ji.github.io/htb-write-up/delivery/write-up-delivery)
+- [Delivery](delivery/write-up-delivery.md)
   - Retired on 22nd May 2021
   - OS: Linux
   - Tags: Help Desk, Mattermost, Brute-Force su
-- [Ready](https://kyuu-ji.github.io/htb-write-up/ready/write-up-ready)
+- [Ready](ready/write-up-ready.md)
   - Retired on 15th May 2021
   - OS: Linux
   - Tags: GitLab, Server Side Request Forgery (SSRF), Docker
-- [Sharp](https://kyuu-ji.github.io/htb-write-up/sharp/write-up-sharp)
+- [Sharp](sharp/write-up-sharp.md)
   - Retired on 1st May 2021
   - OS: Windows
   - Tags: .NET Binary Analysis, .NET Remoting, Windows Communication Foundation
-- [Bucket](https://kyuu-ji.github.io/htb-write-up/bucket/write-up-bucket)
+- [Bucket](bucket/write-up-bucket.md)
   - Retired on 24th April 2021
   - OS: Linux
   - Tags: AWS S3 Buckets, DynamoDB, PD4ML
-- [Laboratory](https://kyuu-ji.github.io/htb-write-up/laboratory/write-up-laboratory)
+- [Laboratory](laboratory/write-up-laboratory.md)
   - Retired on 17th April 2021
   - OS: Linux
   - Tags: CVE (GitLab), Path Injection
-- [Time](https://kyuu-ji.github.io/htb-write-up/time/write-up-time)
+- [Time](time/write-up-time.md)
   - Retired on 3rd April 2021
   - OS: Linux
   - Tags: Java Library (Jackson), Systemd Timer
-- [Luanne](https://kyuu-ji.github.io/htb-write-up/luanne/write-up-luanne)
+- [Luanne](luanne/write-up-luanne.md)
   - Retired on 27th March 2021
   - OS: NetBSD
   - Tags: Supervisor Process Manager, API Fuzzing
-- [Reel2](https://kyuu-ji.github.io/htb-write-up/reel2/write-up-reel2)
+- [Reel2](reel2/write-up-reel2.md)
   - Retired on 13th March 2021
   - OS: Windows
   - Tags: Outlook Web App (OWA), Password Spraying, Phishing, PowerShell Constrained Language, Just Enough Administration (JEA)
-- [Passage](https://kyuu-ji.github.io/htb-write-up/passage/write-up-passage)
+- [Passage](passage/write-up-passage.md)
   - Retired on 6th March 2021
   - OS: Linux
   - Tags: CVE (CuteNews), USBCreator
-- [Academy](https://kyuu-ji.github.io/htb-write-up/academy/write-up-academy)
+- [Academy](academy/write-up-academy.md)
   - Retired on 27th February 2021
   - OS: Linux
   - Tags: PHP Laravel, Brute-Force SSH, Auditd Log Files
-- [Feline](https://kyuu-ji.github.io/htb-write-up/feline/write-up-feline)
+- [Feline](feline/write-up-feline.md)
   - Retired on 20th February 2021
   - OS: Linux
   - Tags: Java Deserialization, Tomcat, CVE (SaltStack), Docker Engine API
-- [Jewel](https://kyuu-ji.github.io/htb-write-up/jewel/write-up-jewel)
+- [Jewel](jewel/write-up-jewel.md)
   - Retired on 13th February 2021
   - OS: Linux
   - Tags: Ruby on Rails, Multi-Factor Authentication
-- [Doctor](https://kyuu-ji.github.io/htb-write-up/doctor/write-up-doctor)
+- [Doctor](doctor/write-up-doctor.md)
   - Retired on 6th February 2021
   - OS: Linux
   - Tags: Server-Side Template Injection (SSTI), Log Files, Splunk Vulnerability
-- [Worker](https://kyuu-ji.github.io/htb-write-up/worker/write-up-worker)
+- [Worker](worker/write-up-worker.md)
   - Retired on 30th January 2021
   - OS: Windows
   - Tags: Apache Subversion, Azure DevOps
-- [Compromised](https://kyuu-ji.github.io/htb-write-up/compromised/write-up-compromised)
+- [Compromised](compromised/write-up-compromised.md)
   - Retired on 23rd January 2021
   - OS: Linux
   - Tags: CVE (LiteCart), Bypass PHP disabled functions, Persistence (MySQL, strace, LD_PRELOAD, PAM), Reverse Engineering
-- [Omni](https://kyuu-ji.github.io/htb-write-up/omni/write-up-omni)
+- [Omni](omni/write-up-omni.md)
   - Retired on 9th January 2021
   - OS: Windows IoT
   - Tags: Windows IoT, SirepRAT, Decrypting Files with PowerShell
-- [OpenKeyS](https://kyuu-ji.github.io/htb-write-up/openkeys/write-up-openkeys)
+- [OpenKeyS](openkeys/write-up-openkeys.md)
   - Retired on 12th December 2020
   - OS: OpenBSD
   - Tags: Vim Swap File, CVE (OpenBSD)
-- [Unbalanced](https://kyuu-ji.github.io/htb-write-up/unbalanced/write-up-unbalanced)
+- [Unbalanced](unbalanced/write-up-unbalanced.md)
   - Retired on 5th December 2020
   - OS: Linux
   - Tags: Cracking EncFS, Proxy connections, XPATH Injection, CVE (Pi-hole)
-- [SneakyMailer](https://kyuu-ji.github.io/htb-write-up/sneakymailer/write-up-sneakymailer)
+- [SneakyMailer](sneakymailer/write-up-sneakymailer.md)
   - Retired on 28th November 2020
   - OS: Linux
   - Tags: Phishing, PyPI Server
-- [Buff](https://kyuu-ji.github.io/htb-write-up/buff/write-up-buff)
+- [Buff](buff/write-up-buff.md)
   - Retired on 21st November 2020
   - OS: Windows
   - Tags: CVE (Gym Management Software), CVE (CloudMe Sync)
-- [Tabby](https://kyuu-ji.github.io/htb-write-up/tabby/write-up-tabby)
+- [Tabby](tabby/write-up-tabby.md)
   - Retired on 7th November 2020
   - OS: Linux
   - Tags: Local File Inclusion (LFI), Tomcat WAR file, Cracking ZIP, LXC (Linux Containers)
-- [Fuse](https://kyuu-ji.github.io/htb-write-up/fuse/write-up-fuse)
+- [Fuse](fuse/write-up-fuse.md)
   - Retired on 31st October 2020
   - OS: Windows
   - Tags: Active Directory, Custom Password List, Printer (Capcom Driver)
-- [Blunder](https://kyuu-ji.github.io/htb-write-up/blunder/write-up-blunder)
+- [Blunder](blunder/write-up-blunder.md)
   - Retired on 17th October 2020
   - OS: Linux
   - Tags: CVE (Bludit CMS), Bypass Brute-Force Restrictions, Sudo Vulnerability
-- [Cache](https://kyuu-ji.github.io/htb-write-up/cache/write-up-cache)
+- [Cache](cache/write-up-cache.md)
   - Retired on 10th October 2020
   - OS: Linux
   - Tags: OpenEMR, SQL Injection, Memcached, Docker
-- [Blackfield](https://kyuu-ji.github.io/htb-write-up/blackfield/write-up-blackfield)
+- [Blackfield](blackfield/write-up-blackfield.md)
   - Retired on 3rd October 2020
   - OS: Windows
   - Tags: Active Directory, AS-REP Roasting, BloodHound, LSASS Dump, NTDS.dit
-- [Admirer](https://kyuu-ji.github.io/htb-write-up/admirer/write-up-admirer)
+- [Admirer](admirer/write-up-admirer.md)
   - Retired on 26th September 2020
   - OS: Linux
   - Tags: Adminer, Local File Inclusion (LFI), Python Library Hijacking
-- [Travel](https://kyuu-ji.github.io/htb-write-up/travel/write-up-travel)
+- [Travel](travel/write-up-travel.md)
   - Retired on 12th September 2020
   - OS: Linux
   - Tags: WordPress, Server Side Request Forgery (SSRF), PHP Deserialization, Memcached, LDAP
-- [Remote](https://kyuu-ji.github.io/htb-write-up/remote/write-up-remote)
+- [Remote](remote/write-up-remote.md)
   - Retired on 5th September 2020
   - OS: Windows
   - Tags: CVE (Umbraco CMS), NFS
-- [Quick](https://kyuu-ji.github.io/htb-write-up/quick/write-up-quick)
+- [Quick](quick/write-up-quick.md)
   - Retired on 29th August 2020
   - OS: Linux
   - Tags: QUIC Transport Protocol, HTTP/3, XXE on Esigate, Symlink Race
-- [Magic](https://kyuu-ji.github.io/htb-write-up/magic/write-up-magic)
+- [Magic](magic/write-up-magic.md)
   - Retired on 22nd August 2020
   - OS: Linux
   - Tags: SQL Injection, Magic Bytes, Path Injection
-- [Traceback](https://kyuu-ji.github.io/htb-write-up/traceback/write-up-traceback)
+- [Traceback](traceback/write-up-traceback.md)
   - Retired on 15th August 2020
   - OS: Linux
   - Tags: Threat Hunting, Lua Scripting, MOTD Privilege Escalation
-- [Oouch](https://kyuu-ji.github.io/htb-write-up/oouch/write-up-oouch)
+- [Oouch](oouch/write-up-oouch.md)
   - Retired on 1st August 2020
   - OS: Linux
   - Tags: OAuth, D-Bus, Containers, uWSGI
-- [Cascade](https://kyuu-ji.github.io/htb-write-up/cascade/write-up-cascade)
+- [Cascade](cascade/write-up-cascade.md)
   - Retired on 25th July 2020
   - OS: Windows
   - Tags: LDAP, .NET Binary Analysis, Active Directory Recycle Bin
-- [Sauna](https://kyuu-ji.github.io/htb-write-up/sauna/write-up-sauna)
+- [Sauna](sauna/write-up-sauna.md)
   - Retired on 18th July 2020
   - OS: Windows
   - Tags: Active Directory, AS-REP Roasting, BloodHound, DCSync, Pass-The-Hash
-- [Book](https://kyuu-ji.github.io/htb-write-up/book/write-up-book)
+- [Book](book/write-up-book.md)
   - Retired on 11th July 2020
   - OS: Linux
   - Tags: SQL Truncation, Logrotten (Logrotate Vulnerability)
-- [ServMon](https://kyuu-ji.github.io/htb-write-up/servmon/write-up-servmon)
+- [ServMon](servmon/write-up-servmon.md)
   - Retired on 20th June 2020
   - OS: Windows
   - Tags: CVE (NVMS-1000), NSClient++
-- [Monteverde](https://kyuu-ji.github.io/htb-write-up/monteverde/write-up-monteverde)
+- [Monteverde](monteverde/write-up-monteverde.md)
   - Retired on 13th June 2020
   - OS: Windows
   - Tags: Password Spraying, Azure AD Connect
-- [Nest](https://kyuu-ji.github.io/htb-write-up/nest/write-up-nest)
+- [Nest](nest/write-up-nest.md)
   - Retired on 6th June 2020
   - OS: Windows
   - Tags: Enumerating SMB Shares, Visual Basic Code Analysis, Alternate Data Streams, .NET Binary Analysis
-- [Resolute](https://kyuu-ji.github.io/htb-write-up/resolute/write-up-resolute)
+- [Resolute](resolute/write-up-resolute.md)
   - Retired on 30th May 2020
   - OS: Windows
   - Tags: Password Spraying, Active Directory, DNS Admin Vulnerability
-- [Obscurity](https://kyuu-ji.github.io/htb-write-up/obscurity/write-up-obscurity)
+- [Obscurity](obscurity/write-up-obscurity.md)
   - Retired on 9th May 2020
   - OS: Linux
   - Tags: Python Code Analysis, Known-Plaintext Attack
-- [OpenAdmin](https://kyuu-ji.github.io/htb-write-up/openadmin/write-up-openadmin)
+- [OpenAdmin](openadmin/write-up-openadmin.md)
   - Retired on 2nd May 2020
   - OS: Linux
   - Tags: CVE (OpenNetAdmin), Password Reuse
-- [Control](https://kyuu-ji.github.io/htb-write-up/control/write-up-control)
+- [Control](control/write-up-control.md)
   - Retired on 25th April 2020
   - OS: Windows
   - Tags: SQL Injection, PowerShell History, Windows Services
-- [Mango](https://kyuu-ji.github.io/htb-write-up/mango/write-up-mango)
+- [Mango](mango/write-up-mango.md)
   - Retired on 18th April 2020
   - OS: Linux
   - Tags: MongoDB
-- [Traverxec](https://kyuu-ji.github.io/htb-write-up/traverxec/write-up-traverxec)
+- [Traverxec](traverxec/write-up-traverxec.md)
   - Retired on 11th April 2020
   - OS: Linux
   - Tags: CVE (Nostromo), Password Cracking, journalctl
-- [Registry](https://kyuu-ji.github.io/htb-write-up/registry/write-up-registry)
+- [Registry](registry/write-up-registry.md)
   - Retired on 4th April 2020
   - OS: Linux
   - Tags: Docker Registry, CVE (Bolt CMS), Restic
-- [Forest](https://kyuu-ji.github.io/htb-write-up/forest/write-up-forest)
+- [Forest](forest/write-up-forest.md)
   - Retired on 21st March 2020
   - OS: Windows
   - Tags: Active Directory, Password Spraying, SMB Null Session Attack, AS-REP Roasting, DCSync
-- [Postman](https://kyuu-ji.github.io/htb-write-up/postman/write-up-postman)
+- [Postman](postman/write-up-postman.md)
   - Retired on 14th March 2020
   - OS: Linux
   - Tags: Redis, CVE (Webmin)
-- [Bankrobber](https://kyuu-ji.github.io/htb-write-up/bankrobber/write-up-bankrobber)
+- [Bankrobber](bankrobber/write-up-bankrobber.md)
   - Retired on 7th March 2020
   - OS: Windows
   - Tags: Cross-Site-Scripting (XSS), SQL Injection, Cross-Site-Request-Forgery (CSRF), Server Exploitation
-- [Scavenger](https://kyuu-ji.github.io/htb-write-up/scavenger/write-up-scavenger)
+- [Scavenger](scavenger/write-up-scavenger.md)
   - Retired on 29th February 2020
   - OS: Linux
   - Tags: SQL Injection, Whois, DNS Zone Transfer, Log and PCAP Analysis, Rootkit Reversing
-- [Zetta](https://kyuu-ji.github.io/htb-write-up/zetta/write-up-zetta)
+- [Zetta](zetta/write-up-zetta.md)
   - Retired on 22nd February 2020
   - OS: Linux
   - Tags: FTP Bounce Attack, IPv6, rsync, Rsyslog, SQL Injection, PostgreSQL
-- [Json](https://kyuu-ji.github.io/htb-write-up/json/write-up-json)
+- [Json](json/write-up-json.md)
   - Retired on 15th February 2020
   - OS: Windows
   - Tags: .NET Deserialization, .NET Binary Analysis
-- [RE](https://kyuu-ji.github.io/htb-write-up/re/write-up-re)
+- [RE](re/write-up-re.md)
   - Retired on 1st February 2020
   - OS: Windows
   - Tags: ODS Spreadsheet with Macros, CVE (WinRAR), Ghidra XXE Vulnerability
-- [AI](https://kyuu-ji.github.io/htb-write-up/ai/write-up-ai)
+- [AI](ai/write-up-ai.md)
   - Retired on 25th January 2020
   - OS: Linux
   - Tags: SQL Injection via Speech-To-Text, Java Debug Wire Protocol (JDWP)
-- [Player](https://kyuu-ji.github.io/htb-write-up/player/write-up-player)
+- [Player](player/write-up-player.md)
   - Retired on 18th January 2020
   - OS: Linux
   - Tags: JSON Web Token (JWT), FFmpeg Vulnerability, CVE (SSH), PHP Deserialization Vulnerability
-- [Bitlab](https://kyuu-ji.github.io/htb-write-up/bitlab/write-up-bitlab)
+- [Bitlab](bitlab/write-up-bitlab.md)
   - Retired on 11th January 2020
   - OS: Linux
   - Tags: GitLab, Git Hooks, PostgreSQL, Windows Binary Analysis
-- [Craft](https://kyuu-ji.github.io/htb-write-up/craft/write-up-craft)
+- [Craft](craft/write-up-craft.md)
   - Retired on 4th January 2020
   - OS: Linux
   - Tags: Gogs (Git), Searching through Code, HashiCorp Vault Token
-- [Wall](https://kyuu-ji.github.io/htb-write-up/wall/write-up-wall)
+- [Wall](wall/write-up-wall.md)
   - Retired on 7th December 2019
   - OS: Linux
-  - Tags: CVE (Centreon), Decompile Python Binary, Screen Vulnerability
-- [Heist](https://kyuu-ji.github.io/htb-write-up/heist/write-up-heist)
+  - Tags: CVE (Centreon), Decompile Python Binary, Screen Privilege Escalation
+- [Heist](heist/write-up-heist.md)
   - Retired on 30th November 2019
   - OS: Windows
   - Tags: Cisco Password Cracking, Password Spraying, SID Brute-Force, Process Dump
-- [Chainsaw](https://kyuu-ji.github.io/htb-write-up/chainsaw/write-up-chainsaw)
+- [Chainsaw](chainsaw/write-up-chainsaw.md)
   - Retired on 23rd November 2019
   - OS: Linux
   - Tags: Solidity / Smart Contracts, InterPlanetary File System (IPFS), Slack Space
-- [Networked](https://kyuu-ji.github.io/htb-write-up/networked/write-up-networked)
+- [Networked](networked/write-up-networked.md)
   - Retired on 16th November 2019
   - OS: Linux
   - Tags: Arbitrary File Upload, Cronjob, Code Execution through Network Scripts
-- [Jarvis](https://kyuu-ji.github.io/htb-write-up/jarvis/write-up-jarvis)
+- [Jarvis](jarvis/write-up-jarvis.md)
   - Retired on 9th November 2019
   - OS: Linux
   - Tags: SQL Injection, phpMyAdmin
-- [Haystack](https://kyuu-ji.github.io/htb-write-up/haystack/write-up-haystack)
+- [Haystack](haystack/write-up-haystack.md)
   - Retired on 2nd November 2019
   - OS: Linux
   - Tags: Port forwarding, Elastic Stack
-- [Safe](https://kyuu-ji.github.io/htb-write-up/safe/write-up-safe)
+- [Safe](safe/write-up-safe.md)
   - Retired on 26th October 2019
   - OS: Linux
   - Tags: Return-Oriented Programming (Buffer Overflow), KeePass database cracking
-- [Ellingson](https://kyuu-ji.github.io/htb-write-up/ellingson/write-up-ellingson)
+- [Ellingson](ellingson/write-up-ellingson.md)
   - Retired on 19th October 2019
   - OS: Linux
   - Tags: Python Flask / Werkzeug, Shadow file, Binary Exploitation (ROP Chain)
-- [Writeup](https://kyuu-ji.github.io/htb-write-up/writeup/write-up-writeup)
+- [Writeup](writeup/write-up-writeup.md)
   - Retired on 12th October 2019
   - OS: Linux
   - Tags: CVE (CMS Made Simple), Relative path in Crontab
-- [Ghoul](https://kyuu-ji.github.io/htb-write-up/ghoul/write-up-ghoul)
+- [Ghoul](ghoul/write-up-ghoul.md)
   - Retired on 5th October 2019
   - OS: Linux
   - Tags: Zip Slip Vulnerability, Docker, Pivoting, Gogs (Git), Git Hooks, SSH Agent Forwarding
-- [SwagShop](https://kyuu-ji.github.io/htb-write-up/swagshop/write-up-swagshop)
+- [SwagShop](swagshop/write-up-swagshop.md)
   - Retired on 28th September 2019
   - OS: Linux
   - Tags: CVE (Magento)
-- [Luke](https://kyuu-ji.github.io/htb-write-up/luke/write-up-luke)
+- [Luke](luke/write-up-luke.md)
   - Retired on 14th September 2019
   - OS: Linux
   - Tags: JSON Web Token (JWT), Ajenti
-- [Bastion](https://kyuu-ji.github.io/htb-write-up/bastion/write-up-bastion)
+- [Bastion](bastion/write-up-bastion.md)
   - Retired on 7th September 2019
   - OS: Windows
   - Tags: VHD files, mRemoteNG
-- [OneTwoSeven](https://kyuu-ji.github.io/htb-write-up/onetwoseven/write-up-onetwoseven)
+- [OneTwoSeven](onetwoseven/write-up-onetwoseven.md)
   - Retired on 31st August 2019
   - OS: Linux
   - Tags: Port forwarding, Advanced Packaging Tools (APT)
-- [Unattended](https://kyuu-ji.github.io/htb-write-up/unattended/write-up-unattended)
+- [Unattended](unattended/write-up-unattended.md)
   - Retired on 24th August 2019
   - OS: Linux
   - Tags: SQL Injection
-- [Helpline](https://kyuu-ji.github.io/htb-write-up/helpline/write-up-helpline)
+- [Helpline](helpline/write-up-helpline.md)
   - Retired on 17th August 2019
   - OS: Windows
-  - Tags: CVE, ManageEngine ServiceDesk, Encrypted File System
-- [Arkham](https://kyuu-ji.github.io/htb-write-up/arkham/write-up-arkham)
+  - Tags: CVE (ManageEngine ServiceDesk), Encrypted File System
+- [Arkham](arkham/write-up-arkham.md)
   - Retired on 10th August 2019
   - OS: Windows
   - Tags: LUKS encryption, Java payloads, UAC bypassing
-- [Fortune](https://kyuu-ji.github.io/htb-write-up/fortune/write-up-fortune)
+- [Fortune](fortune/write-up-fortune.md)
   - Retired on 3rd August 2019
   - OS: OpenBSD
   - Tags: SSL/TLS certificates
-- [LeCasaDePapel](https://kyuu-ji.github.io/htb-write-up/lecasadepapel/write-up-lecasadepapel)
+- [LeCasaDePapel](lecasadepapel/write-up-lecasadepapel.md)
   - Retired on 27th July 2019
   - OS: Linux
   - Tags: SSL/TLS certificates
-- [CTF](https://kyuu-ji.github.io/htb-write-up/ctf/write-up-ctf)
+- [CTF](ctf/write-up-ctf.md)
   - Retired on 20th July 2019
   - OS: Linux
   - Tags: One-Time-Pad, LDAP
-- [FriendZone](https://kyuu-ji.github.io/htb-write-up/friendzone/write-up-friendzone)
+- [FriendZone](friendzone/write-up-friendzone.md)
   - Retired on 13th July 2019
   - OS: Linux
   - Tags: DNS Enumeration
-- [Netmon](https://kyuu-ji.github.io/htb-write-up/netmon/write-up-netmon)
+- [Netmon](netmon/write-up-netmon.md)
   - Retired on 29th June 2019
   - OS: Windows
   - Tags: CVE (PRTG Network Monitor)
-- [Querier](https://kyuu-ji.github.io/htb-write-up/querier/write-up-querier)
+- [Querier](querier/write-up-querier.md)
   - Retired on 22nd June 2019
   - OS: Windows
   - Tags: MS SQL, GPO password
-- [Help](https://kyuu-ji.github.io/htb-write-up/help/write-up-help)
+- [Help](help/write-up-help.md)
   - Retired on 8th June 2019
   - OS: Linux
   - Tags: SQL Injection, Arbitrary File Upload
-- [Sizzle](https://kyuu-ji.github.io/htb-write-up/sizzle/write-up-sizzle)
+- [Sizzle](sizzle/write-up-sizzle.md)
   - Retired on 1st June 2019
   - OS: Windows
   - Tags: SCF File Attack, Certificate Authority, Kerberoast, BloodHound, C2 Framework Covenant
-- [Chaos](https://kyuu-ji.github.io/htb-write-up/chaos/write-up-chaos)
+- [Chaos](chaos/write-up-chaos.md)
   - Retired on 25th May 2019
   - OS: Linux
   - Tags: Password reuse, IMAP, Restricted shell, Firefox passwords
-- [Conceal](https://kyuu-ji.github.io/htb-write-up/conceal/write-up-conceal)
+- [Conceal](conceal/write-up-conceal.md)
   - Retired on 18th May 2019
   - OS: Windows
   - Tags: SNMP, IKE/IPSec
-- [Lightweight](https://kyuu-ji.github.io/htb-write-up/lightweight/write-up-lightweight)
+- [Lightweight](lightweight/write-up-lightweight.md)
   - Retired on 11th May 2019
   - OS: Linux
   - Tags: LDAP, Traffic sniffing, Linux capabilities
-- [Irked](https://kyuu-ji.github.io/htb-write-up/irked/write-up-irked)
+- [Irked](irked/write-up-irked.md)
   - Retired on 27th April 2019
   - OS: Linux
   - Tags: Internet Relay Chat (IRC), Steganography
-- [Teacher](https://kyuu-ji.github.io/htb-write-up/teacher/write-up-teacher)
+- [Teacher](teacher/write-up-teacher.md)
   - Retired on 20th April 2019
   - OS: Linux
   - Tags: CVE (Moodle), Cronjobs
-- [RedCross](https://kyuu-ji.github.io/htb-write-up/redcross/write-up-redcross)
+- [RedCross](redcross/write-up-redcross.md)
   - Retired on 13th April 2019
   - OS: Linux
   - Tags: SQL Injection, Cross-Site-Scripting (XSS), Command Injection, CVE (Haraka), PostgreSQL, Buffer Overflow
-- [Vault](https://kyuu-ji.github.io/htb-write-up/vault/write-up-vault)
+- [Vault](vault/write-up-vault.md)
   - Retired on 6th April 2019
   - OS: Linux
   - Tags: Pivoting, Port Forwarding, GPG
-- [Curling](https://kyuu-ji.github.io/htb-write-up/curling/write-up-curling)
+- [Curling](curling/write-up-curling.md)
   - Retired on 30th March 2019
   - OS: Linux
   - Tags: Custom Word List, Nested encoding, cURL Configuration File
-- [Frolic](https://kyuu-ji.github.io/htb-write-up/frolic/write-up-frolic)
+- [Frolic](frolic/write-up-frolic.md)
   - Retired on 23rd March 2019
   - OS: Linux
   - Tags: Decoding different Encodings, CVE (playSMS), Binary Exploitation
-- [Carrier](https://kyuu-ji.github.io/htb-write-up/carrier/write-up-carrier)
+- [Carrier](carrier/write-up-carrier.md)
   - Retired on 16th March 2019
   - OS: Linux
   - Tags: Border Gateway Protocol (BGP) Hijack
-- [Access](https://kyuu-ji.github.io/htb-write-up/access/write-up-access)
+- [Access](access/write-up-access.md)
   - Retired on 2nd March 2019
   - OS: Windows
   - Tags: Microsoft Access Database, Stored Windows Credentials, Runas
-- [Zipper](https://kyuu-ji.github.io/htb-write-up/zipper/write-up-zipper)
+- [Zipper](zipper/write-up-zipper.md)
   - Retired on 23rd February 2019
   - OS: Linux
   - Tags: Zabbix, Systemd timer
-- [Giddy](https://kyuu-ji.github.io/htb-write-up/giddy/write-up-giddy)
+- [Giddy](giddy/write-up-giddy.md)
   - Retired on 16th February 2019
   - OS: Windows
   - Tags: SQL Injection, CVE (Ubiquiti UniFi Video), Bypass AppLocker & Anti-Malware
-- [Ypuffy](https://kyuu-ji.github.io/htb-write-up/ypuffy/write-up-ypuffy)
+- [Ypuffy](ypuffy/write-up-ypuffy.md)
   - Retired on 9th February 2019
   - OS: OpenBSD
   - Tags: LDAP, SSH Certificate Authority
-- [Dab](https://kyuu-ji.github.io/htb-write-up/dab/write-up-dab)
+- [Dab](dab/write-up-dab.md)
   - Retired on 2nd February 2019
   - OS: Linux
   - Tags: Fuzzing, Memcached, SSH Enumeration, Reverse Engineering
-- [SecNotes](https://kyuu-ji.github.io/htb-write-up/secnotes/write-up-secnotes)
+- [SecNotes](secnotes/write-up-secnotes.md)
   - Retired on 19th January 2019
   - OS: Windows
   - Tags: Cross-Site-Request-Forgery (CSRF)
-- [Oz](https://kyuu-ji.github.io/htb-write-up/oz/write-up-oz)
+- [Oz](oz/write-up-oz.md)
   - Retired on 12th January 2019
   - OS: Linux
-  - Tags: Web API, SQL Injection, Server Side Template Injection, Port Knocking, Docker (Portainer)
-- [Mischief](https://kyuu-ji.github.io/htb-write-up/mischief/write-up-mischief)
+  - Tags: Web API, SQL Injection, Server Side Template Injection (SSTI), Port Knocking, Docker (Portainer)
+- [Mischief](mischief/write-up-mischief.md)
   - Retired on 5th January 2019
   - OS: Linux
   - Tags: SNMP, IPv6, ICMP
-- [Waldo](https://kyuu-ji.github.io/htb-write-up/waldo/write-up-waldo)
+- [Waldo](waldo/write-up-waldo.md)
   - Retired on 15th December 2018
   - OS: Linux
   - Tags: Directory Traversal, Docker, Restricted bash, Linux capabilities
-- [Active](https://kyuu-ji.github.io/htb-write-up/active/write-up-active)
+- [Active](active/write-up-active.md)
   - Retired on 8th December 2018
   - OS: Windows
   - Tags: Active Directory, GPO password, Kerberoast
-- [Hawk](https://kyuu-ji.github.io/htb-write-up/hawk/write-up-hawk)
+- [Hawk](hawk/write-up-hawk.md)
   - Retired on 1st December 2018
   - OS: Linux
   - Tags: Drupal, Decrypt OpenSSL, H2 Java SQL Database
-- [Jerry](https://kyuu-ji.github.io/htb-write-up/jerry/write-up-jerry)
+- [Jerry](jerry/write-up-jerry.md)
   - Retired on 17th November 2018
   - OS: Windows
   - Tags: Tomcat WAR file
-- [Reel](https://kyuu-ji.github.io/htb-write-up/reel/write-up-reel)
+- [Reel](reel/write-up-reel.md)
   - Retired on 10th November 2018
   - OS: Windows
   - Tags: Phishing, Active Directory, BloodHound
-- [Dropzone](https://kyuu-ji.github.io/htb-write-up/dropzone/write-up-dropzone)
+- [Dropzone](dropzone/write-up-dropzone.md)
   - Retired on 3rd November 2018
   - OS: Windows
   - Tags: TFTP, Manage Object Format (MOF), Alternate Data Streams
-- [Bounty](https://kyuu-ji.github.io/htb-write-up/bounty/write-up-bounty)
+- [Bounty](bounty/write-up-bounty.md)
   - Retired on 27th October 2018
   - OS: Windows
   - Tags: IIS web.config, CVE
-- [TartarSauce](https://kyuu-ji.github.io/htb-write-up/tartarsauce/write-up-tartarsauce)
+- [TartarSauce](tartarsauce/write-up-tartarsauce.md)
   - Retired on 20th October 2018
   - OS: Linux
   - Tags: WordPress, Remote File Inclusion (RFI), Tar, Systemd timer
-- [DevOops](https://kyuu-ji.github.io/htb-write-up/devoops/write-up-devoops)
+- [DevOops](devoops/write-up-devoops.md)
   - Retired on 13th October 2018
   - OS: Linux
   - Tags: XML External Entity (XXE), Python pickle, Git
-- [Sunday](https://kyuu-ji.github.io/htb-write-up/sunday/write-up-sunday)
+- [Sunday](sunday/write-up-sunday.md)
   - Retired on 29th September 2018
   - OS: Solaris
   - Tags: Finger, Shadow file, Wget
-- [Olympus](https://kyuu-ji.github.io/htb-write-up/olympus/write-up-olympus)
+- [Olympus](olympus/write-up-olympus.md)
   - Retired on 22nd September 2018
   - OS: Linux
   - Tags: Xdebug, Decipher Wireless Traffic, Port Knocking, Docker
-- [Canape](https://kyuu-ji.github.io/htb-write-up/canape/write-up-canape)
+- [Canape](canape/write-up-canape.md)
   - Retired on 15th September 2018
   - OS: Linux
   - Tags: Git, Python pickle, CouchDB, pip
-- [Poison](https://kyuu-ji.github.io/htb-write-up/poison/write-up-poison)
+- [Poison](poison/write-up-poison.md)
   - Retired on 8th September 2018
   - OS: FreeBSD
   - Tags: Local File Inclusion (LFI), Log Poisoning, VNC
-- [Stratosphere](https://kyuu-ji.github.io/htb-write-up/stratosphere/write-up-stratosphere)
+- [Stratosphere](stratosphere/write-up-stratosphere.md)
   - Retired on 1st September 2018
   - OS: Linux
   - Tags: CVE (Apache Struts), Forward shell, Python module attack
-- [Celestial](https://kyuu-ji.github.io/htb-write-up/celestial/write-up-celestial)
+- [Celestial](celestial/write-up-celestial.md)
   - Retired on 25th August 2018
   - OS: Linux
   - Tags: Node.js Deserialization attack, Cronjobs
-- [Silo](https://kyuu-ji.github.io/htb-write-up/silo/write-up-silo)
+- [Silo](silo/write-up-silo.md)
   - Retired on 4th August 2018
   - OS: Windows
   - Tags: Oracle Database, ODAT, Windows Memory Dump, Volatility, Pass-The-Hash
-- [Valentine](https://kyuu-ji.github.io/htb-write-up/valentine/write-up-valentine)
+- [Valentine](valentine/write-up-valentine.md)
   - Retired on 28th July 2018
   - OS: Linux
   - Tags: Heartbleed, tmux
-- [Aragog](https://kyuu-ji.github.io/htb-write-up/aragog/write-up-aragog)
+- [Aragog](aragog/write-up-aragog.md)
   - Retired on 21st July 2018
   - OS: Linux
   - Tags: XML External Entity (XXE), Local File Inclusion (LFI), WordPress configuration
-- [Bart](https://kyuu-ji.github.io/htb-write-up/bart/write-up-bart)
+- [Bart](bart/write-up-bart.md)
   - Retired on 14th July 2018
   - OS: Windows
   - Tags: Log Poisoning, Autologon Credentials
-- [Nibbles](https://kyuu-ji.github.io/htb-write-up/nibbles/write-up-nibbles)
+- [Nibbles](nibbles/write-up-nibbles.md)
   - Retired on 30th June 2018
   - OS: Linux
-  - Tags: Nibbleblog (CMS)
-- [Falafel](https://kyuu-ji.github.io/htb-write-up/falafel/write-up-falafel)
+  - Tags: CVE (Nibbleblog CMS)
+- [Falafel](falafel/write-up-falafel.md)
   - Retired on 23rd June 2018
   - OS: Linux
   - Tags: SQL Injection, PHP Type Juggling, Wget character length, Linux System Groups
-- [Chatterbox](https://kyuu-ji.github.io/htb-write-up/chatterbox/write-up-chatterbox)
+- [Chatterbox](chatterbox/write-up-chatterbox.md)
   - Retired on 16th June 2018
   - OS: Windows
   - Tags: CVE (AChat chat system)
-- [CrimeStoppers](https://kyuu-ji.github.io/htb-write-up/crimestoppers/write-up-crimestoppers)
+- [CrimeStoppers](crimestoppers/write-up-crimestoppers.md)
   - Retired on 2nd June 2018
   - OS: Linux
   - Tags: Local File Inclusion (LFI), PHP wrapper, Thunderbird, Reverse Engineering
-- [Tally](https://kyuu-ji.github.io/htb-write-up/tally/write-up-tally)
+- [Tally](tally/write-up-tally.md)
   - Retired on 28th May 2018
   - OS: Windows
   - Tags: SharePoint, KeePass database cracking, MS SQL, Scheduled task
-- [Jeeves](https://kyuu-ji.github.io/htb-write-up/jeeves/write-up-jeeves)
+- [Jeeves](jeeves/write-up-jeeves.md)
   - Retired on 19th May 2018
   - OS: Windows
   - Tags: Jenkins, KeePass database cracking, Alternate Data Streams
-- [FluxCapacitor](https://kyuu-ji.github.io/htb-write-up/fluxcapacitor/write-up-fluxcapacitor)
+- [FluxCapacitor](fluxcapacitor/write-up-fluxcapacitor.md)
   - Retired on 12th May 2018
   - OS: Linux
   - Tags: Web Application Fuzzing
-- [Bashed](https://kyuu-ji.github.io/htb-write-up/bashed/write-up-bashed)
+- [Bashed](bashed/write-up-bashed.md)
   - Retired on 28th April 2018
   - OS: Linux
   - Tags: Webshell
-- [Ariekei](https://kyuu-ji.github.io/htb-write-up/ariekei/write-up-ariekei)
+- [Ariekei](ariekei/write-up-ariekei.md)
   - Retired on 21st April 2018
   - OS: Linux
   - Tags: Network Pivoting, ImageTragick, Shellshock, Docker
-- [Inception](https://kyuu-ji.github.io/htb-write-up/inception/write-up-inception)
+- [Inception](inception/write-up-inception.md)
   - Retired on 14th April 2018
   - OS: Linux
   - Tags: Arbitrary File Read, WebDAV, Proxy connections, Host and guest system, Advanced Packaging Tools (APT)
-- [Sense](https://kyuu-ji.github.io/htb-write-up/sense/write-up-sense)
+- [Sense](sense/write-up-sense.md)
   - Retired on 24th March 2018
   - OS: FreeBSD
   - Tags: CVE (pfSense), Bypassing character filter
-- [Enterprise](https://kyuu-ji.github.io/htb-write-up/enterprise/write-up-enterprise)
+- [Enterprise](enterprise/write-up-enterprise.md)
   - Retired on 17th March 2018
   - OS: Linux
   - Tags: SQL Injection (WordPress), Joomla, Pivoting, Binary Exploitation
-- [Kotarak](https://kyuu-ji.github.io/htb-write-up/kotarak/write-up-kotarak)
+- [Kotarak](kotarak/write-up-kotarak.md)
   - Retired on 10th March 2018
   - OS: Linux
   - Tags: Server Side Request Forgery (SSRF), Tomcat WAR file, ntds.dit Cracking, Pivoting, Wget Exploitation
-- [Node](https://kyuu-ji.github.io/htb-write-up/node/write-up-node)
+- [Node](node/write-up-node.md)
   - Retired on 3rd March 2018
   - OS: Linux
   - Tags: Node.js, ZIP password cracking, MongoDB, Binary Exploitation, Return-to-libc Attack
-- [Mantis](https://kyuu-ji.github.io/htb-write-up/mantis/write-up-mantis)
+- [Mantis](mantis/write-up-mantis.md)
   - Retired on 24th February 2018
   - OS: Windows
-  - Tags: Domain Controller, Kerberos Forging Attack
-- [Shocker](https://kyuu-ji.github.io/htb-write-up/shocker/write-up-shocker)
+  - Tags: Active Directory, Kerberos Forging Attack
+- [Shocker](shocker/write-up-shocker.md)
   - Retired on 17th February 2018
   - OS: Linux
   - Tags: CVE (Shellshock)
-- [Mirai](https://kyuu-ji.github.io/htb-write-up/mirai/write-up-mirai)
+- [Mirai](mirai/write-up-mirai.md)
   - Retired on 10th February 2018
   - OS: Linux
   - Tags: Default credentials
-- [Shrek](https://kyuu-ji.github.io/htb-write-up/shrek/write-up-shrek)
+- [Shrek](shrek/write-up-shrek.md)
   - Retired on 3rd February 2018
   - OS: Linux
-  - Tags: Audio Steganography, Decrypting RSA key, Dangers of wildcards
-- [SolidState](https://kyuu-ji.github.io/htb-write-up/solidstate/write-up-solidstate)
+  - Tags: Audio Steganography, Decrypting RSA key, Abusing Wildcards
+- [SolidState](solidstate/write-up-solidstate.md)
   - Retired on 27th January 2018
   - OS: Linux
   - Tags: Mail, Restricted bash
-- [Calamity](https://kyuu-ji.github.io/htb-write-up/calamity/write-up-calamity)
+- [Calamity](calamity/write-up-calamity.md)
   - Retired on 20th January 2018
   - OS: Linux
   - Tags: Audio Steganography, Exploiting LXC (Linux Containers)
-- [Blue](https://kyuu-ji.github.io/htb-write-up/blue/write-up-blue)
+- [Blue](blue/write-up-blue.md)
   - Retired on 13th January 2018
   - OS: Windows
   - Tags: CVE (EternalBlue)
-- [Nineveh](https://kyuu-ji.github.io/htb-write-up/nineveh/write-up-nineveh)
+- [Nineveh](nineveh/write-up-nineveh.md)
   - Retired on 16th December 2017
   - OS: Linux
   - Tags: Online Password Cracking, phpLiteAdmin, Port Knocking, chkrootkit
-- [Blocky](https://kyuu-ji.github.io/htb-write-up/blocky/write-up-blocky)
+- [Blocky](blocky/write-up-blocky.md)
   - Retired on 9th December 2017
   - OS: Linux
   - Tags: Java files
-- [Europa](https://kyuu-ji.github.io/htb-write-up/europa/write-up-europa)
+- [Europa](europa/write-up-europa.md)
   - Retired on 2nd December 2017
   - OS: Linux
   - Tags: PHP Regular Expressions, Cronjobs
-- [Apocalyst](https://kyuu-ji.github.io/htb-write-up/apocalyst/write-up-apocalyst)
+- [Apocalyst](apocalyst/write-up-apocalyst.md)
   - Retired on 25th November 2017
   - OS: Linux
   - Tags: Custom Password Lists, WordPress
-- [Holiday](https://kyuu-ji.github.io/htb-write-up/holiday/write-up-holiday)
+- [Holiday](holiday/write-up-holiday.md)
   - Retired on 18th November 2017
   - OS: Linux
   - Tags: SQL Injection, Cross-Site-Scripting (XSS), Node Package Manager (npm)
-- [Sneaky](https://kyuu-ji.github.io/htb-write-up/sneaky/write-up-sneaky)
+- [Sneaky](sneaky/write-up-sneaky.md)
   - Retired on 11th November 2017
   - OS: Linux
   - Tags: SNMP, IPv6, Binary Exploitation
-- [Charon](https://kyuu-ji.github.io/htb-write-up/charon/write-up-charon)
+- [Charon](charon/write-up-charon.md)
   - Retired on 4th November 2017
   - OS: Linux
   - Tags: SQL Injection, RSA decryption, Binary Exploitation
-- [Optimum](https://kyuu-ji.github.io/htb-write-up/optimum/write-up-optimum)
+- [Optimum](optimum/write-up-optimum.md)
   - Retired on 28th October 2017
   - OS: Windows
   - Tags: CVE (HttpFileServer)
-- [Grandpa](https://kyuu-ji.github.io/htb-write-up/grandpa/write-up-grandpa)
+- [Grandpa](grandpa/write-up-grandpa.md)
+  - Retired on 21st October 2017
+  - OS: Windows
+  - Tags: CVE (WebDAV)
+- [Granny](granny/write-up-granny.md)
   - Retired on 21st October 2017
   - OS: Windows
   - Tags: WebDAV, CVE
-- [Granny](https://kyuu-ji.github.io/htb-write-up/granny/write-up-granny)
-  - Retired on 21st October 2017
-  - OS: Windows
-  - Tags: WebDAV, CVE
-- [Devel](https://kyuu-ji.github.io/htb-write-up/devel/write-up-devel)
+- [Devel](devel/write-up-devel.md)
   - Retired on 14th October 2017
   - OS: Windows
   - Tags: CVE
-- [Lazy](https://kyuu-ji.github.io/htb-write-up/lazy/write-up-lazy)
+- [Lazy](lazy/write-up-lazy.md)
   - Retired on 7th October 2017
   - OS: Linux
   - Tags: Cookie bit flipping, Binary Analysis
-- [Haircut](https://kyuu-ji.github.io/htb-write-up/haircut/write-up-haircut)
+- [Haircut](haircut/write-up-haircut.md)
   - Retired on 30th September 2017
   - OS: Linux
   - Tags: Exploiting cURL, Screen command
-- [Bank](https://kyuu-ji.github.io/htb-write-up/bank/write-up-bank)
+- [Bank](bank/write-up-bank.md)
   - Retired on 22nd September 2017
   - OS: Linux
   - Tags: DNS, Arbitrary File Upload
-- [Joker](https://kyuu-ji.github.io/htb-write-up/joker/write-up-joker)
+- [Joker](joker/write-up-joker.md)
   - Retired on 22nd September 2017
   - OS: Linux
   - Tags: Proxy connections, Sudo exploit, Dangers of wildcards
-- [Bastard](https://kyuu-ji.github.io/htb-write-up/bastard/write-up-bastard)
+- [Bastard](bastard/write-up-bastard.md)
   - Retired on 16th September 2017
   - OS: Windows
   - Tags: Drupal, PHP serialization vulnerability
-- [Beep](https://kyuu-ji.github.io/htb-write-up/beep/write-up-beep)
+- [Beep](beep/write-up-beep.md)
   - Retired on 1st September 2017
   - OS: Linux
   - Tags: Elastix PBX, Local File Inclusion (LFI), Shellshock
-- [Brainfuck](https://kyuu-ji.github.io/htb-write-up/brainfuck/write-up-brainfuck)
+- [Brainfuck](brainfuck/write-up-brainfuck.md)
   - Retired on 26th August 2017
   - OS: Linux
   - Tags: WordPress, Keyed Vigenere Cipher, RSA decryption
-- [Cronos](https://kyuu-ji.github.io/htb-write-up/cronos/write-up-cronos)
+- [Cronos](cronos/write-up-cronos.md)
   - Retired on 5th August 2017
   - OS: Linux
   - Tags: DNS, Web Exploitation, Laravel
-- [Tenten](https://kyuu-ji.github.io/htb-write-up/tenten/write-up-tenten)
+- [Tenten](tenten/write-up-tenten.md)
   - Retired on 16th July 2017
   - OS: Linux
   - Tags: CVE (WordPress), Steganography
-- [Arctic](https://kyuu-ji.github.io/htb-write-up/arctic/write-up-arctic)
+- [Arctic](arctic/write-up-arctic.md)
   - Retired on 7th July 2017
   - OS: Windows
   - Tags: CVE (Adobe Coldfusion)
-- [October](https://kyuu-ji.github.io/htb-write-up/october/write-up-october)
+- [October](october/write-up-october.md)
   - Retired on 1st July 2017
   - OS: Linux
   - Tags: Binary Exploitation, Return-to-libc Attack
-- [Popcorn](https://kyuu-ji.github.io/htb-write-up/popcorn/write-up-popcorn)
+- [Popcorn](popcorn/write-up-popcorn.md)
   - Retired on 25th June 2017
   - OS: Linux
-  - Tags: Unrestricted File Upload, CVE
-- [Legacy](https://kyuu-ji.github.io/htb-write-up/legacy/write-up-legacy)
+  - Tags: Unrestricted File Upload, CVE (MOTD)
+- [Legacy](legacy/write-up-legacy.md)
   - Released on 15th March 2017
   - OS: Windows
-  - Tags: CVE
-- [Lame](https://kyuu-ji.github.io/htb-write-up/lame/write-up-lame)
+  - Tags: CVE (Windows XP)
+- [Lame](lame/write-up-lame.md)
   - Released on 14th March 2017
   - OS: Linux
-  - Tags: CVE
+  - Tags: CVE (vsFTPd)
