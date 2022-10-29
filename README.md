@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 27th November 2021
   - OS: Windows
   - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
+- [Seal](seal/write-up-seal.md)
+  - Retired on 13th November 2021
+  - OS: Linux
+  - Tags: Gitbucket, Server Side Request Forgery (SSRF), Ansible
 - [Explore](explore/write-up-explore.md)
   - Retired on 30th October 2021
   - OS: Android

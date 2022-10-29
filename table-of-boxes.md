@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Faculty</td>
+    <td>Linux</td>
+    <td>22nd October 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Perspective</td>
     <td>Windows</td>
     <td>15th October 2022</td>
@@ -712,10 +725,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Gitbucket</li>
+        <li>Server Side Request Forgery (SSRF)</li>
+        <li>Ansible</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
