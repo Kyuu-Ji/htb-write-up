@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Pikaboo](pikaboo/write-up-pikaboo.md)
+  - Retired on 4th December 2021
+  - OS: Linux
+  - Tags: Path Traversal, Local File Inclusion (LFI), Log Poisoning, Perl Vulnerability
 - [Intelligence](intelligence/write-up-intelligence.md)
   - Retired on 27th November 2021
   - OS: Windows
