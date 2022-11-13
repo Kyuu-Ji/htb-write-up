@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Shared</td>
+    <td>Linux</td>
+    <td>12th November 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Moderators</td>
     <td>Linux</td>
     <td>5th November 2022</td>
@@ -741,10 +754,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>XML External Entity (XXE)</li>
+        <li>Python Code Analysis</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

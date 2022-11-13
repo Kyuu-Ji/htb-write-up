@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 27th November 2021
   - OS: Windows
   - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
+- [BountyHunter](bountyhunter/write-up-bountyhunter.md)
+  - Retired on 20th November 2021
+  - OS: Linux
+  - Tags: XML External Entity (XXE), Python Code Analysis
 - [Seal](seal/write-up-seal.md)
   - Retired on 13th November 2021
   - OS: Linux
