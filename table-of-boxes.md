@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>RedPanda</td>
+    <td>Linux</td>
+    <td>26th November 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Hathor</td>
+    <td>Windows</td>
+    <td>19th November 2022</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Shared</td>
     <td>Linux</td>
     <td>12th November 2022</td>
@@ -1066,10 +1092,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Local File Inclusion (LFI)</li>
+        <li>JSON Web Token (JWT)</li>
+        <li>Sticky Notes</li>
+        <li>Reverse Engineering</li>
+        <li>SQL Injection</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

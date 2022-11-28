@@ -106,6 +106,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 24th July 2021
   - OS: Linux
   - Tags: CVE (Drupal), Snap
+- [Breadcrumbs](breadcrumbs/write-up-breadcrumbs.md)
+  - Retired on 17th July 2021
+  - OS: Windows
+  - Tags: Local File Inclusion (LFI), JSON Web Token (JWT), Sticky Notes, Reverse Engineering, SQL Injection
 - [Atom](atom/write-up-atom.md)
   - Retired on 10th July 2021
   - OS: Windows
