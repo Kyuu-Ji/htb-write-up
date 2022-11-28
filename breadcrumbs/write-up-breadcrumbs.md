@@ -297,12 +297,11 @@ There is a directory _C:/Development_ with a file called _Krypter_Linux_ that ca
 scp development@10.10.10.228:/Development/Krypter_Linux .
 ```
 
-The `file` command shows that it is an **ELF binary**, so it be analyzed via **Reverse Engineering**:
+The `file` command shows that it is an **ELF binary**, so it has to be analyzed via **Reverse Engineering** with a tool like **Ghidra**:
 ```
 Krypter_Linux: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=ab1fa8d6929805501e1793c8b4ddec5c127c6a12, for GNU/Linux 3.2.0, not stripped
 ```
 
-To analyze this file, I will use **Ghidra**.
 In the _main function_ there is a description of the tool, which can also be seen when executing it:
 ```
 Krypter V1.2
@@ -429,7 +428,7 @@ The tool [CyberChef](https://gchq.github.io/CyberChef/) can be used to decrypt t
 - Input: Raw
 ```
 
-> [Recipe for decrypting the password](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'Latin1','string':'k19D193j.%3C19391('%7D,%7B'option':'Hex','string':'00000000000000000000000000000000'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=SDJkRnovak53dFNUV0RVUm90OUpCaFdNUDZYT2RtY3BncXZZSEczNVFLdz0)
+- [Recipe for decrypting the password](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'Latin1','string':'k19D193j.%3C19391('%7D,%7B'option':'Hex','string':'00000000000000000000000000000000'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=SDJkRnovak53dFNUV0RVUm90OUpCaFdNUDZYT2RtY3BncXZZSEczNVFLdz0)
 
 The decrypted password can be used to authenticate as _Administrator_ via SSH!
 ```
