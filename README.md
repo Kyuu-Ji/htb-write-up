@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 27th November 2021
   - OS: Windows
   - Tags: Active Directory, BloodHound, Group Managed Service Account, Silver Ticket
+- [Union](union/write-up-union.md)
+  - Retired on 23rd November 2021
+  - OS: Linux
+  - Tags: SQL Injection, Command Injection
 - [BountyHunter](bountyhunter/write-up-bountyhunter.md)
   - Retired on 20th November 2021
   - OS: Linux

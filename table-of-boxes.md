@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Carpediem</td>
+    <td>Linux</td>
+    <td>3rd December 2022</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>RedPanda</td>
     <td>Linux</td>
     <td>26th November 2022</td>
@@ -767,10 +780,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>Command Injection</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

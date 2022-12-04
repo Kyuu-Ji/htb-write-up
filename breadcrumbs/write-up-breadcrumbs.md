@@ -428,8 +428,6 @@ The tool [CyberChef](https://gchq.github.io/CyberChef/) can be used to decrypt t
 - Input: Raw
 ```
 
-- [Recipe for decrypting the password](https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'Latin1','string':'k19D193j.%3C19391('%7D,%7B'option':'Hex','string':'00000000000000000000000000000000'%7D,'CBC','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=SDJkRnovak53dFNUV0RVUm90OUpCaFdNUDZYT2RtY3BncXZZSEczNVFLdz0)
-
 The decrypted password can be used to authenticate as _Administrator_ via SSH!
 ```
 ssh Administrator@10.10.10.228
