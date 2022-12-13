@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Outdated</td>
+    <td>Windows</td>
+    <td>10th December 2022</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Carpediem</td>
     <td>Linux</td>
     <td>3rd December 2022</td>
@@ -924,11 +937,14 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>TLS Fingerprinting</li>
+        <li>JARM</li>
+        <li>Server Side Request Forgery (SSRF)</li>
+        <li>OMIGOD Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Pit</td>

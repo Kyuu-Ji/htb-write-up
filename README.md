@@ -78,6 +78,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 2nd October 2021
   - OS: Linux
   - Tags: PCAP Analysis, Linux capabilities
+- [Jarmis](jarmis/write-up-jarmis.md)
+  - Retired on 27th September 2021
+  - OS: Linux
+  - Tags: TLS Fingerprinting, JARM, Server Side Request Forgery (SSRF), OMIGOD Vulnerability
 - [Pit](pit/write-up-pit.md)
   - Retired on 25th September 2021
   - OS: Linux

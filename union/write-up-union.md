@@ -33,7 +33,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 The web service hosts a custom developed website with the title _"Join the UHC - November Qualifiers"_ and there is an input field.
 When typing anything into the field, it reveals a link to _challenge.php_ and on there it expects the _first flag_.
 
-When sending a name of a real user of the **UHC November Qualifiers** like the creator of the box _ippsec_, then it shows a different message then when sending anything else:
+When sending a name of a real user of the **UHC November Qualifiers** like the creator of the box _ippsec_, then it shows a different message:
 ```
 Sorry, ippsec you are not eligible due to already qualifying.
 ```
@@ -132,7 +132,7 @@ ssh uhc@10.10.11.128
 ## Privilege Escalation
 
 The file _/var/www/html/firewall.php_ has the code of the SSH enabling:
-```
+```php
 (...)
 if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
     $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
