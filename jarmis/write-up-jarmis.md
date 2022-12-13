@@ -49,7 +49,7 @@ gobuster -u http://10.10.11.117 dir -w /usr/share/wordlists/dirbuster/directory-
 
 ![Jarmis API Documentation](jarmis_web-2.png)
 
-There is an tool on GitHub called [JARM](https://github.com/salesforce/jarm), which does the same task and explains **TLS Fingerprinting** in depth.
+There is a tool on GitHub called [JARM](https://github.com/salesforce/jarm), which does the same task and explains **TLS Fingerprinting** in depth.
 ```
 JARM works by actively sending 10 TLS Client Hello packets to a target TLS server and capturing specific attributes of the TLS Server Hello responses. The aggregated TLS server responses are then hashed in a specific way to produce the JARM fingerprint.
 ```
@@ -233,7 +233,7 @@ This can be used to fuzz through all ports and filter for this value in the _end
 wfuzz -z range,1-65535 -u http://jarmis.htb/api/v1/fetch?endpoint=localhost:FUZZ --hs "null"
 ```
 
-The ports 5985, 5986, 8001 behave like the other open ports, which mean that these are open on the box.
+The ports 5985, 5986, 8001 behave like the other open ports, which means that these are open on the box.
 
 Two of these ports are likely to be [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) developed by Microsoft and this service has a [publicly known vulnerability](https://book.hacktricks.xyz/network-services-pentesting/5985-5986-pentesting-omi) called **OMIGOD**.
 

