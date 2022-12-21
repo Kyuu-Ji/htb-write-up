@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Writer](writer/write-up-writer.md)
+  - Retired on 11th December 2021
+  - OS: Linux
+  - Tags: SQL Injection, Python Flask, Postfix, Advanced Packaging Tools (APT)
 - [Pikaboo](pikaboo/write-up-pikaboo.md)
   - Retired on 4th December 2021
   - OS: Linux

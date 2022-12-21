@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Support</td>
+    <td>Windows</td>
+    <td>17th December 2022</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Outdated</td>
     <td>Windows</td>
     <td>10th December 2022</td>
@@ -748,11 +761,14 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SQL Injection</li>
+        <li>Python Flask</li>
+        <li>Postfix</li>
+        <li>Advanced Packaging Tools (APT)</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Pikaboo</td>
