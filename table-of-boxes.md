@@ -670,11 +670,13 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Server Side Template Injection (SSTI)</li>
+        <li>CVE (Jamovi)</li>
+        <li>Certified Pre-Owned (ADCS)</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Forge</td>

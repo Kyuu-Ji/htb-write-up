@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Anubis](anubis/write-up-anubis.md)
+  - Retired on 29th January 2022
+  - OS: Windows
+  - Tags: Server Side Template Injection (SSTI), CVE (Jamovi), Certified Pre-Owned (ADCS)
 - [Writer](writer/write-up-writer.md)
   - Retired on 11th December 2021
   - OS: Linux
