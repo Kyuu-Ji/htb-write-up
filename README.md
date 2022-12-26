@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 29th January 2022
   - OS: Windows
   - Tags: Server Side Template Injection (SSTI), CVE (Jamovi), Certified Pre-Owned (ADCS)
+- [LogForge](logforge/write-up-logforge.md)
+  - Retired on 23rd December 2021
+  - OS: Linux
+  - Tags: Log4Shell, Java Debugging
 - [Writer](writer/write-up-writer.md)
   - Retired on 11th December 2021
   - OS: Linux
