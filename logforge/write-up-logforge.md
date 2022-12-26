@@ -1,6 +1,6 @@
 # LogForge
 
-This is the write-up for the box LogForge that got retired at the 23rd December 2022.
+This is the write-up for the box LogForge that got retired at the 23rd December 2021.
 My IP address was 10.10.14.7 while I did this.
 
 Let's put this in our hosts file:
@@ -133,7 +133,7 @@ log4j_env_leakage
 ```
 
 The credentials work and it is possible to login to the FTP service.
-The FTP service is in the home folder of root and it is possible to upload an SSH key in _/root/.ssh/authorized_keys2_.
+The FTP service hosts the home folder of root and it is possible to upload an SSH key in _/root/.ssh/authorized_keys2_.
 
 Creating _authorized_keys2_ in the folder with our generated public SSH key:
 ```
