@@ -644,11 +644,13 @@ Work in progress.
     <td>:red_circle: Hard</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>WordPress XML-RPC</li>
+        <li>CVE (PolKit pkexec)</li>
+        <li>Firewall Bypass</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Horizontall</td>

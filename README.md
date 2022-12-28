@@ -34,6 +34,10 @@ grep -iR "8080/tcp" */*.md
 ```
 
 ### Boxes
+- [Pressed](pressed/write-up-pressed.md)
+  - Retired on 5th February 2022
+  - OS: Linux
+  - Tags: WordPress XML-RPC, Firewall Bypass, CVE (PolKit pkexec)
 - [Anubis](anubis/write-up-anubis.md)
   - Retired on 29th January 2022
   - OS: Windows
