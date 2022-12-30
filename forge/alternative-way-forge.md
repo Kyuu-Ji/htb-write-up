@@ -1,4 +1,4 @@
-# Alternative way to exploit Anubis
+# Alternative way to exploit Forge
 
 ## Bypassing SSRF Blacklist
 
