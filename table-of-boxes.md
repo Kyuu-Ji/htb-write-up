@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Shoppy</td>
+    <td>Linux</td>
+    <td>14th January 2023</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Health</td>
+    <td>Linux</td>
+    <td>7th January 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Support</td>
     <td>Windows</td>
     <td>17th December 2022</td>
@@ -1064,10 +1090,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>PHP Backdoor</li>
+        <li>GTFOBins (knife)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

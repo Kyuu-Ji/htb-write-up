@@ -122,6 +122,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 30th August 2021
   - OS: Linux
   - Tags: Server Side Template Injection (SSTI), Golang, AWS S3 Buckets
+- [Knife](knife/write-up-knife.md)
+  - Retired on 28th August 2021
+  - OS: Linux
+  - Tags: PHP Backdoor, GTFOBins (knife)
 - [Love](love/write-up-love.md)
   - Retired on 7th August 2021
   - OS: Windows
