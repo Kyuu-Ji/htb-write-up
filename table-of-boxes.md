@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Ambassador</td>
+    <td>Linux</td>
+    <td>28th January 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>UpDown</td>
+    <td>Linux</td>
+    <td>21st January 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Shoppy</td>
     <td>Linux</td>
     <td>14th January 2023</td>
@@ -579,10 +605,13 @@ Work in progress.
     <td>:black_circle: Insane</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Cross-Site Request Forgery (CSRF)</li>
+        <li>CVE (LocalStack)</li>
+        <li>AWS S3 Buckets</li>
+        <li>Docker</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
