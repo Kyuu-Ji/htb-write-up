@@ -38,6 +38,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 19th March 2022
   - OS: Linux
   - Tags: Cross-Site Request Forgery (CSRF), CVE (LocalStack), AWS S3 Buckets, Docker
+- [Ransom](ransom/write-up-ransom.md)
+  - Retired on 15th March 2022
+  - OS: Linux
+  - Tags: PHP Type Juggling, ZipCrypto Known-Plaintext Attack
 - [Pressed](pressed/write-up-pressed.md)
   - Retired on 5th February 2022
   - OS: Linux

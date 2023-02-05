@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Response</td>
+    <td>Linux</td>
+    <td>4th February 2023</td>
+    <td>:black_circle: Insane</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Ambassador</td>
     <td>Linux</td>
     <td>28th January 2023</td>
@@ -621,10 +634,11 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>PHP Type Juggling</li>
+        <li>ZipCrypto Known-Plaintext Attack</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
