@@ -42,6 +42,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 15th March 2022
   - OS: Linux
   - Tags: PHP Type Juggling, ZipCrypto Known-Plaintext Attack
+- [Devzat](devzat/write-up-devzat.md)
+  - Retired on 12th March 2022
+  - OS: Linux
+  - Tags: Go Code Analysis, InfluxDB, JSON Web Token (JWT)
 - [Pressed](pressed/write-up-pressed.md)
   - Retired on 5th February 2022
   - OS: Linux

@@ -14,6 +14,19 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Photobomb</td>
+    <td>Linux</td>
+    <td>11th February 2023</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Response</td>
     <td>Linux</td>
     <td>4th February 2023</td>
@@ -648,10 +661,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Go Code Analysis</li>
+        <li>InfluxDB</li>
+        <li>JSON Web Token (JWT)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
