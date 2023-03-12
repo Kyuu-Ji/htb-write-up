@@ -14,6 +14,58 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Mentor</td>
+    <td>Linux</td>
+    <td>11th March 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Forgot</td>
+    <td>Linux</td>
+    <td>4th March 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Awkward</td>
+    <td>Linux</td>
+    <td>25th February 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>RainyDay</td>
+    <td>Linux</td>
+    <td>18th February 2023</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Photobomb</td>
     <td>Linux</td>
     <td>11th February 2023</td>
@@ -702,10 +754,12 @@ Work in progress.
     <td>:orange_circle: Medium</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>Docker Image Forensics</li>
+        <li>Server Side Template Injection (SSTI)</li>
+        <li>PGP</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>

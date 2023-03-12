@@ -46,6 +46,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 12th March 2022
   - OS: Linux
   - Tags: Go Code Analysis, InfluxDB, JSON Web Token (JWT)
+- [Bolt](bolt/write-up-bolt.md)
+  - Retired on 19th February 2022
+  - OS: Linux
+  - Tags: Docker Image Forensics, Server Side Template Injection (SSTI), PGP
 - [Pressed](pressed/write-up-pressed.md)
   - Retired on 5th February 2022
   - OS: Linux
