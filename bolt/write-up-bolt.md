@@ -92,8 +92,7 @@ Dumping contents from the database:
 sqlite> .tables
 User
 
-sqlite> SELECT * from User
-   ...> ;
+sqlite> SELECT * from User;
 1|admin|admin@bolt.htb|$1$sm1RceCh$rSd3PygnS/6jlFDfF2J5q.||
 ```
 
@@ -105,7 +104,7 @@ hashcat bolt_sqlite.hash /usr/share/wordlists/rockyou.txt
 After a while the hash is cracked and the password of the user _admin_ can be used to access the _/login_ page:
 > deadbolt
 
-The login is successful and it forwards to a dashboard of [AdminLTE](https://adminlte.io/).
+The login is successful and forwards to a dashboard of [AdminLTE](https://adminlte.io/).
 
 There is a chat between two users that mentions a security issue of the Docker image and talking about a demo environment:
 ```
@@ -234,7 +233,7 @@ mysql> show tables;
 mysql> select * from users
 ```
 
-The table _users_ has the username for _eddie_ and _clark_, but not password hashes.
+The table _users_ has the username for _eddie_ and _clark_, but no password hashes.
 The table _secrets_ contains a **PGP** key that may be decrypted later:
 ```
 mysql> describe secrets;
