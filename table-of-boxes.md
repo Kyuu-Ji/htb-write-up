@@ -27,6 +27,19 @@ Work in progress.
     <td>:x:</td>
   </tr>
   <tr>
+    <td>BroScience</td>
+    <td>Linux</td>
+    <td>8th April 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Sekhmet</td>
     <td>Windows</td>
     <td>1st April 2023</td>
