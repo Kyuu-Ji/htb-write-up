@@ -62,6 +62,10 @@ grep -iR "8080/tcp" */*.md
   - Retired on 22nd January 2022
   - OS: Linux
   - Tags: Server Side Request Forgery (SSRF), Python Code Analysis
+- [Previse](previse/write-up-previse.md)
+  - Retired on 8th January 2022
+  - OS: Linux
+  - Tags: Execute-After-Redirect (EAR), Insecure Direct Object Reference (IDOR)
 - [LogForge](logforge/write-up-logforge.md)
   - Retired on 23rd December 2021
   - OS: Linux
