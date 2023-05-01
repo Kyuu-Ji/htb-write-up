@@ -14,6 +14,32 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>MetaTwo</td>
+    <td>Linux</td>
+    <td>29th April 2023</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Investigation</td>
+    <td>Linux</td>
+    <td>22nd April 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>Encoding</td>
     <td>Linux</td>
     <td>15th April 2023</td>
@@ -862,10 +888,11 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>CVE (Strapi.io)</li>
+        <li>CVE (Laravel Debug Mode)</li>
       </ul>
     </td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
     <td>:x:</td>
   </tr>
   <tr>
