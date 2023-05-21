@@ -14,6 +14,45 @@ Work in progress.
   </tr>
 
   <tr>
+    <td>Precious</td>
+    <td>Linux</td>
+    <td>20th May 2023</td>
+    <td>:green_circle: Easy</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Interface</td>
+    <td>Linux</td>
+    <td>13th May 2023</td>
+    <td>:orange_circle: Medium</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
+    <td>Flight</td>
+    <td>Windows</td>
+    <td>6th May 2023</td>
+    <td>:red_circle: Hard</td>
+    <td>
+      <ul>
+        <li>-</li>
+      </ul>
+    </td>
+    <td>:x:</td>
+    <td>:x:</td>
+  </tr>
+  <tr>
     <td>MetaTwo</td>
     <td>Linux</td>
     <td>29th April 2023</td>
@@ -832,11 +871,13 @@ Work in progress.
     <td>:green_circle: Easy</td>
     <td>
       <ul>
-        <li>-</li>
+        <li>SCF File Attack</li>
+        <li>CVE (Ricoh Printer)</li>
+        <li>PrintNightmare Vulnerability</li>
       </ul>
     </td>
-    <td>:x:</td>
-    <td>:x:</td>
+    <td>:heavy_check_mark:</td>
+    <td>:heavy_check_mark:</td>
   </tr>
   <tr>
     <td>Bolt</td>
